@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "solidarytinker:molten_starfall",
+    "amount": 90
+  },
+  "temperature": 1450,
+  "output": "solidarytinker:starfall"
+}

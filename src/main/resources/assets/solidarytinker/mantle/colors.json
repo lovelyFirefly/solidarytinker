@@ -1,0 +1,24 @@
+{
+  "material.solidarytinker": {
+    "dwarf":  "#596d99",
+    "starfall":  "#596d99"
+  },
+  "modifier.solidarytinker": {
+    "_null_": "白矮星物质",
+
+    "collapse":  "#596d99",
+    "darkstar":  "#43375b",
+    "superblazing":  "#f4790d",
+    "protonation":  "#b332d6",
+
+    "neverend":  "#ffaa7f",
+    "reliable":  "#ffacf0",
+    "tacticsattack":  "#50b9ff",
+
+
+    "sandstrom":  "#ffaa7f",
+    "absolutejustice":  "#ffacf0",
+    "tacticsprotect":  "#50b9ff"
+
+  }
+}

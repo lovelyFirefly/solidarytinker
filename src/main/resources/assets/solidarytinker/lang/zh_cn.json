@@ -1,0 +1,121 @@
+{
+  "itemGroup.solidarytinker": "工匠联合物品",
+
+
+  "effect.solidarytinker.bloodanger": "红温",
+
+
+  "_null_": "匠魂部分",
+
+
+
+  "item.solidarytinker.super_dt_bucket": "浓缩超能氘氚燃料桶",
+  "fluid_type.solidarytinker.super_dt": "浓缩超能氘氚燃料",
+
+
+
+  "item.solidarytinker.starfall_ingot": "星落钢",
+  "tooltip.starfall_ingot.desc1": "恰如点点星光从宇宙中坠落",
+  "item.solidarytinker.molten_starfall_bucket": "熔融星落钢桶",
+  "fluid_type.solidarytinker.molten_starfall": "熔融星落钢",
+
+
+
+  "material.solidarytinker.starfall": "§b星§d落§6钢",
+  "material.solidarytinker.starfall.flavor": "蜕变，成长...",
+  "material.solidarytinker.starfall.encyclopedia": "唔，据说睡着的时候是看不到光环的哦",
+
+
+
+  "modifier.solidarytinker.neverend": "永不休止",
+  "modifier.solidarytinker.neverend.flavor": "bro从来不会红温的，对吧",
+  "modifier.solidarytinker.neverend.description":"当你自己生命值低于30%时获得1级红温效果，拥有此状态时候，每级红温效果攻击附带目标最大生命15%的物理伤害",
+
+  "modifier.solidarytinker.reliable": "可靠",
+  "modifier.solidarytinker.reliable.flavor": "冲锋陷阵，百战当先",
+  "modifier.solidarytinker.reliable.description":"[常驻效果]对生命占比大于50%的目标额外造成2倍的伤害，在一场持续的战斗中，你会累计身上的箭矢（每一次受伤都会累计箭矢），箭矢越多，你造成的额外伤害就越高（每根提供8%增伤效果），达到10根箭矢再受伤会获得红温效果（）每次受伤会延长红温5秒。累计达到20根箭矢会造成一次145倍的伤害,清除所有箭矢并且获得10秒的抗性提升2效果\n[当主手或者副手持有工匠匠心的幻海化梦词条时]每次攻击均有10%概率立刻恢复全身装备冷却，玩家移速锁定至130%,并且获得可以叠加的伤害吸收，至多叠加至最大生命的4倍。持有物品属于ETSH的离子化射线炮时额外获得免伤效果\n[主手或副手未持有幻海化梦词条时]你将变得慵懒，白天造成的伤害降低30%。夜间会变为正常，并且额外获得夜视效果和急迫",
+
+  "modifier.solidarytinker.tacticsattack": "战术性进攻",
+  "modifier.solidarytinker.tacticsattack.flavor": "对勇者的嘉奖",
+  "modifier.solidarytinker.tacticsattack.description":"获得额外1升级槽1能力槽，你的工具耐久损降低70%\n无视目标的无敌帧",
+
+
+
+  "modifier.solidarytinker.sandstrom": "沙海之守望",
+  "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
+  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有2%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每次受伤恢复5%已损生命.仅在有来源伤害时才会触发",
+
+  "modifier.solidarytinker.absolutejustice": "绝对正义",
+  "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
+  "modifier.solidarytinker.absolutejustice.description":"你对无来源伤害几近于免疫(无来源伤害：自然伤害，虚空伤害等...)\n[当副手物品属于工匠创新的重盾时]完全免疫无来源并且取消受击判定",
+
+  "modifier.solidarytinker.tacticsprotect": "战术防御",
+  "modifier.solidarytinker.tacticsprotect.flavor": "对勇者的嘉奖",
+  "modifier.solidarytinker.tacticsprotect.description":"获得1升级1能力1防御槽，护甲耐久损耗降低70%\n生命值首次跌入20%以下的时候获得最大生命30%的伤害吸收，冷却20秒，并且获得持续10秒的等同于盔甲词条等级的抗性提升（不会大于4级）和红温效果(至高词条等级对应的等级为上限，每触发一次提升一级)。并且对周围8*词条等级范围内的怪物造成等同于护盾值的伤害。",
+
+
+
+
+  "item.solidarytinker.takeru": "takeru",
+  "tooltip.takeru.desc1": "takeru是一只乖猫猫",
+
+
+
+  "item.solidarytinker.kemo33": "kemo33",
+  "tooltip.kemo33.desc1": "",
+
+
+
+  "item.solidarytinker.icefantasy_ingot": "墨冰合金锭",
+  "tooltip.icefantasy_ingot.desc1": "自冻洋深处",
+  "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰合金桶",
+  "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰合金",
+
+
+  "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
+  "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
+  "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
+
+
+
+
+  "item.solidarytinker.dwarf_ingot": "白矮星物质锭",
+  "tooltip.dwarf_ingot.desc1":"恰如恒星一般炽热且耀眼",
+  "block.solidarytinker.dwarf_block": "白矮星物质块",
+  "item.solidarytinker.molten_dwarf_bucket": "熔融白矮星物质桶",
+  "fluid_type.solidarytinker.molten_dwarf": "熔融白矮星物质",
+
+
+
+  "material.solidarytinker.dwarf": "白矮星",
+  "material.solidarytinker.dwarf.flavor": "恒星生命周期的衰老阶段",
+  "material.solidarytinker.dwarf.encyclopedia": "......你是怎么做到在匠魂炉子里面做出来这个的？",
+
+
+
+  "modifier.solidarytinker.darkstar": "暗星",
+  "modifier.solidarytinker.darkstar.flavor": "梦回S3",
+  "modifier.solidarytinker.darkstar.description":"每次死亡都会将你33%生命值永久转化为该材料的增伤",
+
+
+
+
+  "modifier.solidarytinker.superblazing": "炽焰",
+  "modifier.solidarytinker.superblazing.flavor": "尽管他已经衰老，但是仍需要数十亿年才熄灭",
+  "modifier.solidarytinker.superblazing.description":"攻击会对目标造成不可自然熄灭的火焰，对处于水中生物则直接附加1.5倍外加等级*0.1倍的伤害",
+
+
+
+
+  "modifier.solidarytinker.collapse": "焱御",
+  "modifier.solidarytinker.collapse.flavor": "所谓永恒，对于恒星漫长生命周期不过一瞬",
+  "modifier.solidarytinker.collapse.description":"攻击你的敌人会陷入永久状态的燃烧，并且如果目标处于燃烧状态，则对你的伤害降低至20%",
+
+
+
+  "modifier.solidarytinker.protonation": "质子化",
+  "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
+  "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值"
+
+
+}

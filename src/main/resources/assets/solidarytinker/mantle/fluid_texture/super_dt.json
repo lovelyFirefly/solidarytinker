@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "solidarytinker:fluid/super_dt/flowing",
+  "still": "solidarytinker:fluid/super_dt/still"
+}

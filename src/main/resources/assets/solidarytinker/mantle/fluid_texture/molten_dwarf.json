@@ -1,0 +1,5 @@
+{
+    "color": "FFFFFFFF",
+    "flowing": "solidarytinker:fluid/molten_dwarf/flowing",
+    "still": "solidarytinker:fluid/molten_dwarf/still"
+}

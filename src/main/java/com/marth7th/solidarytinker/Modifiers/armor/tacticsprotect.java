@@ -34,32 +34,31 @@ public class tacticsprotect extends ArmorModifier {
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
         if (enemy != null && entity != null) {
             if (entity instanceof Player player) {
-                var armor = new ItemStack[]{player.getItemBySlot(EquipmentSlot.HEAD), player.getItemBySlot(EquipmentSlot.CHEST), player.getItemBySlot(EquipmentSlot.LEGS), player.getItemBySlot(EquipmentSlot.FEET)};
-                int modifierslevel = modifierlevel.getsinglearmorlevel(player, this.getId());
-                if (modifierslevel > 0) {
-                    for (ItemStack itemStack1 : armor) {
+                var armor = new ItemStack[]{entity.getItemBySlot(EquipmentSlot.HEAD), entity.getItemBySlot(EquipmentSlot.CHEST), entity.getItemBySlot(EquipmentSlot.LEGS), entity.getItemBySlot(EquipmentSlot.FEET)};
+                int modifierslevel = modifierlevel.getsinglearmorlevel(player,solidarytinkerModifiers.TACTICSPROTECT_STATIC_MODIFIER.getId());
+                for (ItemStack itemStack1 : armor){
+                    if (modifierslevel > 0) {
                         if (!player.getCooldowns().isOnCooldown(itemStack1.getItem())) {
-                            if (player.getHealth() <= player.getMaxHealth() * 0.2f) {
-                                event.setCanceled(true);
-                                double x = player.getX();
-                                double y = player.getY();
-                                double z = player.getZ();
-                                List<Mob> MobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 8 * modifierslevel, y + 8 * modifierslevel, z + 8 * modifierslevel, x - 8 * modifierslevel, y - 8 * modifierslevel, z - 8 * modifierslevel));
-                                for (Mob enemys : MobList) {
-                                    if (enemys != null) {
-                                        enemys.hurt(DamageSource.playerAttack((Player) entity), entity.getAbsorptionAmount() + entity.getMaxHealth() * 0.3f);
-                                    }
+                            if(event.getAmount()>player.getHealth()||player.getHealth()<player.getMaxHealth()*0.25f){
+                            event.setCanceled(true);
+                            double x = player.getX();
+                            double y = player.getY();
+                            double z = player.getZ();
+                            List<Mob> MobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 8 * modifierslevel, y + 8 * modifierslevel, z + 8 * modifierslevel, x - 8 * modifierslevel, y - 8 * modifierslevel, z - 8 * modifierslevel));
+                            for (Mob enemys : MobList) {
+                                if (enemys != null) {
+                                    enemys.hurt(DamageSource.playerAttack((Player) entity), entity.getAbsorptionAmount() + entity.getMaxHealth() * 0.3f);
                                 }
-                                player.setAbsorptionAmount(entity.getMaxHealth() * 0.3f + player.getAbsorptionAmount());
-                                player.getCooldowns().addCooldown(itemStack1.getItem(), 400);
-                                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, Math.min(3, modifierslevel)));
-                                if (player.hasEffect(solidarytinkerEffects.bloodanger.get())) {
-                                    int effectlevel = entity.getEffect(solidarytinkerEffects.bloodanger.get()).getAmplifier();
-                                    player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 200, Math.min(modifierslevel, 1 + effectlevel)));
-                                }
-                                else if(!player.hasEffect(solidarytinkerEffects.bloodanger.get())){
-                                    player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 200, 0));
-                                }
+                            }
+                            player.setAbsorptionAmount(entity.getMaxHealth() * 0.3f + player.getAbsorptionAmount());
+                            player.getCooldowns().addCooldown(itemStack1.getItem(), 600);
+                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, Math.min(3, modifierslevel)));
+                            if (player.hasEffect(solidarytinkerEffects.bloodanger.get())) {
+                                int effectlevel = entity.getEffect(solidarytinkerEffects.bloodanger.get()).getAmplifier();
+                                player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 200, Math.min(modifierslevel, 1 + effectlevel)));
+                            } else if (!player.hasEffect(solidarytinkerEffects.bloodanger.get())) {
+                                player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 200, 0));
+                            }
                             }
                         }
                     }

@@ -35,7 +35,7 @@ public class sandstrom extends ArmorModifier {
                         if(!player.getCooldowns().isOnCooldown(itemStack1.getItem())){
                             for(ItemStack itemStack2:armor) {
                                 if (enemy != null) {
-                                    player.heal(player.getMaxHealth()-player.getHealth() * 0.1f);
+                                    player.heal((player.getMaxHealth()-player.getHealth()) * 0.1f);
                                 }
                             }
                         }

@@ -19,12 +19,9 @@
   "item.solidarytinker.molten_starfall_bucket": "熔融星落钢桶",
   "fluid_type.solidarytinker.molten_starfall": "熔融星落钢",
 
-
-
   "material.solidarytinker.starfall": "§b星§d落§6钢",
   "material.solidarytinker.starfall.flavor": "蜕变，成长...",
   "material.solidarytinker.starfall.encyclopedia": "唔，据说睡着的时候是看不到光环的哦",
-
 
 
   "modifier.solidarytinker.neverend": "永不休止",
@@ -40,8 +37,7 @@
   "modifier.solidarytinker.tacticsattack.description":"获得额外1升级槽1能力槽，你的工具耐久损降低70%\n无视目标的无敌帧",
 
 
-
-  "modifier.solidarytinker.sandstrom": "沙海之守望",
+  "modifier.solidarytinker.sandstrom": "沙海的守望者",
   "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
   "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有2%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每次受伤恢复5%已损生命.仅在有来源伤害时才会触发",
 
@@ -52,7 +48,6 @@
   "modifier.solidarytinker.tacticsprotect": "战术防御",
   "modifier.solidarytinker.tacticsprotect.flavor": "对勇者的嘉奖",
   "modifier.solidarytinker.tacticsprotect.description":"获得1升级1能力1防御槽，护甲耐久损耗降低70%\n生命值首次跌入20%以下的时候获得最大生命30%的伤害吸收，冷却20秒，并且获得持续10秒的等同于盔甲词条等级的抗性提升（不会大于4级）和红温效果(至高词条等级对应的等级为上限，每触发一次提升一级)。并且对周围8*词条等级范围内的怪物造成等同于护盾值的伤害。",
-
 
 
 
@@ -77,8 +72,6 @@
   "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
 
 
-
-
   "item.solidarytinker.dwarf_ingot": "白矮星物质锭",
   "tooltip.dwarf_ingot.desc1":"恰如恒星一般炽热且耀眼",
   "block.solidarytinker.dwarf_block": "白矮星物质块",
@@ -86,18 +79,13 @@
   "fluid_type.solidarytinker.molten_dwarf": "熔融白矮星物质",
 
 
-
   "material.solidarytinker.dwarf": "白矮星",
   "material.solidarytinker.dwarf.flavor": "恒星生命周期的衰老阶段",
   "material.solidarytinker.dwarf.encyclopedia": "......你是怎么做到在匠魂炉子里面做出来这个的？",
 
-
-
   "modifier.solidarytinker.darkstar": "暗星",
   "modifier.solidarytinker.darkstar.flavor": "梦回S3",
   "modifier.solidarytinker.darkstar.description":"每次死亡都会将你33%生命值永久转化为该材料的增伤",
-
-
 
 
   "modifier.solidarytinker.superblazing": "炽焰",
@@ -105,17 +93,18 @@
   "modifier.solidarytinker.superblazing.description":"攻击会对目标造成不可自然熄灭的火焰，对处于水中生物则直接附加1.5倍外加等级*0.1倍的伤害",
 
 
-
-
   "modifier.solidarytinker.collapse": "焱御",
   "modifier.solidarytinker.collapse.flavor": "所谓永恒，对于恒星漫长生命周期不过一瞬",
   "modifier.solidarytinker.collapse.description":"攻击你的敌人会陷入永久状态的燃烧，并且如果目标处于燃烧状态，则对你的伤害降低至20%",
 
 
-
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
-  "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值"
+  "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
+
+  "modifier.solidarytinker.wenguanger": "稳固合金之怒",
+  "modifier.solidarytinker.wenguanger.flavor": "🤬",
+  "modifier.solidarytinker.wenguanger.description":"你天天问牛魔呢"
 
 
 }

@@ -8,10 +8,10 @@
 如果有什么疑问也可以随时向我提问，我很乐意为你解答🤗
 
 制作者名单
-lovelyFirefly(作者) 💛
-ฅ呜喵ฅ（贴图等）    😽
-csdy（技术指导）    😈
-Etsh（合作伙伴）    🧊
+lovelyFirefly(作者)            💛
+ฅ呜喵ฅ(贴图等)                 😽
+csdy(演奏哈基米音乐鼓舞团队)   😈 (他自己给取的)
+Etsh(合作伙伴)                 🧊
 
 
 无需本人授权，拿走你需要的即可！（前提是非盈利性）👻
@@ -30,10 +30,10 @@ If you have any questions, feel free to ask me and I'll be glad to answer them�
 
 List of team
 
-lovelyFirefly(author)         💛
-ฅ呜喵ฅ（texture）             😽
-csdy（Technical advice）      😈
-Etsh（Partners）              🧊
+lovelyFirefly(Author)            💛
+ฅ呜喵ฅ(Texture)                  😽
+csdy(CatMusic-RecitalBand Member)😈   (he named this himself) 
+Etsh(Partners)                   🧊
 
 You don't need to authorize, just take what you need! (Provided it's non-profit.)👻
 

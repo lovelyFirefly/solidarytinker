@@ -23,6 +23,7 @@ public class thefood extends BattleModifier {
             if(carrot){
             int count = getFoodCapability(player).getEatenFoodCount();
                 if(count>30){
+                    int a=0;
                 }
             }
         }

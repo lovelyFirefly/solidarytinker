@@ -12,6 +12,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 
 @Mod(solidarytinker.MOD_ID)
+
 public class solidarytinker {
     /**
      * 联动模组
@@ -23,7 +24,7 @@ public class solidarytinker {
     public static final String MOD_ID = "solidarytinker"; //*是你的模组名，需要英文
     public solidarytinker() {
         /**
-         * 几个注册表都在这边，有的联动所以需要前置
+         *几个注册表都在这边，有的联动所以需要前置
          */
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::commonSetup);

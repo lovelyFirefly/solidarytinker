@@ -1,3 +1,7 @@
+只要是非营利性，想干嘛就干嘛，无需授权
+
+
+
 
 Source installation information for modders
 -------------------------------------------

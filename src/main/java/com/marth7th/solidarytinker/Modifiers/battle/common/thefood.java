@@ -27,7 +27,6 @@ public class thefood extends BattleModifier {
                 }
             }
         }
-
         return baseDamage;
     }
 }

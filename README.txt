@@ -1,46 +1,40 @@
+一个致力于联动不同匠魂附属之间的附属😘
+目前仍在初始阶段，后面会越来越全面（主要是作者本人是懒狗）😝
+本人基础并不是很好，因此有些写法会很蠢😉
+不过可以给想写附属的人一些小小的参考🤔
 
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+有什么建议随时可以在github上面留言，我很乐意听取😚
 
-Note also that the patches are built against "un-renamed" MCP source code (aka
-SRG Names) - this means that you will not be able to read them directly against
-normal code.
+如果有什么疑问也可以随时向我提问，我很乐意为你解答🤗
 
-Setup Process:
-==============================
+制作者名单
+lovelyFirefly(作者)            💛
+ฅ呜喵ฅ(贴图等)                 😽
+csdy(演奏哈基米音乐鼓舞团队)   😈 (他自己给取的)
+Etsh(合作伙伴)                 🧊
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: `./gradlew genEclipseRuns`
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run `gradlew eclipse` to generate the project.
+无需本人授权，拿走你需要的即可！（前提是非盈利性）👻
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: `./gradlew genIntellijRuns`
-4. Refresh the Gradle Project in IDEA if required.
+让我们一起让匠魂3再次伟大！🎇
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can 
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
 
-Mapping Names:
-=============================
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license, if you do not agree with it you can change your mapping names to other crowdsourced names in your 
-build.gradle. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+A MOD dedicated to linking the appendages of different TIC3——MODS😘
+It is still in the initial stage, and it will become more and more comprehensive later (mainly because the author himself is a lazy dog)😝
+Author's code-foundation is not very good, so some of the writing methods will be stupid😉
+However, it can give some small references to those who want to write about affiliates🤔
 
-Additional Resources: 
-=========================
-Community Documentation: https://docs.minecraftforge.net/en/1.19.2/gettingstarted/
-LexManos' Install Video: https://youtu.be/8VEdtQLuLO0
-Forge Forums: https://forums.minecraftforge.net/
-Forge Discord: https://discord.minecraftforge.net/
+If you have any suggestions, feel free to leave a comment on github, I'd love to hear them😚
+
+If you have any questions, feel free to ask me and I'll be glad to answer them🤗
+
+List of team
+
+lovelyFirefly(Author)            💛
+ฅ呜喵ฅ(Texture)                  😽
+csdy(CatMusic-RecitalBand Member)😈   (he named this himself) 
+Etsh(Partners)                   🧊
+
+You don't need to authorize, just take what you need! (Provided it's non-profit.)👻
+
+let's make TIC3 great again🎇

@@ -13,6 +13,11 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.ModList;
 
 public class absolutejustice extends ArmorModifier {
+    @Override
+    public boolean havenolevel() {
+        return true;
+    }
+
     boolean TN = ModList.get().isLoaded("tinkersinnovation");
     public absolutejustice() {
         MinecraftForge.EVENT_BUS.addListener(this::livingAttackEvent);

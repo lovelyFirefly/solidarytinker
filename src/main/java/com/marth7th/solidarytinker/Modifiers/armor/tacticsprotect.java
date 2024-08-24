@@ -44,7 +44,7 @@ public class tacticsprotect extends ArmorModifier {
                             double x = player.getX();
                             double y = player.getY();
                             double z = player.getZ();
-                            List<Mob> MobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 8 * modifierslevel, y + 8 * modifierslevel, z + 8 * modifierslevel, x - 8 * modifierslevel, y - 8 * modifierslevel, z - 8 * modifierslevel));
+                            List<Mob> MobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 2 * modifierslevel, y + 2 * modifierslevel, z + 8 * modifierslevel, x - 2 * modifierslevel, y - 8 * modifierslevel, z - 2 * modifierslevel));
                             for (Mob enemys : MobList) {
                                 if (enemys != null) {
                                     enemys.hurt(DamageSource.playerAttack((Player) entity), entity.getAbsorptionAmount() + entity.getMaxHealth() * 0.3f);

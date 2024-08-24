@@ -27,7 +27,8 @@ public class sandstrom extends ArmorModifier {
             if(entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT)||entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)){
                 entity.clearFire();
                 entity.setInvisible(true);
-            }else if(!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT)||!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)){
+            }
+            else if(!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT)||!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)){
                 entity.setInvisible(false);
                 if(entity instanceof Player player){
                     var armor = new ItemStack[]{player.getItemBySlot(EquipmentSlot.HEAD), player.getItemBySlot(EquipmentSlot.CHEST), player.getItemBySlot(EquipmentSlot.LEGS), player.getItemBySlot(EquipmentSlot.FEET)};
@@ -35,7 +36,7 @@ public class sandstrom extends ArmorModifier {
                         if(!player.getCooldowns().isOnCooldown(itemStack1.getItem())){
                             for(ItemStack itemStack2:armor) {
                                 if (enemy != null) {
-                                    player.heal((player.getMaxHealth()-player.getHealth()) * 0.1f);
+                                    event.setAmount(event.getAmount() * 0.5f);
                                 }
                             }
                         }
@@ -50,7 +51,7 @@ public class sandstrom extends ArmorModifier {
         if(livingEntity.getLevel().getBiome(livingEntity.blockPosition()).is(Biomes.DESERT)||livingEntity.getLevel().getBiome(livingEntity.blockPosition()).is(Biomes.BADLANDS)){
             if(livingEntity instanceof Player player){
                 if(!level.isClientSide && player.tickCount % 20 == 0){
-                    if(RANDOM.nextInt(100)>50){
+                    if(RANDOM.nextInt(1000)>990){
                     ItemStack gold = new ItemStack(Items.RAW_GOLD);
                     player.getInventory().add(gold);
                     }

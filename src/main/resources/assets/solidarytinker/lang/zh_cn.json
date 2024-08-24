@@ -39,7 +39,7 @@
 
   "modifier.solidarytinker.sandstrom": "沙海的守望者",
   "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
-  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有2%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每次受伤恢复5%已损生命.仅在有来源伤害时才会触发",
+  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,获得50%免伤.仅在有来源伤害时且护甲不在冷却才会触发",
 
   "modifier.solidarytinker.absolutejustice": "绝对正义",
   "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
@@ -65,6 +65,19 @@
   "tooltip.icefantasy_ingot.desc1": "自冻洋深处",
   "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰合金桶",
   "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰合金",
+
+
+  "modifier.solidarytinker.ancientocean": "冰雪铸成此志",
+  "modifier.solidarytinker.ancientocean.flavor": "深洋之下，不可莫测",
+  "modifier.solidarytinker.ancientocean.description":"当你生命值高于80%时候攻击会无视目标护甲魔抗等，并且你的工具常规使用不再消耗耐久",
+
+  "modifier.solidarytinker.deepoceanblessing": "深海恩惠",
+  "modifier.solidarytinker.deepoceanblessing.flavor": "深洋之下，别有洞天",
+  "modifier.solidarytinker.deepoceanblessing.description":"在水中时获得水下呼吸效果，并且在你拥有黄心的时候每次攻击都会恢复10%已损生命",
+
+  "modifier.solidarytinker.deepoceanecho": "深海的回声",
+  "modifier.solidarytinker.deepoceanecho.flavor": "你听到了吗",
+  "modifier.solidarytinker.deepoceanecho.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】）获得回声点数，回声点数 * 0.5 * 词条等级将会转化为你的实际伤害。你不再对玩家造成基础伤害",
 
 
   "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
@@ -102,9 +115,12 @@
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
 
+
   "modifier.solidarytinker.wenguanger": "稳固合金之怒",
   "modifier.solidarytinker.wenguanger.flavor": "🤬",
-  "modifier.solidarytinker.wenguanger.description":"你天天问牛魔呢"
+  "modifier.solidarytinker.wenguanger.description":"你天天问牛魔呢",
 
+  "_null_": "mekanism部分",
 
+  "gas.solidarytinker.fluorine": "氟气"
 }

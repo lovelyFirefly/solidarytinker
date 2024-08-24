@@ -115,8 +115,8 @@ public class reliable extends BattleModifier {
         if(!modifierlevel.eachhandshavelevel(entity,TIModifiers.SEA_DREAM.getId())){
             if(modifierlevel.handshavelevel(entity,modifier.getId())){
                 if(entity.getLevel().isNight()){
-                    entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,100 ,0,false,false));
-                    entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,100 ,0,false,false));
+                    entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,400 ,0,false,false));
+                    entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,400 ,0,false,false));
                 }
             }
         }

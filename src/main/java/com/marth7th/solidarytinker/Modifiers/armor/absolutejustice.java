@@ -11,6 +11,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.ModList;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.tools.nbt.IToolContext;
+import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class absolutejustice extends ArmorModifier {
     @Override
@@ -49,4 +53,9 @@ public class absolutejustice extends ArmorModifier {
         }
     }
 
+    @Override
+    public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
+        float a = (float) (1-0.2 * modifier.getLevel());
+        ToolStats.DURABILITY.multiply(builder,a);
+    }
 }

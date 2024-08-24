@@ -69,20 +69,6 @@
         "name": "solidarytinker:tacticsattack",
         "level": 1
       }
-    ],
-    "etshtinker:ionized_cannon": [
-      {
-        "name": "solidarytinker:aaa",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:reliable",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsattack",
-        "level": 1
-      }
     ]
   }
 }

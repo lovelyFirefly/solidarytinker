@@ -22,9 +22,4 @@ public interface aboutattack extends MeleeDamageModifierHook, MeleeHitModifierHo
     default float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         return damage;
     }
-
-
-
-
-
 }

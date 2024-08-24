@@ -37,24 +37,18 @@ public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierH
     }
     default void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
     }
-
     default void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
     }
-
     default void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
     }
-
     default void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
     }
-
     default int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity entity) {
         return amount;
     }
-
     default float modifyStat(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, FloatToolStat stat, float baseValue, float multiplier) {
         return baseValue;
     }
-
     @Override
     default void addVolatileData(IToolContext iToolContext, ModifierEntry modifierEntry, ModDataNBT modDataNBT) {
     }

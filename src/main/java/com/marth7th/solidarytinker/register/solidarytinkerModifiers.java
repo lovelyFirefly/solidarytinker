@@ -28,7 +28,11 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<sandstrom>SANDSTROM_STATIC_MODIFIER=MODIFIERS.register("sandstrom", sandstrom::new);   //沙海守望
     public static final StaticModifier<absolutejustice>ABSOLUTEJUSTICE_STATIC_MODIFIER=MODIFIERS.register("absolutejustice", absolutejustice::new);   //绝对正义
     public static final StaticModifier<tacticsprotect>TACTICSPROTECT_STATIC_MODIFIER=MODIFIERS.register("tacticsprotect", tacticsprotect::new);   //战术防御
-    public static final StaticModifier<ancientocean>ANCIENTOCEAN_STATIC_MODIFIER=MODIFIERS.register("ancientocean", ancientocean::new);   //战术防御
+    public static final StaticModifier<ancientocean>ANCIENTOCEAN_STATIC_MODIFIER=MODIFIERS.register("ancientocean", ancientocean::new);   //古海孑遗
+    public static final StaticModifier<deepoceanblessing>DEEPOCEANBLESSING_STATIC_MODIFIER=MODIFIERS.register("deepoceanblessing", deepoceanblessing::new);   //深海恩惠
+    public static final StaticModifier<deepoceanecho>DEEPOCEANECHO_STATIC_MODIFIER=MODIFIERS.register("deepoceanecho", deepoceanecho::new);   //深海回声
+    public static final StaticModifier<deepoceanprotect>DEEPOCEANPROTECT_STATIC_MODIFIER=MODIFIERS.register("deepoceanprotect", deepoceanprotect::new);   //深海加护
+
 
 
 }

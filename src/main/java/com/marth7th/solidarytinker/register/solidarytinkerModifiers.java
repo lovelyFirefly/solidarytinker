@@ -3,7 +3,9 @@ package com.marth7th.solidarytinker.register;
 import com.marth7th.solidarytinker.Modifiers.armor.*;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
 import com.marth7th.solidarytinker.Modifiers.battle.debug.aaa;
+import com.marth7th.solidarytinker.Modifiers.battle.debug.variety;
 import com.marth7th.solidarytinker.Modifiers.battle.mekanism.darkstar;
+import com.marth7th.solidarytinker.Modifiers.battle.mekanism.raditionprotect;
 import com.marth7th.solidarytinker.Modifiers.battle.mekanism.superblazing;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
@@ -32,6 +34,9 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<deepoceanblessing>DEEPOCEANBLESSING_STATIC_MODIFIER=MODIFIERS.register("deepoceanblessing", deepoceanblessing::new);   //深海恩惠
     public static final StaticModifier<deepoceanecho>DEEPOCEANECHO_STATIC_MODIFIER=MODIFIERS.register("deepoceanecho", deepoceanecho::new);   //深海回声
     public static final StaticModifier<deepoceanprotect>DEEPOCEANPROTECT_STATIC_MODIFIER=MODIFIERS.register("deepoceanprotect", deepoceanprotect::new);   //深海加护
+    public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //深海加护
+    public static final StaticModifier<thefood>THEFOOD_STATIC_MODIFIER=MODIFIERS.register("thefood", thefood::new);   //厨神
+    public static final StaticModifier<raditionprotect>RADITIONPROTECT_STATIC_MODIFIER=MODIFIERS.register("raditionprotect", raditionprotect::new);   //消辐宁
 
 
 

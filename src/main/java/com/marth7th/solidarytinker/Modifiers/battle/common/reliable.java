@@ -60,7 +60,7 @@ public class reliable extends BattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if (attacker instanceof Player player) {
-            livingTarget.invulnerableTime=0;
+            livingTarget.invulnerableTime = 0;
             if (livingTarget.getHealth() >= livingTarget.getMaxHealth() * 0.5f && player.getArrowCount() < 20) {
                 return damage * 1 + (2f * 0.05f * player.getArrowCount());
             } else if (attacker.getArrowCount() >= 20 && livingTarget.getMaxHealth() > livingTarget.getMaxHealth() * 0.5f) {
@@ -112,11 +112,11 @@ public class reliable extends BattleModifier {
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
-        if(!modifierlevel.eachhandshavelevel(entity,TIModifiers.SEA_DREAM.getId())){
-            if(modifierlevel.handshavelevel(entity,modifier.getId())){
-                if(entity.getLevel().isNight()){
-                    entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,400 ,0,false,false));
-                    entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,400 ,0,false,false));
+        if (!modifierlevel.eachhandshavelevel(entity, TIModifiers.SEA_DREAM.getId())) {
+            if (modifierlevel.handshavelevel(entity, modifier.getId())) {
+                if (entity.getLevel().isNight()) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0, false, false));
+                    entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 400, 0, false, false));
                 }
             }
         }

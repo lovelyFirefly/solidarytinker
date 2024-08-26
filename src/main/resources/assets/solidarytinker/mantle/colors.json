@@ -1,8 +1,11 @@
 {
   "material.solidarytinker": {
     "dwarf":  "#596d99",
-    "starfall":  "#596d99"
+    "starfall":  "#ffbbfa",
+    "icefantasy":  "#a5b1ff"
   },
+
+
   "modifier.solidarytinker": {
     "_null_": "白矮星物质",
 
@@ -11,14 +14,26 @@
     "superblazing":  "#f4790d",
     "protonation":  "#b332d6",
 
+
+    "_星野_": null,
     "neverend":  "#ffaa7f",
     "reliable":  "#ffacf0",
     "tacticsattack":  "#50b9ff",
 
-
     "sandstrom":  "#ffaa7f",
     "absolutejustice":  "#ffacf0",
-    "tacticsprotect":  "#50b9ff"
+    "tacticsprotect":  "#50b9ff",
 
+
+
+    "_海渊合金_": null,
+    "ancientocean":  "#597ec2",
+    "deepoceanblessing":  "#495bc2",
+    "deepoceanecho":  "#1a3fc2",
+
+    "deepoceanprotect":  "#495bc2",
+
+
+    "variety":  "#b940ff"
   }
 }

@@ -51,6 +51,7 @@
 
 
 
+
   "item.solidarytinker.takeru": "takeru",
   "tooltip.takeru.desc1": "takeru是一只乖猫猫",
 
@@ -67,6 +68,11 @@
   "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰合金",
 
 
+  "material.solidarytinker.icefantasy": "墨冰合金",
+  "material.solidarytinker.icefantasy.flavor": "又有谁曾去了解冻洋深处掩盖千年的秘密呢",
+  "material.solidarytinker.icefantasy.encyclopedia": "墨冰是谁？\n不是☀🐎sensei吗",
+
+
   "modifier.solidarytinker.ancientocean": "冰雪铸成此志",
   "modifier.solidarytinker.ancientocean.flavor": "深洋之下，不可莫测",
   "modifier.solidarytinker.ancientocean.description":"当你生命值高于80%时候攻击会无视目标护甲魔抗等，并且你的工具常规使用不再消耗耐久",
@@ -79,6 +85,9 @@
   "modifier.solidarytinker.deepoceanecho.flavor": "你听到了吗",
   "modifier.solidarytinker.deepoceanecho.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】）获得回声点数，回声点数 * 0.5 * 词条等级将会转化为你的实际伤害。你不再对玩家造成基础伤害",
 
+  "modifier.solidarytinker.deepoceanprotect": "深海加护",
+  "modifier.solidarytinker.deepoceanprotect.flavor": "深洋之下，如有神助",
+  "modifier.solidarytinker.deepoceanprotect.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】）获得回声点数，回声点数会转化为你的伤害减免，至高90%,每搁12秒受击会获得💛",
 
   "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
   "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
@@ -111,6 +120,17 @@
   "modifier.solidarytinker.collapse.description":"攻击你的敌人会陷入永久状态的燃烧，并且如果目标处于燃烧状态，则对你的伤害降低至20%",
 
 
+
+  "material.solidarytinker.csdy": "csdy",
+  "material.solidarytinker.csdy.flavor": "§k csdy存在于万物之中",
+  "material.solidarytinker.csdy.encyclopedia": "csdy是§k一个善变的人 §7csdy也是§k一个魔怔的人 \n§4他在注视着你 ",
+
+
+  "modifier.solidarytinker.variety": "§k 其实那一天，我什么都没写",
+  "modifier.solidarytinker.variety.flavor": "§k csdy存在于万物之中",
+  "modifier.solidarytinker.variety.description":"§k 其实那一天，我什么都没写",
+
+
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
@@ -120,7 +140,12 @@
   "modifier.solidarytinker.wenguanger.flavor": "🤬",
   "modifier.solidarytinker.wenguanger.description":"你天天问牛魔呢",
 
+
   "_null_": "mekanism部分",
 
-  "gas.solidarytinker.fluorine": "氟气"
+  "gas.solidarytinker.fluorine": "氟气",
+
+  "modifier.solidarytinker.removeradition": "变辐侠",
+  "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",
+  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射"
 }

@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+
 public class solidarytinkerItem {
     public solidarytinkerItem(){}
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "solidarytinker");
@@ -16,5 +17,6 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> icefantasy_ingot = ITEMS.register("icefantasy_ingot", ( ) -> new icefantasy_ingot(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> takeru = ITEMS.register("takeru", ( ) -> new takeru(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> kemo33 = ITEMS.register("kemo33", ( ) -> new kemo33(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> rainbow = ITEMS.register("rainbow", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block",( ) -> new BlockItem(solidarytinkerBlock.dwarf_block.get(),new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
 }

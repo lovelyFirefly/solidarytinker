@@ -2,71 +2,31 @@
   "perStat": {
     "tconstruct:melee_harvest": [
       {
-        "name": "solidarytinker:neverend",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:reliable",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsattack",
+        "name": "solidarytinker:voraciousfox",
         "level": 1
       }
     ],
     "tconstruct:ranged": [
       {
-        "name": "solidarytinker:neverend",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:reliable",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsattack",
+        "name": "solidarytinker:voraciousfox",
         "level": 1
       }
     ],
     "tconstruct:armor": [
       {
-        "name": "solidarytinker:sandstrom",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:absolutejustice",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsprotect",
+        "name": "solidarytinker:anglefox",
         "level": 1
       }
     ],
     "tinkersinnovation:shield": [
       {
-        "name": "solidarytinker:sandstrom",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:absolutejustice",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsprotect",
+        "name": "solidarytinker:anglefox",
         "level": 1
       }
     ],
     "tinkers_ingenuity:laser_gun": [
       {
-        "name": "solidarytinker:neverend",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:reliable",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsattack",
+        "name": "solidarytinker:voraciousfox",
         "level": 1
       }
     ]

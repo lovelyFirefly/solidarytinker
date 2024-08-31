@@ -30,7 +30,7 @@
 
   "modifier.solidarytinker.reliable": "可靠",
   "modifier.solidarytinker.reliable.flavor": "冲锋陷阵，百战当先",
-  "modifier.solidarytinker.reliable.description":"[常驻效果]对生命占比大于50%的目标额外造成2倍的伤害，在一场持续的战斗中，你会累计身上的箭矢（每一次受伤都会累计箭矢），箭矢越多，你造成的额外伤害就越高（每根提供8%增伤效果），达到10根箭矢再受伤会获得红温效果（）每次受伤会延长红温5秒。累计达到20根箭矢会造成一次145倍的伤害,清除所有箭矢并且获得10秒的抗性提升2效果\n[当主手或者副手持有工匠匠心的幻海化梦词条时]每次攻击均有10%概率立刻恢复全身装备冷却，玩家移速锁定至130%,并且获得可以叠加的伤害吸收，至多叠加至最大生命的4倍。持有物品属于ETSH的离子化射线炮时额外获得免伤效果\n[主手或副手未持有幻海化梦词条时]你将变得慵懒，白天造成的伤害降低30%。夜间会变为正常，并且额外获得夜视效果和急迫",
+  "modifier.solidarytinker.reliable.description":"[常驻效果]对生命占比大于50%的目标额外造成2倍的伤害，在一场持续的战斗中，你会累计身上的箭矢（每一次受伤都会累计箭矢），箭矢越多，你造成的额外伤害就越高（每根提供8%增伤效果），达到10根箭矢再受伤会获得红温效果（）每次受伤会延长红温5秒。累计达到20根箭矢会造成一次145倍的伤害,清除所有箭矢并且获得10秒的抗性提升2效果\n[当主手或者副手持有工匠匠心的幻海化梦词条时]大幅提升基础伤害，每次攻击均有10%概率立刻恢复全身装备冷却，玩家移速锁定至130%,并且获得可以叠加的伤害吸收，至多叠加至最大生命的4倍。持有物品属于ETSH的离子化射线炮时额外获得免伤效果\n[主手或副手未持有幻海化梦词条时]大幅提升防御能力，白天造成的伤害降低30%。夜间会变为正常，并且额外获得夜视效果和急迫",
 
   "modifier.solidarytinker.tacticsattack": "战术性进攻",
   "modifier.solidarytinker.tacticsattack.flavor": "对勇者的嘉奖",
@@ -56,9 +56,31 @@
   "tooltip.takeru.desc1": "takeru是一只乖猫猫",
 
 
+  "modifier.solidarytinker.uncannyvalley": "恐怖谷效应/可爱谷效应",
+  "modifier.solidarytinker.uncannyvalley.flavor": "盯着它的眼睛",
+  "modifier.solidarytinker.uncannyvalley.description":"注视的目标如果是玩家，则会给其生命恢复和饱和，注视的目标如果是生物，则会使其凋零",
+
 
   "item.solidarytinker.kemo33": "kemo33",
-  "tooltip.kemo33.desc1": "",
+  "tooltip.kemo33.desc1": "是狐哦",
+
+
+  "material.solidarytinker.kemomimi": "kemo33",
+  "material.solidarytinker.kemomimi.flavor": "是kemomimi了",
+  "material.solidarytinker.kemomimi.encyclopedia": "一只可爱的狐",
+
+
+  "modifier.solidarytinker.anglefox": "天使狐",
+  "modifier.solidarytinker.anglefox.flavor": "你就这么看着他",
+  "modifier.solidarytinker.anglefox.description":"[来自生物的伤害]如果大于你最大生命会被强制修改为最大生命的20%，如果大于最大生命50%则强制修改为最大生命10%，这个数值不会低于4（前者）/2（后者）",
+
+  "modifier.solidarytinker.voraciousfox": "贪吃狐",
+  "modifier.solidarytinker.voraciousfox.flavor": "啊呜啊呜",
+  "modifier.solidarytinker.voraciousfox.description":"攻击额外附加受运气影响的魔法伤害，提升等级会提升比例（每级提升10%自身生命上限）",
+
+  "item.solidarytinker.rainbow_ingot": "彩虹锭",
+  "item.solidarytinker.molten_icefantasy_bucket": "熔融彩虹桶",
+  "fluid_type.solidarytinker.molten_rainbow": "熔融彩虹",
 
 
 
@@ -73,7 +95,7 @@
   "material.solidarytinker.icefantasy.encyclopedia": "墨冰是谁？\n不是☀🐎sensei吗",
 
 
-  "modifier.solidarytinker.ancientocean": "冰雪铸成此志",
+  "modifier.solidarytinker.ancientocean": "古海孑遗",
   "modifier.solidarytinker.ancientocean.flavor": "深洋之下，不可莫测",
   "modifier.solidarytinker.ancientocean.description":"当你生命值高于80%时候攻击会无视目标护甲魔抗等，并且你的工具常规使用不再消耗耐久",
 
@@ -134,11 +156,6 @@
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
-
-
-  "modifier.solidarytinker.wenguanger": "稳固合金之怒",
-  "modifier.solidarytinker.wenguanger.flavor": "🤬",
-  "modifier.solidarytinker.wenguanger.description":"你天天问牛魔呢",
 
 
   "_null_": "mekanism部分",

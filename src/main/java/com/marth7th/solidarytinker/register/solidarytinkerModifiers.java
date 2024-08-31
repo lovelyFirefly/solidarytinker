@@ -37,7 +37,4 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //深海加护
     public static final StaticModifier<thefood>THEFOOD_STATIC_MODIFIER=MODIFIERS.register("thefood", thefood::new);   //厨神
     public static final StaticModifier<removeradition>RADITIONPROTECT_STATIC_MODIFIER=MODIFIERS.register("removeradition", removeradition::new);   //变辐侠
-
-
-
 }

@@ -3,6 +3,7 @@ package com.marth7th.solidarytinker.Modifiers.battle.common;
 import com.c2h6s.etshtinker.init.ItemReg.etshtinkerItems;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
+import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
 import com.xiaoyue.tinkers_ingenuity.register.TIModifiers;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -53,10 +54,14 @@ public class reliable extends BattleModifier {
                         player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 100, 0));
                     }
                 }
+                if (ti){
+                    if (modifierlevel.getmainhandmodifierlevel(player, TIModifiers.SEA_DREAM.getId())==0) {
+                        event.setAmount(event.getAmount() * 0.5f);
+                    }
+                    }
+                }
             }
         }
-    }
-
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if (attacker instanceof Player player) {

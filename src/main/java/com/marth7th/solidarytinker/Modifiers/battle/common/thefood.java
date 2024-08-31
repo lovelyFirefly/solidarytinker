@@ -27,7 +27,6 @@ public class thefood extends BattleModifier {
         if(attacker instanceof Player player) {
             if(carrot&&fm){
             int count = SOLCarrotAPI.getFoodCapability(player).getEatenFoodCount();
-            int cw= FoodList.get(player).getEatenFoods().size();
                 if(count>30){
                     int a=0;
                 }
@@ -40,7 +39,7 @@ public class thefood extends BattleModifier {
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (player != null) {
           int cw = FoodList.get(player).getEatenFoods().size();
-            list.add(Component.translatable("总数量"+cw));
+            list.add(Component.translatable("tooltip.solidarytinker.modifier.thefood"+cw));
         }
     }
 }

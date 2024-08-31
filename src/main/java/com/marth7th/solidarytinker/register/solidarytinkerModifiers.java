@@ -34,9 +34,13 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<deepoceanblessing>DEEPOCEANBLESSING_STATIC_MODIFIER=MODIFIERS.register("deepoceanblessing", deepoceanblessing::new);   //深海恩惠
     public static final StaticModifier<deepoceanecho>DEEPOCEANECHO_STATIC_MODIFIER=MODIFIERS.register("deepoceanecho", deepoceanecho::new);   //深海回声
     public static final StaticModifier<deepoceanprotect>DEEPOCEANPROTECT_STATIC_MODIFIER=MODIFIERS.register("deepoceanprotect", deepoceanprotect::new);   //深海加护
-    public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //深海加护
+    public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //千变
     public static final StaticModifier<thefood>THEFOOD_STATIC_MODIFIER=MODIFIERS.register("thefood", thefood::new);   //厨神
     public static final StaticModifier<removeradition>RADITIONPROTECT_STATIC_MODIFIER=MODIFIERS.register("removeradition", removeradition::new);   //变辐侠
+    public static final StaticModifier<clean>CLEAN_STATIC_MODIFIER=MODIFIERS.register("clean", clean::new);   //净化
+    public static final StaticModifier<uncannyvalley>UNCANNYVALLEY_STATIC_MODIFIER=MODIFIERS.register("uncannyvalley", uncannyvalley::new);   //恐怖谷效应
+    public static final StaticModifier<anglefox>ANGLEFOX_STATIC_MODIFIER=MODIFIERS.register("anglefox", anglefox::new);   //天使狐
+    public static final StaticModifier<voraciousfox>VORACIOUSFOX_STATIC_MODIFIER=MODIFIERS.register("voraciousfox", voraciousfox::new);   //贪吃狐
 
 
 

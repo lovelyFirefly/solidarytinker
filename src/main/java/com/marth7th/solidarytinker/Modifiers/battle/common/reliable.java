@@ -3,6 +3,7 @@ package com.marth7th.solidarytinker.Modifiers.battle.common;
 import com.c2h6s.etshtinker.init.ItemReg.etshtinkerItems;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
+import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
 import com.xiaoyue.tinkers_ingenuity.register.TIModifiers;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -37,7 +38,7 @@ public class reliable extends BattleModifier {
         LivingEntity entity = event.getEntity();
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
         if (entity instanceof Player player) {
-            if (modifierlevel.geteachhandstotalmodifierlevel(entity, this.getId()) > 0) {
+            if (modifierlevel.handshavelevel(entity, this.getId())) {
                 entity.setArrowCount(entity.getArrowCount() + 1);
                 if (etsh) {
                     if (player.getItemBySlot(EquipmentSlot.OFFHAND).is(etshtinkerItems.IONIZED_CANNON.get()) || player.getItemBySlot(EquipmentSlot.MAINHAND).is(etshtinkerItems.IONIZED_CANNON.get())) {
@@ -51,6 +52,11 @@ public class reliable extends BattleModifier {
                         player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), effecttime + 100, effectlevel));
                     } else if (!player.hasEffect(solidarytinkerEffects.bloodanger.get())) {
                         player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 100, 0));
+                    }
+                }
+                if (ti) {
+                    if (modifierlevel.getmainhandmodifierlevel(player, TIModifiers.SEA_DREAM.getId()) == 0) {
+                        event.setAmount(event.getAmount() * 0.5f);
                     }
                 }
             }
@@ -112,11 +118,13 @@ public class reliable extends BattleModifier {
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
-        if (!modifierlevel.eachhandshavelevel(entity, TIModifiers.SEA_DREAM.getId())) {
-            if (modifierlevel.handshavelevel(entity, modifier.getId())) {
-                if (entity.getLevel().isNight()) {
-                    entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0, false, false));
-                    entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 400, 0, false, false));
+        if (ti) {
+            if (!modifierlevel.handshavelevel(entity, TIModifiers.SEA_DREAM.getId())) {
+                if (modifierlevel.handshavelevel(entity, modifier.getId())) {
+                    if (entity.getLevel().isNight()) {
+                        entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0, false, false));
+                        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 400, 0, false, false));
+                    }
                 }
             }
         }

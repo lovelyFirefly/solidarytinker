@@ -1,12 +1,8 @@
 {
-  "itemGroup.solidarytinker": "工匠联合物品",
-
 
   "effect.solidarytinker.bloodanger": "红温",
 
-
   "_null_": "匠魂部分",
-
 
 
   "item.solidarytinker.super_dt_bucket": "浓缩超能氘氚燃料桶",
@@ -15,7 +11,7 @@
 
 
   "item.solidarytinker.starfall_ingot": "星落钢",
-  "tooltip.starfall_ingot.desc1": "恰如点点星光从宇宙中坠落",
+  "tooltip.starfall_ingot.desc1": "呆毛才是本体",
   "item.solidarytinker.molten_starfall_bucket": "熔融星落钢桶",
   "fluid_type.solidarytinker.molten_starfall": "熔融星落钢",
 
@@ -30,7 +26,7 @@
 
   "modifier.solidarytinker.reliable": "可靠",
   "modifier.solidarytinker.reliable.flavor": "冲锋陷阵，百战当先",
-  "modifier.solidarytinker.reliable.description":"[常驻效果]对生命占比大于50%的目标额外造成2倍的伤害，在一场持续的战斗中，你会累计身上的箭矢（每一次受伤都会累计箭矢），箭矢越多，你造成的额外伤害就越高（每根提供8%增伤效果），达到10根箭矢再受伤会获得红温效果（）每次受伤会延长红温5秒。累计达到20根箭矢会造成一次145倍的伤害,清除所有箭矢并且获得10秒的抗性提升2效果\n[当主手或者副手持有工匠匠心的幻海化梦词条时]每次攻击均有10%概率立刻恢复全身装备冷却，玩家移速锁定至130%,并且获得可以叠加的伤害吸收，至多叠加至最大生命的4倍。持有物品属于ETSH的离子化射线炮时额外获得免伤效果\n[主手或副手未持有幻海化梦词条时]你将变得慵懒，白天造成的伤害降低30%。夜间会变为正常，并且额外获得夜视效果和急迫",
+  "modifier.solidarytinker.reliable.description":"[常驻效果]对生命占比大于50%的目标额外造成2倍的伤害，在一场持续的战斗中，你会累计身上的箭矢（每一次受伤都会累计箭矢），箭矢越多，你造成的额外伤害就越高（每根提供8%增伤效果），达到10根箭矢再受伤会获得红温效果（）每次受伤会延长红温5秒。累计达到20根箭矢会造成一次145倍的伤害,清除所有箭矢并且获得10秒的抗性提升2效果\n[当主手或者副手持有工匠匠心的幻海化梦词条时]大幅提升基础伤害，每次攻击均有10%概率立刻恢复全身装备冷却，玩家移速锁定至130%,并且获得可以叠加的伤害吸收，至多叠加至最大生命的4倍。持有物品属于ETSH的离子化射线炮时额外获得免伤效果\n[主手或副手未持有幻海化梦词条时]大幅提升防御能力，白天造成的伤害降低30%。夜间会变为正常，并且额外获得夜视效果和急迫",
 
   "modifier.solidarytinker.tacticsattack": "战术性进攻",
   "modifier.solidarytinker.tacticsattack.flavor": "对勇者的嘉奖",
@@ -56,9 +52,38 @@
   "tooltip.takeru.desc1": "takeru是一只乖猫猫",
 
 
+  "material.solidarytinker.takeru": "takeru",
+  "material.solidarytinker.takeru.flavor": "takeru是一只可爱的小猫",
+  "material.solidarytinker.takeru.encyclopedia": "据说看着它的眼睛会有奇奇妙妙的反应哦",
+
+
+  "modifier.solidarytinker.uncannyvalley": "恐怖谷效应/可爱谷效应",
+  "modifier.solidarytinker.uncannyvalley.flavor": "人称移动信标",
+  "modifier.solidarytinker.uncannyvalley.description":"在4*词条等级范围内如果有玩家，则会对其持续提供生命恢复效果，如果有生物则会对其施加凋零效果",
+
 
   "item.solidarytinker.kemo33": "kemo33",
-  "tooltip.kemo33.desc1": "",
+  "tooltip.kemo33.desc1": "是狐哦",
+
+
+  "material.solidarytinker.kemomimi": "kemo33",
+  "material.solidarytinker.kemomimi.flavor": "是kemomimi了",
+  "material.solidarytinker.kemomimi.encyclopedia": "一只可爱的狐",
+
+
+  "modifier.solidarytinker.anglefox": "天使狐",
+  "modifier.solidarytinker.anglefox.flavor": "你就这么看着他",
+  "modifier.solidarytinker.anglefox.description":"[来自生物的伤害]如果大于你最大生命会被强制修改为最大生命的20%，如果大于最大生命50%则强制修改为最大生命10%，这个数值不会低于4（前者）/2（后者）",
+
+  "modifier.solidarytinker.voraciousfox": "贪吃狐",
+  "modifier.solidarytinker.voraciousfox.flavor": "啊呜啊呜",
+  "modifier.solidarytinker.voraciousfox.description":"攻击额外附加受运气影响的魔法伤害，提升等级会提升比例（每级提升10%自身生命上限）",
+
+
+
+  "item.solidarytinker.rainbow_ingot": "彩虹锭",
+  "item.solidarytinker.molten_icefantasy_bucket": "熔融彩虹桶",
+  "fluid_type.solidarytinker.molten_rainbow": "熔融彩虹",
 
 
 
@@ -67,13 +92,11 @@
   "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰合金桶",
   "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰合金",
 
-
   "material.solidarytinker.icefantasy": "墨冰合金",
   "material.solidarytinker.icefantasy.flavor": "又有谁曾去了解冻洋深处掩盖千年的秘密呢",
   "material.solidarytinker.icefantasy.encyclopedia": "墨冰是谁？\n不是☀🐎sensei吗",
 
-
-  "modifier.solidarytinker.ancientocean": "冰雪铸成此志",
+  "modifier.solidarytinker.ancientocean": "古海孑遗",
   "modifier.solidarytinker.ancientocean.flavor": "深洋之下，不可莫测",
   "modifier.solidarytinker.ancientocean.description":"当你生命值高于80%时候攻击会无视目标护甲魔抗等，并且你的工具常规使用不再消耗耐久",
 
@@ -89,9 +112,17 @@
   "modifier.solidarytinker.deepoceanprotect.flavor": "深洋之下，如有神助",
   "modifier.solidarytinker.deepoceanprotect.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】）获得回声点数，回声点数会转化为你的伤害减免，至高90%,每搁12秒受击会获得💛",
 
+
+
+
+
   "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
   "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
   "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
+
+
+
+
 
 
   "item.solidarytinker.dwarf_ingot": "白矮星物质锭",
@@ -99,7 +130,6 @@
   "block.solidarytinker.dwarf_block": "白矮星物质块",
   "item.solidarytinker.molten_dwarf_bucket": "熔融白矮星物质桶",
   "fluid_type.solidarytinker.molten_dwarf": "熔融白矮星物质",
-
 
   "material.solidarytinker.dwarf": "白矮星",
   "material.solidarytinker.dwarf.flavor": "恒星生命周期的衰老阶段",
@@ -109,11 +139,9 @@
   "modifier.solidarytinker.darkstar.flavor": "梦回S3",
   "modifier.solidarytinker.darkstar.description":"每次死亡都会将你33%生命值永久转化为该材料的增伤",
 
-
   "modifier.solidarytinker.superblazing": "炽焰",
   "modifier.solidarytinker.superblazing.flavor": "尽管他已经衰老，但是仍需要数十亿年才熄灭",
   "modifier.solidarytinker.superblazing.description":"攻击会对目标造成不可自然熄灭的火焰，对处于水中生物则直接附加1.5倍外加等级*0.1倍的伤害",
-
 
   "modifier.solidarytinker.collapse": "焱御",
   "modifier.solidarytinker.collapse.flavor": "所谓永恒，对于恒星漫长生命周期不过一瞬",
@@ -121,14 +149,16 @@
 
 
 
+
   "material.solidarytinker.csdy": "csdy",
   "material.solidarytinker.csdy.flavor": "§k csdy存在于万物之中",
   "material.solidarytinker.csdy.encyclopedia": "csdy是§k一个善变的人 §7csdy也是§k一个魔怔的人 \n§4他在注视着你 ",
 
-
   "modifier.solidarytinker.variety": "§k 其实那一天，我什么都没写",
   "modifier.solidarytinker.variety.flavor": "§k csdy存在于万物之中",
   "modifier.solidarytinker.variety.description":"§k 其实那一天，我什么都没写",
+
+
 
 
   "modifier.solidarytinker.protonation": "质子化",
@@ -136,14 +166,13 @@
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
 
 
-  "modifier.solidarytinker.wenguanger": "稳固合金之怒",
-  "modifier.solidarytinker.wenguanger.flavor": "🤬",
-  "modifier.solidarytinker.wenguanger.description":"你天天问牛魔呢",
-
-
   "_null_": "mekanism部分",
 
   "gas.solidarytinker.fluorine": "氟气",
+
+
+
+
 
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",

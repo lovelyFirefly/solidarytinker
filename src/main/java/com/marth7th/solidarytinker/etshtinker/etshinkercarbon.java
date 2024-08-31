@@ -20,7 +20,7 @@ public class etshinkercarbon {
         fluidSpecial.put(molten_starfall.get(), "magic_damage");
 
         fluidParts.put(molten_starfall.get(), plasmaexplosionpurple.get());
-        fluidDmg.put(molten_starfall.get(), 145F);
-        fluidSpecial.put(molten_starfall.get(), "magic_damage");
+        fluidDmg.put(molten_starfall.get(), 38F);
+        fluidSpecial.put(molten_icefantasy.get(), "magic_damage");
     }
 }

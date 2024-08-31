@@ -55,7 +55,6 @@ public class superblazing extends BattleModifier {
             for (Mob targets : mobbbb) {
                 if (targets != null) {
                     double a = targets.getX();
-                    double b = targets.getY();
                     double c = targets.getZ();
                     targets.setRemainingFireTicks(2147483647);
                     targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,10,1,true,true));

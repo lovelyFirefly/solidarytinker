@@ -2,25 +2,31 @@
   "perStat": {
     "tconstruct:melee_harvest": [
       {
-        "name": "solidarytinker:uncannyvalley",
+        "name": "solidarytinker:thefood",
         "level": 1
       }
     ],
     "tconstruct:ranged": [
       {
-        "name": "solidarytinker:uncannyvalley",
+        "name": "solidarytinker:thefood",
         "level": 1
       }
     ],
     "tconstruct:armor": [
       {
-        "name": "solidarytinker:uncannyvalley",
+        "name": "solidarytinker:collapse",
+        "level": 1
+      }
+    ],
+    "tinkersinnovation:shield": [
+      {
+        "name": "solidarytinker:thefood",
         "level": 1
       }
     ],
     "tinkers_ingenuity:laser_gun": [
       {
-        "name": "solidarytinker:uncannyvalley",
+        "name": "solidarytinker:thefood",
         "level": 1
       }
     ]

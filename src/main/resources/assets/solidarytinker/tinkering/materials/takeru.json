@@ -29,27 +29,27 @@
           "grey": 0
         },
         {
-          "color": "FF350C57",
+          "color": "FFdfdfdf",
           "grey": 63
         },
         {
-          "color": "FF481D6D",
+          "color": "FFb5b5b5",
           "grey": 102
         },
         {
-          "color": "FF5C268A",
+          "color": "FF5a5a5a",
           "grey": 140
         },
         {
-          "color": "FF7141AC",
+          "color": "FFb5b5b5",
           "grey": 178
         },
         {
-          "color": "FF9261CC",
+          "color": "FF5a5a5a",
           "grey": 216
         },
         {
-          "color": "FFC299F3",
+          "color": "FF848484",
           "grey": 255
         }
       ]

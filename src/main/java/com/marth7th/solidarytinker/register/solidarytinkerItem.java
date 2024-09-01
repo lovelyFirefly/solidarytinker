@@ -20,5 +20,6 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> magicuranium_ingot = ITEMS.register("magicuranium_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> rainbow_ingot = ITEMS.register("rainbow_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> saint_chief_ingot = ITEMS.register("saint_chief_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> experience_steel_ingot = ITEMS.register("experience_steel_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block",( ) -> new BlockItem(solidarytinkerBlock.dwarf_block.get(),new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
 }

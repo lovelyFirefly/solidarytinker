@@ -1,0 +1,34 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "solidarytinker:experiencekiller",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "solidarytinker:experiencekiller",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "solidarytinker:experienceprotect",
+        "level": 1
+      }
+    ],
+    "tinkersinnovation:shield": [
+      {
+        "name": "solidarytinker:experienceprotect",
+        "level": 1
+      }
+    ],
+    "tinkers_ingenuity:laser_gun": [
+      {
+        "name": "solidarytinker:experiencekiller",
+        "level": 1
+      }
+    ]
+  }
+}

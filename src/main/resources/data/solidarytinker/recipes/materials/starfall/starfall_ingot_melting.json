@@ -1,6 +1,8 @@
 {
   "type": "tconstruct:melting",
-  "ingredient": { "item": "solidarytinker:starfall_ingot"},
+  "ingredient": {
+    "item": "solidarytinker:starfall_ingot"
+  },
   "result": {
     "fluid": "solidarytinker:molten_starfall",
     "amount": 90

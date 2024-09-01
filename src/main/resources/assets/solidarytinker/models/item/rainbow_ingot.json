@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "solidarytinker:item/ingot/ranbow_ingot"
+    "layer0": "solidarytinker:item/ingot/rainbow_ingot"
   }
 }

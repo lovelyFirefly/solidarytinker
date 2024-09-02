@@ -3,6 +3,7 @@ package com.marth7th.solidarytinker.Modifiers.armor;
 import com.marth7th.solidarytinker.extend.superclass.ArmorModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -13,7 +14,7 @@ public class collapse extends ArmorModifier {
     }
 
     private void livingHurtEvent(LivingHurtEvent event) {
-        LivingEntity enemy= (LivingEntity) event.getSource().getEntity();
+        Entity enemy=  event.getSource().getEntity();
         LivingEntity entity=event.getEntity();
         if (modifierlevel.getsinglearmorlevel(entity, solidarytinkerModifiers.COLLAPSE_STATIC_MODIFIER.getId())>0){
           if(entity!=null){

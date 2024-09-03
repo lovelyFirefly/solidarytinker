@@ -114,8 +114,6 @@
 
 
 
-
-
   "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
   "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
   "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
@@ -133,11 +131,12 @@
   "modifier.solidarytinker.thefood": "厨神之路",
   "modifier.solidarytinker.thefood.flavor": "出得厅堂下得厨房",
   "modifier.solidarytinker.thefood.encyclopedia": "你已经吃过这么多东西了，会有多大的提升呢",
+  "tooltip.solidarytinker.modifier.thefood": "已经吃过的食物",
 
 
-  "modifier.solidarytinker.inheart": "归心",
-  "modifier.solidarytinker.inheart.flavor": "出得厅堂下得厨房",
-  "modifier.solidarytinker.inheart.encyclopedia": "你已经吃过这么多东西了，会有多大的提升呢",
+  "modifier.solidarytinker.inheart": "本心",
+  "modifier.solidarytinker.inheart.flavor": "眷顾",
+  "modifier.solidarytinker.inheart.encyclopedia": "一些食材开始随机产出-即使他们和击杀的生物没什么联系",
 
 
 

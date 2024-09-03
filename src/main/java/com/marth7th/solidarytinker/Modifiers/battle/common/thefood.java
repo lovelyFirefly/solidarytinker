@@ -28,11 +28,11 @@ public class thefood extends BattleModifier {
             if(carrot&&fm){
             int count = SOLCarrotAPI.getFoodCapability(player).getEatenFoodCount();
                 if(count>30){
-                    int a=0;
+                    return damage + count * 2f;
                 }
             }
         }
-        return baseDamage;
+        return damage;
     }
 
     @Override

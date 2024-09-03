@@ -1,4 +1,4 @@
-package com.marth7th.solidarytinker.Modifiers.battle.common;
+package com.marth7th.solidarytinker.Modifiers.battle.hidden;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import net.minecraft.network.chat.Component;
@@ -10,13 +10,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.Random;
 
 public class wenguanger extends BattleModifier {
-    String[] array = {
-            "用铁砧砸骑士金属块，下面基岩",
-            "自己不会看jei？",
-            "jei没有？物品信息没给你说？",
-            "什么？你不会按U？",
-            "anvil\n\n\nknightmetal\n\n\nbedrock",
-    };
+    String[] array = {};
     Random random = new Random();
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {

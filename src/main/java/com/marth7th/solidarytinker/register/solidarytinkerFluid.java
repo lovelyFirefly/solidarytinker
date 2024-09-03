@@ -17,5 +17,8 @@ public class solidarytinkerFluid{
     public static final FluidObject<ForgeFlowingFluid> super_dt = register("super_dt", 9500);//超能氘氚燃料
     public static final FluidObject<ForgeFlowingFluid> molten_starfall = register("molten_starfall", 1450);//熔融星落钢
     public static final FluidObject<ForgeFlowingFluid> molten_icefantasy = register("molten_icefantasy", 1450);//熔融墨冰合金
+    public static final FluidObject<ForgeFlowingFluid> molten_rainbow = register("molten_rainbow", 5600);//熔融彩虹化合物
+    public static final FluidObject<ForgeFlowingFluid> molten_experience_steel = register("molten_experience_steel", 5600);//熔融经验钢
+
 
 }

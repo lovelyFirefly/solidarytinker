@@ -2,71 +2,63 @@
   "perStat": {
     "tconstruct:melee_harvest": [
       {
-        "name": "solidarytinker:neverend",
+        "name": "solidarytinker:ancientocean",
         "level": 1
       },
       {
-        "name": "solidarytinker:reliable",
+        "name": "solidarytinker:deepoceanblessing",
         "level": 1
       },
       {
-        "name": "solidarytinker:tacticsattack",
+        "name": "solidarytinker:deepoceanecho",
         "level": 1
       }
     ],
     "tconstruct:ranged": [
       {
-        "name": "solidarytinker:neverend",
+        "name": "solidarytinker:ancientocean",
         "level": 1
       },
       {
-        "name": "solidarytinker:reliable",
+        "name": "solidarytinker:deepoceanblessing",
         "level": 1
       },
       {
-        "name": "solidarytinker:tacticsattack",
+        "name": "solidarytinker:deepoceanecho",
         "level": 1
       }
     ],
     "tconstruct:armor": [
       {
-        "name": "solidarytinker:sandstrom",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:absolutejustice",
-        "level": 1
-      },
-      {
-        "name": "solidarytinker:tacticsprotect",
+        "name": "solidarytinker:deepoceanprotect",
         "level": 1
       }
     ],
     "tinkersinnovation:shield": [
       {
-        "name": "solidarytinker:sandstrom",
+        "name": "solidarytinker:ancientocean",
         "level": 1
       },
       {
-        "name": "solidarytinker:absolutejustice",
+        "name": "solidarytinker:deepoceanblessing",
         "level": 1
       },
       {
-        "name": "solidarytinker:tacticsprotect",
+        "name": "solidarytinker:deepoceanecho",
         "level": 1
       }
     ],
     "tinkers_ingenuity:laser_gun": [
       {
-        "name": "solidarytinker:neverend",
+        "name": "solidarytinker:ancientocean",
         "level": 1
       },
       {
-        "name": "solidarytinker:reliable",
+        "name": "solidarytinker:deepoceanblessing",
         "level": 1
       },
       {
-        "name": "solidarytinker:tacticsattack",
+        "name": "solidarytinker:deepoceanecho",
         "level": 1
       }
     ]

@@ -39,7 +39,7 @@ public class thefood extends BattleModifier {
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (player != null) {
           int cw = FoodList.get(player).getEatenFoods().size();
-            list.add(Component.translatable("tooltip.solidarytinker.modifier.thefood"+cw));
+            list.add(this.applyStyle(Component.translatable("tooltip.solidarytinker.modifier.thefood"+cw)));
         }
     }
 }

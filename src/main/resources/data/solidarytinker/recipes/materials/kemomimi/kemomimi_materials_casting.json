@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "solidarytinker:molten_kemomimi",
+    "amount": 90
+  },
+  "temperature": 350,
+  "output": "solidarytinker:kemomimi"
+}

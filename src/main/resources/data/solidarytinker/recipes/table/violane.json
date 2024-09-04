@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "tags": "forge:gems/diamond"
+    },
+    "B": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "C": {
+      "item": "tconstruct:amethyst_bronze_nugget"
+    }
+  },
+  "result": {
+    "item": "tinkers_ingenuity:diamond_arrow",
+    "count": 1
+  }
+}

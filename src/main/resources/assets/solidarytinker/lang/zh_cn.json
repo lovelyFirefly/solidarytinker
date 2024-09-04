@@ -16,7 +16,7 @@
   "item.solidarytinker.molten_starfall_bucket": "熔融星落钢桶",
   "fluid_type.solidarytinker.molten_starfall": "熔融星落钢",
 
-  "material.solidarytinker.starfall": "§b星§d落§6钢",
+  "material.solidarytinker.starfall": "§6星§d落§b钢",
   "material.solidarytinker.starfall.flavor": "蜕变，成长...",
   "material.solidarytinker.starfall.encyclopedia": "唔，据说睡着的时候是看不到光环的哦",
 
@@ -51,6 +51,8 @@
 
   "item.solidarytinker.takeru": "takeru",
   "tooltip.takeru.desc1": "takeru是一只乖猫猫",
+  "item.solidarytinker.molten_takeru_bucket": "熔融takeru桶",
+  "fluid_type.solidarytinker.molten_takeru": "熔融takeru",
 
 
   "material.solidarytinker.takeru": "takeru",
@@ -65,12 +67,13 @@
 
   "item.solidarytinker.kemo33": "kemo33",
   "tooltip.kemo33.desc1": "是狐哦",
+  "item.solidarytinker.molten_kemomimi_bucket": "熔融kemo33桶",
+  "fluid_type.solidarytinker.molten_kemomimi": "熔融kemo33",
 
 
   "material.solidarytinker.kemomimi": "kemo33",
   "material.solidarytinker.kemomimi.flavor": "是kemomimi了",
   "material.solidarytinker.kemomimi.encyclopedia": "一只可爱的狐",
-
 
   "modifier.solidarytinker.anglefox": "天使狐",
   "modifier.solidarytinker.anglefox.flavor": "你就这么看着他",
@@ -113,11 +116,6 @@
   "modifier.solidarytinker.deepoceanprotect.flavor": "深洋之下，如有神助",
   "modifier.solidarytinker.deepoceanprotect.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】）获得回声点数，回声点数会转化为你的伤害减免，至高90%,每搁12秒受击会获得💛",
 
-
-
-  "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
-  "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
-  "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
 
 
 
@@ -179,6 +177,8 @@
   "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
   "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
   "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
+  "item.solidarytinker.molten_bloodmeat_bucket": "半熔融血肉混合物桶",
+  "fluid_type.solidarytinker.molten_bloodmeat": "半熔融血肉混合物",
 
 
   "material.solidarytinker.bloodmeat": "腐坏血肉",
@@ -243,6 +243,8 @@
 
 
   "item.solidarytinker.magicuranium_ingot": "魔力铀锭",
+  "item.solidarytinker.molten_magicuranium_bucket": "熔融魔力铀桶",
+  "fluid_type.solidarytinker.molten_magicuranium": "熔融魔力铀",
 
   "material.solidarytinker.magicuranium": "魔力铀",
   "material.solidarytinker.magicuranium.flavor": "帽子才是本体",

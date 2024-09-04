@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "solidarytinker:fluid/molten_bloodmeat/flowing",
+  "still": "solidarytinker:fluid/molten_bloodmeat/still"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "solidarytinker:takeru"},
+  "result": {
+    "fluid": "solidarytinker:molten_takeru",
+    "amount": 90
+  },
+  "temperature": 752,
+  "time": 20
+}

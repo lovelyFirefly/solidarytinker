@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "tinkers_ingenuity"
+    }
+  ],
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "solidarytinker:violane"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "name": "tinkers_ingenuity:molten_auroral_alloy",
+    "amount": 810
+  },
+  "result": "solidarytinker:starfall_ingot",
+  "cooling_time": 1000
+}

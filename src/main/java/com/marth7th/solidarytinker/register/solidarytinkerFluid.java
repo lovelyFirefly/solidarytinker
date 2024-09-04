@@ -20,6 +20,12 @@ public class solidarytinkerFluid{
     public static final FluidObject<ForgeFlowingFluid> molten_rainbow = register("molten_rainbow", 5600);//熔融彩虹化合物
     public static final FluidObject<ForgeFlowingFluid> molten_damascus_steel = register("molten_damascus_steel", 1850);//熔融大马士革
     public static final FluidObject<ForgeFlowingFluid> molten_experience_steel = register("molten_experience_steel", 860);//熔融经验钢
+    public static final FluidObject<ForgeFlowingFluid> molten_magicuranium = register("molten_magicuranium", 860);//熔融魔力铀
+    public static final FluidObject<ForgeFlowingFluid> molten_bloodmeat = register("molten_bloodmeat", 860);//半熔融血肉混合物
+    public static final FluidObject<ForgeFlowingFluid> molten_kemomimi = register("molten_kemomimi", 860);//熔融kemomimi
+    public static final FluidObject<ForgeFlowingFluid> molten_takeru = register("molten_takeru", 860);//熔融takeru
+
+
 
 
 }

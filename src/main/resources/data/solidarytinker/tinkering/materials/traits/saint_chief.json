@@ -4,29 +4,29 @@
       {
         "name": "solidarytinker:thefood",
         "level": 1
+      },
+      {
+        "name": "solidarytinker:inheart",
+        "level": 1
       }
     ],
     "tconstruct:ranged": [
       {
         "name": "solidarytinker:thefood",
         "level": 1
-      }
-    ],
-    "tconstruct:armor": [
+      },
       {
-        "name": "solidarytinker:collapse",
-        "level": 1
-      }
-    ],
-    "tinkersinnovation:shield": [
-      {
-        "name": "solidarytinker:thefood",
+        "name": "solidarytinker:inheart",
         "level": 1
       }
     ],
     "tinkers_ingenuity:laser_gun": [
       {
         "name": "solidarytinker:thefood",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:inheart",
         "level": 1
       }
     ]

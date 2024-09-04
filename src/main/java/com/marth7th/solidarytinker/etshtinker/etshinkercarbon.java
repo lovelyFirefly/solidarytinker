@@ -1,8 +1,7 @@
 package com.marth7th.solidarytinker.etshtinker;
 
 import static com.c2h6s.etshtinker.Mapping.ionizerFluidMap.*;
-import static com.c2h6s.etshtinker.init.etshtinkerParticleType.plasmaexplosioncyan;
-import static com.c2h6s.etshtinker.init.etshtinkerParticleType.plasmaexplosionpurple;
+import static com.c2h6s.etshtinker.init.etshtinkerParticleType.*;
 import static com.marth7th.solidarytinker.register.solidarytinkerFluid.*;
 
 public class etshinkercarbon {
@@ -22,5 +21,13 @@ public class etshinkercarbon {
         fluidParts.put(molten_starfall.get(), plasmaexplosionpurple.get());
         fluidDmg.put(molten_starfall.get(), 38F);
         fluidSpecial.put(molten_icefantasy.get(), "magic_damage");
+
+        fluidParts.put(molten_damascus_steel.get(), plasmaexplosionlime.get());
+        fluidDmg.put(molten_damascus_steel.get(), 16f);
+        fluidSpecial.put(molten_damascus_steel.get(), "random_scatter");
+
+        fluidParts.put(molten_experience_steel.get(), plasmaexplosiongreen.get());
+        fluidDmg.put(molten_experience_steel.get(), 5f);
+        fluidSpecial.put(molten_experience_steel.get(), "burn");
     }
 }

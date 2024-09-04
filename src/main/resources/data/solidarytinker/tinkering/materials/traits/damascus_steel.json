@@ -1,0 +1,34 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "solidarytinker:crushing",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "solidarytinker:crushing",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "solidarytinker:ignore",
+        "level": 1
+      }
+    ],
+    "tinkersinnovation:shield": [
+      {
+        "name": "solidarytinker:ignore",
+        "level": 1
+      }
+    ],
+    "tinkers_ingenuity:laser_gun": [
+      {
+        "name": "solidarytinker:crushing",
+        "level": 1
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "color": "FFfc9cac9",
+  "color": "FFfc9ca9",
   "fallbacks": [
     "metal"
   ],
@@ -54,6 +54,6 @@
         }
       ]
     },
-    "luminosity": 15
+    "luminosity": 8
   }
 }

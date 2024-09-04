@@ -2,11 +2,9 @@ package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.armor.*;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
-import com.marth7th.solidarytinker.Modifiers.battle.hidden.aaa;
-import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.darkstar;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.removeradition;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.superblazing;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.*;
+import com.marth7th.solidarytinker.Modifiers.battle.mekanism.*;
+import com.marth7th.solidarytinker.Modifiers.battle.biomancy.*;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -36,7 +34,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //千变
     public static final StaticModifier<thefood>THEFOOD_STATIC_MODIFIER=MODIFIERS.register("thefood", thefood::new);   //厨神
     public static final StaticModifier<inheart>INHEART_STATIC_MODIFIER=MODIFIERS.register("inheart", inheart::new);   //本心
-    public static final StaticModifier<removeradition>RADITIONPROTECT_STATIC_MODIFIER=MODIFIERS.register("removeradition", removeradition::new);   //变辐侠
+    public static final StaticModifier<removeradition>REMOVERADITION_STATIC_MODIFIER=MODIFIERS.register("removeradition", removeradition::new);   //变辐侠
     public static final StaticModifier<clean>CLEAN_STATIC_MODIFIER=MODIFIERS.register("clean", clean::new);   //净化
     public static final StaticModifier<uncannyvalley>UNCANNYVALLEY_STATIC_MODIFIER=MODIFIERS.register("uncannyvalley", uncannyvalley::new);   //恐怖谷效应
     public static final StaticModifier<anglefox>ANGLEFOX_STATIC_MODIFIER=MODIFIERS.register("anglefox", anglefox::new);   //天使狐
@@ -45,6 +43,10 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<experienceprotect>EXPERIENCEPROTECT_STATIC_MODIFIER=MODIFIERS.register("experienceprotect", experienceprotect::new);   //经验防护
     public static final StaticModifier<crushing>CRUSHING_STATIC_MODIFIER=MODIFIERS.register("crushing", crushing::new);   //碾压
     public static final StaticModifier<ignore>IGNORE_STATIC_MODIFIER=MODIFIERS.register("ignore", ignore::new);   //无视
+    public static final StaticModifier<swell>SWELL_STATIC_MODIFIER=MODIFIERS.register("swell", swell::new);   //膨胀
+    public static final StaticModifier<corrode>CORRODE_STATIC_MODIFIER=MODIFIERS.register("corrode", corrode::new);   //侵蚀
+    public static final StaticModifier<elasticity>ELASTICITY_STATIC_MODIFIER=MODIFIERS.register("elasticity", elasticity::new);   //弹性
+
 
 
 

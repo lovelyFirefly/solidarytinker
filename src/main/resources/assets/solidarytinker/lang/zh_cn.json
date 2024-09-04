@@ -4,6 +4,7 @@
 
   "_null_": "匠魂部分",
 
+  "item.solidarytinker.violane": "青辉石",
 
   "item.solidarytinker.super_dt_bucket": "浓缩超能氘氚燃料桶",
   "fluid_type.solidarytinker.super_dt": "浓缩超能氘氚燃料",
@@ -82,7 +83,7 @@
 
 
   "item.solidarytinker.rainbow_ingot": "彩虹锭",
-  "item.solidarytinker.molten_icefantasy_bucket": "熔融彩虹桶",
+  "item.solidarytinker.molten_rainbow_bucket": "熔融彩虹桶",
   "fluid_type.solidarytinker.molten_rainbow": "熔融彩虹",
 
 
@@ -130,14 +131,49 @@
 
   "modifier.solidarytinker.thefood": "厨神之路",
   "modifier.solidarytinker.thefood.flavor": "出得厅堂下得厨房",
-  "modifier.solidarytinker.thefood.encyclopedia": "你已经吃过这么多东西了，会有多大的提升呢",
+  "modifier.solidarytinker.thefood.description": "你已经吃过这么多东西了，会有多大的提升呢",
   "tooltip.solidarytinker.modifier.thefood": "已经吃过的食物",
 
 
   "modifier.solidarytinker.inheart": "本心",
   "modifier.solidarytinker.inheart.flavor": "眷顾",
-  "modifier.solidarytinker.inheart.encyclopedia": "一些食材开始随机产出-即使他们和击杀的生物没什么联系",
+  "modifier.solidarytinker.inheart.description": "一些食材开始随机产出-即使他们和击杀的生物没什么联系",
 
+
+
+  "item.solidarytinker.experience_steel_ingot": "经验钢锭",
+  "item.solidarytinker.molten_experience_steel_bucket": "熔融经验钢桶",
+  "fluid_type.solidarytinker.molten_experience_steel": "熔融经验钢",
+
+  "material.solidarytinker.experience_steel": "经验钢",
+  "material.solidarytinker.experience_steel.flavor": "充满着经验之力",
+  "material.solidarytinker.experience_steel.encyclopedia": "最初灵感源于某位名字叫mizi的故人，反复变迁了数个版本后成了这样",
+
+  "modifier.solidarytinker.experiencekiller": "经验杀手",
+  "modifier.solidarytinker.experiencekiller.flavor": "阅历越丰富伤害越高",
+  "modifier.solidarytinker.experiencekiller.description": "每一级经验提供额外的0.5 * 词条等级伤害，，每次攻击都会扣除10点经验为代价",
+
+  "modifier.solidarytinker.experienceprotect": "经验防护",
+  "modifier.solidarytinker.experienceprotect.flavor": "这个不额外消耗经验",
+  "modifier.solidarytinker.experienceprotect.description": "每一级经验都会提供0.1 * 词条等级点格挡",
+
+
+
+  "item.solidarytinker.damascus_steel_ingot": "大马士革钢锭",
+  "item.solidarytinker.molten_damascus_steel_bucket": "熔融大马士革钢桶",
+  "fluid_type.solidarytinker.molten_damascus_steel": "熔融大马士革钢",
+
+  "material.solidarytinker.damascus_steel": "大马士革钢",
+  "material.solidarytinker.damascus_steel.flavor": "蛮横无理且霸道",
+  "material.solidarytinker.damascus_steel.encyclopedia": "虽然做出来的武器并没有大马士革的纹路（",
+
+  "modifier.solidarytinker.crushing": "碾压",
+  "modifier.solidarytinker.crushing.flavor": "淘汰弱者",
+  "modifier.solidarytinker.crushing.description": "当目标血量被压低至你最大生命值以下的时候，目标将会直接被处决",
+
+  "modifier.solidarytinker.ignore": "蔑视",
+  "modifier.solidarytinker.ignore.flavor": "你算什么",
+  "modifier.solidarytinker.ignore.description": "格挡掉弱小生物（最大生命值低于你最大生命）的伤害",
 
 
   "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
@@ -145,14 +181,41 @@
   "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
 
 
+  "material.solidarytinker.bloodmeat": "腐坏血肉",
+  "material.solidarytinker.bloodmeat.flavor": "不是腐肉啊喂",
+  "material.solidarytinker.bloodmeat.encyclopedia": "你感觉这团东西试图把你侵占为一体",
 
-  "item.solidarytinker.bloodmeat_ingot": "腐坏的血肉",
-  "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
-  "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
+  "modifier.solidarytinker.swell": "暴涨",
+  "modifier.solidarytinker.swell.flavor": "长期注射药物导致的",
+  "modifier.solidarytinker.swell.description":"伤害吸收0-60时候每次攻击额外提升黄心数量 * 0.5 *等级点伤害，如果黄心值大于60则这个效果翻倍",
+
+  "modifier.solidarytinker.corrode": "侵蚀",
+  "modifier.solidarytinker.corrode.flavor": "似乎和酸液作用相似",
+  "modifier.solidarytinker.corrode.description":"攻击敌人附加同酸液的腐蚀效果",
+
+  "modifier.solidarytinker.elasticity": "弹性",
+  "modifier.solidarytinker.elasticity.flavor": "一拳打在棉花上",
+  "modifier.solidarytinker.elasticity.description":"虽然他是软的，但是它会咬住目标，对目标反噬50%原伤害结果，每提升1词条等级则附加原伤害 * 0.5",
 
 
 
+  "material.solidarytinker.csdy": "csdy",
+  "material.solidarytinker.csdy.flavor": "§k csdy存在于万物之中",
+  "material.solidarytinker.csdy.encyclopedia": "csdy是§k一个善变的人 §7csdy也是§k一个魔怔的人 \n§4他在注视着你 ",
 
+  "modifier.solidarytinker.variety": "§k 其实那一天，我什么都没写",
+  "modifier.solidarytinker.variety.flavor": "§k csdy存在于万物之中",
+  "modifier.solidarytinker.variety.description":"§k 其实那一天，我什么都没写",
+
+
+  "modifier.solidarytinker.protonation": "质子化",
+  "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
+  "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
+
+
+  "_null_": "mekanism部分",
+
+  "gas.solidarytinker.fluorine": "氟气",
 
 
   "item.solidarytinker.dwarf_ingot": "白矮星物质锭",
@@ -179,30 +242,15 @@
 
 
 
+  "item.solidarytinker.magicuranium_ingot": "魔力铀锭",
 
-  "material.solidarytinker.csdy": "csdy",
-  "material.solidarytinker.csdy.flavor": "§k csdy存在于万物之中",
-  "material.solidarytinker.csdy.encyclopedia": "csdy是§k一个善变的人 §7csdy也是§k一个魔怔的人 \n§4他在注视着你 ",
+  "material.solidarytinker.magicuranium": "魔力铀",
+  "material.solidarytinker.magicuranium.flavor": "帽子才是本体",
+  "material.solidarytinker.magicuranium.encyclopedia": "对辐射亲和力极佳，而且对负面效果似乎具有免疫效果",
 
-  "modifier.solidarytinker.variety": "§k 其实那一天，我什么都没写",
-  "modifier.solidarytinker.variety.flavor": "§k csdy存在于万物之中",
-  "modifier.solidarytinker.variety.description":"§k 其实那一天，我什么都没写",
-
-
-
-
-  "modifier.solidarytinker.protonation": "质子化",
-  "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
-  "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
-
-
-  "_null_": "mekanism部分",
-
-  "gas.solidarytinker.fluorine": "氟气",
-
-
-
-
+  "modifier.solidarytinker.clean": "净化",
+  "modifier.solidarytinker.clean.flavor": "魔法的力量",
+  "modifier.solidarytinker.clean.description":"你现在百毒不侵",
 
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",

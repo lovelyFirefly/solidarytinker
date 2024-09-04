@@ -22,34 +22,34 @@
       "tconstruct:armor_maille"
     ],
     "transformer": {
-      "type": "tconstruct:grey_to_color",
+      "type": "tconstruct:grey_to_sprite",
       "palette": [
         {
           "color": "FF000000",
           "grey": 0
         },
         {
-          "color": "FF59585e",
+          "color": "FFb9cac2",
           "grey": 63
         },
         {
-          "color": "FF59585e",
+          "color": "FFa6b5ad",
           "grey": 102
         },
         {
-          "color": "FF636698",
+          "color": "FFaaa9b5",
           "grey": 140
         },
         {
-          "color": "FF494b71",
+          "color": "FFc9c8d6",
           "grey": 178
         },
         {
-          "color": "FF3c4c71",
+          "color": "FFd6bdd0",
           "grey": 216
         },
         {
-          "color": "FF87abff",
+          "color": "FFf4e2fc",
           "grey": 255
         }
       ]

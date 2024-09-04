@@ -1,0 +1,46 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "solidarytinker:corrode",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:swell",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "solidarytinker:corrode",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:swell",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "solidarytinker:elasticity",
+        "level": 1
+      }
+    ],
+    "tinkersinnovation:shield": [
+      {
+        "name": "solidarytinker:elasticity",
+        "level": 1
+      }
+    ],
+    "tinkers_ingenuity:laser_gun": [
+      {
+        "name": "solidarytinker:corrode",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:swell",
+        "level": 1
+      }
+    ]
+  }
+}

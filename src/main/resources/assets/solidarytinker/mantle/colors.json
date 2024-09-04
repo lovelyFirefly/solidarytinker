@@ -2,17 +2,26 @@
   "material.solidarytinker": {
     "dwarf":  "#596d99",
     "starfall":  "#ffbbfa",
-    "icefantasy":  "#a5b1ff"
+    "icefantasy":  "#a5b1ff",
+    "bloodmeat":  "#ff3730",
+    "damascus_steel":  "#f4e2fc",
+    "experience_steel":  "#f5ff35",
+    "kemomimi":  "#eeeab5",
+    "magicuranium":  "#a6fc81",
+    "rainbow":  "#ffd778",
+    "saint_chief":  "#a58afc",
+    "takeru":  "#848484"
   },
 
 
   "modifier.solidarytinker": {
-    "_null_": "白矮星物质",
+    "_白矮星_": null,
 
     "collapse":  "#596d99",
     "darkstar":  "#43375b",
     "superblazing":  "#f4790d",
     "protonation":  "#b332d6",
+
 
 
     "_星野_": null,
@@ -26,7 +35,7 @@
 
 
 
-    "_海渊合金_": null,
+    "_墨冰合金_": null,
     "ancientocean":  "#597ec2",
     "deepoceanblessing":  "#495bc2",
     "deepoceanecho":  "#1a3fc2",
@@ -34,6 +43,54 @@
     "deepoceanprotect":  "#495bc2",
 
 
-    "variety":  "#b940ff"
+
+    "_csdy_": null,
+    "variety":  "#b940ff",
+
+
+    "_血肉_": null,
+    "corrode":  "#cc483f",
+    "swell":  "#cc483f",
+
+    "elasticity":  "#cc483f",
+
+
+
+    "_魔力铀_": null,
+    "clean":  "#baff9c",
+
+    "removeradition":  "#baff9c",
+
+
+
+    "_圣厨_": null,
+    "thefood":  "#ffff60",
+    "inheart":  "#fffaab",
+
+
+
+    "_大马士革_": null,
+    "crushing":  "#ccd1fe",
+
+    "ignore":  "#ccd1fe",
+
+
+
+    "_经验钢_": null,
+    "experiencekiller":  "#8bfe3e",
+
+    "experienceprotect":  "#8bfe3e",
+
+
+
+    "_takeru_": null,
+    "uncannyvalley":  "#ccc9d0",
+
+
+
+    "_kemomimi_": null,
+    "voraciousfox":  "#fef4e3",
+
+    "anglefox":  "#fef4e3"
   }
 }

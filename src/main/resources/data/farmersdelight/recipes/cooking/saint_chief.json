@@ -1,0 +1,42 @@
+{
+  "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ends_delight"
+    }
+  ],
+  "container": {
+    "item": "tconstruct:ingot_cast"
+  },
+  "cookingtime": 1200,
+  "experience": 100.0,
+  "ingredients": [
+    {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    {
+      "item": "ends_delight:raw_dragon_meat"
+    },
+    {
+      "item": "minecraft:rabbit_stew"
+    },
+    {
+      "item": "ends_delight:chorus_flower_pie"
+    },
+    {
+      "item": "ends_delight:stir_fried_shulker_meat"
+    },
+    {
+      "item": "farmersdelight:smoked_ham"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "solidarytinker:saint_chief_ingot"
+  }
+}

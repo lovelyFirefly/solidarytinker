@@ -7,7 +7,7 @@
   ],
   "key": {
     "A": {
-      "tags": "forge:gems/diamond"
+      "tag": "forge:gems/diamond"
     },
     "B": {
       "item": "minecraft:lapis_lazuli"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "tinkers_ingenuity:diamond_arrow",
+    "item": "solidarytinker:violane",
     "count": 1
   }
 }

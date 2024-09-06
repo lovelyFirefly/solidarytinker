@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [],
+  "key": [],
+  "ingredients": [
+    {
+      "item": "solidarytinker:drawf_block"
+    }
+  ],
+  "result": {
+    "item": "solidarytinker:drawf_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "botania:mana_infusion",
+    "input": {
+      "tag": "forge:ingots/uranium"
+    },
+    "mana": 50000,
+    "output": {
+      "item": "solidarytinker:magicuranium_ingot"
+    }
+  }

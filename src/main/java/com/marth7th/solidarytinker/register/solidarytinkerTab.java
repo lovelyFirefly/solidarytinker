@@ -8,7 +8,7 @@ public class solidarytinkerTab {
     public static final CreativeModeTab MATERIALS = new CreativeModeTab("materials") {
         @Override
         public  ItemStack makeIcon() {
-            return new ItemStack((ItemLike) solidarytinkerItem.dwarf_ingot.get());
+            return new ItemStack((ItemLike) solidarytinkerItem.takeru.get());
         }
     };
     public solidarytinkerTab(){}

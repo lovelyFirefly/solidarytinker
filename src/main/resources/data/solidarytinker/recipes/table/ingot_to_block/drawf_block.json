@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "solidarytinker:drawf_ingot"
+    }
+  },
+  "result": {
+    "item": "solidarytinker:drawf_block",
+    "count": 1
+  }
+}

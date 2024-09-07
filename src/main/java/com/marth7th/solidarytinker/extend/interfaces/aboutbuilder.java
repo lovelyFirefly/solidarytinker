@@ -10,6 +10,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
@@ -58,5 +59,25 @@ public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierH
     }
     default InteractionResult onToolUse(IToolStackView iToolStackView, ModifierEntry modifierEntry, Player player, InteractionHand interactionHand, InteractionSource interactionSource) {
         return InteractionResult.PASS;
+    }
+    default void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
+    }
+
+
+    default void onFinishUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity) {
+    }
+
+
+    default UseAnim getUseAction(IToolStackView tool, ModifierEntry modifier) {
+        return null;
+    }
+
+
+    default int getUseDuration(IToolStackView tool, ModifierEntry modifier) {
+        return 0;
+    }
+
+
+    default void onUsingTick(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
     }
 }

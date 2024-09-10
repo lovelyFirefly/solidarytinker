@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -26,7 +27,6 @@ import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHoo
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
-import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -39,7 +39,7 @@ import java.util.function.BiConsumer;
 
 public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierHook, ConditionalStatModifierHook, InventoryTickModifierHook, ToolDamageModifierHook, TooltipModifierHook , VolatileDataModifierHook , GeneralInteractionModifierHook , ProcessLootModifierHook {
     default void initbuilderinterface(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, new ModuleHook[]{ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT,ModifierHooks.PROCESS_LOOT});
+        hookBuilder.addHook(this,ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT,ModifierHooks.PROCESS_LOOT,ModifierHooks.VOLATILE_DATA);
     }
     default void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
     }
@@ -55,8 +55,11 @@ public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierH
     default float modifyStat(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, FloatToolStat stat, float baseValue, float multiplier) {
         return baseValue;
     }
-    default void addVolatileData(IToolContext iToolContext, ModifierEntry modifierEntry, ModDataNBT modDataNBT) {
+
+    @Override
+    default void addVolatileData(IToolContext iToolContext, @NotNull ModifierEntry modifierEntry, ModDataNBT modDataNBT) {
     }
+
     default InteractionResult onToolUse(IToolStackView iToolStackView, ModifierEntry modifierEntry, Player player, InteractionHand interactionHand, InteractionSource interactionSource) {
         return InteractionResult.PASS;
     }

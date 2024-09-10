@@ -1,10 +1,15 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.armor.*;
+import com.marth7th.solidarytinker.Modifiers.battle.biomancy.corrode;
+import com.marth7th.solidarytinker.Modifiers.battle.biomancy.swell;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
-import com.marth7th.solidarytinker.Modifiers.battle.hidden.*;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.*;
-import com.marth7th.solidarytinker.Modifiers.battle.biomancy.*;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.aaa;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.release;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
+import com.marth7th.solidarytinker.Modifiers.battle.mekanism.darkstar;
+import com.marth7th.solidarytinker.Modifiers.battle.mekanism.removeradition;
+import com.marth7th.solidarytinker.Modifiers.battle.mekanism.superblazing;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -46,6 +51,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<swell>SWELL_STATIC_MODIFIER=MODIFIERS.register("swell", swell::new);   //膨胀
     public static final StaticModifier<corrode>CORRODE_STATIC_MODIFIER=MODIFIERS.register("corrode", corrode::new);   //侵蚀
     public static final StaticModifier<elasticity>ELASTICITY_STATIC_MODIFIER=MODIFIERS.register("elasticity", elasticity::new);   //弹性
+    public static final StaticModifier<release>RELEASE_STATIC_MODIFIER=MODIFIERS.register("release", release::new);   //弹性
 
 
 

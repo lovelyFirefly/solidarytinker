@@ -16,14 +16,13 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 public class crushing extends BattleModifier {
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        LivingEntity entity =context.getAttacker();
+        LivingEntity entity = context.getAttacker();
         LivingEntity target = context.getLivingTarget();
-        if(entity instanceof Player player){
+        if (entity instanceof Player player) {
             if (target != null) {
-                if(player.getMaxHealth()>target.getMaxHealth()){
+                if (player.getMaxHealth() > target.getHealth()) {
                     target.kill();
                     target.die(DamageSource.playerAttack(player));
-                    target.setHealth(0);
                 }
             }
         }
@@ -31,12 +30,11 @@ public class crushing extends BattleModifier {
 
     @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
-        if(attacker instanceof Player player){
-            if(player.getMaxHealth()>target.getHealth()){
-                target.invulnerableTime=0;
-                target.kill();
+        if (attacker instanceof Player player) {
+            if(attacker.getMaxHealth()>target.getHealth()){
+                target.invulnerableTime = 0;
                 target.die(DamageSource.playerAttack(player));
-                target.setHealth(0);
+                target.kill();
             }
         }
     }

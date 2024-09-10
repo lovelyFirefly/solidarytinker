@@ -130,13 +130,12 @@
   "modifier.solidarytinker.thefood": "厨神之路",
   "modifier.solidarytinker.thefood.flavor": "出得厅堂下得厨房",
   "modifier.solidarytinker.thefood.description": "你已经吃过这么多东西了，会有多大的提升呢",
-  "tooltip.solidarytinker.modifier.thefood": "已经吃过的食物",
+  "tooltip.solidarytinker.thefood.eated": "已经吃过的食物",
 
 
   "modifier.solidarytinker.inheart": "本心",
   "modifier.solidarytinker.inheart.flavor": "眷顾",
   "modifier.solidarytinker.inheart.description": "一些食材开始随机产出-即使他们和击杀的生物没什么联系",
-
 
 
   "item.solidarytinker.experience_steel_ingot": "经验钢锭",
@@ -167,7 +166,7 @@
 
   "modifier.solidarytinker.crushing": "碾压",
   "modifier.solidarytinker.crushing.flavor": "淘汰弱者",
-  "modifier.solidarytinker.crushing.description": "当目标血量被压低至你最大生命值以下的时候，目标将会直接被处决",
+  "modifier.solidarytinker.crushing.description": "当目标血量被压低至你最大生命值以下的时候，目标将会直接被处决(远程不算玩家击杀)",
 
   "modifier.solidarytinker.ignore": "蔑视",
   "modifier.solidarytinker.ignore.flavor": "你算什么",

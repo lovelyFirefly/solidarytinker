@@ -19,7 +19,7 @@ public class voraciousfox extends BattleModifier {
         if(context.getAttacker() instanceof Player player){
            int a = RANDOM.nextInt(10 * modifier.getLevel());
            context.getTarget().invulnerableTime=0;
-           context.getTarget().hurt(DamageSource.MAGIC,player.getMaxHealth() * a);
+           context.getTarget().hurt(DamageSource.MAGIC,player.getMaxHealth() * a/100);
         }
     }
 
@@ -28,7 +28,7 @@ public class voraciousfox extends BattleModifier {
         if(attacker instanceof Player player){
             int a = RANDOM.nextInt(10 * level);
             target.invulnerableTime=0;
-            target.hurt(DamageSource.MAGIC,player.getMaxHealth() * a);
+            target.hurt(DamageSource.MAGIC,player.getMaxHealth() * a/100);
         }
     }
 }

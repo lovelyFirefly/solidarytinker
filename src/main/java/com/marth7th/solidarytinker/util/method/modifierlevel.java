@@ -104,6 +104,6 @@ public class modifierlevel {
         return modifierlevel.getheadmodifierlevel(entity, modifierId) > 0 && modifierlevel.getchestmodifierlevel(entity, modifierId) > 0 && modifierlevel.getlegsmodifierlevel(entity, modifierId) > 0 && modifierlevel.getfeetmodifierlevel(entity, modifierId) > 0;
     }
     public static boolean Playerequiphaslevel(LivingEntity entity, ModifierId modifierId) {
-        return modifierlevel.getsinglearmorlevel(entity,modifierId)>0&&modifierlevel.handshavelevel(entity,modifierId);
+        return modifierlevel.getsinglearmorlevel(entity,modifierId)>0||modifierlevel.handshavelevel(entity,modifierId);
     }
 }

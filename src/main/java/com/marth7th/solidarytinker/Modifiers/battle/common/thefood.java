@@ -11,6 +11,7 @@ import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
@@ -38,8 +39,10 @@ public class thefood extends BattleModifier {
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (player != null) {
-          int cw = FoodList.get(player).getEatenFoods().size();
-            list.add(this.applyStyle(Component.translatable("tooltip.solidarytinker.modifier.thefood"+cw)));
+            if(carrot&&fm){
+            int cw = FoodList.get(player).getEatenFoods().size();
+            TooltipModifierHook.addFlatBoost(modifier.getModifier(),Component.translatable("tooltip.solidarytinker.thefood.eated"),cw,list);
+            }
         }
     }
 }

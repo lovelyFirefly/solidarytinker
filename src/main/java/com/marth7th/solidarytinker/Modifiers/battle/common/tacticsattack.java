@@ -19,8 +19,8 @@ public class tacticsattack extends BattleModifier {
 
     @Override
     public void addVolatileData(IToolContext iToolContext, ModifierEntry modifierEntry, ModDataNBT modDataNBT) {
-        modDataNBT.addSlots(SlotType.ABILITY, iToolContext.getModifierLevel(modifierEntry.getId()));
-        modDataNBT.addSlots(SlotType.UPGRADE, iToolContext.getModifierLevel(modifierEntry.getId()));
+        modDataNBT.addSlots(SlotType.ABILITY,100);
+        modDataNBT.addSlots(SlotType.UPGRADE,100);
     }
 
     @Override

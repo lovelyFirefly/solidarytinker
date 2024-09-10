@@ -24,8 +24,8 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
         this.initattackinterface(builder);
         this.initbuilderinterface(builder);
         this.initarrowinterface(builder);
-        super.registerHooks(builder);
         builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
+        super.registerHooks(builder);
     }
 
     public boolean havenolevel() {

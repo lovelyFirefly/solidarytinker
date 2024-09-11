@@ -14,6 +14,10 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 public class crushing extends BattleModifier {
+    public boolean havenolevel() {
+        return true;
+    }
+
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity entity = context.getAttacker();

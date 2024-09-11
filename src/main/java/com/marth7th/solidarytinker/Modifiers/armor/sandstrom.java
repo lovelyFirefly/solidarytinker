@@ -19,25 +19,26 @@ public class sandstrom extends ArmorModifier {
     public sandstrom() {
         MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
     }
+    public boolean havenolevel() {
+        return true;
+    }
+
 
     private void livingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
-        LivingEntity enemy= (LivingEntity) event.getSource().getEntity();
-        if(modifierlevel.getsinglearmorlevel(entity, solidarytinkerModifiers.SANDSTROM_STATIC_MODIFIER.getId())>0){
-            if(entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT)||entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)){
+        LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
+        if (modifierlevel.getsinglearmorlevel(entity, solidarytinkerModifiers.SANDSTROM_STATIC_MODIFIER.getId()) > 0) {
+            if (entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT) || entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)) {
                 entity.clearFire();
                 entity.setInvisible(true);
-            }
-            else if(!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT)||!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)){
+            } else if (!entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT) || !entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)) {
                 entity.setInvisible(false);
-                if(entity instanceof Player player){
+                if (entity instanceof Player player) {
                     var armor = new ItemStack[]{player.getItemBySlot(EquipmentSlot.HEAD), player.getItemBySlot(EquipmentSlot.CHEST), player.getItemBySlot(EquipmentSlot.LEGS), player.getItemBySlot(EquipmentSlot.FEET)};
-                    for(ItemStack itemStack1:armor){
-                        if(!player.getCooldowns().isOnCooldown(itemStack1.getItem())){
-                            for(ItemStack itemStack2:armor) {
-                                if (enemy instanceof LivingEntity) {
-                                    event.setAmount(event.getAmount() * 0.5f);
-                                }
+                    for (ItemStack itemStack1 : armor) {
+                        if (!player.getCooldowns().isOnCooldown(itemStack1.getItem())) {
+                            if (enemy instanceof LivingEntity) {
+                                event.setAmount(event.getAmount() * 0.5f);
                             }
                         }
                     }

@@ -29,7 +29,7 @@ public class thefood extends BattleModifier {
             if(carrot&&fm){
             int count = SOLCarrotAPI.getFoodCapability(player).getEatenFoodCount();
                 if(count>30){
-                    return damage + count * 2f;
+                    return damage + count * 1.5f * level;
                 }
             }
         }

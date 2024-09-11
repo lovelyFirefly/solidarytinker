@@ -9,6 +9,10 @@ import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.Event;
 
 public class clean extends ArmorModifier {
+    public boolean havenolevel() {
+        return true;
+    }
+
     public clean() {
         MinecraftForge.EVENT_BUS.addListener(this::RemoveEffectEvent);
     }

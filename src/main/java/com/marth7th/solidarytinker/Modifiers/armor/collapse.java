@@ -9,6 +9,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 public class collapse extends ArmorModifier {
+    public boolean havenolevel() {
+        return true;
+    }
+
     public collapse() {
         MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
     }

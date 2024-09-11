@@ -13,6 +13,10 @@ import java.util.List;
 
 public class inheart extends BattleModifier {
     boolean fm = ModList.get().isLoaded("farmersdelight");
+    public boolean havenolevel() {
+        return true;
+    }
+
 
     @Override
     public void processLoot(IToolStackView iToolStackView, ModifierEntry modifierEntry, List<ItemStack> list, LootContext lootContext) {

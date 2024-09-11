@@ -8,6 +8,10 @@ import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class anglefox extends ArmorModifier {
+    public boolean havenolevel() {
+        return true;
+    }
+
     @Override
     public float TrueDamageamount(IToolStackView armor, int level, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean isDirectDamage, LivingEntity entity, LivingEntity enemy) {
         if(amount>entity.getMaxHealth()){

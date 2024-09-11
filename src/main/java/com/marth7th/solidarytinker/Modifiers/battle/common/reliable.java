@@ -3,7 +3,6 @@ package com.marth7th.solidarytinker.Modifiers.battle.common;
 import com.c2h6s.etshtinker.init.ItemReg.etshtinkerItems;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
-import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
 import com.xiaoyue.tinkers_ingenuity.register.TIModifiers;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -29,6 +28,10 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 public class reliable extends BattleModifier {
     boolean ti = ModList.get().isLoaded("tinkers_ingenuity");
     boolean etsh = ModList.get().isLoaded("etshtinker");
+    public boolean havenolevel() {
+        return true;
+    }
+
 
     public reliable() {
         MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);

@@ -14,17 +14,17 @@ public class etshinkercarbon {
         fluidDmg.put(super_dt.get(), 12F);
         fluidSpecial.put(super_dt.get(), "explosion");
 
-        fluidParts.put(molten_starfall.get(), plasmaexplosionpurple.get());
-        fluidDmg.put(molten_starfall.get(), 145F);
-        fluidSpecial.put(molten_starfall.get(), "magic_damage");
+        fluidParts.put(molten_kemomimi.get(), plasmaexplosionpurple.get());
+        fluidDmg.put(molten_kemomimi.get(), 145F);
+        fluidSpecial.put(molten_kemomimi.get(), "magic_damage");
 
         fluidParts.put(molten_starfall.get(), plasmaexplosionpurple.get());
         fluidDmg.put(molten_starfall.get(), 38F);
         fluidSpecial.put(molten_icefantasy.get(), "magic_damage");
 
         fluidParts.put(molten_damascus_steel.get(), plasmaexplosionlime.get());
-        fluidDmg.put(molten_damascus_steel.get(), 16f);
-        fluidSpecial.put(molten_damascus_steel.get(), "random_scatter");
+        fluidDmg.put(molten_damascus_steel.get(), 3f);
+        fluidSpecial.put(molten_damascus_steel.get(), "explosion");
 
         fluidParts.put(molten_experience_steel.get(), plasmaexplosiongreen.get());
         fluidDmg.put(molten_experience_steel.get(), 5f);

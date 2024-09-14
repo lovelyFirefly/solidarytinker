@@ -14,6 +14,7 @@ public class swell extends BattleModifier {
         }
         else if(a>60){
             return damage + a * 1f * level;
+
         }
         return damage;
     }

@@ -4,10 +4,16 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class solidarytinkerTab {
-    public static final CreativeModeTab MATERIALS = new CreativeModeTab("materials") {
+    public static final CreativeModeTab MATERIALS = new CreativeModeTab("solidarytinker.materials") {
         @Override
         public  ItemStack makeIcon() {
             return new ItemStack(solidarytinkerItem.takeru.get());
+        }
+    };
+    public static final CreativeModeTab TOOL = new CreativeModeTab("solidarytinker.tool") {
+        @Override
+        public  ItemStack makeIcon() {
+            return new ItemStack(solidarytinkerItem.dwarf_ingot.get());
         }
     };
     public solidarytinkerTab(){}

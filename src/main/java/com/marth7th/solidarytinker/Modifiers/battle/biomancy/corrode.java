@@ -33,7 +33,6 @@ public class corrode extends BattleModifier {
             target.addEffect(new MobEffectInstance(ModMobEffects.ARMOR_SHRED.get(),100,level));
             target.addEffect(new MobEffectInstance(ModMobEffects.BLEED.get(),100,level));
             target.invulnerableTime=0;
-            target.level.setBlock()
         }
     }
 }

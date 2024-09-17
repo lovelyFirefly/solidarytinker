@@ -19,16 +19,18 @@ public class absolutejustice extends ArmorModifier {
     }
 
     boolean TN = ModList.get().isLoaded("tinkersinnovation");
+
     public absolutejustice() {
         MinecraftForge.EVENT_BUS.addListener(this::livingAttackEvent);
     }
+
     {
         MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
     }
 
     private void livingHurtEvent(@NotNull LivingHurtEvent event) {
         if (modifierlevel.getsinglearmorlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
-            if(event.getSource().getEntity()==null){
+            if (event.getSource().getEntity() == null) {
                 event.setCanceled(true);
             }
         }
@@ -36,14 +38,14 @@ public class absolutejustice extends ArmorModifier {
 
     private void livingAttackEvent(LivingAttackEvent event) {
         if (modifierlevel.getsinglearmorlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
-            if(TN){
-                if(event.getEntity() instanceof Player player){
-                    if (event.getSource().getEntity() == null&&player.getItemBySlot(EquipmentSlot.OFFHAND).is(TinkersInnovationItems.heavy_shield.get())) {
-                        event.getEntity().invulnerableTime=1;
+            if (TN) {
+                if (event.getEntity() instanceof Player player) {
+                    if (event.getSource().getEntity() == null && player.getItemBySlot(EquipmentSlot.OFFHAND).is(TinkersInnovationItems.heavy_shield.get())) {
+                        event.getEntity().invulnerableTime = 1;
                         event.setCanceled(true);
                     }
                 }
             }
-            }
         }
     }
+}

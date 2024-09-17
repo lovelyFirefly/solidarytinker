@@ -39,14 +39,13 @@ public class sandstrom extends ArmorModifier {
                         if (!player.getCooldowns().isOnCooldown(itemStack1.getItem())) {
                             if (enemy instanceof LivingEntity) {
                                 event.setAmount(event.getAmount() * 0.5f);
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-
     @Override
     public void onInventoryTick(IToolStackView iToolStackView, ModifierEntry modifierEntry, Level level, LivingEntity livingEntity, int i, boolean b, boolean b1, ItemStack itemStack) {
         if(livingEntity.getLevel().getBiome(livingEntity.blockPosition()).is(Biomes.DESERT)||livingEntity.getLevel().getBiome(livingEntity.blockPosition()).is(Biomes.BADLANDS)){

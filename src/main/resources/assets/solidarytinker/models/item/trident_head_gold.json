@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "solidarytinker:item/tool/cast/trident_head/gold_blank"
+  }
+}

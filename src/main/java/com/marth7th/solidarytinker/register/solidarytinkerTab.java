@@ -16,5 +16,11 @@ public class solidarytinkerTab {
             return new ItemStack(solidarytinkerItem.dwarf_ingot.get());
         }
     };
+    public static final CreativeModeTab PART = new CreativeModeTab("solidarytinker.part") {
+        @Override
+        public  ItemStack makeIcon() {
+            return new ItemStack(solidarytinkerItem.damascus_steel_ingot.get());
+        }
+    };
     public solidarytinkerTab(){}
 }

@@ -47,6 +47,8 @@ public class solidarytinker {
             event.enqueueWork(ionizerFluidMapMek::extendMap);
             event.enqueueWork(etshinkercarbon::extendMap);
         }
+//        幽默挖掘等级(未实装）
+//        TierSortingRegistry.registerTier(overlord.instance,new ResourceLocation("solidarytinker:overlord"), List.of(Tiers.NETHERITE),List.of());
     }
     public static ResourceLocation getResource(String id) {
         return new ResourceLocation("solidarytinker", id);

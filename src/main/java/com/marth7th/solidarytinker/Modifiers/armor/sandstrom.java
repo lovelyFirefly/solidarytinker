@@ -38,7 +38,7 @@ public class sandstrom extends ArmorModifier {
                     for (ItemStack itemStack1 : armor) {
                         if (!player.getCooldowns().isOnCooldown(itemStack1.getItem())) {
                             if (enemy instanceof LivingEntity) {
-                                event.setAmount(event.getAmount() * 0.5f);
+                                event.setAmount(event.getAmount() * 0.7f);
                                 }
                             }
                         }

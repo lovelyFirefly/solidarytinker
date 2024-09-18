@@ -2,6 +2,7 @@ package com.marth7th.solidarytinker.Modifiers.battle.common;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -20,12 +21,12 @@ public class ancientocean extends BattleModifier {
     }
 
     private void LivingAttackEvent(LivingAttackEvent event) {
-        LivingEntity attacker = (LivingEntity) event.getSource().getEntity();
-        if (attacker != null) {
-            if(attacker.getHealth()>attacker.getMaxHealth() * 0.8f&& modifierlevel.handshavelevel(attacker,this.getId())){
+        Entity entity = event.getSource().getEntity();
+        if(entity instanceof LivingEntity attacker){
+            if (attacker.getHealth() > attacker.getMaxHealth() * 0.8f && modifierlevel.handshavelevel(attacker, this.getId())) {
                 event.getSource().bypassArmor().bypassMagic().bypassInvul().bypassEnchantments();
+            }
         }
-    }
     }
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity entity) {

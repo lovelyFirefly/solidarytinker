@@ -1,4 +1,16 @@
 {
+  "itemGroup.solidarytinker.materials": "工匠联合-材料",
+  "itemGroup.solidarytinker.tool": "工匠联合-工具",
+
+
+  "item.solidarytinker.trident": "三叉戟",
+  "item.solidarytinker.trident.description": "和原版三叉戟相差无几，但却拥有更高的基础伤害。基础攻速更低",
+  "stat.solidarytinker.trident_head": "三叉戟头",
+  "item.solidarytinker.trident_head_cast": "三叉戟头金质铸膜",
+  "item.solidarytinker.trident_head_sand_cast": "三叉戟头沙子铸膜",
+  "item.solidarytinker.trident_head_red_sand_cast": "三叉戟头红沙铸膜",
+
+
 
   "effect.solidarytinker.bloodanger": "Red temperature",
 
@@ -8,7 +20,6 @@
 
   "item.solidarytinker.super_dt_bucket": "super_dt_bucket",
   "fluid_type.solidarytinker.super_dt": "super_dt",
-
 
 
   "item.solidarytinker.starfall_ingot": "starfall_ingot",
@@ -34,15 +45,15 @@
   "modifier.solidarytinker.tacticsattack.description":"Gain an additional upgrade slot and ability slot equal to the level of the modifier，70% reduction in durability loss of your tools%\nIgnores the target's invulnerableTime",
 
 
-  "modifier.solidarytinker.sandstrom": "沙海的守望者",
-  "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
-  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,获得50%免伤.仅在有来源伤害时且护甲不在冷却才会触发",
+  "modifier.solidarytinker.sandstrom": "Guardian of the Desert",
+  "modifier.solidarytinker.sandstrom.flavor": "Moor... hometown",
+  "modifier.solidarytinker.sandstrom.description":"While on a mission in the desert, there is a 5% chance of finding raw gold per second and keeping it in your inventory，Escape into stealth after being hit and when attack exits invisibility\nObtain the blessing of the sea of sand beyond the desert,Gain 30% Damage Immunity.Only triggers when there is source damage and the armor is not on cooldown",
 
-  "modifier.solidarytinker.absolutejustice": "绝对正义",
-  "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
-  "modifier.solidarytinker.absolutejustice.description":"你对无来源伤害几近于免疫(无来源伤害：自然伤害，虚空伤害等...)\n[当副手物品属于工匠创新的重盾时]完全免疫无来源并且取消受击判定",
+  "modifier.solidarytinker.absolutejustice": "absolutejustice",
+  "modifier.solidarytinker.absolutejustice.flavor": "Fair dueling",
+  "modifier.solidarytinker.absolutejustice.description":"You are nearly immune to unsourced damage(unsourced damage:Natural DamageSource，Out of world and more...)\n[When the off-hand item belongs to the Heavy Shield of the tinkers Innovation]Complete immunity unsourced damage and Cancels the hit hit",
 
-  "modifier.solidarytinker.tacticsprotect": "战术防御",
+  "modifier.solidarytinker.tacticsprotect": "tacticsprotect",
   "modifier.solidarytinker.tacticsprotect.flavor": "对勇者的嘉奖",
   "modifier.solidarytinker.tacticsprotect.description":"获得额外等同于该词条等级数量的升级槽，能力槽和防御槽。护甲耐久损耗降低70%\n生命值首次跌入20%以下的时候获得最大生命30%的伤害吸收，冷却20秒，并且获得持续10秒的等同于盔甲词条等级的抗性提升（不会大于4级）和红温效果(至高词条等级对应的等级为上限，每触发一次提升一级)。并且对周围8*词条等级范围内的怪物造成等同于护盾值的伤害。",
 

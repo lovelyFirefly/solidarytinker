@@ -13,13 +13,7 @@ public class solidarytinkerTab {
     public static final CreativeModeTab TOOL = new CreativeModeTab("solidarytinker.tool") {
         @Override
         public  ItemStack makeIcon() {
-            return new ItemStack(solidarytinkerItem.dwarf_ingot.get());
-        }
-    };
-    public static final CreativeModeTab PART = new CreativeModeTab("solidarytinker.part") {
-        @Override
-        public  ItemStack makeIcon() {
-            return new ItemStack(solidarytinkerItem.damascus_steel_ingot.get());
+            return new ItemStack(solidarytinkerItem.trident.get());
         }
     };
     public solidarytinkerTab(){}

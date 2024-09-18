@@ -1,4 +1,16 @@
 {
+  "itemGroup.solidarytinker.materials": "工匠联合-材料",
+  "itemGroup.solidarytinker.tool": "工匠联合-工具",
+
+
+  "item.solidarytinker.trident": "三叉戟",
+  "item.solidarytinker.trident.description": "和原版三叉戟相差无几，但却拥有更高的基础伤害。基础攻速更低",
+  "item.solidarytinker.trident_head": "三叉戟头",
+  "item.solidarytinker.trident_head_cast": "三叉戟头金质铸膜",
+  "item.solidarytinker.trident_head_sand_cast": "三叉戟头沙子铸膜",
+  "item.solidarytinker.trident_head_red_sand_cast": "三叉戟头红沙铸膜",
+
+
 
   "effect.solidarytinker.bloodanger": "红温",
 
@@ -8,7 +20,6 @@
 
   "item.solidarytinker.super_dt_bucket": "浓缩超能氘氚燃料桶",
   "fluid_type.solidarytinker.super_dt": "浓缩超能氘氚燃料",
-
 
 
   "item.solidarytinker.starfall_ingot": "星落钢",
@@ -36,7 +47,7 @@
 
   "modifier.solidarytinker.sandstrom": "沙海的守望者",
   "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
-  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,获得50%免伤.仅在有来源伤害时且护甲不在冷却才会触发",
+  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,获得30%免伤.仅在有来源伤害时且护甲不在冷却才会触发",
 
   "modifier.solidarytinker.absolutejustice": "绝对正义",
   "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",

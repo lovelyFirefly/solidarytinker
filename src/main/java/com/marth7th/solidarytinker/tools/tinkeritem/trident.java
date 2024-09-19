@@ -96,7 +96,6 @@ public class trident extends ModifiableItem {
                         }
 
                         level.playSound((Player)null, player, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
-
                 }
             }
         }
@@ -127,7 +126,6 @@ public class trident extends ModifiableItem {
                 p_43385_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
         }
-
         return true;
     }
 }

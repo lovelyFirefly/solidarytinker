@@ -22,7 +22,7 @@ apply plugin: 'net.minecraftforge.gradle'
 
 
 
-version = '0.8.2.release'
+version = '0.9.1.release'
 group = 'com.marth7th.solidarytinker' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'solidarytinker'
 

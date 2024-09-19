@@ -61,7 +61,7 @@ public class trident extends ModifiableItem {
                                 throwntrident.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                             }
                             level.addFreshEntity(throwntrident);
-                            level.playSound((Player)null, throwntrident, SoundEvents.TRIDENT_THROW, SoundSource.PLAYERS, 1.0F, 1.0F);
+                            level.playSound(null, throwntrident, SoundEvents.TRIDENT_THROW, SoundSource.PLAYERS, 1.0F, 1.0F);
                             if (!player.getAbilities().instabuild) {
                                 player.getInventory().removeItem(stack);
                             }
@@ -79,7 +79,7 @@ public class trident extends ModifiableItem {
                         f1 *= f5 / f4;
                         f2 *= f5 / f4;
                         f3 *= f5 / f4;
-                        player.push((double)f1, (double)f2, (double)f3);
+                        player.push(f1, f2, f3);
                         player.startAutoSpinAttack(20);
                         if (player.isOnGround()) {
                             float f6 = 1.1999999F;

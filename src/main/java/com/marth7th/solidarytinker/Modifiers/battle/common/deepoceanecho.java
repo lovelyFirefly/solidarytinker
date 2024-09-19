@@ -23,6 +23,7 @@ public class deepoceanecho extends BattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if(attacker instanceof Player player){
+
         float a = player.getMaxHealth() * 0.2f + player.getArrowCount() * 0.6f +Math.max(player.totalExperience * 0.0001f,1);
         if(livingTarget instanceof Player){
             return damage * 0f;

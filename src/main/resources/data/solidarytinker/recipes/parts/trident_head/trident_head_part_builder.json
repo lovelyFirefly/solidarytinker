@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:part_builder",
+  "pattern": "solidarytinker:trident_head",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "solidarytinker:trident_head"
+    }
+  ],
+  "cost": 5,
+  "result": {
+    "item": "solidarytinker:trident_head"
+  }
+}

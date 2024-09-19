@@ -47,7 +47,7 @@
 
   "modifier.solidarytinker.sandstrom": "沙海的守望者",
   "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
-  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,获得30%免伤.仅在有来源伤害时且护甲不在冷却才会触发",
+  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每有一件盔甲不在冷却都会在上一件的基础上获得30%免伤",
 
   "modifier.solidarytinker.absolutejustice": "绝对正义",
   "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
@@ -221,6 +221,17 @@
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
+
+
+  "modifier.solidarytinker.riptide": "激流",
+  "modifier.solidarytinker.riptide.flavor": "激流勇进！",
+  "modifier.solidarytinker.riptide.description":"强化版的激流，相较于原版使你非水环境可以正常使用三叉戟，雨天和水中则会进入激流模式，提升词条等级以提升激流冲刺距离",
+
+
+  "recipe.solidarytinker.modifier.crcs": "需要任意等级激流强化作为前置哦宝贝",
+  "modifier.solidarytinker.crcs": "风雨无阻",
+  "modifier.solidarytinker.crcs.flavor": "海神祝我！",
+  "modifier.solidarytinker.crcs.description":"任何时候均可触发激流效果，不再依赖于水",
 
 
   "_null_": "mekanism部分",

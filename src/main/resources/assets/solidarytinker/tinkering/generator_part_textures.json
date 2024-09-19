@@ -1,0 +1,21 @@
+{
+    "parts": [
+        {
+            "path": "solidarytinker:item/tool/trident_head/trident_head",
+            "stat_type": "tconstruct:head"
+        },
+        {
+            "path": "solidarytinker:item/tool/trident/trident_head",
+            "stat_type": "tconstruct:head"
+        },
+        {
+            "path": "solidarytinker:item/tool/trident/trident_handle1",
+            "stat_type": "tconstruct:handle"
+        },
+        {
+            "path": "solidarytinker:item/tool/trident/trident_handle2",
+            "stat_type": "tconstruct:handle"
+        }
+    ],
+    "replace": false
+}

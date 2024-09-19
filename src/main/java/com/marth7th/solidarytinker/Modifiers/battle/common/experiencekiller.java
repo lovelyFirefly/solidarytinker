@@ -21,7 +21,6 @@ public class experiencekiller extends BattleModifier {
         }
         return damage;
     }
-
     @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
         if(attacker instanceof Player player){

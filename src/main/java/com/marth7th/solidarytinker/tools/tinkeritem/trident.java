@@ -32,45 +32,43 @@ public class trident extends ModifiableItem {
     }
 
 
-    public boolean canAttackBlock(BlockState p_43409_, Level p_43410_, BlockPos p_43411_, Player p_43412_) {
-        return !p_43412_.isCreative();
+    public boolean canAttackBlock(BlockState blockState, Level level, BlockPos blockPos, Player player) {
+        return !player.isCreative();
     }
 
-    public UseAnim getUseAnimation(ItemStack p_43417_) {
+    public UseAnim getUseAnimation(ItemStack stack) {
         return UseAnim.SPEAR;
     }
 
-    public int getUseDuration(ItemStack p_43419_) {
+    public int getUseDuration(ItemStack stack) {
         return 72000;
     }
 
-    public void releaseUsing(ItemStack p_43394_, Level p_43395_, LivingEntity p_43396_, int p_43397_) {
-        if (p_43396_ instanceof Player player) {
-            int i = this.getUseDuration(p_43394_) - p_43397_;
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int duration) {
+        if (livingEntity instanceof Player player) {
+            int i = this.getUseDuration(stack) - duration;
             if (i >= 10) {
                 int j = modifierlevel.getmainhandmodifierlevel(player, solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId());
-                if (j <= 0 || player.isInWaterOrRain()) {
-                    if (!p_43395_.isClientSide) {
-                        p_43394_.hurtAndBreak(1, player, (p_43388_) -> {
-                            p_43388_.broadcastBreakEvent(p_43396_.getUsedItemHand());
+                int k = modifierlevel.getmainhandmodifierlevel(player, solidarytinkerModifiers.CRCS_STATIC_MODIFIER.getId());
+                    if (!level.isClientSide) {
+                        stack.hurtAndBreak(1, player, (player1) -> {
+                            player1.broadcastBreakEvent(livingEntity.getUsedItemHand());
                         });
-                        if (j == 0) {
-                            ThrownTrident throwntrident = new ThrownTrident(p_43395_, player, p_43394_);
+                        if (j == 0&&k==0 || (j > 0 && !player.isInWater() && !player.level.isRaining())&&k==0){
+                            ThrownTrident throwntrident = new ThrownTrident(level, player, stack);
                             throwntrident.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F + (float)j * 0.5F, 1.0F);
                             if (player.getAbilities().instabuild) {
                                 throwntrident.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                             }
-
-                            p_43395_.addFreshEntity(throwntrident);
-                            p_43395_.playSound((Player)null, throwntrident, SoundEvents.TRIDENT_THROW, SoundSource.PLAYERS, 1.0F, 1.0F);
+                            level.addFreshEntity(throwntrident);
+                            level.playSound((Player)null, throwntrident, SoundEvents.TRIDENT_THROW, SoundSource.PLAYERS, 1.0F, 1.0F);
                             if (!player.getAbilities().instabuild) {
-                                player.getInventory().removeItem(p_43394_);
+                                player.getInventory().removeItem(stack);
                             }
                         }
                     }
-
                     player.awardStat(Stats.ITEM_USED.get(this));
-                    if (j > 0) {
+                    if (k>0||(j>0&&player.isInWater())||(j>0&&player.level.isRaining())) {
                         float f7 = player.getYRot();
                         float f = player.getXRot();
                         float f1 = -Mth.sin(f7 * ((float)Math.PI / 180F)) * Mth.cos(f * ((float)Math.PI / 180F));
@@ -97,36 +95,35 @@ public class trident extends ModifiableItem {
                             soundevent = SoundEvents.TRIDENT_RIPTIDE_1;
                         }
 
-                        p_43395_.playSound((Player)null, player, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    }
+                        level.playSound((Player)null, player, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
 
                 }
             }
         }
     }
 
-    public InteractionResultHolder<ItemStack> use(Level p_43405_, Player p_43406_, InteractionHand p_43407_) {
-        ItemStack itemstack = p_43406_.getItemInHand(p_43407_);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
         if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1) {
             return InteractionResultHolder.fail(itemstack);
-        } else if (EnchantmentHelper.getRiptide(itemstack) > 0 && !p_43406_.isInWaterOrRain()) {
+        } else if (EnchantmentHelper.getRiptide(itemstack) > 0 && !player.isInWaterOrRain()) {
             return InteractionResultHolder.fail(itemstack);
         } else {
-            p_43406_.startUsingItem(p_43407_);
+            player.startUsingItem(hand);
             return InteractionResultHolder.consume(itemstack);
         }
     }
 
-    public boolean hurtEnemy(ItemStack p_43390_, LivingEntity p_43391_, LivingEntity p_43392_) {
-        p_43390_.hurtAndBreak(1, p_43392_, (p_43414_) -> {
+    public boolean hurtEnemy(ItemStack stack, LivingEntity p_43391_, LivingEntity p_43392_) {
+        stack.hurtAndBreak(1, p_43392_, (p_43414_) -> {
             p_43414_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });
         return true;
     }
 
-    public boolean mineBlock(ItemStack p_43399_, Level p_43400_, BlockState p_43401_, BlockPos p_43402_, LivingEntity p_43403_) {
+    public boolean mineBlock(ItemStack stack, Level p_43400_, BlockState p_43401_, BlockPos p_43402_, LivingEntity p_43403_) {
         if ((double)p_43401_.getDestroySpeed(p_43400_, p_43402_) != 0.0D) {
-            p_43399_.hurtAndBreak(2, p_43403_, (p_43385_) -> {
+            stack.hurtAndBreak(2, p_43403_, (p_43385_) -> {
                 p_43385_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
         }

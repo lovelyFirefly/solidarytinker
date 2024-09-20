@@ -52,11 +52,8 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<corrode>CORRODE_STATIC_MODIFIER=MODIFIERS.register("corrode", corrode::new);   //侵蚀
     public static final StaticModifier<elasticity>ELASTICITY_STATIC_MODIFIER=MODIFIERS.register("elasticity", elasticity::new);   //弹性
     public static final StaticModifier<release>RELEASE_STATIC_MODIFIER=MODIFIERS.register("release", release::new);   //弹性
+    public static final StaticModifier<seabless> SEABLESS_STATIC_MODIFIER=MODIFIERS.register("seabless", seabless::new);   //海神赐福
     public static final StaticModifier<riptide> RIPTIDE_STATIC_MODIFIER=MODIFIERS.register("riptide", riptide::new);   //激流
     public static final StaticModifier<crcs> CRCS_STATIC_MODIFIER=MODIFIERS.register("crcs", crcs::new);   //风雨无阻
-
-
-
-
 
 }

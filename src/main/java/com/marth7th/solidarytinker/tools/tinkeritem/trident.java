@@ -18,12 +18,14 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class trident extends ModifiableItem {
 
@@ -81,6 +83,8 @@ public class trident extends ModifiableItem {
                         f3 *= f5 / f4;
                         player.push(f1, f2, f3);
                         player.startAutoSpinAttack(20);
+                        IToolStackView stackView = ToolStack.from(player.getMainHandItem());
+                        ToolDamageUtil.damageAnimated(stackView, 10, player);
                         if (player.isOnGround()) {
                             float f6 = 1.1999999F;
                             player.move(MoverType.SELF, new Vec3(0.0D, (double)1.1999999F, 0.0D));
@@ -94,8 +98,7 @@ public class trident extends ModifiableItem {
                         } else {
                             soundevent = SoundEvents.TRIDENT_RIPTIDE_1;
                         }
-
-                        level.playSound((Player)null, player, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
+                        level.playSound(null, player, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
                 }
             }
         }
@@ -105,25 +108,21 @@ public class trident extends ModifiableItem {
         ItemStack itemstack = player.getItemInHand(hand);
         if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1) {
             return InteractionResultHolder.fail(itemstack);
-        } else if (EnchantmentHelper.getRiptide(itemstack) > 0 && !player.isInWaterOrRain()) {
-            return InteractionResultHolder.fail(itemstack);
         } else {
             player.startUsingItem(hand);
             return InteractionResultHolder.consume(itemstack);
         }
     }
-
-    public boolean hurtEnemy(ItemStack stack, LivingEntity p_43391_, LivingEntity p_43392_) {
-        stack.hurtAndBreak(1, p_43392_, (p_43414_) -> {
-            p_43414_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+    public boolean hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity player) {
+        stack.hurtAndBreak(1, player, (player1) -> {
+            player1.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });
         return true;
     }
-
-    public boolean mineBlock(ItemStack stack, Level p_43400_, BlockState p_43401_, BlockPos p_43402_, LivingEntity p_43403_) {
-        if ((double)p_43401_.getDestroySpeed(p_43400_, p_43402_) != 0.0D) {
-            stack.hurtAndBreak(2, p_43403_, (p_43385_) -> {
-                p_43385_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+    public boolean mineBlock(ItemStack stack, Level level, BlockState blockState, BlockPos blockPos, LivingEntity entity) {
+        if ((double)blockState.getDestroySpeed(level, blockPos) != 0.0D) {
+            stack.hurtAndBreak(2, entity, (entity1) -> {
+                entity1.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
         }
         return true;

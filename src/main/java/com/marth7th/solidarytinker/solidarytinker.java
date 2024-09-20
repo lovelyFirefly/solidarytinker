@@ -3,8 +3,13 @@ package com.marth7th.solidarytinker;
 import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
 import com.marth7th.solidarytinker.etshtinker.etshinkercarbon;
 import com.marth7th.solidarytinker.register.*;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -12,6 +17,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 
 @Mod(solidarytinker.MOD_ID)
+@Mod.EventBusSubscriber(
+        bus = Mod.EventBusSubscriber.Bus.MOD
+)
 
 public class solidarytinker {
     /**
@@ -28,6 +36,7 @@ public class solidarytinker {
          */
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::commonSetup);
+        MinecraftForge.EVENT_BUS.register(this);
         solidarytinkerItem.ITEMS.register(eventBus);
         solidarytinkerModifiers.MODIFIERS.register(eventBus);
         solidarytinkerFluid.FLUIDS.register(eventBus);
@@ -55,5 +64,15 @@ public class solidarytinker {
     }
     public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
         return TinkerDataCapability.TinkerDataKey.of(getResource(name));
+    }
+    @SubscribeEvent
+    public static void gatherData(GatherDataEvent event) {
+        DataGenerator gen = event.getGenerator();
+        ExistingFileHelper fileHelper = event.getExistingFileHelper();
+        if (event.includeClient()) {
+        }
+        if (event.includeServer()) {
+        }
+
     }
 }

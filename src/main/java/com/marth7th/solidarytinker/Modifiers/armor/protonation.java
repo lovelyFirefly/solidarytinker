@@ -25,7 +25,6 @@ public class protonation extends ArmorModifier {
         a= modifierlevel.getsinglearmorlevel(entity,solidarytinkerModifiers.PROTONATION_STATIC_MODIFIER.getId());
         return amount;
     }
-
     public int a;
 
     @Override

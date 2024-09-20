@@ -52,7 +52,7 @@ public class removeradition extends BattleModifier {
             }
         }
         else {
-            entity.sendSystemMessage(Component.translatable("呜哇，没有力气再去清除了，先恢复点耐久吧"));
+            entity.sendSystemMessage(Component.translatable("唔嘿，没有力气再去清除了，先恢复点耐久吧"));
         }
     }
 

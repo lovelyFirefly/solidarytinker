@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "solidarytinker.refmap.json",
   "mixins": [
+    "dragon",
+    "PlayerMixin",
     "Test"
   ],
   "client": [

@@ -8,23 +8,23 @@ public class al1s implements Tier {
     public static Tier instance = new al1s();
     @Override
     public int getUses() {
-        return 2147483647;
+        return 12;
     }
     @Override
     public float getSpeed() {
-        return 2147483647;
+        return 12;
     }
     @Override
     public float getAttackDamageBonus() {
-        return 2147483647;
+        return 12;
     }
     @Override
     public int getLevel() {
-        return 2147483647;
+        return 12;
     }
     @Override
     public int getEnchantmentValue() {
-        return 2147483647;
+        return 12;
     }
     @Override
     public Ingredient getRepairIngredient() {

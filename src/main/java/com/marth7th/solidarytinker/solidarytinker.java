@@ -3,9 +3,12 @@ package com.marth7th.solidarytinker;
 import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
 import com.marth7th.solidarytinker.etshtinker.etshinkercarbon;
 import com.marth7th.solidarytinker.register.*;
+import com.marth7th.solidarytinker.shelf.tier.al1s;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +18,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
+
+import java.util.List;
 
 @Mod(solidarytinker.MOD_ID)
 @Mod.EventBusSubscriber(
@@ -58,7 +63,7 @@ public class solidarytinker {
             event.enqueueWork(etshinkercarbon::extendMap);
         }
 //        幽默挖掘等级(未实装）
-//        TierSortingRegistry.registerTier(overlord.instance,new ResourceLocation("solidarytinker:overlord"), List.of(Tiers.NETHERITE),List.of());
+        TierSortingRegistry.registerTier(al1s.instance,new ResourceLocation("solidarytinker:al1s"), List.of(Tiers.NETHERITE),List.of());
     }
     public static ResourceLocation getResource(String id) {
         return new ResourceLocation("solidarytinker", id);

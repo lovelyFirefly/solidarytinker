@@ -95,5 +95,8 @@
 
     "riptide":  "#5d83ff",
     "crcs":  "#2344ff"
+  },
+  "harvest_tier.solidarytinker": {
+    "al1s": "#80a2ff"
   }
 }

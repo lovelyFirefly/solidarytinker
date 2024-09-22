@@ -41,7 +41,7 @@ public class absolutejustice extends ArmorModifier {
             if (TN) {
                 if (event.getEntity() instanceof Player player) {
                     if (event.getSource().getEntity() == null && player.getItemBySlot(EquipmentSlot.OFFHAND).is(TinkersInnovationItems.heavy_shield.get())) {
-                        event.getEntity().invulnerableTime = 1;
+                        event.getEntity().invulnerableTime = 40;
                         event.setCanceled(true);
                     }
                 }

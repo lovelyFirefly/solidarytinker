@@ -102,14 +102,14 @@
 
 
 
-  "item.solidarytinker.icefantasy_ingot": "☀🦄sensei锭",
+  "item.solidarytinker.icefantasy_ingot": "墨冰锭",
   "tooltip.icefantasy_ingot.desc1": "自冻洋深处",
-  "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰合金桶",
-  "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰合金",
+  "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰桶",
+  "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰",
 
-  "material.solidarytinker.icefantasy": "☀🦄sensei",
+  "material.solidarytinker.icefantasy": "墨冰",
   "material.solidarytinker.icefantasy.flavor": "又有谁曾去了解冻洋深处掩盖千年的秘密呢",
-  "material.solidarytinker.icefantasy.encyclopedia": "墨冰是谁？\n不是☀🐎sensei吗",
+  "material.solidarytinker.icefantasy.encyclopedia": "墨冰是谁？\n不是☀🦄sensei吗",
 
   "modifier.solidarytinker.ancientocean": "古海孑遗",
   "modifier.solidarytinker.ancientocean.flavor": "深洋之下，不可莫测",

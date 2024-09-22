@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "solidarytinker:trident_head_cast"
+    "solidarytinker:trident_head_sand_cast",
+    "solidarytinker:trident_head_red_sand_cast"
   ]
 }

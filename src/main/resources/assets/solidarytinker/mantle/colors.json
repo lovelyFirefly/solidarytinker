@@ -94,9 +94,10 @@
     "anglefox":  "#fef4e3",
 
     "riptide":  "#5d83ff",
-    "crcs":  "#2344ff"
+    "crcs":  "#2344ff",
+    "seabless":  "#7dd0c4"
   },
   "harvest_tier.solidarytinker": {
-    "al1s": "#80a2ff"
+    "al1s": "#ffc9ff"
   }
 }

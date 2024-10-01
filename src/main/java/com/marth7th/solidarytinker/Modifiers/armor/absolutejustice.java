@@ -8,7 +8,9 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +29,6 @@ public class absolutejustice extends ArmorModifier {
     {
         MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
     }
-
     private void livingHurtEvent(@NotNull LivingHurtEvent event) {
         if (modifierlevel.getsinglearmorlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
             if (event.getSource().getEntity() == null) {
@@ -36,12 +37,13 @@ public class absolutejustice extends ArmorModifier {
         }
     }
 
+
     private void livingAttackEvent(LivingAttackEvent event) {
         if (modifierlevel.getsinglearmorlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
             if (TN) {
                 if (event.getEntity() instanceof Player player) {
                     if (event.getSource().getEntity() == null && player.getItemBySlot(EquipmentSlot.OFFHAND).is(TinkersInnovationItems.heavy_shield.get())) {
-                        event.getEntity().invulnerableTime = 40;
+                        event.getEntity().invulnerableTime = 80;
                         event.setCanceled(true);
                     }
                 }

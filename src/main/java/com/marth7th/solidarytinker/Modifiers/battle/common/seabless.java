@@ -8,6 +8,16 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class seabless extends BattleModifier {
     @Override
+    public boolean havenolevel() {
+        return true;
+    }
+
+    @Override
+    public boolean hidden() {
+        return true;
+    }
+
+    @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity entity) {
         if (entity != null && (entity.isInWater() || entity.level.isRaining())) {
             return (int) (amount * 0.5f);

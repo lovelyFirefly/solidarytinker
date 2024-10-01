@@ -38,23 +38,33 @@
     {
       "type": "tconstruct:base_stats",
       "stats": {
-        "tconstruct:attack_damage": 1,
-        "tconstruct:attack_speed": 1
+        "tconstruct:attack_damage": 4,
+        "tconstruct:attack_speed": 1.2
       }
     },
     {
       "type": "tconstruct:multiply_stats",
       "multipliers": {
-        "tconstruct:attack_damage": 1.2,
-        "tconstruct:attack_speed": 0.8
+        "tconstruct:attack_damage": 1.4,
+        "tconstruct:attack_speed": 0.8,
+        "tconstruct:durability": 1.1
       }
     },
     {
       "type": "tconstruct:modifier_slots",
       "slots": {
-        "abilities": 1,
+        "abilities": 2,
         "upgrades": 2
       }
+    },
+    {
+      "type": "tconstruct:traits",
+      "traits": [
+        {
+          "level": 1,
+          "name": "solidarytinker:seabless"
+        }
+      ]
     }
   ]
 }

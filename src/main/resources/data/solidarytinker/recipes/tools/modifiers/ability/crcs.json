@@ -13,10 +13,10 @@
       "item": "solidarytinker:violane"
     },
     {
-      "tag": "forge:glass"
+      "item": "minecraft:phantom_membrane"
     },
     {
-      "tag": "forge:glass"
+      "item": "tconstruct:sky_slime"
     }
   ],
   "level": 1,

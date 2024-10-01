@@ -33,7 +33,6 @@ public class trident extends ModifiableItem {
         super(properties, toolDefinition);
     }
 
-
     public boolean canAttackBlock(BlockState blockState, Level level, BlockPos blockPos, Player player) {
         return !player.isCreative();
     }

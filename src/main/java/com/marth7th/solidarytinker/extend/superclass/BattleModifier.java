@@ -40,12 +40,13 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
     }
 
     public boolean hidden() {
-        return true;
+        return false;
     }
     public boolean shouldDisplay(boolean advanced) {
         if (hidden()) {
+            return advanced;
+        } else
             return hidden() || advanced;
-        } else return advanced;
     }
 
     @Override

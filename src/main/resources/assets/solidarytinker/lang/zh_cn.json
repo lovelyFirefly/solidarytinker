@@ -6,6 +6,7 @@
   "item.solidarytinker.trident": "三叉戟",
   "item.solidarytinker.trident.description": "和原版三叉戟相差无几，但却拥有更高的基础伤害。基础攻速更低",
   "item.solidarytinker.trident_head": "三叉戟头",
+  "pattern.solidarytinker.trident_head": "三叉戟头",
   "item.solidarytinker.trident_head_cast": "三叉戟头金质铸膜",
   "item.solidarytinker.trident_head_sand_cast": "三叉戟头沙子铸膜",
   "item.solidarytinker.trident_head_red_sand_cast": "三叉戟头红沙铸膜",
@@ -236,7 +237,7 @@
   "recipe.solidarytinker.modifier.crcs": "需要任意等级激流强化作为前置哦宝贝",
   "modifier.solidarytinker.crcs": "风雨无阻",
   "modifier.solidarytinker.crcs.flavor": "海神祝我！",
-  "modifier.solidarytinker.crcs.description":"任何时候均可触发激流效果，不再依赖于水",
+  "modifier.solidarytinker.crcs.description":"让你不再依赖于水,可以自由冲刺",
 
 
   "_null_": "mekanism部分",
@@ -282,7 +283,7 @@
 
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",
-  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射",
+  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射"
 
 
 }

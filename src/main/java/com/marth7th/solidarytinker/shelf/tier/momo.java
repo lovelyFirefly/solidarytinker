@@ -4,8 +4,8 @@ package com.marth7th.solidarytinker.shelf.tier;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class al1s implements Tier {
-    public static Tier instance = new al1s();
+public class momo implements Tier {
+    public static Tier instance = new momo();
     @Override
     public int getUses() {
         return 12;

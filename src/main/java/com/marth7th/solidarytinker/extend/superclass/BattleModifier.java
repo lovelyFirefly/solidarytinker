@@ -16,7 +16,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class BattleModifier extends Modifier implements aboutattack, aboutbuilder, aboutarrow,EquipmentChangeModifierHook {
+public class   BattleModifier extends Modifier implements aboutattack, aboutbuilder, aboutarrow,EquipmentChangeModifierHook {
     public BattleModifier() {
     }
 
@@ -40,7 +40,7 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
     }
 
     public boolean hidden() {
-        return false;
+        return true;
     }
     public boolean shouldDisplay(boolean advanced) {
         if (hidden()) {

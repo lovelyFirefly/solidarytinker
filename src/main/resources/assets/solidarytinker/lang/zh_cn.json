@@ -102,7 +102,7 @@
   "fluid_type.solidarytinker.molten_rainbow": "熔融彩虹",
 
 
-  "stat.tconstruct.harvest_tier.solidarytinker.al1s": "牢墨",
+  "stat.tconstruct.harvest_tier.solidarytinker.momo": "牢墨",
   "item.solidarytinker.icefantasy_ingot": "墨冰锭",
   "tooltip.icefantasy_ingot.desc1": "自冻洋深处",
   "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰桶",
@@ -283,7 +283,8 @@
 
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",
-  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射"
+  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射",
 
-
+  "death.attack.tinker": "%1$s 被牢墨亲死了",
+  "death.attack.tinker.player": "%1$s 一不小心崴到脚了"
 }

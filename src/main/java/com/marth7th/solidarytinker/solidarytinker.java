@@ -1,9 +1,10 @@
 package com.marth7th.solidarytinker;
 
 import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
+import com.kwpugh.gobber2.lists.tiers.ToolMaterialTiers;
 import com.marth7th.solidarytinker.etshtinker.etshinkercarbon;
 import com.marth7th.solidarytinker.register.*;
-import com.marth7th.solidarytinker.shelf.tier.al1s;
+import com.marth7th.solidarytinker.shelf.tier.momo;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tiers;
@@ -32,6 +33,7 @@ public class solidarytinker {
      * mekanism
      * etshtinker的离子炮
      */
+    public static boolean gobber2= ModList.get().isLoaded("gobber2");
     public static boolean Mekenabled = ModList.get().isLoaded("mekanism");
     public static boolean ETSH = ModList.get().isLoaded("etshtinker");
     public static final String MOD_ID = "solidarytinker"; //*是你的模组名，需要英文
@@ -63,7 +65,13 @@ public class solidarytinker {
             event.enqueueWork(etshinkercarbon::extendMap);
         }
 //        幽默挖掘等级(未实装）
-        TierSortingRegistry.registerTier(al1s.instance,new ResourceLocation("solidarytinker:al1s"), List.of(Tiers.NETHERITE),List.of());
+        if(!TierSortingRegistry.isTierSorted(momo.instance)){
+            if(gobber2){
+                TierSortingRegistry.registerTier(momo.instance,new ResourceLocation("solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER),List.of());
+            }else {
+                TierSortingRegistry.registerTier(momo.instance,new ResourceLocation("solidarytinker:momo"), List.of(Tiers.NETHERITE),List.of());
+            }
+        }
     }
     public static ResourceLocation getResource(String id) {
         return new ResourceLocation("solidarytinker", id);

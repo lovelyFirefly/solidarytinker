@@ -5,6 +5,7 @@ import com.marth7th.solidarytinker.Modifiers.battle.biomancy.corrode;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.swell;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.aaa;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.release;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
 import com.marth7th.solidarytinker.Modifiers.battle.mekanism.darkstar;
@@ -22,6 +23,7 @@ public class solidarytinkerModifiers {
      */
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(MOD_ID);
     public static final StaticModifier<aaa> AAA_STATIC_MODIFIER=MODIFIERS.register("aaa", aaa::new);   //测试
+    public static final StaticModifier<nos> NOS_STATIC_MODIFIER=MODIFIERS.register("nos", nos::new);   //测试
     public static final StaticModifier<protonation>PROTONATION_STATIC_MODIFIER=MODIFIERS.register("protonation", protonation::new);   //测试
     public static final StaticModifier<darkstar>DARKSTAR_STATIC_MODIFIER=MODIFIERS.register("darkstar", darkstar::new);   //暗星
     public static final StaticModifier<superblazing>SUPERBLAZING_STATIC_MODIFIER=MODIFIERS.register("superblazing", superblazing::new);   //炽焰

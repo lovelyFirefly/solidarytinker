@@ -10,7 +10,7 @@
     "tconstruct:head": {
       "durability": 3250,
       "mining_speed": 10,
-      "mining_tier": "solidarytinker:al1s",
+      "mining_tier": "solidarytinker:momo",
       "melee_attack": 8
     },
     "tconstruct:limb": {

@@ -22,7 +22,7 @@ public class protonation extends ArmorModifier {
 
     @Override
     public float TrueDamageamount(IToolStackView armor, int level, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean isDirectDamage, LivingEntity entity, LivingEntity enemy) {
-        a= modifierlevel.getsinglearmorlevel(entity,solidarytinkerModifiers.PROTONATION_STATIC_MODIFIER.getId());
+        a= modifierlevel.getTotalArmorModifierlevel(entity,solidarytinkerModifiers.PROTONATION_STATIC_MODIFIER.getId());
         return amount;
     }
     public int a;

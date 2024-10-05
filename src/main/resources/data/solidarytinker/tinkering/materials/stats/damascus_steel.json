@@ -59,7 +59,7 @@
       "armor": 5.0,
       "toughness": 4,
       "knockback_resistance": 0.4,
-      "block_amount": 5,
+      "block_amount": 0.5,
       "shield_amount": 10
     },
     "etshtinker:fluid_chamber": {

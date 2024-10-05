@@ -283,8 +283,5 @@
 
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",
-  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射",
-
-  "death.attack.tinker": "%1$s 被牢墨亲死了",
-  "death.attack.tinker.player": "%1$s 一不小心崴到脚了"
+  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射"
 }

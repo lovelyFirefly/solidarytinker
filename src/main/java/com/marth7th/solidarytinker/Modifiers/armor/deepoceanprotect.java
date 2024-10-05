@@ -23,7 +23,7 @@ public class deepoceanprotect extends ArmorModifier {
     private void livingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         if (entity instanceof Player player) {
-            int a = modifierlevel.getsinglearmorlevel(entity, solidarytinkerModifiers.DEEPOCEANPROTECT_STATIC_MODIFIER.getId());
+            int a = modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.DEEPOCEANPROTECT_STATIC_MODIFIER.getId());
             if (a > 0) {
                 float cost = player.totalExperience * 0.0001f + player.getMaxHealth() * 0.2f + player.getArmorValue() * 0.6f * a;
                 event.setAmount(event.getAmount() * Math.max(1 - cost * 0.01f, 0.1f));

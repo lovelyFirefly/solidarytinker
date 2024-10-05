@@ -13,7 +13,7 @@ public class modifierlevel {
     //一个一个获取词条等级太麻烦了，所以我仿照晓月弄了这个
 
 
-    public static int getmainhandmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getMainhandModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.MAINHAND));
@@ -24,7 +24,7 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static int getoffhandmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getOffhandModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.OFFHAND));
@@ -35,7 +35,7 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static int geteachhandstotalmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getEachHandsTotalModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.MAINHAND));
@@ -46,14 +46,14 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static boolean eachhandshavelevel(LivingEntity entity, ModifierId modifierId) {
-        return modifierlevel.getmainhandmodifierlevel(entity, modifierId) > 0&& modifierlevel.getoffhandmodifierlevel(entity, modifierId) > 0;
+    public static boolean EachHandsHaveModifierlevel(LivingEntity entity, ModifierId modifierId) {
+        return modifierlevel.getMainhandModifierlevel(entity, modifierId) > 0&& modifierlevel.getOffhandModifierlevel(entity, modifierId) > 0;
     }
-    public static boolean handshavelevel(LivingEntity entity, ModifierId modifierId) {
-        return modifierlevel.geteachhandstotalmodifierlevel(entity, modifierId) > 0;
+    public static boolean HandsHaveModifierlevel(LivingEntity entity, ModifierId modifierId) {
+        return modifierlevel.getEachHandsTotalModifierlevel(entity, modifierId) > 0;
     }
     
-    public static int getheadmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getHeadModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.HEAD));
@@ -64,7 +64,7 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static int getchestmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getChestModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.CHEST));
@@ -75,7 +75,7 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static int getlegsmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getLegsModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.LEGS));
@@ -86,7 +86,7 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static int getfeetmodifierlevel(LivingEntity entity, ModifierId modifierId) {
+    public static int getFeetsModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){
                 ToolStack toolStack = ToolStack.from(entity.getItemBySlot(EquipmentSlot.FEET));
@@ -97,13 +97,13 @@ public class modifierlevel {
         }
         return 0;
     }
-    public static int getsinglearmorlevel(LivingEntity entity, ModifierId modifierId) {
-        return modifierlevel.getheadmodifierlevel(entity, modifierId) + modifierlevel.getchestmodifierlevel(entity, modifierId) + modifierlevel.getlegsmodifierlevel(entity, modifierId) + modifierlevel.getfeetmodifierlevel(entity, modifierId);
+    public static int getTotalArmorModifierlevel(LivingEntity entity, ModifierId modifierId) {
+        return modifierlevel.getHeadModifierlevel(entity, modifierId) + modifierlevel.getChestModifierlevel(entity, modifierId) + modifierlevel.getLegsModifierlevel(entity, modifierId) + modifierlevel.getFeetsModifierlevel(entity, modifierId);
     }
-    public static boolean allarmorhaslevel(LivingEntity entity, ModifierId modifierId) {
-        return modifierlevel.getheadmodifierlevel(entity, modifierId) > 0 && modifierlevel.getchestmodifierlevel(entity, modifierId) > 0 && modifierlevel.getlegsmodifierlevel(entity, modifierId) > 0 && modifierlevel.getfeetmodifierlevel(entity, modifierId) > 0;
+    public static boolean EachaArmorHasModifierlevel(LivingEntity entity, ModifierId modifierId) {
+        return modifierlevel.getHeadModifierlevel(entity, modifierId) > 0 && modifierlevel.getChestModifierlevel(entity, modifierId) > 0 && modifierlevel.getLegsModifierlevel(entity, modifierId) > 0 && modifierlevel.getFeetsModifierlevel(entity, modifierId) > 0;
     }
-    public static boolean Playerequiphaslevel(LivingEntity entity, ModifierId modifierId) {
-        return modifierlevel.getsinglearmorlevel(entity,modifierId)>0||modifierlevel.handshavelevel(entity,modifierId);
+    public static boolean EquipHasModifierlevel(LivingEntity entity, ModifierId modifierId) {
+        return modifierlevel.getTotalArmorModifierlevel(entity,modifierId)>0||modifierlevel.HandsHaveModifierlevel(entity,modifierId);
     }
 }

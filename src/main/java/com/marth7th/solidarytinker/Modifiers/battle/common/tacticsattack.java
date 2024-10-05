@@ -32,7 +32,7 @@ public class tacticsattack extends BattleModifier {
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if (attacker instanceof Player player) {
             if (ti) {
-                if (modifierlevel.getmainhandmodifierlevel(player, TIModifiers.SEA_DREAM.getId()) > 0) {
+                if (modifierlevel.getMainhandModifierlevel(player, TIModifiers.SEA_DREAM.getId()) > 0) {
                     return damage * 1.3f;
                 }
             }

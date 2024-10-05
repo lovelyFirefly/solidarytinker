@@ -14,10 +14,10 @@ public class experienceprotect extends ArmorModifier {
 
     private void livingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
-        if(modifierlevel.getsinglearmorlevel(entity,this.getId())>0){
+        if(modifierlevel.getTotalArmorModifierlevel(entity,this.getId())>0){
             if(entity instanceof Player player){
                 int a = player.experienceLevel;
-                int level=modifierlevel.getsinglearmorlevel(player,this.getId());
+                int level=modifierlevel.getTotalArmorModifierlevel(player,this.getId());
                 if(a>0){
                     event.setAmount(event.getAmount()-a*0.1f*level);
                 }

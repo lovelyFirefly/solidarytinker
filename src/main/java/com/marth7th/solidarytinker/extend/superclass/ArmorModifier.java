@@ -26,11 +26,13 @@ public class ArmorModifier extends Modifier implements aboutarmor,DamageBlockMod
         }else
             return super.getDisplayName(level);
     }
-    public boolean hidden(){return  true;};
+    public boolean hidden(){return false;}
     public boolean shouldDisplay(boolean advanced) {
         if(hidden()){
-            return hidden() || advanced;
-        }else return advanced;
+            return advanced;
+        }
+        else
+            return true;
     }
     public ArmorModifier(){
     }

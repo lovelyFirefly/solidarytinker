@@ -20,7 +20,7 @@ public class collapse extends ArmorModifier {
     private void livingHurtEvent(LivingHurtEvent event) {
         Entity enemy=  event.getSource().getEntity();
         LivingEntity entity=event.getEntity();
-        if (modifierlevel.getsinglearmorlevel(entity, solidarytinkerModifiers.COLLAPSE_STATIC_MODIFIER.getId())>0){
+        if (modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.COLLAPSE_STATIC_MODIFIER.getId())>0){
           if(entity!=null){
             event.setAmount(event.getAmount() * 0.5f);
            }

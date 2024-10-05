@@ -23,7 +23,7 @@ public class uncannyvalley extends BattleModifier {
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (entity instanceof Player player) {
-            if (modifierlevel.Playerequiphaslevel(player, this.getId())) {
+            if (modifierlevel.EquipHasModifierlevel(player, this.getId())) {
                 double x = player.getX();
                 double y = player.getY();
                 double z = player.getZ();

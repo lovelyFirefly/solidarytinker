@@ -224,6 +224,11 @@
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
 
 
+  "modifier.solidarytinker.seabless": "海神赐福",
+  "modifier.solidarytinker.seabless.flavor": "不是海王",
+  "modifier.solidarytinker.seabless.description":"在水中或者下雨耐久消耗降低50%",
+
+
   "modifier.solidarytinker.riptide": "激流",
   "modifier.solidarytinker.riptide.flavor": "激流勇进！",
   "modifier.solidarytinker.riptide.description":"强化版的激流，相较于原版使你非水环境可以正常使用三叉戟，雨天和水中则会进入激流模式，提升词条等级以提升激流冲刺距离",

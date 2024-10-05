@@ -27,7 +27,7 @@ public class sandstrom extends ArmorModifier {
     private void livingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
-        if (modifierlevel.getsinglearmorlevel(entity, solidarytinkerModifiers.SANDSTROM_STATIC_MODIFIER.getId()) > 0) {
+        if (modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.SANDSTROM_STATIC_MODIFIER.getId()) > 0) {
             if (entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.DESERT) || entity.getLevel().getBiome(entity.blockPosition()).is(Biomes.BADLANDS)) {
                 entity.clearFire();
                 entity.setInvisible(true);

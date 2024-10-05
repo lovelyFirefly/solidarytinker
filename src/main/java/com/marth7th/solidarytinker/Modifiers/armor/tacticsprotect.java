@@ -35,7 +35,7 @@ public class tacticsprotect extends ArmorModifier {
         if (enemy != null && entity != null) {
             if (entity instanceof Player player) {
                 var armor = new ItemStack[]{entity.getItemBySlot(EquipmentSlot.HEAD), entity.getItemBySlot(EquipmentSlot.CHEST), entity.getItemBySlot(EquipmentSlot.LEGS), entity.getItemBySlot(EquipmentSlot.FEET)};
-                int modifierslevel = modifierlevel.getsinglearmorlevel(player,solidarytinkerModifiers.TACTICSPROTECT_STATIC_MODIFIER.getId());
+                int modifierslevel = modifierlevel.getTotalArmorModifierlevel(player,solidarytinkerModifiers.TACTICSPROTECT_STATIC_MODIFIER.getId());
                 for (ItemStack itemStack1 : armor){
                     if (modifierslevel > 0) {
                         if (!player.getCooldowns().isOnCooldown(itemStack1.getItem())) {

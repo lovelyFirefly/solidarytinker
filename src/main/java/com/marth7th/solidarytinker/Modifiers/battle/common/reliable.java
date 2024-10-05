@@ -41,7 +41,7 @@ public class reliable extends BattleModifier {
         LivingEntity entity = event.getEntity();
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
         if (entity instanceof Player player) {
-            if (modifierlevel.handshavelevel(entity, this.getId())) {
+            if (modifierlevel.HandsHaveModifierlevel(entity, this.getId())) {
                 entity.setArrowCount(entity.getArrowCount() + 1);
                 if (etsh) {
                     if (player.getItemBySlot(EquipmentSlot.OFFHAND).is(etshtinkerItems.IONIZED_CANNON.get()) || player.getItemBySlot(EquipmentSlot.MAINHAND).is(etshtinkerItems.IONIZED_CANNON.get())) {
@@ -58,7 +58,7 @@ public class reliable extends BattleModifier {
                     }
                 }
                 if (ti) {
-                    if (modifierlevel.getmainhandmodifierlevel(player, TIModifiers.SEA_DREAM.getId()) == 0) {
+                    if (modifierlevel.getMainhandModifierlevel(player, TIModifiers.SEA_DREAM.getId()) == 0) {
                         event.setAmount(event.getAmount() * 0.5f);
                     }
                 }
@@ -89,7 +89,7 @@ public class reliable extends BattleModifier {
         LivingEntity attacker = context.getAttacker();
         if (attacker instanceof Player player) {
             if (ti) {
-                if (modifierlevel.handshavelevel(attacker, TIModifiers.SEA_DREAM.getId())) {
+                if (modifierlevel.HandsHaveModifierlevel(attacker, TIModifiers.SEA_DREAM.getId())) {
                     var armor = new ItemStack[]{player.getItemBySlot(EquipmentSlot.HEAD), player.getItemBySlot(EquipmentSlot.CHEST), player.getItemBySlot(EquipmentSlot.LEGS), player.getItemBySlot(EquipmentSlot.FEET), player.getItemBySlot(EquipmentSlot.OFFHAND), player.getItemBySlot(EquipmentSlot.MAINHAND)};
                     player.setSpeed(1.3f);
                     player.setAbsorptionAmount(Math.min(player.getMaxHealth() * 3.5f, damageDealt));
@@ -122,8 +122,8 @@ public class reliable extends BattleModifier {
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (ti) {
-            if (!modifierlevel.handshavelevel(entity, TIModifiers.SEA_DREAM.getId())) {
-                if (modifierlevel.handshavelevel(entity, modifier.getId())) {
+            if (!modifierlevel.HandsHaveModifierlevel(entity, TIModifiers.SEA_DREAM.getId())) {
+                if (modifierlevel.HandsHaveModifierlevel(entity, modifier.getId())) {
                     if (entity.getLevel().isNight()) {
                         entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0, false, false));
                         entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 400, 0, false, false));

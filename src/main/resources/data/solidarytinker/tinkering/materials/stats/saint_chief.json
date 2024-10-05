@@ -24,6 +24,14 @@
       "accuracy": 2.0,
       "melee_damage": 4.0
     },
+    "tinkersinnovation:shield_plate": {
+      "durability": 1022,
+      "armor": 4.0,
+      "toughness": 2,
+      "knockback_resistance": 0.4,
+      "block_amount": 0.25,
+      "shield_amount": 5
+    },
     "etshtinker:fluid_chamber": {
       "fluid_capacity": 72000
     },

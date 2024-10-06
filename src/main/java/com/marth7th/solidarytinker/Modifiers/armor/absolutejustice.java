@@ -22,14 +22,7 @@ public class absolutejustice extends ArmorModifier {
 
     boolean TN = ModList.get().isLoaded("tinkersinnovation");
 
-    public absolutejustice() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingAttackEvent);
-    }
-
-    {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
-    private void livingHurtEvent(@NotNull LivingHurtEvent event) {
+    public void LivingHurtEvent( LivingHurtEvent event) {
         if (modifierlevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
             if (event.getSource().getEntity() == null) {
                 event.setCanceled(true);
@@ -37,8 +30,7 @@ public class absolutejustice extends ArmorModifier {
         }
     }
 
-
-    private void livingAttackEvent(LivingAttackEvent event) {
+    public void LivingAttackEvent(LivingAttackEvent event) {
         if (modifierlevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
             if (TN) {
                 if (event.getEntity() instanceof Player player) {

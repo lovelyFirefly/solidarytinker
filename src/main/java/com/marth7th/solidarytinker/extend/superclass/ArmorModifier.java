@@ -5,6 +5,11 @@ import com.marth7th.solidarytinker.extend.interfaces.aboutbuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.eventbus.api.Event;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -26,6 +31,21 @@ public class ArmorModifier extends Modifier implements aboutarmor,DamageBlockMod
         }else
             return super.getDisplayName(level);
     }
+    {
+        MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::MobEffectEvent);
+    }
+
+    public void MobEffectEvent(MobEffectEvent.Applicable event) {
+    }
+
+    public void LivingAttackEvent(LivingAttackEvent event) {
+    }
+
+    public void LivingHurtEvent(LivingHurtEvent event) {
+    }
+
     public boolean hidden(){return false;}
     public boolean shouldDisplay(boolean advanced) {
         if(hidden()){

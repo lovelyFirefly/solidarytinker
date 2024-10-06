@@ -17,11 +17,7 @@ public class ancientocean extends BattleModifier {
         return true;
     }
 
-    public ancientocean() {
-        MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
-    }
-
-    private void LivingAttackEvent(LivingAttackEvent event) {
+    public void LivingAttackEvent(LivingAttackEvent event) {
         Entity entity = event.getSource().getEntity();
         if(entity instanceof LivingEntity attacker){
             if (attacker.getHealth() > attacker.getMaxHealth() * 0.8f && modifierlevel.HandsHaveModifierlevel(attacker, this.getId())) {

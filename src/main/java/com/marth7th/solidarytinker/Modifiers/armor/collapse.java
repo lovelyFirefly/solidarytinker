@@ -12,12 +12,7 @@ public class collapse extends ArmorModifier {
     public boolean havenolevel() {
         return true;
     }
-
-    public collapse() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
-
-    private void livingHurtEvent(LivingHurtEvent event) {
+    public void LivingHurtEvent(LivingHurtEvent event) {
         Entity enemy=  event.getSource().getEntity();
         LivingEntity entity=event.getEntity();
         if (modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.COLLAPSE_STATIC_MODIFIER.getId())>0){

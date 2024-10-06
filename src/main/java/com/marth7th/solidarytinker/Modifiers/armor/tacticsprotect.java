@@ -25,11 +25,9 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import java.util.List;
 
 public class tacticsprotect extends ArmorModifier {
-    public tacticsprotect() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
 
-    public void livingHurtEvent(LivingHurtEvent event) {
+
+    public void LivingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
         if (enemy != null && entity != null) {

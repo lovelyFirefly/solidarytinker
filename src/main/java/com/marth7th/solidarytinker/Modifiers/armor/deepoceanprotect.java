@@ -16,11 +16,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class deepoceanprotect extends ArmorModifier {
-    public deepoceanprotect() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
 
-    private void livingHurtEvent(LivingHurtEvent event) {
+    public void LivingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         if (entity instanceof Player player) {
             int a = modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.DEEPOCEANPROTECT_STATIC_MODIFIER.getId());

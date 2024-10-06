@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.mekanism;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import com.marth7th.solidarytinker.util.method.modifierlevel;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,14 +21,11 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 import java.util.List;
 
 public class darkstar extends BattleModifier {
-    public darkstar() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
     public int a =0;
-    private void livingHurtEvent(LivingHurtEvent event) {
+    public void LivingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity=event.getEntity();
         if(entity instanceof Player player){
-            if(event.getAmount()>player.getHealth()){
+            if(event.getAmount()>player.getHealth()&& modifierlevel.getMainhandModifierlevel(player,this.getId())>0){
                 a=a+1;
             }
         }

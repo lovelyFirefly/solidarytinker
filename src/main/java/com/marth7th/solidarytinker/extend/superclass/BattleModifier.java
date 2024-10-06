@@ -6,6 +6,9 @@ import com.marth7th.solidarytinker.extend.interfaces.aboutbuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -20,12 +23,23 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
     public BattleModifier() {
     }
 
+
     protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
         this.initattackinterface(builder);
         this.initbuilderinterface(builder);
         this.initarrowinterface(builder);
         builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
         super.registerHooks(builder);
+    }
+    {
+        MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
+    }
+
+    public void LivingHurtEvent(LivingHurtEvent event) {
+    }
+    public void LivingAttackEvent(LivingAttackEvent event) {
+
     }
 
     public boolean havenolevel() {

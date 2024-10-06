@@ -31,13 +31,7 @@ public class reliable extends BattleModifier {
     public boolean havenolevel() {
         return true;
     }
-
-
-    public reliable() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
-
-    private void livingHurtEvent(LivingHurtEvent event) {
+    public void LivingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
         if (entity instanceof Player player) {

@@ -16,15 +16,12 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class sandstrom extends ArmorModifier {
-    public sandstrom() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
     public boolean havenolevel() {
         return true;
     }
 
 
-    private void livingHurtEvent(LivingHurtEvent event) {
+    public void LivingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
         if (modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.SANDSTROM_STATIC_MODIFIER.getId()) > 0) {

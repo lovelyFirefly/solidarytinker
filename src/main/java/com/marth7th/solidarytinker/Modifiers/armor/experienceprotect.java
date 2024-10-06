@@ -8,11 +8,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 public class experienceprotect extends ArmorModifier {
-    public experienceprotect() {
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurtEvent);
-    }
-
-    private void livingHurtEvent(LivingHurtEvent event) {
+    public void LivingHurtEvent(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         if(modifierlevel.getTotalArmorModifierlevel(entity,this.getId())>0){
             if(entity instanceof Player player){

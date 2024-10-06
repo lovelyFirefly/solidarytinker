@@ -13,11 +13,7 @@ public class clean extends ArmorModifier {
         return true;
     }
 
-    public clean() {
-        MinecraftForge.EVENT_BUS.addListener(this::RemoveEffectEvent);
-    }
-
-    private void RemoveEffectEvent(MobEffectEvent.Applicable event) {
+    public void MobEffectEvent(MobEffectEvent.Applicable event) {
         LivingEntity entity = event.getEntity();
         if (modifierlevel.getTotalArmorModifierlevel(entity, solidarytinkerModifiers.CLEAN_STATIC_MODIFIER.getId()) > 0) {
             if (!event.getEffectInstance().getEffect().isBeneficial())

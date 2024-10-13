@@ -16,5 +16,11 @@ public class solidarytinkerTab {
             return new ItemStack(solidarytinkerItem.trident.get());
         }
     };
+    public static final CreativeModeTab CASTS = new CreativeModeTab("solidarytinker.tool") {
+        @Override
+        public  ItemStack makeIcon() {
+            return new ItemStack(solidarytinkerItem.trident_head_cast.get());
+        }
+    };
     public solidarytinkerTab(){}
 }

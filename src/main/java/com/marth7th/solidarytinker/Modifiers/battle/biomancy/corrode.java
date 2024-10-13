@@ -1,11 +1,10 @@
 package com.marth7th.solidarytinker.Modifiers.battle.biomancy;
 
+
 import com.github.elenterius.biomancy.init.ModMobEffects;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
@@ -27,7 +26,6 @@ public class corrode extends BattleModifier {
             context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.BLEED.get(),100,modifier.getLevel()));
         }
     }
-
     @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
         if(enabled&target!=null){

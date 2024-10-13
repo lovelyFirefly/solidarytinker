@@ -21,6 +21,7 @@ import slimeknights.tconstruct.library.modifiers.hook.behavior.AttributesModifie
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ProcessLootModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ToolDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.VolatileDataModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
@@ -37,9 +38,9 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierHook, ConditionalStatModifierHook, InventoryTickModifierHook, ToolDamageModifierHook, TooltipModifierHook , VolatileDataModifierHook , GeneralInteractionModifierHook , ProcessLootModifierHook {
+public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierHook, ConditionalStatModifierHook, InventoryTickModifierHook, ToolDamageModifierHook, TooltipModifierHook , VolatileDataModifierHook , GeneralInteractionModifierHook , ProcessLootModifierHook , ModifierRemovalHook {
     default void initbuilderinterface(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this,ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT,ModifierHooks.PROCESS_LOOT,ModifierHooks.VOLATILE_DATA);
+        hookBuilder.addHook(this,ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT,ModifierHooks.PROCESS_LOOT,ModifierHooks.VOLATILE_DATA,ModifierHooks.REMOVE);
     }
     default void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
     }

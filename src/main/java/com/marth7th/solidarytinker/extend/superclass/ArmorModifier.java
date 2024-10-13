@@ -3,14 +3,16 @@ package com.marth7th.solidarytinker.extend.superclass;
 import com.marth7th.solidarytinker.extend.interfaces.aboutarmor;
 import com.marth7th.solidarytinker.extend.interfaces.aboutbuilder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
-import net.minecraftforge.eventbus.api.Event;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -40,10 +42,21 @@ public class ArmorModifier extends Modifier implements aboutarmor,DamageBlockMod
     public void MobEffectEvent(MobEffectEvent.Applicable event) {
     }
 
+    @Override
+    public Component getDisplayName(IToolStackView tool, ModifierEntry entry) {
+        return super.getDisplayName(tool, entry);
+    }
+
     public void LivingAttackEvent(LivingAttackEvent event) {
     }
 
     public void LivingHurtEvent(LivingHurtEvent event) {
+        if(event.getSource().getEntity() instanceof LivingEntity entity&&event.getEntity() instanceof Player player){
+            this.LivingHurt(event,entity,player);
+        }
+    }
+
+    public void LivingHurt(LivingHurtEvent event, LivingEntity entity, Player player) {
     }
 
     public boolean hidden(){return false;}
@@ -63,5 +76,11 @@ public class ArmorModifier extends Modifier implements aboutarmor,DamageBlockMod
         builder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT);
     }
     public void processLoot(IToolStackView iToolStackView, ModifierEntry modifierEntry, List<ItemStack> list, LootContext lootContext) {
+    }
+
+    @Nullable
+    @Override
+    public Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
+        return null;
     }
 }

@@ -9,6 +9,8 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.tconstruct.common.registration.CastItemObject;
+import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -17,12 +19,11 @@ import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 public class solidarytinkerItem {
     public solidarytinkerItem(){}
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "solidarytinker");
+    public static final ItemDeferredRegisterExtension OTHER_ITEM=new ItemDeferredRegisterExtension("solidarytinker");
     private static final Item.Properties TOOL = (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(1);
-    private static final Item.Properties CASTS=(new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
+    private static final Item.Properties CASTS=(new Item.Properties()).tab(solidarytinkerTab.CASTS).stacksTo(64);
     private static final Item.Properties PART= (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
-    public static final RegistryObject<Item> trident_head_cast=ITEMS.register("trident_head_cast", () -> new Item(CASTS.stacksTo(64).tab(solidarytinkerTab.TOOL)));
-    public static final RegistryObject<Item> trident_head_sand_cast=ITEMS.register("trident_head_sand_cast", () -> new Item(CASTS.stacksTo(64).tab(solidarytinkerTab.TOOL)));
-    public static final RegistryObject<Item> trident_head_red_sand_cast=ITEMS.register("trident_head_red_sand_cast", () -> new Item(CASTS.stacksTo(64).tab(solidarytinkerTab.TOOL)));
+    public static final CastItemObject trident_head_cast=OTHER_ITEM.registerCast("trident_head_cast",CASTS);
     public static final RegistryObject<ToolPartItem> TRIDENT_HEAD=ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
     public static final RegistryObject<ModifiableItem> energychain_gun=ITEMS.register("energychain_gun", () -> new energychain_gun(TOOL, toolDefinitions.ENERGYCHAIN_GUN));
     public static final RegistryObject<ModifiableItem> trident=ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));

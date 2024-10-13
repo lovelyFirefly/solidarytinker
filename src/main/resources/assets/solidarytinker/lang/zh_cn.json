@@ -14,6 +14,7 @@
 
 
   "effect.solidarytinker.bloodanger": "红温",
+  "effect.solidarytinker.seriously_injured": "重伤",
 
   "_null_": "匠魂部分",
 
@@ -126,7 +127,7 @@
 
   "modifier.solidarytinker.deepoceanprotect": "深海加护",
   "modifier.solidarytinker.deepoceanprotect.flavor": "深洋之下，如有神助",
-  "modifier.solidarytinker.deepoceanprotect.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】 * 词条等级）获得回声点数，回声点数会转化为你的伤害减免，至高90%,每搁12秒受击会获得最大生命值50% * 词条等级的伤害吸收，可以叠加，当数值回声点数的十分之一时不再触发",
+  "modifier.solidarytinker.deepoceanprotect.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】 * 词条等级）获得回声点数，回声点数会转化为你的伤害减免，每10点回声增加1%伤害减免。至高90%,每搁12秒受击会获得最大生命值50% * 词条等级的伤害吸收，可以叠加，当数值回声点数的十分之一时不再触发",
 
 
 
@@ -222,6 +223,11 @@
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",
+
+
+  "modifier.solidarytinker.injured": "重伤",
+  "modifier.solidarytinker.injured.flavor": "若敢来犯，定叫你有来无回",
+  "modifier.solidarytinker.injured.description":"攻击目标施加10秒等同于词条等级的重伤效果，每级重伤效果减少目标30%的回复能力",
 
 
   "modifier.solidarytinker.seabless": "海神赐福",

@@ -48,10 +48,10 @@ public class deepoceanecho extends BattleModifier {
         if (player != null) {
             int level = modifier.getLevel();
             float a = Math.round((player.getMaxHealth() * 0.2f + player.getArrowCount() * 0.6f +player.totalExperience * 0.0001f));
-            list.add(applyStyle(Component.translatable(icefantasy.GetColor("当前回声点数")).append(icefantasy.GetColor(a + ""))));
-            list.add(applyStyle(Component.translatable(icefantasy.GetColor("每点回声所增幅的伤害")).append(icefantasy.GetColor(level * 0.5f +"攻击力"))));
-            list.add(applyStyle(Component.translatable(icefantasy.GetColor("实际提升的总伤害")).append(icefantasy.GetColor((level * 0.5f) * a + "攻击力"))));
-            list.add(applyStyle(Component.translatable(icefantasy.GetColor("你已是完全之龙，足以审判众神")).append(icefantasy.GetColor("你已经掌握"+level+"层权能"))));
+            list.add(applyStyle(Component.literal(icefantasy.GetColor("当前回声点数")).append(icefantasy.GetColor(a + ""))));
+            list.add(applyStyle(Component.literal(icefantasy.GetColor("每点回声所增幅的伤害")).append(icefantasy.GetColor(level * 0.5f +"攻击力"))));
+            list.add(applyStyle(Component.literal(icefantasy.GetColor("实际提升的总伤害")).append(icefantasy.GetColor((level * 0.5f) * a + "攻击力"))));
+            list.add(applyStyle(Component.literal(icefantasy.GetColor("你已是完全之龙，足以审判众神")).append(icefantasy.GetColor("你已经掌握"+level+"层权能"))));
         }
     }
 }

@@ -95,7 +95,8 @@
 
     "riptide":  "#5d83ff",
     "crcs":  "#2344ff",
-    "seabless":  "#7dd0c4"
+    "seabless":  "#7dd0c4",
+    "injured":  "#ca4cff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

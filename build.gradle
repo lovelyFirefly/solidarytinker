@@ -24,7 +24,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 
 
-version = '0.9.5.release'
+version = '0.9.6.release'
 group = 'com.marth7th.solidarytinker' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'solidarytinker'
 

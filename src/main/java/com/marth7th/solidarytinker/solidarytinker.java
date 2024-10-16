@@ -39,10 +39,10 @@ public class solidarytinker {
          *几个注册表都在这边，有的联动所以需要前置
          */
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         eventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         solidarytinkerItem.ITEMS.register(eventBus);
+        solidarytinkerItem.OTHER_ITEM.register(eventBus);
         solidarytinkerModifiers.MODIFIERS.register(eventBus);
         solidarytinkerFluid.FLUIDS.register(eventBus);
         solidarytinkerBlock.BLOCK.register(eventBus);

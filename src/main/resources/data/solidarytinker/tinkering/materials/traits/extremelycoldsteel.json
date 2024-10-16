@@ -1,0 +1,46 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "solidarytinker:extremelycold",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:brittle",
+        "level": 1
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "name": "solidarytinker:extremelycold",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:brittle",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "solidarytinker:coldfetters",
+        "level": 1
+      }
+    ],
+    "tinkersinnovation:shield": [
+      {
+        "name": "solidarytinker:coldfetters",
+        "level": 1
+      }
+    ],
+    "tinkers_ingenuity:laser_gun": [
+      {
+        "name": "solidarytinker:extremelycold",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:brittle",
+        "level": 1
+      }
+    ]
+  }
+}

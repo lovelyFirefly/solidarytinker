@@ -210,16 +210,6 @@
   "modifier.solidarytinker.elasticity.description":"虽然他是软的，但是它会咬住目标，对目标反噬50%原伤害结果，每提升1词条等级则附加原伤害 * 0.5",
 
 
-
-  "material.solidarytinker.csdy": "csdy",
-  "material.solidarytinker.csdy.flavor": "§k csdy存在于万物之中",
-  "material.solidarytinker.csdy.encyclopedia": "csdy是§k一个善变的人 §7csdy也是§k一个魔怔的人 \n§4他在注视着你 ",
-
-  "modifier.solidarytinker.variety": "§k 其实那一天，我什么都没写",
-  "modifier.solidarytinker.variety.flavor": "§k csdy存在于万物之中",
-  "modifier.solidarytinker.variety.description":"§k 其实那一天，我什么都没写",
-
-
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
   "modifier.solidarytinker.protonation.description":"增加全额的2024护甲韧性和护甲值",

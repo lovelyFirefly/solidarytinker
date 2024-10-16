@@ -103,6 +103,31 @@
   "fluid_type.solidarytinker.molten_rainbow": "熔融彩虹",
 
 
+  "item.solidarytinker.extremelycoldsteel_ingot": "超低温钢锭",
+  "item.solidarytinker.molten_extremelycoldsteel_bucket": "熔融超低温钢桶",
+  "fluid_type.solidarytinker.molten_extremelycoldsteel": "熔融超低温钢",
+
+
+  "material.solidarytinker.extremelycoldsteel": "超低温钢",
+  "material.solidarytinker.extremelycoldsteel.flavor": "冷锻的材料，质地较脆",
+  "material.solidarytinker.extremelycoldsteel.encyclopedia": "一只可爱的狐",
+
+
+  "modifier.solidarytinker.extremelycold": "极寒",
+  "modifier.solidarytinker.extremelycold.flavor": "凛冬将至",
+  "modifier.solidarytinker.extremelycold.description":"攻击会有10%概率对目标施加减速效果，如果目标已经有减速效果则百分百在原有基础上延长10秒。",
+
+
+  "modifier.solidarytinker.brittle": "脆质化",
+  "modifier.solidarytinker.brittle.flavor": "优雅冻人",
+  "modifier.solidarytinker.brittle.description":"目标缓慢效果时长会极大影响你对其的伤害，在其剩余时间小于20秒时候你的伤害会降低80%，20-40秒时候会提升20%伤害。如果目标缓慢时长大于一分钟还会被额外造成其最大生命12%的伤害",
+
+
+  "modifier.solidarytinker.coldfetters": "寒冰血脉",
+  "modifier.solidarytinker.coldfetters.flavor": "绝对零度！",
+  "modifier.solidarytinker.coldfetters.description":"如果攻击你的目标带有缓慢效果，你此次受到伤害降低10% * 词条等级。代价是当你收到的无来源伤害增加10%",
+
+
   "stat.tconstruct.harvest_tier.solidarytinker.momo": "牢墨",
   "item.solidarytinker.icefantasy_ingot": "墨冰锭",
   "tooltip.icefantasy_ingot.desc1": "自冻洋深处",
@@ -209,15 +234,6 @@
   "modifier.solidarytinker.elasticity.flavor": "一拳打在棉花上",
   "modifier.solidarytinker.elasticity.description":"虽然他是软的，但是它会咬住目标，对目标反噬50%原伤害结果，每提升1词条等级则附加原伤害 * 0.5",
 
-
-
-  "material.solidarytinker.csdy": "csdy",
-  "material.solidarytinker.csdy.flavor": "§k csdy存在于万物之中",
-  "material.solidarytinker.csdy.encyclopedia": "csdy是§k一个善变的人 §7csdy也是§k一个魔怔的人 \n§4他在注视着你 ",
-
-  "modifier.solidarytinker.variety": "§k 其实那一天，我什么都没写",
-  "modifier.solidarytinker.variety.flavor": "§k csdy存在于万物之中",
-  "modifier.solidarytinker.variety.description":"§k 其实那一天，我什么都没写",
 
 
   "modifier.solidarytinker.protonation": "质子化",

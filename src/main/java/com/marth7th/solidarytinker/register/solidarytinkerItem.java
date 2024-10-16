@@ -23,8 +23,8 @@ public class solidarytinkerItem {
     private static final Item.Properties TOOL = (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(1);
     private static final Item.Properties CASTS=(new Item.Properties()).tab(solidarytinkerTab.CASTS).stacksTo(64);
     private static final Item.Properties PART= (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
-    public static final CastItemObject trident_head_cast=OTHER_ITEM.registerCast("trident_head_cast",CASTS);
-    public static final RegistryObject<ToolPartItem> TRIDENT_HEAD=ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
+    public static final CastItemObject trident_head_cast=OTHER_ITEM.registerCast("trident_head",CASTS);
+    public static final RegistryObject<ToolPartItem> trident_head=ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
     public static final RegistryObject<ModifiableItem> energychain_gun=ITEMS.register("energychain_gun", () -> new energychain_gun(TOOL, toolDefinitions.ENERGYCHAIN_GUN));
     public static final RegistryObject<ModifiableItem> trident=ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));
 
@@ -40,5 +40,6 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> damascus_steel_ingot = ITEMS.register("damascus_steel_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> saint_chief_ingot = ITEMS.register("saint_chief_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> experience_steel_ingot = ITEMS.register("experience_steel_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> extremelycoldsteel_ingot = ITEMS.register("extremelycoldsteel_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block",( ) -> new BlockItem(solidarytinkerBlock.dwarf_block.get(),new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
 }

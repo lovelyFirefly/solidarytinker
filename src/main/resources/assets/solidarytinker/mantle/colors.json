@@ -10,7 +10,8 @@
     "magicuranium":  "#a6fc81",
     "rainbow":  "#ffd778",
     "saint_chief":  "#a58afc",
-    "takeru":  "#848484"
+    "takeru":  "#848484",
+    "extremelycoldsteel":  "#4f9fe5"
   },
 
 
@@ -92,6 +93,16 @@
     "voraciousfox":  "#fef4e3",
 
     "anglefox":  "#fef4e3",
+
+
+
+    "_超低温钢_": null,
+    "extremelycold":  "#4f9fe5",
+    "brittle":  "#4f9fe5",
+
+    "coldfetters":  "#4f9fe5",
+
+
 
     "riptide":  "#5d83ff",
     "crcs":  "#2344ff",

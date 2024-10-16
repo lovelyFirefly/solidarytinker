@@ -16,12 +16,12 @@
     "tconstruct:limb": {
       "durability": 2915,
       "draw_speed": 4.5,
-      "velocity": 5.6,
+      "velocity": 4.1,
       "accuracy": 1.0
     },
     "tconstruct:grip": {
       "durability": 2.6,
-      "accuracy": 2.0,
+      "accuracy": 1.0,
       "melee_damage": 5.0
     },
     "tconstruct:maille": {},

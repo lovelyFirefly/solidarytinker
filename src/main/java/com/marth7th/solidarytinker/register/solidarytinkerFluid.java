@@ -24,6 +24,7 @@ public class solidarytinkerFluid{
     public static final FluidObject<ForgeFlowingFluid> molten_bloodmeat = register("molten_bloodmeat", 860);//半熔融血肉混合物
     public static final FluidObject<ForgeFlowingFluid> molten_kemomimi = register("molten_kemomimi", 860);//熔融kemomimi
     public static final FluidObject<ForgeFlowingFluid> molten_takeru = register("molten_takeru", 860);//熔融takeru
+    public static final FluidObject<ForgeFlowingFluid> molten_extremelycoldsteel = register("molten_extremelycoldsteel", 860);//熔融takeru
 
 
 

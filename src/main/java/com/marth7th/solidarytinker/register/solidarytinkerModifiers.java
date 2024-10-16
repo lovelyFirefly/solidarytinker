@@ -7,9 +7,7 @@ import com.marth7th.solidarytinker.Modifiers.battle.common.*;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.release;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.darkstar;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.removeradition;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.superblazing;
+import com.marth7th.solidarytinker.Modifiers.battle.mekanism.*;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -55,6 +53,9 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<seabless> SEABLESS_STATIC_MODIFIER=MODIFIERS.register("seabless", seabless::new);   //海神赐福
     public static final StaticModifier<riptide> RIPTIDE_STATIC_MODIFIER=MODIFIERS.register("riptide", riptide::new);   //激流
     public static final StaticModifier<crcs> CRCS_STATIC_MODIFIER=MODIFIERS.register("crcs", crcs::new);   //风雨无阻
-    public static final StaticModifier<injured> injuredStaticModifier=MODIFIERS.register("injured", injured::new);   //重伤
+    public static final StaticModifier<injured> INJURED_STATIC_MODIFIER=MODIFIERS.register("injured", injured::new);   //重伤
+    public static final StaticModifier<extremelycold> EXTREMELYCOLD_STATIC_MODIFIER=MODIFIERS.register("extremelycold", extremelycold::new);   //极寒
+    public static final StaticModifier<brittle> BRITTLE_STATIC_MODIFIER=MODIFIERS.register("brittle", brittle::new);   //脆质化
+    public static final StaticModifier<coldfetters> COLDFETTERS_STATIC_MODIFIER=MODIFIERS.register("coldfetters",coldfetters::new);   //寒冰血脉
 
 }

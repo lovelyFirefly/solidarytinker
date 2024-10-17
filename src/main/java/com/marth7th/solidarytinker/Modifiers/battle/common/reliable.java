@@ -15,7 +15,6 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -32,11 +31,9 @@ public class reliable extends BattleModifier {
         return true;
     }
     public void LivingHurtEvent(LivingHurtEvent event) {
-        LivingEntity entity = event.getEntity();
-        LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
-        if (entity instanceof Player player) {
-            if (modifierlevel.HandsHaveModifierlevel(entity, this.getId())) {
-                entity.setArrowCount(entity.getArrowCount() + 1);
+        if (event.getEntity() instanceof Player player) {
+            if (modifierlevel.HandsHaveModifierlevel(player, this.getId())) {
+                player.setArrowCount(player.getArrowCount() + 1);
                 if (etsh) {
                     if (player.getItemBySlot(EquipmentSlot.OFFHAND).is(etshtinkerItems.IONIZED_CANNON.get()) || player.getItemBySlot(EquipmentSlot.MAINHAND).is(etshtinkerItems.IONIZED_CANNON.get())) {
                         event.setAmount(event.getAmount() * 0.5f);
@@ -44,8 +41,8 @@ public class reliable extends BattleModifier {
                 }
                 if (player.getArrowCount() > 10) {
                     if (player.hasEffect(solidarytinkerEffects.bloodanger.get())) {
-                        int effectlevel = entity.getEffect(solidarytinkerEffects.bloodanger.get()).getAmplifier();
-                        int effecttime = entity.getEffect(solidarytinkerEffects.bloodanger.get()).getDuration();
+                        int effectlevel = player.getEffect(solidarytinkerEffects.bloodanger.get()).getAmplifier();
+                        int effecttime = player.getEffect(solidarytinkerEffects.bloodanger.get()).getDuration();
                         player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), effecttime + 100, effectlevel));
                     } else if (!player.hasEffect(solidarytinkerEffects.bloodanger.get())) {
                         player.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 100, 0));

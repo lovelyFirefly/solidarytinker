@@ -6,13 +6,9 @@ import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.fml.ModList;
-import org.jetbrains.annotations.NotNull;
 
 public class absolutejustice extends ArmorModifier {
     @Override
@@ -23,9 +19,11 @@ public class absolutejustice extends ArmorModifier {
     boolean TN = ModList.get().isLoaded("tinkersinnovation");
 
     public void LivingHurtEvent( LivingHurtEvent event) {
-        if (modifierlevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
-            if (event.getSource().getEntity() == null) {
-                event.setCanceled(true);
+        if(event.getEntity()!=null){
+            if (modifierlevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
+                if (event.getSource().getEntity() == null) {
+                    event.setCanceled(true);
+                }
             }
         }
     }

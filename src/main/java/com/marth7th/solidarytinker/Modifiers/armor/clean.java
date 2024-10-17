@@ -13,10 +13,11 @@ public class clean extends ArmorModifier {
     }
 
     public void MobEffectEvent(MobEffectEvent.Applicable event) {
-        LivingEntity entity = event.getEntity();
-        if (modifierlevel.EquipHasModifierlevel(entity, solidarytinkerModifiers.CLEAN_STATIC_MODIFIER.getId())) {
-            if (!event.getEffectInstance().getEffect().isBeneficial())
-                event.setResult(Event.Result.DENY);
+        if(event.getEntity()!=null&&event.getEntity()instanceof LivingEntity ){
+            if (modifierlevel.EquipHasModifierlevel(event.getEntity(), solidarytinkerModifiers.CLEAN_STATIC_MODIFIER.getId())) {
+                if (!event.getEffectInstance().getEffect().isBeneficial())
+                    event.setResult(Event.Result.DENY);
+            }
         }
     }
 }

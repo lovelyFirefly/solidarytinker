@@ -1,12 +1,18 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "tinkerscalibration"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
   "type": "tconstruct:alloy",
   "inputs": [
     { "name": "tinkerscalibration:dragonbreath",
       "amount": 200 },
-    { "name": "industrialforegoing:biofuel",
-      "amount": 1000 },
-    { "name": "thermal:refined_fuel",
-      "amount": 500 },
     { "name": "mekanism:ethene",
       "amount": 1000 },
     { "name": "mekanismgenerators:fusion_fuel",

@@ -9,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
@@ -23,10 +22,12 @@ import java.util.List;
 public class darkstar extends BattleModifier {
     public int a =0;
     public void LivingHurtEvent(LivingHurtEvent event) {
-        LivingEntity entity=event.getEntity();
-        if(entity instanceof Player player){
-            if(event.getAmount()>player.getHealth()&& modifierlevel.getMainhandModifierlevel(player,this.getId())>0){
-                a=a+1;
+        if(event.getEntity()!=null){
+            LivingEntity entity=event.getEntity();
+            if(entity instanceof Player player){
+                if(event.getAmount()>player.getHealth()&& modifierlevel.getMainhandModifierlevel(player,this.getId())>0){
+                    a=a+1;
+                }
             }
         }
     }

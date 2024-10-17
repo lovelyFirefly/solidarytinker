@@ -13,7 +13,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -28,9 +27,8 @@ public class tacticsprotect extends ArmorModifier {
 
 
     public void LivingHurtEvent(LivingHurtEvent event) {
-        LivingEntity entity = event.getEntity();
-        LivingEntity enemy = (LivingEntity) event.getSource().getEntity();
-        if (enemy != null && entity != null) {
+        if (event.getSource().getEntity() != null && event.getEntity() != null&&event.getSource().getEntity() instanceof LivingEntity) {
+            LivingEntity entity = event.getEntity();
             if (entity instanceof Player player) {
                 var armor = new ItemStack[]{entity.getItemBySlot(EquipmentSlot.HEAD), entity.getItemBySlot(EquipmentSlot.CHEST), entity.getItemBySlot(EquipmentSlot.LEGS), entity.getItemBySlot(EquipmentSlot.FEET)};
                 int modifierslevel = modifierlevel.getTotalArmorModifierlevel(player,solidarytinkerModifiers.TACTICSPROTECT_STATIC_MODIFIER.getId());

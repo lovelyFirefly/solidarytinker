@@ -20,12 +20,14 @@ public class injured extends BattleModifier {
     }
 
     public void LivingHealEvent(LivingHealEvent event) {
-        if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
-            int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier();
-            if (level <= 3) {
-                event.setAmount(event.getAmount() * 1 - 0.3f * level);
-            } else
-                event.setCanceled(true);
+        if(event.getEntity()!=null){
+            if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
+                int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier();
+                if (level <= 3) {
+                    event.setAmount(event.getAmount() * 1 - 0.3f * level);
+                } else
+                    event.setCanceled(true);
+            }
         }
     }
 

@@ -16,9 +16,9 @@ public class ancientocean extends BattleModifier {
     }
 
     public void LivingAttackEvent(LivingAttackEvent event) {
-        if(event.getEntity() instanceof Player attacker){
-            if (attacker.getHealth() > attacker.getMaxHealth() * 0.8f && modifierlevel.HandsHaveModifierlevel(attacker, this.getId())) {
-                event.getSource().bypassArmor().bypassMagic().bypassInvul().bypassEnchantments();
+        if(event.getSource().getEntity() instanceof Player player){
+            if(modifierlevel.getMainhandModifierlevel(player,this.getId())>0){
+                event.getSource().bypassArmor().bypassInvul().bypassMagic().bypassEnchantments();
             }
         }
     }

@@ -23,7 +23,7 @@ public class neverend extends BattleModifier {
         if (context.getLivingTarget() != null) {
             if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())) {
                 int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()), context.getLivingTarget().getMaxHealth() * 0.15f * effectlevel);
+                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()), context.getLivingTarget().getMaxHealth() * 0.15f * (effectlevel+1));
             }
         }
     }
@@ -33,7 +33,7 @@ public class neverend extends BattleModifier {
         if (attacker.hasEffect(solidarytinkerEffects.bloodanger.get())) {
             int effectlevel = (attacker.getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
             target.invulnerableTime = 0;
-            target.hurt(DamageSource.playerAttack((Player) attacker), target.getMaxHealth() * 0.15f * effectlevel);
+            target.hurt(DamageSource.playerAttack((Player) attacker), target.getMaxHealth() * 0.15f * effectlevel+1);
             arrow.setBaseDamage(arrow.getBaseDamage());
         }
     }

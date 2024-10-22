@@ -49,7 +49,7 @@
 
   "modifier.solidarytinker.sandstrom": "沙海的守望者",
   "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
-  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每有一件盔甲不在冷却都会在上一件的基础上获得30%免伤",
+  "modifier.solidarytinker.sandstrom.description":"在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里，受击遁入隐身状态，攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每有一件盔甲不在冷却都会在上一件的基础上获得40%免伤",
 
   "modifier.solidarytinker.absolutejustice": "绝对正义",
   "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
@@ -289,7 +289,9 @@
   "modifier.solidarytinker.collapse.flavor": "所谓永恒，对于恒星漫长生命周期不过一瞬",
   "modifier.solidarytinker.collapse.description":"攻击你的敌人会陷入永久状态的燃烧，并且如果目标处于燃烧状态，则对你的伤害降低至20%",
 
-
+  "modifier.solidarytinker.aaa": "清除",
+  "modifier.solidarytinker.aaa.flavor": "测试用词条",
+  "modifier.solidarytinker.aaa.description":"用于remove一些出了bug的实体等",
 
   "item.solidarytinker.magicuranium_ingot": "魔力铀锭",
   "item.solidarytinker.molten_magicuranium_bucket": "熔融魔力铀桶",

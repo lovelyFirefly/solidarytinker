@@ -33,7 +33,7 @@ public class reliable extends BattleModifier {
     public void LivingHurtEvent(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (modifierlevel.HandsHaveModifierlevel(player, this.getId())) {
-                player.setArrowCount(player.getArrowCount() + 1);
+                player.setArrowCount(player.getArrowCount() + 2);
                 if (etsh) {
                     if (player.getItemBySlot(EquipmentSlot.OFFHAND).is(etshtinkerItems.IONIZED_CANNON.get()) || player.getItemBySlot(EquipmentSlot.MAINHAND).is(etshtinkerItems.IONIZED_CANNON.get())) {
                         event.setAmount(event.getAmount() * 0.5f);
@@ -59,17 +59,9 @@ public class reliable extends BattleModifier {
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if (attacker instanceof Player player) {
-            livingTarget.invulnerableTime = 0;
-            if (livingTarget.getHealth() >= livingTarget.getMaxHealth() * 0.5f && player.getArrowCount() < 20) {
-                return damage * 1 + (2f * 0.05f * player.getArrowCount());
-            } else if (attacker.getArrowCount() >= 20 && livingTarget.getMaxHealth() > livingTarget.getMaxHealth() * 0.5f) {
-                attacker.setArrowCount(0);
-                return damage * 1 + (145 * 2);
-            } else if (livingTarget.getHealth() < livingTarget.getMaxHealth() * 0.5f && player.getArrowCount() < 20) {
-                return damage * 1 + (0.05f * player.getArrowCount());
-            } else if (livingTarget.getHealth() < livingTarget.getMaxHealth() * 0.5f && player.getArrowCount() >= 20) {
-                return damage * 145f;
+        if(livingTarget!=null) {
+            if (livingTarget.getHealth() >livingTarget.getMaxHealth() * 0.5f){
+                return damage * 2f;
             }
         }
         return damage;
@@ -96,17 +88,8 @@ public class reliable extends BattleModifier {
 
     @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
-        if (attacker instanceof Player player) {
-            if (target.getHealth() >= target.getMaxHealth() * 0.5f && player.getArrowCount() < 20) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * 1 + (2f * 0.05f * player.getArrowCount()));
-            } else if (attacker.getArrowCount() >= 20 && target.getMaxHealth() > target.getMaxHealth() * 0.5f) {
-                attacker.setArrowCount(0);
-                arrow.setBaseDamage(arrow.getBaseDamage() * 1 + (145 * 2));
-            } else if (target.getHealth() < target.getMaxHealth() * 0.5f && player.getArrowCount() < 20) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * 1 + (0.05f * player.getArrowCount()));
-            } else if (target.getHealth() < target.getMaxHealth() * 0.5f && player.getArrowCount() >= 20) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * 145f);
-            }
+        if(target.getHealth()>target.getMaxHealth() * 0.5f){
+            arrow.setBaseDamage(arrow.getBaseDamage() *2f);
         }
     }
 

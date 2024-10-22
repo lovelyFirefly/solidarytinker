@@ -4,6 +4,7 @@ import com.marth7th.solidarytinker.Modifiers.armor.*;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.corrode;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.swell;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.aaa;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.release;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
@@ -57,5 +58,6 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<extremelycold> EXTREMELYCOLD_STATIC_MODIFIER=MODIFIERS.register("extremelycold", extremelycold::new);   //极寒
     public static final StaticModifier<brittle> BRITTLE_STATIC_MODIFIER=MODIFIERS.register("brittle", brittle::new);   //脆质化
     public static final StaticModifier<coldfetters> COLDFETTERS_STATIC_MODIFIER=MODIFIERS.register("coldfetters",coldfetters::new);   //寒冰血脉
+    public static final StaticModifier<aaa> AAA_STATIC_MODIFIER=MODIFIERS.register("aaa",aaa::new);   //寒冰血脉
 
 }

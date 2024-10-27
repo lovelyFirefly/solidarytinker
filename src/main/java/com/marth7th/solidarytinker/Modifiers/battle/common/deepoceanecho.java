@@ -23,7 +23,7 @@ public class deepoceanecho extends BattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if(attacker instanceof Player player){
-        float a = (player.getMaxHealth() * 0.2f * player.getArmorValue() * 0.6f *Math.max(player.totalExperience * 0.001f,1))*0.5f*level;
+        float a = (Math.max(player.getMaxHealth() * 0.2f,1) * Math.max(player.getArmorValue() * 0.6f,1) *Math.max(player.totalExperience * 0.001f,1))*0.5f*level;
         if(livingTarget instanceof Player){
             return damage * 0f;
         }
@@ -46,7 +46,7 @@ public class deepoceanecho extends BattleModifier {
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (player != null) {
             int level = modifier.getLevel();
-            float a = player.getMaxHealth() * 0.2f * player.getArmorValue() * 0.6f *Math.max(player.totalExperience * 0.001f,1);
+            float a = (Math.max(player.getMaxHealth() * 0.2f,1) * Math.max(player.getArmorValue() * 0.6f,1) *Math.max(player.totalExperience * 0.001f,1))*0.5f*level;
             list.add(applyStyle(Component.literal(icefantasy.GetColor("当前回声点数")).append(icefantasy.GetColor(a + ""))));
             list.add(applyStyle(Component.literal(icefantasy.GetColor("每点回声所增幅的伤害")).append(icefantasy.GetColor(level * 0.5f +"攻击力"))));
             list.add(applyStyle(Component.literal(icefantasy.GetColor("实际提升的总伤害")).append(icefantasy.GetColor((level * 0.5f) * a + "攻击力"))));

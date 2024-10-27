@@ -26,6 +26,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 version = '0.9.7a.fix'
 group = 'com.marth7th.solidarytinker' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'solidarytinker'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -47,7 +48,7 @@ minecraft {
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'official', version: '1.19.2'
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.

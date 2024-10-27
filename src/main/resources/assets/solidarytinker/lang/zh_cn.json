@@ -36,7 +36,7 @@
 
   "modifier.solidarytinker.neverend": "永不休止",
   "modifier.solidarytinker.neverend.flavor": "bro从来不会红温的，对吧",
-  "modifier.solidarytinker.neverend.description":"当你自己生命值低于30%时获得1级红温效果，拥有此状态时候，每级红温效果攻击附带目标最大生命15%的物理伤害",
+  "modifier.solidarytinker.neverend.description":"当你自己生命值低于30%时获得1级红温效果，拥有此状态时候，每级红温效果攻击附带目标最大生命20%的物理伤害",
 
   "modifier.solidarytinker.reliable": "可靠",
   "modifier.solidarytinker.reliable.flavor": "冲锋陷阵，百战当先",

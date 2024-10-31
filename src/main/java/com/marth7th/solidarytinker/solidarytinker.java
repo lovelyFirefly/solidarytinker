@@ -78,4 +78,7 @@ public class solidarytinker {
         return TinkerDataCapability.TinkerDataKey.of(getResource(name));
 
     }
+    public static String makeDescriptionId(String type, String name) {
+        return type + ".solidarytinker." + name;
+    }
 }

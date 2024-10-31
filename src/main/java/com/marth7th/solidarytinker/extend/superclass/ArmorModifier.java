@@ -37,9 +37,13 @@ public class ArmorModifier extends Modifier implements aboutarmor,DamageBlockMod
         MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
         MinecraftForge.EVENT_BUS.addListener(this::MobEffectEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::WhenEffectRemove);
     }
 
     public void MobEffectEvent(MobEffectEvent.Applicable event) {
+    }
+
+    public void WhenEffectRemove(MobEffectEvent.Remove event) {
     }
 
     @Override

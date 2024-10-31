@@ -21,13 +21,13 @@
   "item.solidarytinker.violane": "青辉石",
 
   "item.solidarytinker.super_dt_bucket": "浓缩超能氘氚燃料桶",
-  "fluid_type.solidarytinker.super_dt": "浓缩超能氘氚燃料",
+  "fluid.solidarytinker.super_dt": "浓缩超能氘氚燃料",
 
 
   "item.solidarytinker.starfall_ingot": "星落钢",
   "tooltip.starfall_ingot.desc1": "呆毛才是本体",
   "item.solidarytinker.molten_starfall_bucket": "熔融星落钢桶",
-  "fluid_type.solidarytinker.molten_starfall": "熔融星落钢",
+  "fluid.solidarytinker.molten_starfall": "熔融星落钢",
 
   "material.solidarytinker.starfall": "§6星§d落§b钢",
   "material.solidarytinker.starfall.flavor": "蜕变，成长...",
@@ -65,7 +65,7 @@
   "item.solidarytinker.takeru": "takeru",
   "tooltip.takeru.desc1": "takeru是一只乖猫猫",
   "item.solidarytinker.molten_takeru_bucket": "熔融takeru桶",
-  "fluid_type.solidarytinker.molten_takeru": "熔融takeru",
+  "fluid.solidarytinker.molten_takeru": "熔融takeru",
 
 
   "material.solidarytinker.takeru": "takeru",
@@ -81,7 +81,7 @@
   "item.solidarytinker.kemo33": "kemo33",
   "tooltip.kemo33.desc1": "是狐哦",
   "item.solidarytinker.molten_kemomimi_bucket": "熔融kemo33桶",
-  "fluid_type.solidarytinker.molten_kemomimi": "熔融kemo33",
+  "fluid.solidarytinker.molten_kemomimi": "熔融kemo33",
 
 
   "material.solidarytinker.kemomimi": "kemo33",
@@ -100,12 +100,12 @@
 
   "item.solidarytinker.rainbow_ingot": "彩虹锭",
   "item.solidarytinker.molten_rainbow_bucket": "熔融彩虹桶",
-  "fluid_type.solidarytinker.molten_rainbow": "熔融彩虹",
+  "fluid.solidarytinker.molten_rainbow": "熔融彩虹",
 
 
   "item.solidarytinker.extremelycoldsteel_ingot": "超低温钢锭",
   "item.solidarytinker.molten_extremelycoldsteel_bucket": "熔融超低温钢桶",
-  "fluid_type.solidarytinker.molten_extremelycoldsteel": "熔融超低温钢",
+  "fluid.solidarytinker.molten_extremelycoldsteel": "熔融超低温钢",
 
 
   "material.solidarytinker.extremelycoldsteel": "超低温钢",
@@ -132,7 +132,7 @@
   "item.solidarytinker.icefantasy_ingot": "墨冰锭",
   "tooltip.icefantasy_ingot.desc1": "自冻洋深处",
   "item.solidarytinker.molten_icefantasy_bucket": "熔融墨冰桶",
-  "fluid_type.solidarytinker.molten_icefantasy": "熔融墨冰",
+  "fluid.solidarytinker.molten_icefantasy": "熔融墨冰",
 
   "material.solidarytinker.icefantasy": "墨冰",
   "material.solidarytinker.icefantasy.flavor": "又有谁曾去了解冻洋深处掩盖千年的秘密呢",
@@ -178,7 +178,7 @@
 
   "item.solidarytinker.experience_steel_ingot": "经验钢锭",
   "item.solidarytinker.molten_experience_steel_bucket": "熔融经验钢桶",
-  "fluid_type.solidarytinker.molten_experience_steel": "熔融经验钢",
+  "fluid.solidarytinker.molten_experience_steel": "熔融经验钢",
 
   "material.solidarytinker.experience_steel": "经验钢",
   "material.solidarytinker.experience_steel.flavor": "充满着经验之力",
@@ -196,7 +196,7 @@
 
   "item.solidarytinker.damascus_steel_ingot": "大马士革钢锭",
   "item.solidarytinker.molten_damascus_steel_bucket": "熔融大马士革钢桶",
-  "fluid_type.solidarytinker.molten_damascus_steel": "熔融大马士革钢",
+  "fluid.solidarytinker.molten_damascus_steel": "熔融大马士革钢",
 
   "material.solidarytinker.damascus_steel": "大马士革钢",
   "material.solidarytinker.damascus_steel.flavor": "蛮横无理且霸道",
@@ -215,7 +215,7 @@
   "tooltip.bloodmeat_ingot.desc1": "殷红色的背后不知道隐藏着多少秘密......",
   "tooltip.bloodmeat_ingot.desc2": "他在注视着你",
   "item.solidarytinker.molten_bloodmeat_bucket": "半熔融血肉混合物桶",
-  "fluid_type.solidarytinker.molten_bloodmeat": "半熔融血肉混合物",
+  "fluid.solidarytinker.molten_bloodmeat": "半熔融血肉混合物",
 
 
   "material.solidarytinker.bloodmeat": "腐坏血肉",
@@ -261,6 +261,15 @@
   "modifier.solidarytinker.crcs.flavor": "海神祝我！",
   "modifier.solidarytinker.crcs.description":"让你不再依赖于水,可以自由冲刺",
 
+  "modifier.solidarytinker.aaa": "清除",
+  "modifier.solidarytinker.aaa.flavor": "测试用词条",
+  "modifier.solidarytinker.aaa.description":"用于remove一些出了bug的实体等",
+
+
+  "modifier.solidarytinker.despoil": "抽筋脱骨",
+  "modifier.solidarytinker.despoil.flavor": "同血肉重铸",
+  "modifier.solidarytinker.despoil.description": "能获取额外的血肉重铸战利品",
+
 
   "_null_": "mekanism部分",
 
@@ -271,7 +280,7 @@
   "tooltip.dwarf_ingot.desc1":"恰如恒星一般炽热且耀眼",
   "block.solidarytinker.dwarf_block": "白矮星物质块",
   "item.solidarytinker.molten_dwarf_bucket": "熔融白矮星物质桶",
-  "fluid_type.solidarytinker.molten_dwarf": "熔融白矮星物质",
+  "fluid.solidarytinker.molten_dwarf": "熔融白矮星物质",
 
   "material.solidarytinker.dwarf": "白矮星",
   "material.solidarytinker.dwarf.flavor": "恒星生命周期的衰老阶段",
@@ -289,13 +298,9 @@
   "modifier.solidarytinker.collapse.flavor": "所谓永恒，对于恒星漫长生命周期不过一瞬",
   "modifier.solidarytinker.collapse.description":"攻击你的敌人会陷入永久状态的燃烧，并且如果目标处于燃烧状态，则对你的伤害降低至20%",
 
-  "modifier.solidarytinker.aaa": "清除",
-  "modifier.solidarytinker.aaa.flavor": "测试用词条",
-  "modifier.solidarytinker.aaa.description":"用于remove一些出了bug的实体等",
-
   "item.solidarytinker.magicuranium_ingot": "魔力铀锭",
   "item.solidarytinker.molten_magicuranium_bucket": "熔融魔力铀桶",
-  "fluid_type.solidarytinker.molten_magicuranium": "熔融魔力铀",
+  "fluid.solidarytinker.molten_magicuranium": "熔融魔力铀",
 
   "material.solidarytinker.magicuranium": "魔力铀",
   "material.solidarytinker.magicuranium.flavor": "帽子才是本体",
@@ -307,5 +312,9 @@
 
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.flavor": "是的，这武器现在会说话了",
-  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射"
+  "modifier.solidarytinker.removeradition.description":"长按右键消耗500耐久清除当前区块环境辐射",
+
+
+  "death.attack.tinker": "%1$s 被牢墨亲死了",
+  "death.attack.tinker.player": "%1$s 被 %2$s 用牢墨亲死了了"
 }

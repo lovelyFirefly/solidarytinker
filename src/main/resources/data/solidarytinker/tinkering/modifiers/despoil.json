@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:constant_enchantment",
+      "level": 1,
+      "name": "biomancy:despoil",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -19,10 +19,12 @@
       "item": "minecraft:cactus"
     }
   ],
-  "level": 1,
+  "level": {
+    "max": 5
+  },
   "result": "solidarytinker:injured",
   "slots": {
-    "abilities": 1
+    "upgrades": 1
   },
   "tools": [
     {

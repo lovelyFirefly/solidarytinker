@@ -250,16 +250,23 @@
   "modifier.solidarytinker.seabless.flavor": "不是海王",
   "modifier.solidarytinker.seabless.description":"在水中或者下雨耐久消耗降低50%",
 
-
   "modifier.solidarytinker.riptide": "激流",
   "modifier.solidarytinker.riptide.flavor": "激流勇进！",
   "modifier.solidarytinker.riptide.description":"强化版的激流，相较于原版使你非水环境可以正常使用三叉戟，雨天和水中则会进入激流模式，提升词条等级以提升激流冲刺距离",
 
-
   "recipe.solidarytinker.modifier.crcs": "需要任意等级激流强化作为前置哦宝贝",
   "modifier.solidarytinker.crcs": "风雨无阻",
   "modifier.solidarytinker.crcs.flavor": "海神祝我！",
-  "modifier.solidarytinker.crcs.description":"让你不再依赖于水,可以自由冲刺",
+  "modifier.solidarytinker.crcs.description":"让你不再依赖于水,可以自由冲刺,并且助手持有时完全免疫摔落伤害",
+
+  "modifier.solidarytinker.lightningbolt": "引雷",
+  "modifier.solidarytinker.lightningbolt.flavor": "同原版",
+  "modifier.solidarytinker.lightningbolt.description":"在雨天可以触发雷击效果",
+
+  "modifier.solidarytinker.loyal": "忠诚",
+  "modifier.solidarytinker.loyal.flavor": "美妙的谎言",
+  "modifier.solidarytinker.loyal.description":"工具丢出后会返回你的手中！",
+
 
   "modifier.solidarytinker.aaa": "清除",
   "modifier.solidarytinker.aaa.flavor": "测试用词条",

@@ -27,18 +27,18 @@ public class deepoceanecho extends BattleModifier {
         if(livingTarget instanceof Player){
             return damage * 0f;
         }
-        else return damage+a;
+        else return damage+(a * 0.5f * level);
         }
         return damage;
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
         if(attacker instanceof Player player){
-            float a = player.getMaxHealth() * 0.2f + player.getArmorValue() * 0.6f +player.totalExperience * 0.0001f;
+            float a = (Math.max(player.getMaxHealth() * 0.2f,1) * Math.max(player.getArmorValue() * 0.6f,1) *Math.max(player.totalExperience * 0.001f,1))*0.5f*level;
             if(target instanceof Player){
                 arrow.setBaseDamage(0);
-            }else arrow.setBaseDamage(arrow.getBaseDamage() + (a * 0.5 *level));
+            }else arrow.setBaseDamage(arrow.getBaseDamage() + (a * 0.5 * level));
         }
     }
 

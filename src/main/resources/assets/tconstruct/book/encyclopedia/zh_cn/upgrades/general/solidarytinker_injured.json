@@ -1,0 +1,13 @@
+{
+  "modifier_id": "solidarytinker:injured",
+  "text": [
+    {
+      "text": "为目标施加对应等级的5秒重伤药水效果,当5级时候这个效果会延长至20秒,每级重伤减少目标30%回复能力"
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "需要1升级槽",
+    "最高5级"
+  ]
+}

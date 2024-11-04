@@ -46,7 +46,7 @@ public class darkstar extends BattleModifier {
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
         ModDataNBT tooldata= ToolStack.from(attacker.getItemBySlot(EquipmentSlot.MAINHAND)).getPersistentData();
         if(target!=null&&target.isInWater()){
             arrow.setBaseDamage((arrow.getBaseDamage() + tooldata.getFloat(DEATH))*2f);

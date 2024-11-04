@@ -23,8 +23,6 @@ import java.util.List;
 public class BattleModifier extends Modifier implements aboutattack, aboutbuilder, aboutarrow,EquipmentChangeModifierHook {
     public BattleModifier() {
     }
-
-
     protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
         this.initattackinterface(builder);
         this.initbuilderinterface(builder);

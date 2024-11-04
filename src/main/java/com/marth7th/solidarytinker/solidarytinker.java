@@ -32,11 +32,12 @@ public class solidarytinker {
     public static boolean gobber2 = ModList.get().isLoaded("gobber2");
     public static boolean Mekenabled = ModList.get().isLoaded("mekanism");
     public static boolean ETSH = ModList.get().isLoaded("etshtinker");
+    public static boolean TI = ModList.get().isLoaded("tinkers_ingenuity");
     public static final String MOD_ID = "solidarytinker"; //*是你的模组名，需要英文
 
     public solidarytinker() {
-        /**
-         *几个注册表都在这边，有的联动所以需要前置
+        /*
+         几个注册表都在这边，有的联动所以需要前置
          */
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::commonSetup);
@@ -49,6 +50,9 @@ public class solidarytinker {
         solidarytinkerEffects.EFFECT.register(eventBus);
         if (Mekenabled) {
             solidarytinkerGas.GAS.register(eventBus);
+        }
+        if(TI){
+            TinkerCuriosModifier.MODIFIERS.register(eventBus);
         }
     }
 
@@ -76,7 +80,6 @@ public class solidarytinker {
 
     public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
         return TinkerDataCapability.TinkerDataKey.of(getResource(name));
-
     }
     public static String makeDescriptionId(String type, String name) {
         return type + ".solidarytinker." + name;

@@ -25,5 +25,4 @@ public abstract class dragon {
     public void catsound(CallbackInfoReturnable<SoundEvent> cir){
         cir.setReturnValue(SoundEvents.CAT_AMBIENT);
     }
-
 }

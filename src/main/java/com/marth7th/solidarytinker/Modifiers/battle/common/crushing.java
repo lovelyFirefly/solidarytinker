@@ -33,7 +33,7 @@ public class crushing extends BattleModifier {
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
         if (attacker instanceof Player player) {
             if(attacker.getMaxHealth()>target.getHealth()){
                 target.invulnerableTime = 0;

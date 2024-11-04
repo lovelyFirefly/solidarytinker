@@ -28,7 +28,7 @@ public class voraciousfox extends BattleModifier {
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile,  EntityHitResult hit, AbstractArrow arrow,LivingEntity attacker, LivingEntity target) {
         if(attacker instanceof Player player){
             int a = RANDOM.nextInt(10 * level);
             target.invulnerableTime=0;

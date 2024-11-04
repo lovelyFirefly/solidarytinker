@@ -1,0 +1,12 @@
+{
+  "modifier_id": "solidarytinker:lightningbolt",
+  "text": [
+    {
+      "text": "在雨天可以引雷，需要在空地才能触发"
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "需要1升级槽"
+  ]
+}

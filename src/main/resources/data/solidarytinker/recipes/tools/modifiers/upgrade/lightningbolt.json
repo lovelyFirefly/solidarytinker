@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "item": "forge:ingots/copper"
+    },
+    {
+      "item": "minecraft:lightning_rod"
+    },
+    {
+      "tag": "forge:ingots/copper"
+    },
+    {
+      "tag": "forge:ingots/copper"
+    },
+    {
+      "tag": "forge:ingots/copper"
+    }
+  ],
+  "level": {
+    "max": 1
+  },
+  "result": "solidarytinker:lightningbolt",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "item": "solidarytinker:trident"
+  }
+}

@@ -21,8 +21,8 @@ public interface aboutarrow extends ProjectileHitModifierHook, ProjectileLaunchM
     }
     @Override
     default boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        if (target != null && attacker != null && projectile instanceof AbstractArrow arrow) {
-            this.arrowhurt(modifiers, persistentData, modifier.getLevel(), projectile, arrow, hit, attacker, target);
+        if (target != null && attacker != null&&projectile instanceof AbstractArrow arrow) {
+            this.arrowhurt(modifiers, persistentData, modifier.getLevel(), projectile, hit,arrow, attacker, target);
         }
         return false;
     }
@@ -35,7 +35,7 @@ public interface aboutarrow extends ProjectileHitModifierHook, ProjectileLaunchM
         if (arrow != null) {
             this.onTinkerArrowShoot(tool, modifier.getLevel(), shooter, projectile, arrow, namespacedNBT, primary);}
     }
-    default void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
+    default void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
     }
     default void onTinkerArrowShoot(IToolStackView tool, int level, LivingEntity shooter, Projectile projectile, AbstractArrow arrow, NamespacedNBT namespacedNBT, boolean primary) {
     }

@@ -1,7 +1,6 @@
 package com.marth7th.solidarytinker.extend.interfaces;
 
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
@@ -17,9 +16,8 @@ public interface aboutarmor extends DamageBlockModifierHook, OnAttackedModifierH
         hookBuilder.addHook(this, ModifierHooks.DAMAGE_BLOCK, ModifierHooks.ON_ATTACKED, ModifierHooks.MODIFY_DAMAGE);
     }
     default float modifyDamageTaken(IToolStackView armor, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean isDirectDamage) {
-        LivingEntity entity = context.getEntity();
-        Entity enemy = source.getEntity();
-        if (enemy!=null){
+        if (source.getEntity() instanceof LivingEntity enemy){
+            LivingEntity entity = context.getEntity();
         return this.TrueDamageamount(armor, modifier.getLevel(), context, slot, source, amount, isDirectDamage,entity, (LivingEntity) enemy);}
         return amount;
     }

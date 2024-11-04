@@ -1,7 +1,11 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
+import com.marth7th.solidarytinker.util.method.modifierlevel;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -23,5 +27,15 @@ public class seabless extends BattleModifier {
             return (int) (amount * 0.5f);
         }
         return amount;
+    }
+
+    @Override
+    public void LivingAttackEvent(LivingAttackEvent event) {
+        if(modifierlevel.getMainhandModifierlevel(event.getEntity(), solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId())>0){
+            if(event.getSource()==DamageSource.FALL){
+                event.getEntity().invulnerableTime=80;
+                event.setCanceled(true);
+            }
+        }
     }
 }

@@ -32,7 +32,7 @@ public class brittle extends BattleModifier {
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, AbstractArrow arrow, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit,  AbstractArrow arrow,LivingEntity attacker, LivingEntity target) {
         if(target!=null){
             if(target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)){
                 int timeleft=target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();

@@ -18,7 +18,7 @@ public class solidarytinkerFluid {
     }
 
     private static FluidType.Properties hot(String name) {
-        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.ENDER_DRAGON_HURT).sound(SoundActions.BUCKET_EMPTY, SoundEvents.ENDER_DRAGON_HURT);
+        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.ENDER_DRAGON_HURT).sound(SoundActions.BUCKET_EMPTY, SoundEvents.ENDER_DRAGON_DEATH);
     }
 
     private static FluidType.Properties cool(String name) {

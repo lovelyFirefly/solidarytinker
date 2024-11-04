@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.tools.tinkeritem;
 
+import com.marth7th.solidarytinker.entity.tinkertrident;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.modifierlevel;
 import net.minecraft.core.BlockPos;
@@ -15,20 +16,26 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
+import slimeknights.tconstruct.library.tools.capability.EntityModifierCapability;
+import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
+import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public class trident extends ModifiableItem {
-
+public class trident extends ModifiableItem{
     public trident(Properties properties, ToolDefinition toolDefinition) {
         super(properties, toolDefinition);
     }
@@ -49,6 +56,7 @@ public class trident extends ModifiableItem {
         if (livingEntity instanceof Player player) {
             int i = this.getUseDuration(stack) - duration;
             if (i >= 10) {
+                ToolStack tool = ToolStack.from(stack);
                 int j = modifierlevel.getMainhandModifierlevel(player, solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId());
                 int k = modifierlevel.getMainhandModifierlevel(player, solidarytinkerModifiers.CRCS_STATIC_MODIFIER.getId());
                     if (!level.isClientSide) {
@@ -56,8 +64,17 @@ public class trident extends ModifiableItem {
                             player1.broadcastBreakEvent(livingEntity.getUsedItemHand());
                         });
                         if (j == 0&&k==0 || (j > 0 && !player.isInWater() && !player.level.isRaining())&&k==0){
-                            ThrownTrident throwntrident = new ThrownTrident(level, player, stack);
+                            tinkertrident throwntrident = new tinkertrident(level, player, stack);
                             throwntrident.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F + (float)j * 0.5F, 1.0F);
+                            float baseArrowDamage = tool.getStats().get(ToolStats.ATTACK_DAMAGE);
+                            throwntrident.setBaseDamage(ConditionalStatModifierHook.getModifiedStat(tool, player, ToolStats.ATTACK_DAMAGE, baseArrowDamage)*2);
+                            ModifierNBT modifiers = tool.getModifiers();
+                            throwntrident.getCapability(EntityModifierCapability.CAPABILITY).ifPresent(cap -> cap.setModifiers(modifiers));
+                            NamespacedNBT arrowData = PersistentDataCapability.getOrWarn(throwntrident);
+                            for (ModifierEntry entry : modifiers.getModifiers()) {
+                                entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, entry, livingEntity, throwntrident, throwntrident, arrowData,true);
+                            }
+
                             if (player.getAbilities().instabuild) {
                                 throwntrident.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                             }
@@ -126,4 +143,5 @@ public class trident extends ModifiableItem {
         }
         return true;
     }
+
 }

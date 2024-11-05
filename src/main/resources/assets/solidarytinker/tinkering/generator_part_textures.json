@@ -15,6 +15,26 @@
         {
             "path": "solidarytinker:item/tool/trident/trident_handle2",
             "stat_type": "tconstruct:handle"
+        },
+        {
+            "path": "solidarytinker:item/tool/mekatool/head1",
+            "stat_type": "tconstruct:head"
+        },
+        {
+            "path": "solidarytinker:item/tool/mekatool/head2",
+            "stat_type": "tconstruct:head"
+        },
+        {
+            "path": "solidarytinker:item/tool/mekatool/head3",
+            "stat_type": "tconstruct:head"
+        },
+        {
+            "path": "solidarytinker:item/tool/mekatool/binding",
+            "stat_type": "tconstruct:binding"
+        },
+        {
+            "path": "solidarytinker:item/tool/mekatool/handle",
+            "stat_type": "tconstruct:handle"
         }
     ],
     "replace": false

@@ -11,6 +11,8 @@
   "item.solidarytinker.trident_head_sand_cast": "三叉戟头沙子铸膜",
   "item.solidarytinker.trident_head_red_sand_cast": "三叉戟头红沙铸膜",
 
+  "item.solidarytinker.mekatool": "开拓者工具",
+  "item.solidarytinker.mekatool.description": "类似于mekanism的原子分解机,可以挖掘各种物品并且无视挖掘等级",
 
 
   "effect.solidarytinker.bloodanger": "红温",

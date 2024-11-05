@@ -1,0 +1,58 @@
+{
+  "translation_key": "item.solidarytinker.mekatool",
+  "icon": {
+    "item": "solidarytinker:mekatool",
+    "nbt": {
+      "tic_display": true,
+      "tic_materials": ["tconstruct:ui_render#head", "tconstruct:ui_render#handle", "tconstruct:ui_render#extra", "tconstruct:ui_render#large", "tconstruct:ui_render#extra_large"]
+    }
+  },
+  "sortIndex": 1,
+  "input_slots": [
+    {
+      "icon": "tconstruct:pick_head",
+      "translation_key": "item.tconstruct.pick_head",
+      "x": 45,
+      "y": 26,
+      "filter": {
+        "item": "tconstruct:pick_head"
+      }
+    },
+    {
+      "icon": "tconstruct:round_plate",
+      "translation_key": "item.tconstruct.large_plate",
+      "x": 25,
+      "y": 46,
+      "filter": {
+        "item": "tconstruct:round_plate"
+      }
+    },
+    {
+      "icon": "tconstruct:tool_binding",
+      "translation_key": "item.tconstruct.tool_binding",
+      "x": 25,
+      "y": 26,
+      "filter": {
+        "item": "tconstruct:tool_binding"
+      }
+    },
+    {
+      "icon": "tconstruct:broad_axe_head",
+      "translation_key": "item.tconstruct.broad_axe_head",
+      "x": 45,
+      "y": 46,
+      "filter": {
+        "item": "tconstruct:broad_axe_head"
+      }
+    },
+    {
+      "icon": "tconstruct:tough_handle",
+      "translation_key": "item.tconstruct.tough_handle",
+      "x": 7,
+      "y": 62,
+      "filter": {
+        "item": "tconstruct:tough_handle"
+      }
+    }
+  ]
+}

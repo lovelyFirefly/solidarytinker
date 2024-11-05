@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Items.ingot.*;
-import com.marth7th.solidarytinker.tools.tinkeritem.energychain_gun;
+import com.marth7th.solidarytinker.tools.tinkeritem.mekatool;
 import com.marth7th.solidarytinker.tools.tinkeritem.trident;
 import com.marth7th.solidarytinker.tools.toolDefinitions;
 import net.minecraft.world.item.BlockItem;
@@ -25,7 +25,7 @@ public class solidarytinkerItem {
     private static final Item.Properties PART= (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
     public static final CastItemObject trident_head_cast=OTHER_ITEM.registerCast("trident_head",CASTS);
     public static final RegistryObject<ToolPartItem> trident_head=ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
-    public static final RegistryObject<ModifiableItem> energychain_gun=ITEMS.register("energychain_gun", () -> new energychain_gun(TOOL, toolDefinitions.ENERGYCHAIN_GUN));
+    public static final RegistryObject<ModifiableItem> mekatool=ITEMS.register("mekatool", () -> new mekatool(TOOL, toolDefinitions.MEKATOOL));
     public static final RegistryObject<ModifiableItem> trident=ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));
 
     public static final RegistryObject<Item> takeru = ITEMS.register("takeru", ( ) -> new takeru(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));

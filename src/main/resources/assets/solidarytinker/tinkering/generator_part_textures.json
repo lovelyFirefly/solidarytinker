@@ -5,6 +5,10 @@
             "stat_type": "tconstruct:head"
         },
         {
+            "path": "solidarytinker:item/tool/mining_core/mining_core",
+            "stat_type": "tconstruct:binding"
+        },
+        {
             "path": "solidarytinker:item/tool/trident/trident_head",
             "stat_type": "tconstruct:head"
         },

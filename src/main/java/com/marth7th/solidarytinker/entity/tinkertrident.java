@@ -95,9 +95,7 @@ public class tinkertrident extends AbstractArrow {
         this.dealtDamage = true;
         SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
         if (entity.hurt(damagesource, i)) {
-            if (entity.getType() == EntityType.ENDERMAN) {
-                return;
-            }
+            return;
         }
         this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01D, -0.1D, -0.01D));
         float f1 = 1.0F;

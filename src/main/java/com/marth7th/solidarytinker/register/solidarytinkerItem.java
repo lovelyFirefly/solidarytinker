@@ -14,6 +14,7 @@ import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 
 public class solidarytinkerItem {
@@ -25,6 +26,7 @@ public class solidarytinkerItem {
     private static final Item.Properties PART= (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
     public static final CastItemObject trident_head_cast=OTHER_ITEM.registerCast("trident_head",CASTS);
     public static final RegistryObject<ToolPartItem> trident_head=ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
+    public static final RegistryObject<ToolPartItem> mining_core = ITEMS.register("mining_core", () -> new ToolPartItem(PART, StatlessMaterialStats.BINDING.getIdentifier()));
     public static final RegistryObject<ModifiableItem> mekatool=ITEMS.register("mekatool", () -> new mekatool(TOOL, toolDefinitions.MEKATOOL));
     public static final RegistryObject<ModifiableItem> trident=ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));
 

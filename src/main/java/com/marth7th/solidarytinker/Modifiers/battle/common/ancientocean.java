@@ -8,6 +8,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class ancientocean extends BattleModifier {
     @Override
@@ -24,6 +25,8 @@ public class ancientocean extends BattleModifier {
     }
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity entity) {
+        int MaxDurability = tool.getStats().getInt(ToolStats.DURABILITY);
+        int Durability = tool.getCurrentDurability();
         return 0;
     }
 }

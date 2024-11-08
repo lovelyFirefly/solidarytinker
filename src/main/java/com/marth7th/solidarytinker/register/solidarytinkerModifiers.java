@@ -6,6 +6,7 @@ import com.marth7th.solidarytinker.Modifiers.battle.biomancy.swell;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.release;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.test;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
 import com.marth7th.solidarytinker.Modifiers.battle.mekanism.*;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -58,6 +59,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<brittle> BRITTLE_STATIC_MODIFIER=MODIFIERS.register("brittle", brittle::new);   //脆质化
     public static final StaticModifier<coldfetters> COLDFETTERS_STATIC_MODIFIER=MODIFIERS.register("coldfetters",coldfetters::new);   //寒冰血脉
     public static final StaticModifier<loyal> LOYAL_STATIC_MODIFIER=MODIFIERS.register("loyal",loyal::new);   //忠诚
-    public static final StaticModifier<lightningbolt> LIGHTNINGBOLT_STATIC_MODIFIER=MODIFIERS.register("lightningbolt",lightningbolt::new);   //忠诚
+    public static final StaticModifier<lightningbolt> LIGHTNINGBOLT_STATIC_MODIFIER = MODIFIERS.register("lightningbolt", lightningbolt::new);   //引雷
+    public static final StaticModifier<test> TEST_STATIC_MODIFIER = MODIFIERS.register("test", test::new);   //测试
 
 }

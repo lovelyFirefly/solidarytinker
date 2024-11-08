@@ -13,7 +13,8 @@
 
   "item.solidarytinker.mekatool": "开拓者工具",
   "item.solidarytinker.mekatool.description": "类似于mekanism的原子分解机,可以挖掘各种物品并且无视挖掘等级",
-
+  "item.solidarytinker.mining_core": "挖掘核心",
+  "pattern.solidarytinker.mining_core": "挖掘核心",
 
   "effect.solidarytinker.bloodanger": "红温",
   "effect.solidarytinker.seriously_injured": "重伤",
@@ -192,7 +193,7 @@
 
   "modifier.solidarytinker.experienceprotect": "经验防护",
   "modifier.solidarytinker.experienceprotect.flavor": "这个不额外消耗经验",
-  "modifier.solidarytinker.experienceprotect.description": "每一级经验都会提供0.1 * 词条等级点格挡",
+  "modifier.solidarytinker.experienceprotect.description": "每一级经验都会提供0.08 * 词条等级点格挡",
 
 
 
@@ -268,11 +269,9 @@
   "modifier.solidarytinker.loyal": "忠诚",
   "modifier.solidarytinker.loyal.flavor": "美妙的谎言",
   "modifier.solidarytinker.loyal.description":"工具丢出后会返回你的手中！",
-
-
-  "modifier.solidarytinker.aaa": "清除",
-  "modifier.solidarytinker.aaa.flavor": "测试用词条",
-  "modifier.solidarytinker.aaa.description":"用于remove一些出了bug的实体等",
+  "modifier.solidarytinker.test": "清除",
+  "modifier.solidarytinker.test.flavor": "测试用词条",
+  "modifier.solidarytinker.test.description": "用于remove一些出了bug的实体等",
 
 
   "modifier.solidarytinker.despoil": "抽筋脱骨",

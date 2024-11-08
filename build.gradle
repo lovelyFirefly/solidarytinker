@@ -10,21 +10,13 @@ buildscript {
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 plugins {
     id 'eclipse'
     id 'maven-publish'
 }
-
-
-
-
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
-
-
-
-version = '1.0.1'
+version = '1.0.2'
 group = 'com.marth7th.solidarytinker' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'solidarytinker'
 

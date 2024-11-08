@@ -67,7 +67,7 @@ public class trident extends ModifiableItem{
                             tinkertrident throwntrident = new tinkertrident(level, player, stack);
                             throwntrident.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F + (float)j * 0.5F, 1.0F);
                             float baseArrowDamage = tool.getStats().get(ToolStats.ATTACK_DAMAGE);
-                            throwntrident.setBaseDamage(ConditionalStatModifierHook.getModifiedStat(tool, player, ToolStats.ATTACK_DAMAGE, baseArrowDamage)*2);
+                            throwntrident.setBaseDamage(ConditionalStatModifierHook.getModifiedStat(tool, player, ToolStats.ATTACK_DAMAGE, baseArrowDamage));
                             ModifierNBT modifiers = tool.getModifiers();
                             throwntrident.getCapability(EntityModifierCapability.CAPABILITY).ifPresent(cap -> cap.setModifiers(modifiers));
                             NamespacedNBT arrowData = PersistentDataCapability.getOrWarn(throwntrident);

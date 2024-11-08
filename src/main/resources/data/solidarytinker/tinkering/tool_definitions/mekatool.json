@@ -3,12 +3,12 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
+        "tconstruct:large_plate",
         "tconstruct:pick_head",
         {
-          "item": "tconstruct:large_plate",
+          "item": "tconstruct:mining_core",
           "scale": 0.75
         },
-        "tconstruct:tool_binding",
         "tconstruct:broad_axe_head",
         {
           "item": "tconstruct:tough_handle",
@@ -70,18 +70,6 @@
           "level": 3,
           "name": "tconstruct:reinforced"
         }
-      ]
-    },
-    {
-      "type": "tconstruct:is_effective",
-      "predicate_type": "mantle:tag",
-      "tag": "minecraft:mineable/axe"
-    },
-    {
-      "type": "tconstruct:tool_actions",
-      "tool_actions": [
-        "axe_dig",
-        "tconstruct:sweep"
       ]
     }
   ]

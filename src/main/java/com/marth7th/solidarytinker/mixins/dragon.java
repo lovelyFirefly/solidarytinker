@@ -18,7 +18,7 @@ public abstract class dragon {
         cir.setReturnValue(true);
     }
     @Inject(method = {"getHurtSound"}, at=@At("HEAD"), cancellable = true)
-    public void wolfsound(DamageSource p_31154_, CallbackInfoReturnable<SoundEvent> cir){
+    public void catsound(DamageSource p_31154_, CallbackInfoReturnable<SoundEvent> cir) {
         cir.setReturnValue(SoundEvents.CAT_HURT);
     }
     @Inject(method = {"getAmbientSound"}, at=@At("RETURN"), cancellable = true)

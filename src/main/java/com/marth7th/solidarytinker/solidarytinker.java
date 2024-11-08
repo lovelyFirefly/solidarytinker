@@ -59,7 +59,6 @@ public class solidarytinker {
     /**
      * 抑制etshtinker相关类加载
      */
-
     public void commonSetup(FMLCommonSetupEvent event) {
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);

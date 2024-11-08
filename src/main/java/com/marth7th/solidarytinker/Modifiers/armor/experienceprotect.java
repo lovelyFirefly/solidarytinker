@@ -15,7 +15,7 @@ public class experienceprotect extends ArmorModifier {
                     int a = player.experienceLevel;
                     int level = modifierlevel.getTotalArmorModifierlevel(player, this.getId());
                     if (a > 0) {
-                        event.setAmount(event.getAmount() - a * 0.1f * level);
+                        event.setAmount(event.getAmount() - a * 0.08f * level);
                     }
                 }
             }

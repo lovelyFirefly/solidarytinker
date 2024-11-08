@@ -29,6 +29,12 @@
         "name": "solidarytinker:voraciousfox",
         "level": 1
       }
+    ],
+    "tinkers_ingenuity:curio": [
+      {
+        "name": "solidarytinker:angelprotect",
+        "level": 1
+      }
     ]
   }
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "solidarytinker:trident_head"
+    "solidarytinker:trident_head",
+    "solidarytinker:mining_core"
   ]
 }

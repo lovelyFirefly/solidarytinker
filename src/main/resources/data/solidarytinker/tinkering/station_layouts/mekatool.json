@@ -12,28 +12,28 @@
     {
       "icon": "tconstruct:pick_head",
       "translation_key": "item.tconstruct.pick_head",
-      "x": 45,
+      "x": 25,
       "y": 26,
       "filter": {
         "item": "tconstruct:pick_head"
       }
     },
     {
-      "icon": "tconstruct:round_plate",
-      "translation_key": "item.tconstruct.large_plate",
+      "icon": "solidarytinker:mining_core",
+      "translation_key": "item.solidarytinker.mining_core",
       "x": 25,
       "y": 46,
       "filter": {
-        "item": "tconstruct:round_plate"
+        "item": "solidarytinker:mining_core"
       }
     },
     {
-      "icon": "tconstruct:tool_binding",
-      "translation_key": "item.tconstruct.tool_binding",
-      "x": 25,
+      "icon": "tconstruct:large_plate",
+      "translation_key": "item.tconstruct.large_plate",
+      "x": 45,
       "y": 26,
       "filter": {
-        "item": "tconstruct:tool_binding"
+        "item": "tconstruct:large_plate"
       }
     },
     {

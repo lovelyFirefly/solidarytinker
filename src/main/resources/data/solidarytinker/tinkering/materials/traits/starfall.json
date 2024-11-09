@@ -69,6 +69,20 @@
         "name": "solidarytinker:tacticsattack",
         "level": 1
       }
+    ],
+    "tinkers_ingenuity:curio": [
+      {
+        "name": "solidarytinker:bha",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:natived",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:watery",
+        "level": 1
+      }
     ]
   }
 }

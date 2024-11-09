@@ -2,10 +2,10 @@ package com.marth7th.solidarytinker.register;
 
 
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
+
 
 @Mod.EventBusSubscriber(
         modid = "solidarytinker",
@@ -16,8 +16,8 @@ import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
 public class solidarytinkerToolUtil {
     public solidarytinkerToolUtil() {
     }
-    @SubscribeEvent
-    static void clientSetupEvent(FMLClientSetupEvent event) {
+
+    public static void clientSetupEvent(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             TinkerItemProperties.registerToolProperties(solidarytinkerItem.trident.get().asItem());
         });

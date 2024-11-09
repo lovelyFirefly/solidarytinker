@@ -77,6 +77,14 @@
     "tinkers_ingenuity:laser_medium": {
       "laser_range": 35,
       "cooldown": 1.1
+    },
+    "tinkers_ingenuity:curio_extra": {},
+    "tinkers_ingenuity:curio_main": {
+      "movement_speed": 0.2,
+      "armor": 2.5,
+      "toughness": 2.5,
+      "attack": 1.5,
+      "arrow_damage": 1.5
     }
   }
 }

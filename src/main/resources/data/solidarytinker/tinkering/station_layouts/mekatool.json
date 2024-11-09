@@ -7,15 +7,15 @@
       "tic_materials": ["tconstruct:ui_render#head", "tconstruct:ui_render#handle", "tconstruct:ui_render#extra", "tconstruct:ui_render#large", "tconstruct:ui_render#extra_large"]
     }
   },
-  "sortIndex": 1,
+  "sortIndex": 10,
   "input_slots": [
     {
-      "icon": "tconstruct:pick_head",
-      "translation_key": "item.tconstruct.pick_head",
-      "x": 25,
-      "y": 26,
+      "icon": "tconstruct:broad_axe_head",
+      "translation_key": "item.tconstruct.broad_axe_head",
+      "x": 45,
+      "y": 46,
       "filter": {
-        "item": "tconstruct:pick_head"
+        "item": "tconstruct:broad_axe_head"
       }
     },
     {
@@ -37,12 +37,12 @@
       }
     },
     {
-      "icon": "tconstruct:broad_axe_head",
-      "translation_key": "item.tconstruct.broad_axe_head",
-      "x": 45,
-      "y": 46,
+      "icon": "tconstruct:pick_head",
+      "translation_key": "item.tconstruct.pick_head",
+      "x": 25,
+      "y": 26,
       "filter": {
-        "item": "tconstruct:broad_axe_head"
+        "item": "tconstruct:pick_head"
       }
     },
     {

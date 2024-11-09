@@ -63,6 +63,7 @@ public class solidarytinker {
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);
             event.enqueueWork(etshinkercarbon::extendMap);
+
         }
         if (!TierSortingRegistry.isTierSorted(momo.instance)) {
             if (gobber2 && TierSortingRegistry.isTierSorted(ToolMaterialTiers.END_GOBBER)) {

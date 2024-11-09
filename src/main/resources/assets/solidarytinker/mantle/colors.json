@@ -29,10 +29,12 @@
     "neverend":  "#ffaa7f",
     "reliable":  "#ffacf0",
     "tacticsattack":  "#50b9ff",
-
     "sandstrom":  "#ffaa7f",
     "absolutejustice":  "#ffacf0",
     "tacticsprotect":  "#50b9ff",
+    "bha": "#ffaa7f",
+    "natived": "#ffacf0",
+    "watery": "#50b9ff",
 
 
 
@@ -42,6 +44,7 @@
     "deepoceanecho":  "#1a3fc2",
 
     "deepoceanprotect":  "#495bc2",
+    "deepoceanchew": "#1a3fc2",
 
 
 
@@ -87,8 +90,8 @@
 
     "_kemomimi_": null,
     "voraciousfox":  "#fef4e3",
-
     "anglefox":  "#fef4e3",
+    "angleprotect": "#fef4e3",
 
 
 
@@ -106,7 +109,8 @@
     "lightningbolt":  "#7dd0c4",
     "loyal":  "#7dd0c4",
     "injured":  "#ca4cff",
-    "despoil":  "#ff1515"
+    "despoil": "#ff1515",
+    "precise": "#ffcc11"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class anglefox extends ArmorModifier {
+public class angelfox extends ArmorModifier {
     public boolean havenolevel() {
         return true;
     }

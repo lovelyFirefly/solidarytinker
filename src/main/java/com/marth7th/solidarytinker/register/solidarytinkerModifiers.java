@@ -41,7 +41,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<removeradition>REMOVERADITION_STATIC_MODIFIER=MODIFIERS.register("removeradition", removeradition::new);   //变辐侠
     public static final StaticModifier<clean>CLEAN_STATIC_MODIFIER=MODIFIERS.register("clean", clean::new);   //净化
     public static final StaticModifier<uncannyvalley>UNCANNYVALLEY_STATIC_MODIFIER=MODIFIERS.register("uncannyvalley", uncannyvalley::new);   //恐怖谷效应
-    public static final StaticModifier<anglefox>ANGLEFOX_STATIC_MODIFIER=MODIFIERS.register("anglefox", anglefox::new);   //天使狐
+    public static final StaticModifier<angelfox> ANGELFOX_STATIC_MODIFIER = MODIFIERS.register("angelfox", angelfox::new);   //天使狐
     public static final StaticModifier<voraciousfox>VORACIOUSFOX_STATIC_MODIFIER=MODIFIERS.register("voraciousfox", voraciousfox::new);   //贪吃狐
     public static final StaticModifier<experiencekiller>EXPRIENCEKILLER_STATIC_MODIFIER=MODIFIERS.register("experiencekiller", experiencekiller::new);   //经验杀手
     public static final StaticModifier<experienceprotect>EXPERIENCEPROTECT_STATIC_MODIFIER=MODIFIERS.register("experienceprotect", experienceprotect::new);   //经验防护

@@ -12,7 +12,7 @@
   "item.solidarytinker.trident_head_red_sand_cast": "三叉戟头红沙铸膜",
 
   "item.solidarytinker.mekatool": "开拓者工具",
-  "item.solidarytinker.mekatool.description": "类似于mekanism的原子分解机,可以挖掘各种物品并且无视挖掘等级",
+  "item.solidarytinker.mekatool.description": "类似于mekanism的原子分解机,可以挖掘各种物品并且无视挖掘等级,工具挖掘速度恒定15",
   "item.solidarytinker.mining_core": "挖掘核心",
   "pattern.solidarytinker.mining_core": "挖掘核心",
 
@@ -63,13 +63,13 @@
   "modifier.solidarytinker.tacticsprotect.description":"获得额外等同于该词条等级数量的升级槽，能力槽和防御槽。护甲耐久损耗降低70%\n生命值首次跌入20%以下的时候获得最大生命30%的伤害吸收，冷却20秒，并且获得持续10秒的等同于盔甲词条等级的抗性提升（不会大于4级）和红温效果(至高词条等级对应的等级为上限，每触发一次提升一级)。并且对周围8*词条等级范围内的怪物造成等同于护盾值的伤害。",
   "modifier.solidarytinker.natived": "原生",
   "modifier.solidarytinker.natived.flavor": "初始形态",
-  "modifier.solidarytinker.natived.description": "增加每级2点幸运和26.6% X 等级的攻击速度,你受到单次伤害不会超过最大生命26%,获得额外时运效果",
+  "modifier.solidarytinker.natived.description": "增加每级2点幸运和26.6% X 等级的攻击速度,你受到单次伤害不会超过最大生命26%,触发时候获得1秒额外无敌帧。获得额外时运效果",
   "modifier.solidarytinker.watery": "水着",
   "modifier.solidarytinker.watery.flavor": "专注速度",
   "modifier.solidarytinker.watery.description": "你所有物品栏的工具冷却速度更快",
   "modifier.solidarytinker.bha": "临战",
   "modifier.solidarytinker.bha.flavor": "冲锋陷阵,百战当先",
-  "modifier.solidarytinker.bha.description": "攻击次数八次后的第九次攻击转而造成400%全伤害加成的伤害,获得额外抢夺效果",
+  "modifier.solidarytinker.bha.description": "攻击次数八次后的第九次攻击转而造成400% * 词条等级的全伤害加成的伤害,获得额外抢夺效果",
 
   "item.solidarytinker.takeru": "takeru",
   "tooltip.takeru.desc1": "takeru是一只乖猫猫",
@@ -96,17 +96,16 @@
   "material.solidarytinker.kemomimi": "kemo33",
   "material.solidarytinker.kemomimi.flavor": "是kemomimi了",
   "material.solidarytinker.kemomimi.encyclopedia": "一只可爱的狐",
-
-  "modifier.solidarytinker.anglefox": "天使狐",
-  "modifier.solidarytinker.anglefox.flavor": "你就这么看着他",
-  "modifier.solidarytinker.anglefox.description":"[来自生物的伤害]如果大于你最大生命会被强制修改为最大生命的20%，如果大于最大生命50%则强制修改为最大生命10%，这个数值不会低于4（前者）/2（后者）",
+  "modifier.solidarytinker.angelfox": "天使狐",
+  "modifier.solidarytinker.angelfox.flavor": "你就这么看着他",
+  "modifier.solidarytinker.angelfox.description": "[来自生物的伤害]如果大于你最大生命会被强制修改为最大生命的20%，如果大于最大生命50%则强制修改为最大生命10%，这个数值不会低于4（前者）/2（后者）",
 
   "modifier.solidarytinker.voraciousfox": "贪吃狐",
   "modifier.solidarytinker.voraciousfox.flavor": "啊呜啊呜",
   "modifier.solidarytinker.voraciousfox.description":"攻击额外附加受运气影响的魔法伤害，提升等级会提升比例（每级提升10%自身生命上限）",
-  "modifier.solidarytinker.angleprotect": "天使之护",
-  "modifier.solidarytinker.angleprotect.flavor": "啊呜啊呜",
-  "modifier.solidarytinker.angleprotect.description": "受到超出最大生命50%的伤害会转而将其降低为最大生命30%的伤害(全伤害)",
+  "modifier.solidarytinker.angelprotect": "天使之护",
+  "modifier.solidarytinker.angelprotect.flavor": "啊呜啊呜",
+  "modifier.solidarytinker.angelprotect.description": "受到超出最大生命50%的伤害会转而将其降低为最大生命30%的伤害(全伤害)",
 
 
   "item.solidarytinker.rainbow_ingot": "彩虹锭",
@@ -164,6 +163,9 @@
   "modifier.solidarytinker.deepoceanprotect": "深海加护",
   "modifier.solidarytinker.deepoceanprotect.flavor": "深洋之下，如有神助",
   "modifier.solidarytinker.deepoceanprotect.description":"基于（最大生命值的30% * 护甲值的60% + 总经验点数的10000分之1【这个至少为1】 * 词条等级）获得回声点数，回声点数会转化为你的伤害减免，每10点回声增加1%伤害减免。至高90%,每搁12秒受击会获得最大生命值50% * 词条等级的伤害吸收，可以叠加，当数值回声点数的十分之一时不再触发",
+  "modifier.solidarytinker.deepoceanchew": "深海之噬",
+  "modifier.solidarytinker.deepoceanchew.flavor": "",
+  "modifier.solidarytinker.deepoceanchew.description": "",
 
 
 
@@ -286,8 +288,8 @@
   "modifier.solidarytinker.despoil.flavor": "同血肉重铸",
   "modifier.solidarytinker.despoil.description": "能获取额外的血肉重铸战利品",
   "modifier.solidarytinker.precise": "精密",
-  "modifier.solidarytinker.despoil.flavor": "精准而优雅",
-  "modifier.solidarytinker.despoil.description": "挖掘掉落的东西会更好",
+  "modifier.solidarytinker.precise.flavor": "精准而优雅",
+  "modifier.solidarytinker.precise.description": "挖掘掉落的东西会更好",
 
 
   "_null_": "mekanism部分",

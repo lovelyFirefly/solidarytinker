@@ -2,7 +2,7 @@
   "tool": "solidarytinker:mekatool",
   "text": [
     {
-      "text": "类似于mekanism的原子分解机\n无视挖掘目标的类型和等级\n更加耐用,自带额外掉落特性"
+      "text": "类似于mekanism的原子分解机\n无视挖掘目标的类型和等级\n更加耐用,自带额外掉落特性\n挖掘速度恒定15"
     }
   ],
   "properties": [

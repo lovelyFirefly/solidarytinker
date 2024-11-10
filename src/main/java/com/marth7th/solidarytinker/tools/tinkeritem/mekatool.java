@@ -19,7 +19,7 @@ public class mekatool extends ModifiableItem {
         return true;
     }
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
-        return 8f;
+        return 15f;
     }
     @Override
     public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {

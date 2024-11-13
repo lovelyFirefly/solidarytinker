@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,6 +34,10 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
     {
         MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::LivingDamageEvent);
+    }
+
+    public void LivingDamageEvent(LivingDamageEvent event) {
     }
 
     public void LivingHurtEvent(LivingHurtEvent event) {

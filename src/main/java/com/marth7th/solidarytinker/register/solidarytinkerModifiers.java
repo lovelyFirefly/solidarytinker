@@ -60,6 +60,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<coldfetters> COLDFETTERS_STATIC_MODIFIER=MODIFIERS.register("coldfetters",coldfetters::new);   //寒冰血脉
     public static final StaticModifier<loyal> LOYAL_STATIC_MODIFIER=MODIFIERS.register("loyal",loyal::new);   //忠诚
     public static final StaticModifier<lightningbolt> LIGHTNINGBOLT_STATIC_MODIFIER = MODIFIERS.register("lightningbolt", lightningbolt::new);   //引雷
+    public static final StaticModifier<FluxArmor> FLUX_ARMOR_STATIC_MODIFIER = MODIFIERS.register("fluxarmor", FluxArmor::new);   //测试
     public static final StaticModifier<test> TEST_STATIC_MODIFIER = MODIFIERS.register("test", test::new);   //测试
 
 }

@@ -23,8 +23,6 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class deepoceanprotect extends ArmorModifier {
     public static ResourceLocation WAIT = solidarytinker.getResource("wait");
@@ -47,9 +45,9 @@ public class deepoceanprotect extends ArmorModifier {
                 for (ItemStack armors : armor) {
                     if (armors.getItem() instanceof ModifiableArmorItem) {
                         ToolStack tool = ToolStack.from(armors);
-                        if (tool.getPersistentData().getInt(WAIT) == 3 && player.getAbsorptionAmount() < player.totalExperience * 0.0001f + player.getMaxHealth() * 0.2f + player.getArmorValue() * 0.6f * a / 10) {
+                        if (tool.getPersistentData().getInt(WAIT) == 0 && player.getAbsorptionAmount() < player.totalExperience * 0.0001f + player.getMaxHealth() * 0.2f + player.getArmorValue() * 0.6f * a / 10) {
                             player.setAbsorptionAmount(player.getAbsorptionAmount() + player.getMaxHealth() * 0.5f * a);
-                            tool.getPersistentData().putInt(WAIT, 1);
+                            tool.getPersistentData().putInt(WAIT, 240);
                         }
                     }
                 }
@@ -59,17 +57,9 @@ public class deepoceanprotect extends ArmorModifier {
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
-        if (modifier.getLevel() > 0 && entity instanceof Player player) {
-            if (tool.getPersistentData().getInt(WAIT) == 1) {
-                tool.getPersistentData().putInt(WAIT, 2);
-                TimerTask t = new TimerTask() {
-                    @Override
-                    public void run() {
-                        tool.getPersistentData().putInt(WAIT, 3);
-                    }
-                };
-                Timer timer = new Timer();
-                timer.schedule(t, 20000);
+        if (modifier.getLevel() > 0 && entity instanceof Player) {
+            if (tool.getPersistentData().getInt(WAIT) > 0) {
+                tool.getPersistentData().putInt(WAIT, tool.getPersistentData().getInt(WAIT) - 1);
             }
         }
     }

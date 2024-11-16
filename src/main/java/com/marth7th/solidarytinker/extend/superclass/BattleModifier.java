@@ -14,21 +14,21 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class BattleModifier extends Modifier implements aboutattack, aboutbuilder, aboutarrow,EquipmentChangeModifierHook {
+public class BattleModifier extends Modifier implements aboutattack, aboutbuilder, aboutarrow, EquipmentChangeModifierHook, BlockBreakModifierHook {
     public BattleModifier() {
     }
     protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
         this.initattackinterface(builder);
         this.initbuilderinterface(builder);
         this.initarrowinterface(builder);
-        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
         super.registerHooks(builder);
     }
     {
@@ -36,7 +36,6 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
         MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingDamageEvent);
     }
-
     public void LivingDamageEvent(LivingDamageEvent event) {
     }
 
@@ -76,5 +75,9 @@ public class BattleModifier extends Modifier implements aboutattack, aboutbuilde
     @Override
     public Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
         return null;
+    }
+
+    @Override
+    public void afterBlockBreak(IToolStackView iToolStackView, ModifierEntry modifierEntry, ToolHarvestContext toolHarvestContext) {
     }
 }

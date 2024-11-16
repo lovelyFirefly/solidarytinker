@@ -17,13 +17,11 @@ import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.AttributesModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ProcessLootModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ToolDamageModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
-import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.build.VolatileDataModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.build.*;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
@@ -38,9 +36,9 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierHook, ConditionalStatModifierHook, InventoryTickModifierHook, ToolDamageModifierHook, TooltipModifierHook , VolatileDataModifierHook , GeneralInteractionModifierHook , ProcessLootModifierHook , ModifierRemovalHook {
+public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierHook, ConditionalStatModifierHook, InventoryTickModifierHook, ToolDamageModifierHook, TooltipModifierHook, VolatileDataModifierHook, GeneralInteractionModifierHook, ProcessLootModifierHook, ModifierRemovalHook, ValidateModifierHook, EquipmentChangeModifierHook {
     default void initbuilderinterface(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this,ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT,ModifierHooks.PROCESS_LOOT,ModifierHooks.VOLATILE_DATA,ModifierHooks.REMOVE);
+        hookBuilder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP, ModifierHooks.GENERAL_INTERACT, ModifierHooks.PROCESS_LOOT, ModifierHooks.VOLATILE_DATA, ModifierHooks.REMOVE, ModifierHooks.VALIDATE, ModifierHooks.EQUIPMENT_CHANGE);
     }
     default void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
     }
@@ -83,5 +81,11 @@ public interface aboutbuilder extends ToolStatsModifierHook, AttributesModifierH
 
 
     default void onUsingTick(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
+    }
+
+    @Nullable
+    @Override
+    default Component validate(IToolStackView iToolStackView, ModifierEntry modifierEntry) {
+        return Component.empty();
     }
 }

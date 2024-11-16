@@ -295,6 +295,7 @@
   "_null_": "mekanism部分",
 
   "gas.solidarytinker.fluorine": "氟气",
+  "modifier.solidarytinker.tooltip.storedenergy": "能量存储",
 
 
   "item.solidarytinker.dwarf_ingot": "白矮星物质锭",

@@ -3,6 +3,7 @@ package com.marth7th.solidarytinker;
 import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
 import com.kwpugh.gobber2.lists.tiers.ToolMaterialTiers;
 import com.marth7th.solidarytinker.etshtinker.etshinkercarbon;
+import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.register.*;
 import com.marth7th.solidarytinker.shelf.tier.momo;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
+import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 
 import java.util.List;
 
@@ -24,16 +26,11 @@ import java.util.List;
 )
 
 public class solidarytinker {
-    /**
-     * 联动模组
-     * mekanism
-     * etshtinker的离子炮
-     */
     public static boolean gobber2 = ModList.get().isLoaded("gobber2");
     public static boolean Mekenabled = ModList.get().isLoaded("mekanism");
     public static boolean ETSH = ModList.get().isLoaded("etshtinker");
     public static boolean TI = ModList.get().isLoaded("tinkers_ingenuity");
-    public static final String MOD_ID = "solidarytinker"; //*是你的模组名，需要英文
+    public static final String MOD_ID = "solidarytinker";
 
     public solidarytinker() {
         /*
@@ -55,15 +52,11 @@ public class solidarytinker {
             TinkerCuriosModifier.MODIFIERS.register(eventBus);
         }
     }
-
-    /**
-     * 抑制etshtinker相关类加载
-     */
     public void commonSetup(FMLCommonSetupEvent event) {
+        ToolCapabilityProvider.register(FluxStorage::new);
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);
             event.enqueueWork(etshinkercarbon::extendMap);
-
         }
         if (!TierSortingRegistry.isTierSorted(momo.instance)) {
             if (gobber2 && TierSortingRegistry.isTierSorted(ToolMaterialTiers.END_GOBBER)) {

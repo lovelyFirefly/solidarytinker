@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "solidarytinker:cold_chroma_alloy",
-  "temperature": 4320,
-  "result": {
-    "fluid": "solidarytinker:molten_cold_chroma_alloy",
-    "amount": 90
-  }
-}

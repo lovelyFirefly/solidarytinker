@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:table_casting_material",
-  "cast": {
-    "item": "mekanism:alloy_atomic"
-  },
-  "cast_consumed": true,
-  "item_cost": 8,
-  "result": "solidarytinker:mining_core"
-}

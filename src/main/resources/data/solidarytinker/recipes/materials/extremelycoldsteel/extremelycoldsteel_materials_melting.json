@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "solidarytinker:extremelycoldsteel",
-  "temperature": 1400,
-  "result": {
-    "fluid": "solidarytinker:molten_extremelycoldsteel",
-    "amount": 90
-  }
-}

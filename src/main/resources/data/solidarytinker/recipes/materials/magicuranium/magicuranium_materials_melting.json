@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "solidarytinker:magicuranium",
-  "temperature": 1250,
-  "result": {
-    "fluid": "solidarytinker:molten_magicuranium",
-    "amount": 90
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "solidarytinker:kemomimi",
-  "temperature": 350,
-  "result": {
-    "fluid": "solidarytinker:molten_kemomimi",
-    "amount": 90
-  }
-}

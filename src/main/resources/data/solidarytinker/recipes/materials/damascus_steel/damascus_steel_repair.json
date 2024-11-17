@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "solidarytinker:damascus_steel_ingot"
-  },
-  "value": 1,
-  "needed": 1,
-  "material": "solidarytinker:damascus_steel"
-}

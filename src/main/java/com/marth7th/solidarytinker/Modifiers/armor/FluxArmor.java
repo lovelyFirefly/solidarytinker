@@ -39,7 +39,6 @@ public class FluxArmor extends FluxArmorModifier {
                     FluxStorage.removeEnergy(legs, 200, false, true);
                     FluxStorage.removeEnergy(feet, 200, false, true);
                 }
-
             }
         }
     }

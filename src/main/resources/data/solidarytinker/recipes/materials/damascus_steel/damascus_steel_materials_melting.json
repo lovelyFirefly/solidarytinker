@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "solidarytinker:damascus_steel",
-  "temperature": 1500,
-  "result": {
-    "fluid": "solidarytinker:molten_damascus_steel",
-    "amount": 90
-  }
-}

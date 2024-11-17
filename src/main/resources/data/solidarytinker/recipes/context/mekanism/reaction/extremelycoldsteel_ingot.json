@@ -1,0 +1,21 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 100,
+  "fluidInput": {
+    "amount": 200,
+    "fluid": "mekanism:oxygen"
+  },
+  "gasInput": {
+    "amount": 100,
+    "gas": "mekanism:oxygen"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "forge:ingots/steel"
+    }
+  },
+  "itemOutput": {
+    "count": 1,
+    "item": "solidarytinker:extremelycoldsteel_ingot"
+  }
+}

@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.armor.FluxArmor;
+import com.marth7th.solidarytinker.Modifiers.battle.technology.FluxWeapon;
 import com.marth7th.solidarytinker.Modifiers.slots.energyadd;
 import com.marth7th.solidarytinker.Modifiers.slots.energymultiple;
 import com.marth7th.solidarytinker.Modifiers.slots.energytransport;
@@ -15,5 +16,6 @@ public class solidarytinkerModifierMekEtsh {
     public static final StaticModifier<energymultiple> energymultiple = MODIFIERS.register("energymultiple", energymultiple::new);
     public static final StaticModifier<energytransport> energytransport = MODIFIERS.register("energytransport", energytransport::new);
     public static final StaticModifier<FluxArmor> FLUX_ARMOR_STATIC_MODIFIER = MODIFIERS.register("fluxarmor", FluxArmor::new);   //测试
+    public static final StaticModifier<FluxWeapon> fluxweapon = MODIFIERS.register("fluxweapon", FluxWeapon::new);   //测试
 
 }

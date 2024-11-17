@@ -2,7 +2,7 @@ package com.marth7th.solidarytinker.Modifiers.curios;
 
 import com.marth7th.solidarytinker.solidarytinker;
 import com.xiaoyue.tinkers_ingenuity.generic.XICModifier;
-import com.xiaoyue.tinkers_ingenuity.utils.item.ToolUtils;
+import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils.Curios;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -35,7 +35,7 @@ public class bha extends XICModifier implements ModifierRemovalHook, LootingModi
 
     private void LivingHurtEvent(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            List<ItemStack> curio = ToolUtils.Curios.getStacks(player);
+            List<ItemStack> curio = Curios.getStacks(player);
             Level level = player.getLevel();
             BlockPos posA = player.getOnPos();
             for (ItemStack curios : curio) {

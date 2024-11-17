@@ -1,10 +1,10 @@
 package com.marth7th.solidarytinker.extend.superclass;
 
 import com.marth7th.solidarytinker.extend.energy.FluxStorage;
+import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
+import com.marth7th.solidarytinker.register.solidarytinkerSlots;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.Nullable;
@@ -22,9 +22,16 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-@Deprecated
 public class FluxBattleModifier extends BattleModifier implements VolatileDataModifierHook, ValidateModifierHook, DurabilityDisplayModifierHook, ToolDamageModifierHook {
     public FluxBattleModifier() {
+    }
+
+    protected void registerHooks(ModuleHookMap.Builder builder) {
+        super.registerHooks(builder);
+        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
+        builder.addHook(this, ModifierHooks.TOOLTIP, ModifierHooks.REMOVE);
+        builder.addHook(this, ModifierHooks.DURABILITY_DISPLAY, ModifierHooks.TOOL_DAMAGE);
+        builder.addHook(this, ModifierHooks.VALIDATE, ModifierHooks.VOLATILE_DATA, ModifierHooks.REMOVE);
     }
 
     public Component validate(IToolStackView tool, ModifierEntry modifier) {
@@ -43,6 +50,7 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
     }
 
     public void addVolatileData(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
+        volatileData.addSlots(solidarytinkerSlots.FLUX, 5);
         if (volatileData.contains(FluxStorage.MAX_ENERGY, 3)) {
             volatileData.putInt(FluxStorage.MAX_ENERGY, volatileData.getInt(FluxStorage.MAX_ENERGY) + this.getCapacity(context, modifier, volatileData) * modifier.getLevel());
         } else {
@@ -52,60 +60,46 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
         if (!volatileData.contains(FluxStorage.ENERGY_OWNER, 8)) {
             volatileData.putString(FluxStorage.ENERGY_OWNER, this.getId().toString());
         }
-
     }
 
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (tool instanceof ToolStack && this.isOwner(tool.getVolatileData())) {
             int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_STORE);
-            String var10002 = String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY));
-            MutableComponent var10001 = Component.translatable("modifier.solidarytinker.tooltip.storedenergy");
             if (energy_store > 0) {
-                list.add(var10001.append(var10002 + "/" + (tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).append(this.getDisplayName().copy()));
+                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).withStyle(this.getDisplayName().getStyle()));
             } else {
-                list.add(var10001.append(var10002 + "/" + tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY)).append(this.getDisplayName().copy()));
+                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY))).withStyle(this.getDisplayName().getStyle()));
             }
         }
-
     }
 
     public int getCapacity(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
-        return 25000;
+        int add = context.getModifierLevel(solidarytinkerModifierMekEtsh.energyadd.getId());
+        int mu = context.getModifierLevel(solidarytinkerModifierMekEtsh.energymultiple.getId());
+        return (int) ((1000 + add * 20000) * (1 + mu * 0.4F));
     }
 
     public boolean isOwner(IModDataView volatileData) {
         return this.getId().toString().equals(volatileData.getString(FluxStorage.ENERGY_OWNER));
     }
 
-    protected void registerHooks(ModuleHookMap.Builder builder) {
-        super.registerHooks(builder);
-        builder.addHook(this, ModifierHooks.DURABILITY_DISPLAY, ModifierHooks.TOOL_DAMAGE);
-    }
-
     public Boolean showDurabilityBar(IToolStackView tool, ModifierEntry modifier) {
-        return FluxStorage.getEnergyStored(tool) > 0 || tool.getDamage() > 0;
+        if (FluxStorage.getEnergyStored(tool) > 0) {
+            return true;
+        }
+        return tool.getDamage() > 0;
     }
 
     public int getDurabilityWidth(IToolStackView tool, ModifierEntry modifier) {
         int max = tool.getStats().getInt(ToolStats.DURABILITY);
         int amount = tool.getCurrentDurability();
         if (FluxStorage.getEnergyStored(tool) > 0 && FluxStorage.getMaxEnergyStored(tool) > 0) {
-            return Math.min((int) (13.0F * ((float) FluxStorage.getEnergyStored(tool) / (float) FluxStorage.getMaxEnergyStored(tool))) + 1, 13);
-        } else {
-            return amount >= max ? 13 : 1 + 13 * (amount - 1) / max;
+            return Math.min((int) (13 * ((float) FluxStorage.getEnergyStored(tool) / FluxStorage.getMaxEnergyStored(tool))) + 1, 13);
         }
+        return amount >= max ? 13 : 1 + 13 * (amount - 1) / max;
     }
 
     public int getDurabilityRGB(IToolStackView tool, ModifierEntry modifier) {
-        return FluxStorage.getEnergyStored(tool) > 0 ? 16305663 : -1;
-    }
-
-    public int onDamageTool(IToolStackView tool, ModifierEntry modifierEntry, int amount, @Nullable LivingEntity livingEntity) {
-        if (FluxStorage.getEnergyStored(tool) > 200 * amount) {
-            FluxStorage.removeEnergy(tool, 200 * amount, false, false);
-            return 0;
-        } else {
-            return amount;
-        }
+        return FluxStorage.getEnergyStored(tool) > 0 ? 0xf8cdff : -1;
     }
 }

@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.extend.energy;
 
+import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -29,15 +30,16 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
         this.tool = toolStack;
         this.capOptional = LazyOptional.of(() -> this);
     }
-
     public static int receiveEnergy(IToolStackView tool, int maxReceive, boolean simulate) {
         int energyStored = getEnergyStored(tool);
-        int energyReceived = Math.min(getMaxEnergyStored(tool) - energyStored, maxReceive);
+        int level = tool.getModifierLevel(solidarytinkerModifierMekEtsh.energytransport.getId());
+        int energyReceived = (int) (100 + Math.pow(25, level));
+        int sss = Math.min(getMaxEnergyStored(tool) - energyStored, energyReceived);
         if (!simulate) {
             ModDataNBT persistentData = tool.getPersistentData();
-            persistentData.putInt(STORED_ENERGY, energyStored + energyReceived);
+            persistentData.putInt(STORED_ENERGY, energyStored + sss);
         }
-        return energyReceived;
+        return sss;
     }
 
     public static void removeEnergy(IToolStackView tool, int energyRemoved, boolean simulate, boolean drain) {

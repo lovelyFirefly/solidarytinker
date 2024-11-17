@@ -1,14 +1,14 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.armor.*;
-import com.marth7th.solidarytinker.Modifiers.battle.biomancy.corrode;
-import com.marth7th.solidarytinker.Modifiers.battle.biomancy.swell;
+import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Corrode;
+import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Swell;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
+import com.marth7th.solidarytinker.Modifiers.battle.hidden.Release;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
-import com.marth7th.solidarytinker.Modifiers.battle.hidden.release;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.test;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
-import com.marth7th.solidarytinker.Modifiers.battle.mekanism.*;
+import com.marth7th.solidarytinker.Modifiers.battle.technology.*;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -21,46 +21,45 @@ public class solidarytinkerModifiers {
      */
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(MOD_ID);
     public static final StaticModifier<nos> NOS_STATIC_MODIFIER=MODIFIERS.register("nos", nos::new);   //测试
-    public static final StaticModifier<protonation>PROTONATION_STATIC_MODIFIER=MODIFIERS.register("protonation", protonation::new);   //测试
-    public static final StaticModifier<darkstar>DARKSTAR_STATIC_MODIFIER=MODIFIERS.register("darkstar", darkstar::new);   //暗星
-    public static final StaticModifier<superblazing>SUPERBLAZING_STATIC_MODIFIER=MODIFIERS.register("superblazing", superblazing::new);   //炽焰
-    public static final StaticModifier<collapse>COLLAPSE_STATIC_MODIFIER=MODIFIERS.register("collapse", collapse::new);   //坍缩
-    public static final StaticModifier<neverend>NEVEREND_STATIC_MODIFIER=MODIFIERS.register("neverend", neverend::new);   //永不休止
-    public static final StaticModifier<reliable>RELIABLE_STATIC_MODIFIER=MODIFIERS.register("reliable", reliable::new);   //可靠
-    public static final StaticModifier<tacticsattack>TACTICSATTACK_STATIC_MODIFIER=MODIFIERS.register("tacticsattack", tacticsattack::new);//战术进攻
-    public static final StaticModifier<sandstrom>SANDSTROM_STATIC_MODIFIER=MODIFIERS.register("sandstrom", sandstrom::new);   //沙海守望
-    public static final StaticModifier<absolutejustice>ABSOLUTEJUSTICE_STATIC_MODIFIER=MODIFIERS.register("absolutejustice", absolutejustice::new);   //绝对正义
-    public static final StaticModifier<tacticsprotect>TACTICSPROTECT_STATIC_MODIFIER=MODIFIERS.register("tacticsprotect", tacticsprotect::new);   //战术防御
-    public static final StaticModifier<ancientocean>ANCIENTOCEAN_STATIC_MODIFIER=MODIFIERS.register("ancientocean", ancientocean::new);   //古海孑遗
-    public static final StaticModifier<deepoceanblessing>DEEPOCEANBLESSING_STATIC_MODIFIER=MODIFIERS.register("deepoceanblessing", deepoceanblessing::new);   //深海恩惠
-    public static final StaticModifier<deepoceanecho>DEEPOCEANECHO_STATIC_MODIFIER=MODIFIERS.register("deepoceanecho", deepoceanecho::new);   //深海回声
-    public static final StaticModifier<deepoceanprotect>DEEPOCEANPROTECT_STATIC_MODIFIER=MODIFIERS.register("deepoceanprotect", deepoceanprotect::new);   //深海加护
+    public static final StaticModifier<Protonation> PROTONATION_STATIC_MODIFIER = MODIFIERS.register("protonation", Protonation::new);   //测试
+    public static final StaticModifier<DarkStar> DARKSTAR_STATIC_MODIFIER = MODIFIERS.register("darkstar", DarkStar::new);   //暗星
+    public static final StaticModifier<SuperBlazing> SUPERBLAZING_STATIC_MODIFIER = MODIFIERS.register("superblazing", SuperBlazing::new);   //炽焰
+    public static final StaticModifier<Collapse> COLLAPSE_STATIC_MODIFIER = MODIFIERS.register("collapse", Collapse::new);   //坍缩
+    public static final StaticModifier<NeverEnd> NEVEREND_STATIC_MODIFIER = MODIFIERS.register("neverend", NeverEnd::new);   //永不休止
+    public static final StaticModifier<Reliable> RELIABLE_STATIC_MODIFIER = MODIFIERS.register("reliable", Reliable::new);   //可靠
+    public static final StaticModifier<TacticsAttack> TACTICSATTACK_STATIC_MODIFIER = MODIFIERS.register("tacticsattack", TacticsAttack::new);//战术进攻
+    public static final StaticModifier<SandStrom> SANDSTROM_STATIC_MODIFIER = MODIFIERS.register("sandstrom", SandStrom::new);   //沙海守望
+    public static final StaticModifier<AbsoluteJustice> ABSOLUTEJUSTICE_STATIC_MODIFIER = MODIFIERS.register("absolutejustice", AbsoluteJustice::new);   //绝对正义
+    public static final StaticModifier<TacticsProtect> TACTICSPROTECT_STATIC_MODIFIER = MODIFIERS.register("tacticsprotect", TacticsProtect::new);   //战术防御
+    public static final StaticModifier<Ancientocean> ANCIENTOCEAN_STATIC_MODIFIER = MODIFIERS.register("ancientocean", Ancientocean::new);   //古海孑遗
+    public static final StaticModifier<DeepOceanBlessing> DEEPOCEANBLESSING_STATIC_MODIFIER = MODIFIERS.register("deepoceanblessing", DeepOceanBlessing::new);   //深海恩惠
+    public static final StaticModifier<DeepOceanEcho> DEEPOCEANECHO_STATIC_MODIFIER = MODIFIERS.register("deepoceanecho", DeepOceanEcho::new);   //深海回声
+    public static final StaticModifier<DeepOceanProtect> DEEPOCEANPROTECT_STATIC_MODIFIER = MODIFIERS.register("deepoceanprotect", DeepOceanProtect::new);   //深海加护
     public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //千变
-    public static final StaticModifier<thefood>THEFOOD_STATIC_MODIFIER=MODIFIERS.register("thefood", thefood::new);   //厨神
-    public static final StaticModifier<inheart>INHEART_STATIC_MODIFIER=MODIFIERS.register("inheart", inheart::new);   //本心
-    public static final StaticModifier<removeradition>REMOVERADITION_STATIC_MODIFIER=MODIFIERS.register("removeradition", removeradition::new);   //变辐侠
-    public static final StaticModifier<clean>CLEAN_STATIC_MODIFIER=MODIFIERS.register("clean", clean::new);   //净化
-    public static final StaticModifier<uncannyvalley>UNCANNYVALLEY_STATIC_MODIFIER=MODIFIERS.register("uncannyvalley", uncannyvalley::new);   //恐怖谷效应
-    public static final StaticModifier<angelfox> ANGELFOX_STATIC_MODIFIER = MODIFIERS.register("angelfox", angelfox::new);   //天使狐
-    public static final StaticModifier<voraciousfox>VORACIOUSFOX_STATIC_MODIFIER=MODIFIERS.register("voraciousfox", voraciousfox::new);   //贪吃狐
-    public static final StaticModifier<experiencekiller>EXPRIENCEKILLER_STATIC_MODIFIER=MODIFIERS.register("experiencekiller", experiencekiller::new);   //经验杀手
-    public static final StaticModifier<experienceprotect>EXPERIENCEPROTECT_STATIC_MODIFIER=MODIFIERS.register("experienceprotect", experienceprotect::new);   //经验防护
-    public static final StaticModifier<crushing>CRUSHING_STATIC_MODIFIER=MODIFIERS.register("crushing", crushing::new);   //碾压
-    public static final StaticModifier<ignore>IGNORE_STATIC_MODIFIER=MODIFIERS.register("ignore", ignore::new);   //无视
-    public static final StaticModifier<swell>SWELL_STATIC_MODIFIER=MODIFIERS.register("swell", swell::new);   //膨胀
-    public static final StaticModifier<corrode>CORRODE_STATIC_MODIFIER=MODIFIERS.register("corrode", corrode::new);   //侵蚀
-    public static final StaticModifier<elasticity>ELASTICITY_STATIC_MODIFIER=MODIFIERS.register("elasticity", elasticity::new);   //弹性
-    public static final StaticModifier<release>RELEASE_STATIC_MODIFIER=MODIFIERS.register("release", release::new);   //弹性
-    public static final StaticModifier<seabless> SEABLESS_STATIC_MODIFIER=MODIFIERS.register("seabless", seabless::new);   //海神赐福
-    public static final StaticModifier<riptide> RIPTIDE_STATIC_MODIFIER=MODIFIERS.register("riptide", riptide::new);   //激流
+    public static final StaticModifier<TheFood> THEFOOD_STATIC_MODIFIER = MODIFIERS.register("thefood", TheFood::new);   //厨神
+    public static final StaticModifier<InHeart> INHEART_STATIC_MODIFIER = MODIFIERS.register("inheart", InHeart::new);   //本心
+    public static final StaticModifier<RemoveRadition> REMOVERADITION_STATIC_MODIFIER = MODIFIERS.register("removeradition", RemoveRadition::new);   //变辐侠
+    public static final StaticModifier<Clean> CLEAN_STATIC_MODIFIER = MODIFIERS.register("clean", Clean::new);   //净化
+    public static final StaticModifier<UncannyValley> UNCANNYVALLEY_STATIC_MODIFIER = MODIFIERS.register("uncannyvalley", UncannyValley::new);   //恐怖谷效应
+    public static final StaticModifier<AngelFox> ANGELFOX_STATIC_MODIFIER = MODIFIERS.register("angelfox", AngelFox::new);   //天使狐
+    public static final StaticModifier<VoraciousFox> VORACIOUSFOX_STATIC_MODIFIER = MODIFIERS.register("voraciousfox", VoraciousFox::new);   //贪吃狐
+    public static final StaticModifier<ExperienceKiller> EXPRIENCEKILLER_STATIC_MODIFIER = MODIFIERS.register("experiencekiller", ExperienceKiller::new);   //经验杀手
+    public static final StaticModifier<ExperienceProtect> EXPERIENCEPROTECT_STATIC_MODIFIER = MODIFIERS.register("experienceprotect", ExperienceProtect::new);   //经验防护
+    public static final StaticModifier<Crushing> CRUSHING_STATIC_MODIFIER = MODIFIERS.register("crushing", Crushing::new);   //碾压
+    public static final StaticModifier<Ignore> IGNORE_STATIC_MODIFIER = MODIFIERS.register("ignore", Ignore::new);   //无视
+    public static final StaticModifier<Swell> SWELL_STATIC_MODIFIER = MODIFIERS.register("swell", Swell::new);   //膨胀
+    public static final StaticModifier<Corrode> CORRODE_STATIC_MODIFIER = MODIFIERS.register("corrode", Corrode::new);   //侵蚀
+    public static final StaticModifier<Elasticity> ELASTICITY_STATIC_MODIFIER = MODIFIERS.register("elasticity", Elasticity::new);   //弹性
+    public static final StaticModifier<Release> RELEASE_STATIC_MODIFIER = MODIFIERS.register("release", Release::new);   //弹性
+    public static final StaticModifier<SeaBless> SEABLESS_STATIC_MODIFIER = MODIFIERS.register("seabless", SeaBless::new);   //海神赐福
+    public static final StaticModifier<Riptide> RIPTIDE_STATIC_MODIFIER = MODIFIERS.register("riptide", Riptide::new);   //激流
     public static final StaticModifier<crcs> CRCS_STATIC_MODIFIER=MODIFIERS.register("crcs", crcs::new);   //风雨无阻
-    public static final StaticModifier<injured> INJURED_STATIC_MODIFIER=MODIFIERS.register("injured", injured::new);   //重伤
-    public static final StaticModifier<extremelycold> EXTREMELYCOLD_STATIC_MODIFIER=MODIFIERS.register("extremelycold", extremelycold::new);   //极寒
-    public static final StaticModifier<brittle> BRITTLE_STATIC_MODIFIER=MODIFIERS.register("brittle", brittle::new);   //脆质化
-    public static final StaticModifier<coldfetters> COLDFETTERS_STATIC_MODIFIER=MODIFIERS.register("coldfetters",coldfetters::new);   //寒冰血脉
-    public static final StaticModifier<loyal> LOYAL_STATIC_MODIFIER=MODIFIERS.register("loyal",loyal::new);   //忠诚
-    public static final StaticModifier<lightningbolt> LIGHTNINGBOLT_STATIC_MODIFIER = MODIFIERS.register("lightningbolt", lightningbolt::new);   //引雷
-    public static final StaticModifier<FluxArmor> FLUX_ARMOR_STATIC_MODIFIER = MODIFIERS.register("fluxarmor", FluxArmor::new);   //测试
+    public static final StaticModifier<Injured> INJURED_STATIC_MODIFIER = MODIFIERS.register("injured", Injured::new);   //重伤
+    public static final StaticModifier<ExtremelyCold> EXTREMELYCOLD_STATIC_MODIFIER = MODIFIERS.register("extremelycold", ExtremelyCold::new);   //极寒
+    public static final StaticModifier<Brittle> BRITTLE_STATIC_MODIFIER = MODIFIERS.register("brittle", Brittle::new);   //脆质化
+    public static final StaticModifier<ColdFetters> COLDFETTERS_STATIC_MODIFIER = MODIFIERS.register("coldfetters", ColdFetters::new);   //寒冰血脉
+    public static final StaticModifier<Loyal> LOYAL_STATIC_MODIFIER = MODIFIERS.register("loyal", Loyal::new);   //忠诚
+    public static final StaticModifier<Lightningbolt> LIGHTNINGBOLT_STATIC_MODIFIER = MODIFIERS.register("lightningbolt", Lightningbolt::new);   //引雷
     public static final StaticModifier<test> TEST_STATIC_MODIFIER = MODIFIERS.register("test", test::new);   //测试
 
 }

@@ -11,19 +11,15 @@
     "rainbow":  "#ffd778",
     "saint_chief":  "#a58afc",
     "takeru":  "#848484",
-    "extremelycoldsteel":  "#4f9fe5"
+    "extremelycoldsteel": "#4f9fe5",
+    "cold_chroma_alloy": "#63dddd"
   },
-
-
   "modifier.solidarytinker": {
     "_白矮星_": null,
-
     "collapse":  "#596d99",
     "darkstar":  "#43375b",
     "superblazing":  "#f4790d",
     "protonation":  "#b332d6",
-
-
 
     "_星野_": null,
     "neverend":  "#ffaa7f",
@@ -36,71 +32,49 @@
     "natived": "#ffacf0",
     "watery": "#50b9ff",
 
-
-
     "_墨冰合金_": null,
     "ancientocean":  "#aaaaff",
     "deepoceanblessing":  "#7e96ff",
     "deepoceanecho":  "#1a3fc2",
-
     "deepoceanprotect":  "#495bc2",
     "deepoceanchew": "#1a3fc2",
-
-
 
     "_血肉_": null,
     "corrode":  "#cc483f",
     "swell":  "#cc483f",
-
     "elasticity":  "#cc483f",
-
-
 
     "_魔力铀_": null,
     "clean":  "#baff9c",
-
     "removeradition":  "#baff9c",
-
-
 
     "_圣厨_": null,
     "thefood":  "#ffff60",
     "inheart":  "#fffaab",
 
-
-
     "_大马士革_": null,
     "crushing":  "#ccd1fe",
-
     "ignore":  "#ccd1fe",
-
-
 
     "_经验钢_": null,
     "experiencekiller":  "#8bfe3e",
-
     "experienceprotect":  "#8bfe3e",
-
-
 
     "_takeru_": null,
     "uncannyvalley":  "#ccc9d0",
-
-
 
     "_kemomimi_": null,
     "voraciousfox":  "#fef4e3",
     "angelfox": "#fef4e3",
     "angelprotect": "#fef4e3",
 
-
-
     "_超低温钢_": null,
     "extremelycold":  "#4f9fe5",
     "brittle":  "#4f9fe5",
-
     "coldfetters":  "#4f9fe5",
-
+    "_极寒彩钢_": null,
+    "fluxweapon": "#63dddd",
+    "fluxarmor": "#63dddd",
 
 
     "riptide":  "#5d83ff",
@@ -110,7 +84,10 @@
     "loyal":  "#7dd0c4",
     "injured":  "#ca4cff",
     "despoil": "#ff1515",
-    "precise": "#ffcc11"
+    "precise": "#ffcc11",
+    "energyadd": "#98dd4e",
+    "energymultiple": "#98dd4e",
+    "energytransport": "#98dd4e"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

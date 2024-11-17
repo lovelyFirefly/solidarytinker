@@ -2,10 +2,10 @@ package com.marth7th.solidarytinker;
 
 import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
 import com.kwpugh.gobber2.lists.tiers.ToolMaterialTiers;
-import com.marth7th.solidarytinker.etshtinker.etshinkercarbon;
+import com.marth7th.solidarytinker.etshtinker.EtshinkerCarbon;
 import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.register.*;
-import com.marth7th.solidarytinker.shelf.tier.momo;
+import com.marth7th.solidarytinker.shelf.tier.Momo;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.MinecraftForge;
@@ -45,8 +45,10 @@ public class solidarytinker {
         solidarytinkerFluid.FLUIDS.register(eventBus);
         solidarytinkerBlock.BLOCK.register(eventBus);
         solidarytinkerEffects.EFFECT.register(eventBus);
-        if (Mekenabled) {
+        solidarytinkerSlots.init();
+        if (Mekenabled && ETSH) {
             solidarytinkerGas.GAS.register(eventBus);
+            solidarytinkerModifierMekEtsh.MODIFIERS.register(eventBus);
         }
         if(TI){
             TinkerCuriosModifier.MODIFIERS.register(eventBus);
@@ -56,13 +58,13 @@ public class solidarytinker {
         ToolCapabilityProvider.register(FluxStorage::new);
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);
-            event.enqueueWork(etshinkercarbon::extendMap);
+            event.enqueueWork(EtshinkerCarbon::extendMap);
         }
-        if (!TierSortingRegistry.isTierSorted(momo.instance)) {
+        if (!TierSortingRegistry.isTierSorted(Momo.instance)) {
             if (gobber2 && TierSortingRegistry.isTierSorted(ToolMaterialTiers.END_GOBBER)) {
-                TierSortingRegistry.registerTier(momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER), List.of());
+                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER), List.of());
             } else {
-                TierSortingRegistry.registerTier(momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(Tiers.NETHERITE), List.of());
+                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(Tiers.NETHERITE), List.of());
             }
         }
     }

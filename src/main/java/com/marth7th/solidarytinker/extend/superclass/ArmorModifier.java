@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.extend.superclass;
 
-import com.marth7th.solidarytinker.extend.interfaces.aboutarmor;
-import com.marth7th.solidarytinker.extend.interfaces.aboutbuilder;
+import com.marth7th.solidarytinker.extend.interfaces.AboutArmor;
+import com.marth7th.solidarytinker.extend.interfaces.AboutBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class ArmorModifier extends Modifier implements aboutarmor, DamageBlockModifierHook, OnAttackedModifierHook, ModifyDamageModifierHook, ProtectionModifierHook, ElytraFlightModifierHook, EquipmentChangeModifierHook, aboutbuilder, VolatileDataModifierHook, GeneralInteractionModifierHook, EntityInteractionModifierHook {
+public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockModifierHook, OnAttackedModifierHook, ModifyDamageModifierHook, ProtectionModifierHook, ElytraFlightModifierHook, EquipmentChangeModifierHook, AboutBuilder, VolatileDataModifierHook, GeneralInteractionModifierHook, EntityInteractionModifierHook {
     public boolean havenolevel(){return false;}
 
     public @NotNull Component getDisplayName(int level) {

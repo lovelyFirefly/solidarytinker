@@ -1,9 +1,6 @@
 package com.marth7th.solidarytinker.Items.ingot;
 
 import com.marth7th.solidarytinker.register.solidarytinkerTab;
-import com.marth7th.solidarytinker.util.compound.icefantasy;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

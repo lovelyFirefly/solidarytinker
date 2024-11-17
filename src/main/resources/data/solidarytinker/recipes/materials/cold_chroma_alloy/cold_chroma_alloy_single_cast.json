@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "name": "solidarytinker:molten_cold_chroma_alloy",
+    "amount": 90
+  },
+  "result": "solidarytinker:cold_chroma_alloy_ingot",
+  "cooling_time": 200
+}

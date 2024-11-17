@@ -2,7 +2,7 @@ package com.marth7th.solidarytinker.tools.tinkeritem;
 
 import com.marth7th.solidarytinker.entity.tinkertrident;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
-import com.marth7th.solidarytinker.util.method.modifierlevel;
+import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -57,8 +57,8 @@ public class trident extends ModifiableItem{
             int i = this.getUseDuration(stack) - duration;
             if (i >= 10) {
                 ToolStack tool = ToolStack.from(stack);
-                int j = modifierlevel.getMainhandModifierlevel(player, solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId());
-                int k = modifierlevel.getMainhandModifierlevel(player, solidarytinkerModifiers.CRCS_STATIC_MODIFIER.getId());
+                int j = ModifierLevel.getMainhandModifierlevel(player, solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId());
+                int k = ModifierLevel.getMainhandModifierlevel(player, solidarytinkerModifiers.CRCS_STATIC_MODIFIER.getId());
                     if (!level.isClientSide) {
                         stack.hurtAndBreak(1, player, (player1) -> {
                             player1.broadcastBreakEvent(livingEntity.getUsedItemHand());

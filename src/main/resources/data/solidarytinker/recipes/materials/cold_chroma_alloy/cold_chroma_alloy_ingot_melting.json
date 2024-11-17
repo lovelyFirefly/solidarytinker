@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "solidarytinker:cold_chroma_alloy_ingot"
+  },
+  "result": {
+    "fluid": "solidarytinker:molten_cold_chroma_alloy",
+    "amount": 90
+  },
+  "temperature": 4320,
+  "time": 40
+}

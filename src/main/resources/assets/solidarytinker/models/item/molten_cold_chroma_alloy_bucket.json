@@ -1,0 +1,5 @@
+{
+  "parent": "forge:item/bucket_drip",
+  "loader": "forge:bucket",
+  "fluid": "solidarytinker:molten_cold_chroma_alloy"
+}

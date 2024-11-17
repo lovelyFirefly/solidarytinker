@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Items.ingot.*;
-import com.marth7th.solidarytinker.tools.tinkeritem.mekatool;
+import com.marth7th.solidarytinker.tools.tinkeritem.MekaTool;
 import com.marth7th.solidarytinker.tools.tinkeritem.trident;
 import com.marth7th.solidarytinker.tools.toolDefinitions;
 import net.minecraft.world.item.BlockItem;
@@ -27,7 +27,7 @@ public class solidarytinkerItem {
     public static final CastItemObject trident_head_cast=OTHER_ITEM.registerCast("trident_head",CASTS);
     public static final RegistryObject<ToolPartItem> trident_head=ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
     public static final RegistryObject<ToolPartItem> mining_core = ITEMS.register("mining_core", () -> new ToolPartItem(PART, StatlessMaterialStats.BINDING.getIdentifier()));
-    public static final RegistryObject<ModifiableItem> mekatool=ITEMS.register("mekatool", () -> new mekatool(TOOL, toolDefinitions.MEKATOOL));
+    public static final RegistryObject<ModifiableItem> mekatool = ITEMS.register("mekatool", () -> new MekaTool(TOOL, toolDefinitions.MEKATOOL));
     public static final RegistryObject<ModifiableItem> trident=ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));
 
     public static final RegistryObject<Item> takeru = ITEMS.register("takeru", ( ) -> new takeru(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
@@ -43,5 +43,6 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> saint_chief_ingot = ITEMS.register("saint_chief_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> experience_steel_ingot = ITEMS.register("experience_steel_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> extremelycoldsteel_ingot = ITEMS.register("extremelycoldsteel_ingot", ( ) -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> cold_chroma_alloy_ingot = ITEMS.register("cold_chroma_alloy_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block",( ) -> new BlockItem(solidarytinkerBlock.dwarf_block.get(),new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
 }

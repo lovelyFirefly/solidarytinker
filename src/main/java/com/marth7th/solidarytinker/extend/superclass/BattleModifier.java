@@ -1,8 +1,8 @@
 package com.marth7th.solidarytinker.extend.superclass;
 
-import com.marth7th.solidarytinker.extend.interfaces.aboutarrow;
-import com.marth7th.solidarytinker.extend.interfaces.aboutattack;
-import com.marth7th.solidarytinker.extend.interfaces.aboutbuilder;
+import com.marth7th.solidarytinker.extend.interfaces.AboutArrow;
+import com.marth7th.solidarytinker.extend.interfaces.AboutAttack;
+import com.marth7th.solidarytinker.extend.interfaces.AboutBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class BattleModifier extends Modifier implements aboutattack, aboutbuilder, aboutarrow, EquipmentChangeModifierHook, BlockBreakModifierHook {
+public class BattleModifier extends Modifier implements AboutAttack, AboutBuilder, AboutArrow, EquipmentChangeModifierHook, BlockBreakModifierHook {
     public BattleModifier() {
     }
     protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {

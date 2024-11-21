@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "solidarytinker:molten_experience_steel",
+    "amount": 90
+  },
+  "temperature": 860,
+  "output": "solidarytinker:experience_steel"
+}

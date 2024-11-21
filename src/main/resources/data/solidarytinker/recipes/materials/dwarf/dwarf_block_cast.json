@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "solidarytinker:molten_dwarf",
+    "amount": 810
+  },
+  "result": "solidarytinker:dwarf_block",
+  "cooling_time": 165
+}

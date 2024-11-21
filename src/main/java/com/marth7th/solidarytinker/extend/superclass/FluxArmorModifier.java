@@ -1,6 +1,4 @@
 package com.marth7th.solidarytinker.extend.superclass;
-
-
 import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.register.solidarytinkerSlots;
@@ -29,10 +27,7 @@ public class FluxArmorModifier extends ArmorModifier implements VolatileDataModi
 
     protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
-        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE, ModifierHooks.INVENTORY_TICK, ModifierHooks.ON_ATTACKED);
-        builder.addHook(this, ModifierHooks.TOOLTIP, ModifierHooks.REMOVE);
         builder.addHook(this, ModifierHooks.DURABILITY_DISPLAY, ModifierHooks.TOOL_DAMAGE);
-        builder.addHook(this, ModifierHooks.VALIDATE, ModifierHooks.VOLATILE_DATA, ModifierHooks.REMOVE);
     }
 
     public Component validate(IToolStackView tool, ModifierEntry modifier) {

@@ -13,10 +13,11 @@ out
 *.iml
 .idea
 
+
 # gradle
 build
 .gradle
-
+.lib
 # other
 eclipse
 run

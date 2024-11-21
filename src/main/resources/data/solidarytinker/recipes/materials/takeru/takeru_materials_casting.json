@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "solidarytinker:molten_takeru",
+    "amount": 90
+  },
+  "temperature": 752,
+  "output": "solidarytinker:takeru"
+}

@@ -31,7 +31,7 @@ public class FluxArmor extends FluxArmorModifier {
                     FluxStorage.removeEnergy(chest, 200 * amount, false, false);
                     FluxStorage.removeEnergy(legs, 200 * amount, false, false);
                     FluxStorage.removeEnergy(feet, 200 * amount, false, false);
-                    event.setAmount(amount * 0.075f);
+                    event.setAmount(amount * 0.06f);
                 } else {
                     event.setAmount(event.getAmount() * 0.5f);
                     FluxStorage.removeEnergy(helmet, 200, false, true);

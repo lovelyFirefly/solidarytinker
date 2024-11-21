@@ -34,14 +34,14 @@ public class Injured extends BattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if(level<=5){
-            livingTarget.addEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(),100,level,true,true));
-        }
-        else livingTarget.addEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(),400,level,true,true));
+            livingTarget.forceAddEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(), 100, level, false, false), attacker);
+        } else
+            livingTarget.forceAddEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(), 400, level, false, false), attacker);
         return damage;
     }
 
     @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
-        target.addEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(),100,0,true,true));
+        target.forceAddEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(), 100, 0, false, false), attacker);
     }
 }

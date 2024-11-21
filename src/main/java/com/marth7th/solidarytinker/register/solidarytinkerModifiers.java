@@ -61,5 +61,6 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<Loyal> LOYAL_STATIC_MODIFIER = MODIFIERS.register("loyal", Loyal::new);   //忠诚
     public static final StaticModifier<Lightningbolt> LIGHTNINGBOLT_STATIC_MODIFIER = MODIFIERS.register("lightningbolt", Lightningbolt::new);   //引雷
     public static final StaticModifier<test> TEST_STATIC_MODIFIER = MODIFIERS.register("test", test::new);   //测试
+    public static final StaticModifier<SlimeCuring> SlimeCuring = MODIFIERS.register("slimecuring", SlimeCuring::new);   //测试
 
 }

@@ -28,10 +28,7 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
 
     protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
-        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
-        builder.addHook(this, ModifierHooks.TOOLTIP, ModifierHooks.REMOVE);
         builder.addHook(this, ModifierHooks.DURABILITY_DISPLAY, ModifierHooks.TOOL_DAMAGE);
-        builder.addHook(this, ModifierHooks.VALIDATE, ModifierHooks.VOLATILE_DATA, ModifierHooks.REMOVE);
     }
 
     public Component validate(IToolStackView tool, ModifierEntry modifier) {

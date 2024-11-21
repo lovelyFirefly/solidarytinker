@@ -1,8 +1,14 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package com.marth7th.solidarytinker.extend.superclass;
 
 import com.marth7th.solidarytinker.extend.interfaces.AboutArmor;
 import com.marth7th.solidarytinker.extend.interfaces.AboutBuilder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -18,27 +24,22 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.*;
 import slimeknights.tconstruct.library.modifiers.hook.build.VolatileDataModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.EntityInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockModifierHook, OnAttackedModifierHook, ModifyDamageModifierHook, ProtectionModifierHook, ElytraFlightModifierHook, EquipmentChangeModifierHook, AboutBuilder, VolatileDataModifierHook, GeneralInteractionModifierHook, EntityInteractionModifierHook {
-    public boolean havenolevel(){return false;}
-
-    public @NotNull Component getDisplayName(int level) {
-        if(havenolevel()){
-            return super.getDisplayName();
-        }else
-            return super.getDisplayName(level);
-    }
-    {
+public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockModifierHook, OnAttackedModifierHook, ModifyDamageModifierHook, ProtectionModifierHook, ElytraFlightModifierHook, EquipmentChangeModifierHook, AboutBuilder, VolatileDataModifierHook, GeneralInteractionModifierHook {
+    public ArmorModifier() {
         MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
         MinecraftForge.EVENT_BUS.addListener(this::MobEffectEvent);
         MinecraftForge.EVENT_BUS.addListener(this::WhenEffectRemove);
+    }
+
+    public boolean havenolevel() {
+        return false;
     }
 
     public void MobEffectEvent(MobEffectEvent.Applicable event) {
@@ -47,7 +48,6 @@ public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockMo
     public void WhenEffectRemove(MobEffectEvent.Remove event) {
     }
 
-    @Override
     public Component getDisplayName(IToolStackView tool, ModifierEntry entry) {
         return super.getDisplayName(tool, entry);
     }
@@ -55,38 +55,43 @@ public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockMo
     public void LivingAttackEvent(LivingAttackEvent event) {
     }
 
-    public void LivingHurtEvent(LivingHurtEvent event) {
-        if(event.getSource().getEntity() instanceof LivingEntity entity&&event.getEntity() instanceof Player player){
-            this.LivingHurt(event,entity,player);
-        }
+    public @NotNull Component getDisplayName(int level) {
+        return this.havenolevel() ? super.getDisplayName() : super.getDisplayName(level);
     }
 
     public void LivingHurt(LivingHurtEvent event, LivingEntity entity, Player player) {
     }
 
-    public boolean hidden(){return false;}
-    public boolean shouldDisplay(boolean advanced) {
-        if(hidden()){
-            return advanced;
+    public void LivingHurtEvent(LivingHurtEvent event) {
+        Entity var4 = event.getSource().getEntity();
+        if (var4 instanceof LivingEntity entity) {
+            LivingEntity var5 = event.getEntity();
+            if (var5 instanceof Player player) {
+                this.LivingHurt(event, entity, player);
+            }
         }
-        else
-            return true;
+
     }
-    public ArmorModifier(){
+
+    public boolean hidden() {
+        return false;
     }
+
+    public boolean shouldDisplay(boolean advanced) {
+        return this.hidden() ? advanced : true;
+    }
+
     protected void registerHooks(ModuleHookMap.Builder builder) {
         this.initarmorinterface(builder);
-        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE,ModifierHooks.ELYTRA_FLIGHT,ModifierHooks.MODIFY_HURT,ModifierHooks.VOLATILE_DATA);
+        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE, ModifierHooks.ELYTRA_FLIGHT, ModifierHooks.MODIFY_HURT, ModifierHooks.VOLATILE_DATA);
         builder.addHook(this, ModifierHooks.DAMAGE_BLOCK, ModifierHooks.ON_ATTACKED, ModifierHooks.MODIFY_DAMAGE);
-        builder.addHook(this, ModifierHooks.VALIDATE, ModifierHooks.ENTITY_INTERACT);
-        builder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP,ModifierHooks.GENERAL_INTERACT);
+        builder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.ATTRIBUTES, ModifierHooks.TOOL_STATS, ModifierHooks.INVENTORY_TICK, ModifierHooks.TOOL_DAMAGE, ModifierHooks.TOOLTIP, ModifierHooks.GENERAL_INTERACT);
     }
+
     public void processLoot(IToolStackView iToolStackView, ModifierEntry modifierEntry, List<ItemStack> list, LootContext lootContext) {
     }
 
-    @Nullable
-    @Override
-    public Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
+    public @Nullable Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
         return null;
     }
 }

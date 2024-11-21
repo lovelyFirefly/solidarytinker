@@ -1,3 +1,4 @@
+
 package com.marth7th.solidarytinker.extend.superclass;
 
 import com.marth7th.solidarytinker.extend.interfaces.AboutArrow;
@@ -14,35 +15,35 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
-import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class BattleModifier extends Modifier implements AboutAttack, AboutBuilder, AboutArrow, EquipmentChangeModifierHook, BlockBreakModifierHook {
+public class BattleModifier extends Modifier implements AboutAttack, AboutBuilder, AboutArrow, EquipmentChangeModifierHook {
     public BattleModifier() {
-    }
-    protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
-        this.initattackinterface(builder);
-        this.initbuilderinterface(builder);
-        this.initarrowinterface(builder);
-        super.registerHooks(builder);
-    }
-    {
         MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingDamageEvent);
     }
+
+    protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
+        this.initattackinterface(builder);
+        this.initbuilderinterface(builder);
+        this.initarrowinterface(builder);
+        builder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
+        super.registerHooks(builder);
+    }
+
     public void LivingDamageEvent(LivingDamageEvent event) {
     }
 
     public void LivingHurtEvent(LivingHurtEvent event) {
     }
-    public void LivingAttackEvent(LivingAttackEvent event) {
 
+    public void LivingAttackEvent(LivingAttackEvent event) {
     }
 
     public boolean havenolevel() {
@@ -50,34 +51,21 @@ public class BattleModifier extends Modifier implements AboutAttack, AboutBuilde
     }
 
     public @NotNull Component getDisplayName(int level) {
-        if (havenolevel()) {
-            return super.getDisplayName();
-        } else
-            return super.getDisplayName(level);
+        return this.havenolevel() ? super.getDisplayName() : super.getDisplayName(level);
     }
 
     public boolean hidden() {
         return false;
     }
+
     public boolean shouldDisplay(boolean advanced) {
-        if(hidden()){
-            return advanced;
-        }
-        else
-            return true;
+        return this.hidden() ? advanced : true;
     }
 
-    @Override
     public void processLoot(IToolStackView iToolStackView, ModifierEntry modifierEntry, List<ItemStack> list, LootContext lootContext) {
     }
 
-    @Nullable
-    @Override
-    public Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
+    public @Nullable Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
         return null;
-    }
-
-    @Override
-    public void afterBlockBreak(IToolStackView iToolStackView, ModifierEntry modifierEntry, ToolHarvestContext toolHarvestContext) {
     }
 }

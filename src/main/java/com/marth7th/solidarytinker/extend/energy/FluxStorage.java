@@ -33,7 +33,8 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
     public static int receiveEnergy(IToolStackView tool, int maxReceive, boolean simulate) {
         int energyStored = getEnergyStored(tool);
         int level = tool.getModifierLevel(solidarytinkerModifierMekEtsh.energytransport.getId());
-        int energyReceived = (int) (100 + Math.pow(25, level));
+        int tran = 1000 + level * 2000;
+        int energyReceived = Math.min(getMaxEnergyStored(tool) - energyStored, Math.min(tran, maxReceive));
         int sss = Math.min(getMaxEnergyStored(tool) - energyStored, energyReceived);
         if (!simulate) {
             ModDataNBT persistentData = tool.getPersistentData();
@@ -41,7 +42,6 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
         }
         return sss;
     }
-
     public static void removeEnergy(IToolStackView tool, int energyRemoved, boolean simulate, boolean drain) {
         int energyStored = getEnergyStored(tool);
         ModDataNBT persistentData;
@@ -78,7 +78,7 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
     }
 
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        return receiveEnergy(this.tool.get(), getMaxEnergyStored(this.tool.get()) / 5, simulate);
+        return receiveEnergy(this.tool.get(), maxReceive, simulate);
     }
 
     public int extractEnergy(int maxExtract, boolean simulate) {

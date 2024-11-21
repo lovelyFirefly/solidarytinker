@@ -87,7 +87,9 @@
     "precise": "#ffcc11",
     "energyadd": "#98dd4e",
     "energymultiple": "#98dd4e",
-    "energytransport": "#98dd4e"
+    "energytransport": "#98dd4e",
+    "fluxshot": "#98dd4e",
+    "slimecuring": "#d3f5ab"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

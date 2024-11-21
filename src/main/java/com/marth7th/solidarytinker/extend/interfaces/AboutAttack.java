@@ -1,3 +1,8 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package com.marth7th.solidarytinker.extend.interfaces;
 
 import net.minecraft.world.entity.LivingEntity;
@@ -10,12 +15,11 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public interface AboutAttack extends MeleeDamageModifierHook, MeleeHitModifierHook {
-
     default void initattackinterface(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MELEE_HIT);
     }
-    @Override
-    default float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage){
+
+    default float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         return context.getLivingTarget() != null ? this.staticdamage(tool, modifier.getLevel(), context, context.getAttacker(), context.getLivingTarget(), baseDamage, damage) : damage;
     }
 

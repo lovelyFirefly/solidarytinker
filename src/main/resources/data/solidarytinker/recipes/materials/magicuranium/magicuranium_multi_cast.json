@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "cast_consumed": false,
+  "fluid": {
+    "name": "solidarytinker:molten_magicuranium",
+    "amount": 90
+  },
+  "result": "solidarytinker:magicuranium_ingot",
+  "cooling_time": 200
+}

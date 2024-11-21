@@ -229,7 +229,7 @@
   "modifier.solidarytinker.voraciousfox.description": "攻击额外附加受运气影响的魔法伤害,提升等级会提升比例（每级提升10%自身生命上限）",
   "modifier.solidarytinker.voraciousfox.flavor": "啊呜啊呜",
   "modifier.solidarytinker.watery": "水着",
-  "modifier.solidarytinker.watery.description": "你所有物品栏的工具冷却速度更快",
+  "modifier.solidarytinker.watery.description": "大幅缩减你所有物品栏的工具的冷却速度(4倍）",
   "modifier.solidarytinker.watery.flavor": "专注速度",
   "pattern.solidarytinker.mining_core": "挖掘核心",
   "pattern.solidarytinker.trident_head": "三叉戟头",
@@ -253,9 +253,15 @@
   "material.solidarytinker.cold_chroma_alloy.encyclopedia": "在极低温的影响下,彩钢的属性出现了一些逆转",
   "material.solidarytinker.cold_chroma_alloy.flavor": "多冷的隆冬",
   "modifier.solidarytinker.fluxweapon": "通量镀层",
-  "modifier.solidarytinker.fluxweapon.description": "仅仅在主手时候生效\n攻击会提升40%x面板x词条等级的伤害。每点伤害提升额外消耗400x词条等级x面板的能量，当能量不足时无法触发这个增伤\n远程则基于箭矢伤害去提升,同时倍率降低到30%",
+  "modifier.solidarytinker.fluxweapon.description": "仅仅在主手时候生效\n攻击会提升40%x面板x词条等级的伤害。每点伤害提升额外消耗400x词条等级x面板x40%的能量，当能量不足时无法触发这个增伤\n远程则基于箭矢伤害去提升,同时倍率降低到30%",
   "modifier.solidarytinker.fluxweapon.flavor": "滋滋...",
   "modifier.solidarytinker.fluxarmor": "通量装甲",
-  "modifier.solidarytinker.fluxarmor.description": "身着4件时,消耗全身每件电量抵挡伤害,每400点电量抵挡1点实际伤害,至多抵挡原伤害92.5%,如果当前电量不足以抵挡此次伤害则免伤效果降低至50%且清空电量",
-  "modifier.solidarytinker.fluxarmor.flavor": "通量防御开启"
+  "modifier.solidarytinker.fluxarmor.description": "身着4件时,消耗全身每件电量抵挡伤害,每400点电量抵挡1点实际伤害,至多抵挡原伤害94%,如果当前电量不足以抵挡此次伤害则免伤效果降低至50%且清空电量",
+  "modifier.solidarytinker.fluxarmor.flavor": "通量防御开启",
+  "modifier.solidarytinker.fluxshot": "通量射击",
+  "modifier.solidarytinker.fluxshot.description": "每次消耗100Fe来代替消耗箭矢",
+  "modifier.solidarytinker.fluxshot.flavor": "化能源为箭矢",
+  "modifier.solidarytinker.slimecuring": "黏液固化",
+  "modifier.solidarytinker.slimecuring.description": "武器/盔甲的黏液覆层上限+300，每50点黏液覆层提供1%的伤害提升/1%的物理和爆炸抗性。当你受到你生命值50%以上的物理伤害时，消耗最大值75%的粘液覆层抵消50%伤害",
+  "modifier.solidarytinker.slimecuring.flavor": "它变硬了"
 }

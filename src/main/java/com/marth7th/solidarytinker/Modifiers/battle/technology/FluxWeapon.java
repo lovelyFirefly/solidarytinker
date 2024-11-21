@@ -16,7 +16,7 @@ public class FluxWeapon extends FluxBattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         float need = tool.getStats().get(ToolStats.ATTACK_DAMAGE);
-        if (FluxStorage.getEnergyStored(tool) >= need * 400 * level) {
+        if (FluxStorage.getEnergyStored(tool) >= need * 0.4F * 400 * level) {
             FluxStorage.removeEnergy(tool, (int) (400 * need), false, false);
             return damage + need * (0.4f * level);
         }
@@ -39,8 +39,8 @@ public class FluxWeapon extends FluxBattleModifier {
 
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifierEntry, int amount, @Nullable LivingEntity livingEntity) {
-        if (FluxStorage.getEnergyStored(tool) > 1000 * amount) {
-            FluxStorage.removeEnergy(tool, 1000 * amount, false, false);
+        if (FluxStorage.getEnergyStored(tool) > 500 * amount) {
+            FluxStorage.removeEnergy(tool, 500 * amount, false, false);
             return 0;
         }
         return amount;

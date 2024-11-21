@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "item": "solidarytinker:violane"
+    },
+    {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    {
+      "item": "solidarytinker:violane"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    },
+    {
+      "item": "tconstruct:sky_slime"
+    }
+  ],
+  "level": 1,
+  "result": "solidarytinker:crcs",
+  "slots": {
+    "abilities": 1
+  },
+  "requirements": {
+    "name": "solidarytinker:riptide",
+    "level": 1,
+    "error": "recipe.solidarytinker.modifier.crcs"
+  },
+  "tools": {
+    "item": "solidarytinker:trident"
+  }
+}

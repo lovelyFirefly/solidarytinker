@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_steel",
+      "amount": 360
+    },
+    {
+      "name": "tconstruct:molten_hepatizon",
+      "amount": 180
+    },
+    {
+      "name": "tinkers_ingenuity:molten_lefigaro",
+      "amount": 180
+    }
+  ],
+  "result": {
+    "fluid": "solidarytinker:molten_damascus_steel",
+    "amount": 90
+  },
+  "temperature": 1450
+}

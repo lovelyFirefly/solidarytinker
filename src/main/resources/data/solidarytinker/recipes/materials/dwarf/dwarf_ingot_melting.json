@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "solidarytinker:dwarf_ingot"
+  },
+  "result": {
+    "fluid": "solidarytinker:molten_dwarf",
+    "amount": 90
+  },
+  "temperature": 6200,
+  "time": 20
+}

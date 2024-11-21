@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "solidarytinker:starfall_ingot"
+  },
+  "value": 1,
+  "needed": 1,
+  "material": "solidarytinker:starfall"
+}

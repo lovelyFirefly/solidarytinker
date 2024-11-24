@@ -144,13 +144,13 @@
   "modifier.solidarytinker.elasticity.description": "虽然他是软的,但是它会咬住目标,对目标反噬50%原伤害结果,每提升1词条等级则附加原伤害 * 0.5",
   "modifier.solidarytinker.elasticity.flavor": "一拳打在棉花上",
   "modifier.solidarytinker.energyadd": "增限",
-  "modifier.solidarytinker.energyadd.description": "增加能量基础容量每级20000",
+  "modifier.solidarytinker.energyadd.description": "增加能量基础容量每级30000",
   "modifier.solidarytinker.energyadd.flavor": "地基牢固",
   "modifier.solidarytinker.energymultiple": "超限",
   "modifier.solidarytinker.energymultiple.description": "每级增加40%能量存储",
   "modifier.solidarytinker.energymultiple.flavor": "飞升",
   "modifier.solidarytinker.energytransport": "高速传输",
-  "modifier.solidarytinker.energytransport.description": "增加25^词条等级点能量传输",
+  "modifier.solidarytinker.energytransport.description": "增加1000*词条等级点能量传输",
   "modifier.solidarytinker.energytransport.flavor": "超导？",
   "modifier.solidarytinker.experiencekiller": "经验杀手",
   "modifier.solidarytinker.experiencekiller.description": "每一级经验提供额外的0.5 * 词条等级伤害,,每次攻击都会扣除10点经验为代价",
@@ -262,6 +262,6 @@
   "modifier.solidarytinker.fluxshot.description": "每次消耗100Fe来代替消耗箭矢",
   "modifier.solidarytinker.fluxshot.flavor": "化能源为箭矢",
   "modifier.solidarytinker.slimecuring": "黏液固化",
-  "modifier.solidarytinker.slimecuring.description": "武器/盔甲的黏液覆层上限+300，每50点黏液覆层提供1%的伤害提升/1%的物理和爆炸抗性。当你受到你生命值50%以上的物理伤害时，消耗最大值75%的粘液覆层抵消50%伤害",
+  "modifier.solidarytinker.slimecuring.description": "武器/盔甲的黏液覆层上限+300，每50点黏液覆层提供1%的伤害提升/1%的物理和爆炸抗性。当你受到你生命值50%以上的物理伤害时，消耗最大值25%的粘液覆层抵消90%伤害",
   "modifier.solidarytinker.slimecuring.flavor": "它变硬了"
 }

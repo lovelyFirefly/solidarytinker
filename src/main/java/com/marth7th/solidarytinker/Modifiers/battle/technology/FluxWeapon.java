@@ -39,8 +39,8 @@ public class FluxWeapon extends FluxBattleModifier {
 
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifierEntry, int amount, @Nullable LivingEntity livingEntity) {
-        if (FluxStorage.getEnergyStored(tool) > 500 * amount) {
-            FluxStorage.removeEnergy(tool, 500 * amount, false, false);
+        if (FluxStorage.getEnergyStored(tool) > 100 * amount) {
+            FluxStorage.removeEnergy(tool, 100 * amount, false, false);
             return 0;
         }
         return amount;

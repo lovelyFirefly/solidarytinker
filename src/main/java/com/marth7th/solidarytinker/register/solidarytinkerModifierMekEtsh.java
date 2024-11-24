@@ -20,5 +20,4 @@ public class solidarytinkerModifierMekEtsh {
     public static final StaticModifier<FluxWeapon> fluxweapon = MODIFIERS.register("fluxweapon", FluxWeapon::new);   //测试
     public static final StaticModifier<Fluxshot> fluxshot = MODIFIERS.register("fluxshot", Fluxshot::new);   //测试
 
-
 }

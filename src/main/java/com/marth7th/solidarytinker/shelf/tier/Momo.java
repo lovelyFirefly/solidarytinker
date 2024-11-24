@@ -1,8 +1,7 @@
 package com.marth7th.solidarytinker.shelf.tier;
-
-
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
 public class Momo implements Tier {
     public static Tier instance = new Momo();
@@ -27,7 +26,7 @@ public class Momo implements Tier {
         return 12;
     }
     @Override
-    public Ingredient getRepairIngredient() {
+    public @NotNull Ingredient getRepairIngredient() {
         return Ingredient.EMPTY;
     }
 

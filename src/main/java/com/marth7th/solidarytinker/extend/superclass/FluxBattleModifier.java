@@ -73,7 +73,7 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
     public int getCapacity(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
         int add = context.getModifierLevel(solidarytinkerModifierMekEtsh.energyadd.getId());
         int mu = context.getModifierLevel(solidarytinkerModifierMekEtsh.energymultiple.getId());
-        return (int) ((1000 + add * 20000) * (1 + mu * 0.4F));
+        return (int) ((10000 + add * 30000) * (1 + mu * 0.4F));
     }
 
     public boolean isOwner(IModDataView volatileData) {

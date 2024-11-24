@@ -9,10 +9,6 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 
 public class ModifierLevel {
-
-    //一个一个获取词条等级太麻烦了，所以我仿照晓月弄了这个
-
-
     public static int getMainhandModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if(entity instanceof Player player){

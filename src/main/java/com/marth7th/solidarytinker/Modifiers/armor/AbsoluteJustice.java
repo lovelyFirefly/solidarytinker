@@ -18,8 +18,8 @@ public class AbsoluteJustice extends ArmorModifier {
 
     boolean TN = ModList.get().isLoaded("tinkersinnovation");
 
-    public void LivingHurtEvent( LivingHurtEvent event) {
-        if(event.getEntity()!=null){
+    public void LivingHurtEvent(LivingHurtEvent event) {
+        if (event.getEntity() != null) {
             if (ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
                 if (event.getSource().getEntity() == null) {
                     event.setCanceled(true);

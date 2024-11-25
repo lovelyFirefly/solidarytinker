@@ -32,8 +32,8 @@ public class SeaBless extends BattleModifier {
     @Override
     public void LivingAttackEvent(LivingAttackEvent event) {
         if (ModifierLevel.getMainhandModifierlevel(event.getEntity(), solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId()) > 0) {
-            if(event.getSource()==DamageSource.FALL){
-                event.getEntity().invulnerableTime=80;
+            if (event.getSource() == DamageSource.FALL) {
+                event.getEntity().invulnerableTime = 80;
                 event.setCanceled(true);
             }
         }

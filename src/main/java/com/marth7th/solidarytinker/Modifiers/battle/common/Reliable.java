@@ -27,9 +27,11 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 public class Reliable extends BattleModifier {
     boolean ti = ModList.get().isLoaded("tinkers_ingenuity");
     boolean etsh = ModList.get().isLoaded("etshtinker");
+
     public boolean havenolevel() {
         return true;
     }
+
     public void LivingHurtEvent(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (ModifierLevel.HandsHaveModifierlevel(player, this.getId())) {
@@ -59,8 +61,8 @@ public class Reliable extends BattleModifier {
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if(livingTarget!=null) {
-            if (livingTarget.getHealth() >livingTarget.getMaxHealth() * 0.5f){
+        if (livingTarget != null) {
+            if (livingTarget.getHealth() > livingTarget.getMaxHealth() * 0.5f) {
                 return damage * 2f;
             }
         }
@@ -87,9 +89,9 @@ public class Reliable extends BattleModifier {
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit,AbstractArrow arrow,  LivingEntity attacker, LivingEntity target) {
-        if(target.getHealth()>target.getMaxHealth() * 0.5f){
-            arrow.setBaseDamage(arrow.getBaseDamage() *2f);
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
+        if (target.getHealth() > target.getMaxHealth() * 0.5f) {
+            arrow.setBaseDamage(arrow.getBaseDamage() * 2f);
         }
     }
 

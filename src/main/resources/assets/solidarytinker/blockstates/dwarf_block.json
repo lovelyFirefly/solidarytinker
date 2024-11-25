@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "solidarytinker:block/dwarf_block" }
+    "": {
+      "model": "solidarytinker:block/dwarf_block"
+    }
   }
 }

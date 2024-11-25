@@ -5,7 +5,7 @@ import static com.c2h6s.etshtinker.init.etshtinkerParticleType.*;
 import static com.marth7th.solidarytinker.register.solidarytinkerFluid.*;
 
 public class EtshinkerCarbon {
-    public static void extendMap () {
+    public static void extendMap() {
         fluidParts.put(molten_dwarf.get(), plasmaexplosioncyan.get());
         fluidDmg.put(molten_dwarf.get(), 18F);
         fluidSpecial.put(molten_dwarf.get(), "burn");

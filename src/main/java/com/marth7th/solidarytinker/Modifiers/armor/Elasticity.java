@@ -12,8 +12,8 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class Elasticity extends ArmorModifier {
     @Override
     public float TrueDamageamount(IToolStackView armor, int level, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean isDirectDamage, LivingEntity entity, LivingEntity enemy) {
-        if(enemy instanceof Mob mob){
-            if(entity instanceof Player player){
+        if (enemy instanceof Mob mob) {
+            if (entity instanceof Player player) {
                 mob.hurt(DamageSource.MAGIC, amount * 0.5f * level);
             }
         }

@@ -12,9 +12,9 @@ public class ColdFetters extends ArmorModifier {
     public void LivingHurtEvent(LivingHurtEvent event) {
         if (event.getSource().getEntity() != null && ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), this.getId()) > 0) {
             int level = ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), this.getId());
-            if(event.getSource().getEntity()instanceof LivingEntity enemy){
-                if(enemy.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)){
-                    event.setAmount(event.getAmount() * (1-0.1f*level));
+            if (event.getSource().getEntity() instanceof LivingEntity enemy) {
+                if (enemy.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+                    event.setAmount(event.getAmount() * (1 - 0.1f * level));
                 }
             }
         } else if (ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), this.getId()) > 0) {

@@ -16,13 +16,14 @@ public class Ancientocean extends BattleModifier {
     }
 
     public void LivingAttackEvent(LivingAttackEvent event) {
-        if(event.getSource().getEntity() instanceof Player player){
+        if (event.getSource().getEntity() instanceof Player player) {
             if (ModifierUtil.getModifierLevel(player.getMainHandItem(), this.getId()) > 0) {
-                    event.getEntity().invulnerableTime = 0;
-                    event.getSource().bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
-                }
+                event.getEntity().invulnerableTime = 0;
+                event.getSource().bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
             }
         }
+    }
+
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity entity) {
         return 0;

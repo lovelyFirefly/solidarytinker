@@ -50,10 +50,11 @@ public class solidarytinker {
             solidarytinkerGas.GAS.register(eventBus);
             solidarytinkerModifierMekEtsh.MODIFIERS.register(eventBus);
         }
-        if(TI){
+        if (TI) {
             TinkerCuriosModifier.MODIFIERS.register(eventBus);
         }
     }
+
     public void commonSetup(FMLCommonSetupEvent event) {
         ToolCapabilityProvider.register(FluxStorage::new);
         if (Mekenabled && ETSH) {
@@ -76,6 +77,7 @@ public class solidarytinker {
     public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
         return TinkerDataCapability.TinkerDataKey.of(getResource(name));
     }
+
     public static String makeDescriptionId(String type, String name) {
         return type + ".solidarytinker." + name;
     }

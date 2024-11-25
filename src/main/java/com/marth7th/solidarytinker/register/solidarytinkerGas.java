@@ -6,8 +6,8 @@ import mekanism.common.registration.impl.GasRegistryObject;
 
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
-public class solidarytinkerGas{
+public class solidarytinkerGas {
     public static final GasDeferredRegister GAS = new GasDeferredRegister(MOD_ID);
-    public static final GasRegistryObject<Gas> FLUORINE  = GAS.register("fluorine", 0xadc739);
+    public static final GasRegistryObject<Gas> FLUORINE = GAS.register("fluorine", 0xadc739);
 
 }

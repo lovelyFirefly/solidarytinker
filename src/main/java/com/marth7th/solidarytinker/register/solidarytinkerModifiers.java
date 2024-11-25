@@ -15,12 +15,8 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 public class solidarytinkerModifiers {
-    /**
-     * 词条的注册部分
-     * 图省事所有直接把等号外部分写在一起了（
-     */
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(MOD_ID);
-    public static final StaticModifier<nos> NOS_STATIC_MODIFIER=MODIFIERS.register("nos", nos::new);   //测试
+    public static final StaticModifier<nos> NOS_STATIC_MODIFIER = MODIFIERS.register("nos", nos::new);   //测试
     public static final StaticModifier<Protonation> PROTONATION_STATIC_MODIFIER = MODIFIERS.register("protonation", Protonation::new);   //测试
     public static final StaticModifier<DarkStar> DARKSTAR_STATIC_MODIFIER = MODIFIERS.register("darkstar", DarkStar::new);   //暗星
     public static final StaticModifier<SuperBlazing> SUPERBLAZING_STATIC_MODIFIER = MODIFIERS.register("superblazing", SuperBlazing::new);   //炽焰
@@ -35,7 +31,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<DeepOceanBlessing> DEEPOCEANBLESSING_STATIC_MODIFIER = MODIFIERS.register("deepoceanblessing", DeepOceanBlessing::new);   //深海恩惠
     public static final StaticModifier<DeepOceanEcho> DEEPOCEANECHO_STATIC_MODIFIER = MODIFIERS.register("deepoceanecho", DeepOceanEcho::new);   //深海回声
     public static final StaticModifier<DeepOceanProtect> DEEPOCEANPROTECT_STATIC_MODIFIER = MODIFIERS.register("deepoceanprotect", DeepOceanProtect::new);   //深海加护
-    public static final StaticModifier<variety>VARIETY_STATIC_MODIFIER=MODIFIERS.register("variety", variety::new);   //千变
+    public static final StaticModifier<variety> VARIETY_STATIC_MODIFIER = MODIFIERS.register("variety", variety::new);   //千变
     public static final StaticModifier<TheFood> THEFOOD_STATIC_MODIFIER = MODIFIERS.register("thefood", TheFood::new);   //厨神
     public static final StaticModifier<InHeart> INHEART_STATIC_MODIFIER = MODIFIERS.register("inheart", InHeart::new);   //本心
     public static final StaticModifier<RemoveRadition> REMOVERADITION_STATIC_MODIFIER = MODIFIERS.register("removeradition", RemoveRadition::new);   //变辐侠
@@ -53,7 +49,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<Release> RELEASE_STATIC_MODIFIER = MODIFIERS.register("release", Release::new);   //弹性
     public static final StaticModifier<SeaBless> SEABLESS_STATIC_MODIFIER = MODIFIERS.register("seabless", SeaBless::new);   //海神赐福
     public static final StaticModifier<Riptide> RIPTIDE_STATIC_MODIFIER = MODIFIERS.register("riptide", Riptide::new);   //激流
-    public static final StaticModifier<crcs> CRCS_STATIC_MODIFIER=MODIFIERS.register("crcs", crcs::new);   //风雨无阻
+    public static final StaticModifier<crcs> CRCS_STATIC_MODIFIER = MODIFIERS.register("crcs", crcs::new);   //风雨无阻
     public static final StaticModifier<Injured> INJURED_STATIC_MODIFIER = MODIFIERS.register("injured", Injured::new);   //重伤
     public static final StaticModifier<ExtremelyCold> EXTREMELYCOLD_STATIC_MODIFIER = MODIFIERS.register("extremelycold", ExtremelyCold::new);   //极寒
     public static final StaticModifier<Brittle> BRITTLE_STATIC_MODIFIER = MODIFIERS.register("brittle", Brittle::new);   //脆质化

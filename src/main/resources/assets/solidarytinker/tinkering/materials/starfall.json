@@ -23,25 +23,25 @@
     ],
     "transformer": {
       "type": "tconstruct:grey_to_sprite",
-        "palette": [
-          {
-            "grey": 0,
-            "color": "FF000000"
-          },
-          {
-            "grey": 63,
-            "path": "solidarytinker:hover/starfall_dark"
-          },
-          {
-            "grey": 178,
-            "path": "solidarytinker:hover/starfall_medium"
-          },
-          {
-            "grey": 255,
-            "path": "solidarytinker:hover/starfall_light"
-          }
-        ]
-      },
-  "luminosity": 15
+      "palette": [
+        {
+          "grey": 0,
+          "color": "FF000000"
+        },
+        {
+          "grey": 63,
+          "path": "solidarytinker:hover/starfall_dark"
+        },
+        {
+          "grey": 178,
+          "path": "solidarytinker:hover/starfall_medium"
+        },
+        {
+          "grey": 255,
+          "path": "solidarytinker:hover/starfall_light"
+        }
+      ]
+    },
+    "luminosity": 15
   }
 }

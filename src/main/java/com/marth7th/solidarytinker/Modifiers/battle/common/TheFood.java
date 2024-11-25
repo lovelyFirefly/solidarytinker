@@ -25,10 +25,10 @@ public class TheFood extends BattleModifier {
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if(attacker instanceof Player player) {
-            if(carrot&&fm){
-            int count = SOLCarrotAPI.getFoodCapability(player).getEatenFoodCount();
-                if(count>30){
+        if (attacker instanceof Player player) {
+            if (carrot && fm) {
+                int count = SOLCarrotAPI.getFoodCapability(player).getEatenFoodCount();
+                if (count > 30) {
                     return damage + count * 1.5f * level;
                 }
             }
@@ -39,9 +39,9 @@ public class TheFood extends BattleModifier {
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (player != null) {
-            if(carrot&&fm){
-            int cw = FoodList.get(player).getEatenFoods().size();
-            TooltipModifierHook.addFlatBoost(modifier.getModifier(),Component.translatable("tooltip.solidarytinker.thefood.eated"),cw,list);
+            if (carrot && fm) {
+                int cw = FoodList.get(player).getEatenFoods().size();
+                TooltipModifierHook.addFlatBoost(modifier.getModifier(), Component.translatable("tooltip.solidarytinker.thefood.eated"), cw, list);
             }
         }
     }

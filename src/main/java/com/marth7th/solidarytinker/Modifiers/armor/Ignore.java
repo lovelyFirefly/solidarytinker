@@ -14,7 +14,7 @@ public class Ignore extends ArmorModifier {
 
     @Override
     public float TrueDamageamount(IToolStackView armor, int level, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean isDirectDamage, LivingEntity entity, LivingEntity enemy) {
-        if(enemy.getMaxHealth()<entity.getMaxHealth()){
+        if (enemy.getMaxHealth() < entity.getMaxHealth()) {
             return amount * 0;
         }
         return amount;

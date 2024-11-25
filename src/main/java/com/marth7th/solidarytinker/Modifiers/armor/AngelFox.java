@@ -14,11 +14,10 @@ public class AngelFox extends ArmorModifier {
 
     @Override
     public float TrueDamageamount(IToolStackView armor, int level, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean isDirectDamage, LivingEntity entity, LivingEntity enemy) {
-        if(amount>entity.getMaxHealth()){
-            return Math.max(amount * 0 + entity.getMaxHealth() * 0.2f,4);
-        }
-        else if(amount>entity.getMaxHealth() * 0.5f){
-            return Math.max(amount*0+entity.getMaxHealth() * 0.1f,2);
+        if (amount > entity.getMaxHealth()) {
+            return Math.max(amount * 0 + entity.getMaxHealth() * 0.2f, 4);
+        } else if (amount > entity.getMaxHealth() * 0.5f) {
+            return Math.max(amount * 0 + entity.getMaxHealth() * 0.1f, 2);
         }
         return amount;
     }

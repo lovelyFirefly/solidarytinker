@@ -15,6 +15,7 @@ public class kemo33 extends Item {
     public kemo33(Properties properties) {
         super(properties.tab(solidarytinkerTab.MATERIALS).stacksTo(64));
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("tooltip.kemo33.desc1").withStyle(ChatFormatting.DARK_AQUA));

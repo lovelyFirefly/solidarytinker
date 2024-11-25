@@ -1,4 +1,3 @@
-
 package com.marth7th.solidarytinker.extend.interfaces;
 
 import net.minecraft.world.damagesource.DamageSource;

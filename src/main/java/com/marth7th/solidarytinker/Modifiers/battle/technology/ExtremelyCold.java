@@ -15,39 +15,39 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 public class ExtremelyCold extends BattleModifier {
     @Override
-    public boolean havenolevel() {return true;}
+    public boolean havenolevel() {
+        return true;
+    }
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if(context.getLivingTarget()!=null){
-            LivingEntity target=context.getLivingTarget();
+        if (context.getLivingTarget() != null) {
+            LivingEntity target = context.getLivingTarget();
             int a = RANDOM.nextInt(10);
-            if(target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)){
-                int timeleft=target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
-                int EffectLevel=target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
-                if(timeleft>=0){
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,EffectLevel,timeleft+10));
+            if (target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
+                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
+                if (timeleft >= 0) {
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 10));
                 }
-            }
-            else if(a==1){
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,0,10));
+            } else if (a == 1) {
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 10));
             }
         }
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile,  EntityHitResult hit, AbstractArrow arrow,LivingEntity attacker, LivingEntity target) {
-        if(target!=null){
+    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
+        if (target != null) {
             int a = RANDOM.nextInt(10);
-            if(target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)){
-                int timeleft=target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
-                int EffectLevel=target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
-                if(timeleft>=0){
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,EffectLevel,timeleft+10));
+            if (target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
+                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
+                if (timeleft >= 0) {
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 10));
                 }
-            }
-            else if(a==1){
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,0,10));
+            } else if (a == 1) {
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 10));
             }
         }
     }

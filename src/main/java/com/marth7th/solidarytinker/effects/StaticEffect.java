@@ -8,8 +8,10 @@ public class StaticEffect extends MobEffect {
     protected StaticEffect(MobEffectCategory type, int color) {
         super(type, color);
     }
-    public void setAmplifier (LivingEntity living, int amplifier) {
+
+    public void setAmplifier(LivingEntity living, int amplifier) {
     }
+
     public boolean aBoolean(int duration, int amplifier) {
         return duration > 0;
     }

@@ -11,7 +11,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class test extends BattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if(context.getLivingTarget()!=null){
+        if (context.getLivingTarget() != null) {
             context.getLivingTarget().setHealth(0);
             context.getLivingTarget().die(DamageSource.playerAttack((Player) attacker));
             context.getLivingTarget().remove(Entity.RemovalReason.KILLED);

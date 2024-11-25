@@ -20,19 +20,20 @@ public class Corrode extends BattleModifier {
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if(enabled&context.getLivingTarget()!=null){
-            context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.CORROSIVE.get(),100,modifier.getLevel()));
-            context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.ARMOR_SHRED.get(),100,modifier.getLevel()));
-            context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.BLEED.get(),100,modifier.getLevel()));
+        if (enabled & context.getLivingTarget() != null) {
+            context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.CORROSIVE.get(), 100, modifier.getLevel()));
+            context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.ARMOR_SHRED.get(), 100, modifier.getLevel()));
+            context.getLivingTarget().addEffect(new MobEffectInstance(ModMobEffects.BLEED.get(), 100, modifier.getLevel()));
         }
     }
+
     @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
-        if(enabled&target!=null){
-            target.addEffect(new MobEffectInstance(ModMobEffects.CORROSIVE.get(),100,level));
-            target.addEffect(new MobEffectInstance(ModMobEffects.ARMOR_SHRED.get(),100,level));
-            target.addEffect(new MobEffectInstance(ModMobEffects.BLEED.get(),100,level));
-            target.invulnerableTime=0;
+        if (enabled & target != null) {
+            target.addEffect(new MobEffectInstance(ModMobEffects.CORROSIVE.get(), 100, level));
+            target.addEffect(new MobEffectInstance(ModMobEffects.ARMOR_SHRED.get(), 100, level));
+            target.addEffect(new MobEffectInstance(ModMobEffects.BLEED.get(), 100, level));
+            target.invulnerableTime = 0;
         }
     }
 }

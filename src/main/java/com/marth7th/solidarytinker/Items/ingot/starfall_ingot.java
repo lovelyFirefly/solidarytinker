@@ -15,6 +15,7 @@ public class starfall_ingot extends Item {
     public starfall_ingot(Properties properties) {
         super(properties.tab(solidarytinkerTab.MATERIALS).stacksTo(64));
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("tooltip.starfall_ingot.desc1").withStyle(ChatFormatting.BLUE));

@@ -1,4 +1,3 @@
-
 package com.marth7th.solidarytinker.extend.superclass;
 
 import com.marth7th.solidarytinker.extend.interfaces.AboutArrow;

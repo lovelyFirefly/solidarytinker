@@ -1,4 +1,5 @@
 package com.marth7th.solidarytinker.extend.superclass;
+
 import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.register.solidarytinkerSlots;

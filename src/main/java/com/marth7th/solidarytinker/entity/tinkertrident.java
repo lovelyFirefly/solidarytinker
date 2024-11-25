@@ -30,17 +30,19 @@ public class tinkertrident extends AbstractArrow {
     private ItemStack tridentItem = new ItemStack(Items.TRIDENT);
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
+
     public tinkertrident(Level level, LivingEntity entity, ItemStack stack) {
         super(EntityType.TRIDENT, entity, level);
         this.tridentItem = stack.copy();
     }
+
     public void tick() {
         if (this.inGroundTime > 4) {
             this.dealtDamage = true;
         }
         Entity entity = this.getOwner();
-        if(entity instanceof Player player){
-            int i= ModifierUtil.getModifierLevel(this.tridentItem, solidarytinkerModifiers.LOYAL_STATIC_MODIFIER.getId());
+        if (entity instanceof Player player) {
+            int i = ModifierUtil.getModifierLevel(this.tridentItem, solidarytinkerModifiers.LOYAL_STATIC_MODIFIER.getId());
             if (i > 0 && (this.dealtDamage || this.isNoPhysics())) {
                 if (!this.isAcceptibleReturnOwner()) {
                     if (!this.level.isClientSide && this.pickup == AbstractArrow.Pickup.ALLOWED) {
@@ -50,12 +52,12 @@ public class tinkertrident extends AbstractArrow {
                 } else {
                     this.setNoPhysics(true);
                     Vec3 vec3 = entity.getEyePosition().subtract(this.position());
-                    this.setPosRaw(this.getX(), this.getY() + vec3.y * 0.015D * (double)i, this.getZ());
+                    this.setPosRaw(this.getX(), this.getY() + vec3.y * 0.015D * (double) i, this.getZ());
                     if (this.level.isClientSide) {
                         this.yOld = this.getY();
                     }
 
-                    double d0 = 0.05D * (double)i;
+                    double d0 = 0.05D * (double) i;
                     this.setDeltaMovement(this.getDeltaMovement().scale(0.95D).add(vec3.normalize().scale(d0)));
                     if (this.clientSideReturnTridentTickCount == 0) {
                         this.playSound(SoundEvents.TRIDENT_RETURN, 10.0F, 1.0F);
@@ -75,23 +77,27 @@ public class tinkertrident extends AbstractArrow {
             return false;
         }
     }
+
     protected ItemStack getPickupItem() {
         return this.tridentItem.copy();
     }
+
     @Nullable
     protected EntityHitResult findHitEntity(Vec3 var10000, Vec3 var10001) {
         return this.dealtDamage ? null : super.findHitEntity(var10000, var10001);
     }
 
     @Override
-    public void setBaseDamage(double a) {this.baseDamage = a;}
+    public void setBaseDamage(double a) {
+        this.baseDamage = a;
+    }
 
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
-        float f = (float)this.getDeltaMovement().length();
-        float i = (float) Mth.clamp((double)f * this.baseDamage, 0.0D, Float.MAX_VALUE);
+        float f = (float) this.getDeltaMovement().length();
+        float i = (float) Mth.clamp((double) f * this.baseDamage, 0.0D, Float.MAX_VALUE);
         Entity entity1 = this.getOwner();
-        DamageSource damagesource = DamageSource.trident(this, (Entity)(entity1 == null ? this : entity1)).bypassEnchantments();
+        DamageSource damagesource = DamageSource.trident(this, (Entity) (entity1 == null ? this : entity1)).bypassEnchantments();
         this.dealtDamage = true;
         SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
         if (entity.hurt(damagesource, i)) {
@@ -99,13 +105,13 @@ public class tinkertrident extends AbstractArrow {
         }
         this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01D, -0.1D, -0.01D));
         float f1 = 1.0F;
-        if (this.level instanceof ServerLevel && this.level.isRaining()&& this.canSummon()&&entity1 instanceof LivingEntity) {
+        if (this.level instanceof ServerLevel && this.level.isRaining() && this.canSummon() && entity1 instanceof LivingEntity) {
             BlockPos blockpos = entity.blockPosition();
             if (this.level.canSeeSky(blockpos)) {
                 LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(this.level);
                 if (lightningbolt != null) {
                     lightningbolt.moveTo(Vec3.atBottomCenterOf(blockpos));
-                    lightningbolt.setCause(entity1 instanceof ServerPlayer ? (ServerPlayer)entity1 : null);
+                    lightningbolt.setCause(entity1 instanceof ServerPlayer ? (ServerPlayer) entity1 : null);
                     this.level.addFreshEntity(lightningbolt);
                 }
                 soundevent = SoundEvents.TRIDENT_THUNDER;
@@ -114,20 +120,25 @@ public class tinkertrident extends AbstractArrow {
         }
         this.playSound(soundevent, f1, 1.0F);
     }
+
     public boolean canSummon() {
-        return ModifierUtil.getModifierLevel(this.tridentItem, solidarytinkerModifiers.LIGHTNINGBOLT_STATIC_MODIFIER.getId())>0;
+        return ModifierUtil.getModifierLevel(this.tridentItem, solidarytinkerModifiers.LIGHTNINGBOLT_STATIC_MODIFIER.getId()) > 0;
     }
+
     protected boolean tryPickup(Player player) {
         return super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
     }
+
     protected @NotNull SoundEvent getDefaultHitGroundSoundEvent() {
         return SoundEvents.TRIDENT_HIT_GROUND;
     }
+
     public void playerTouch(Player player) {
         if (this.ownedBy(player) || this.getOwner() == null) {
             super.playerTouch(player);
         }
     }
+
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.put("Trident", this.tridentItem.save(new CompoundTag()));

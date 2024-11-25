@@ -24,7 +24,7 @@ public class NeverEnd extends BattleModifier {
         if (context.getLivingTarget() != null) {
             if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())) {
                 int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic().bypassInvul(), context.getLivingTarget().getMaxHealth() * 0.15f * (effectlevel+1));
+                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic().bypassInvul(), context.getLivingTarget().getMaxHealth() * 0.15f * (effectlevel + 1));
             }
         }
     }
@@ -33,29 +33,27 @@ public class NeverEnd extends BattleModifier {
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
         if (attacker.hasEffect(solidarytinkerEffects.bloodanger.get())) {
             int effectlevel = (attacker.getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-            int count=attacker.getArrowCount();
+            int count = attacker.getArrowCount();
             target.invulnerableTime = 0;
-            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic().bypassEnchantments(), target.getMaxHealth() * 0.2f * effectlevel+1);
-            if(count>=0&&count<20){
-                arrow.setBaseDamage(arrow.getBaseDamage() * (1+(0.08*count)));
-            }
-            else if(count>=20){
+            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic().bypassEnchantments(), target.getMaxHealth() * 0.2f * effectlevel + 1);
+            if (count >= 0 && count < 20) {
+                arrow.setBaseDamage(arrow.getBaseDamage() * (1 + (0.08 * count)));
+            } else if (count >= 20) {
                 arrow.setBaseDamage(arrow.getBaseDamage() * 145f);
                 attacker.setArrowCount(0);
-                attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,600,1,true,true));
+                attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, true, true));
             }
         }
     }
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if(attacker.getArrowCount()>=0&&attacker.getArrowCount()<20){
-            return damage * (1f+(0.8f * attacker.getArrowCount()));
-    }
-        else if(attacker.getArrowCount()>=20){
+        if (attacker.getArrowCount() >= 0 && attacker.getArrowCount() < 20) {
+            return damage * (1f + (0.8f * attacker.getArrowCount()));
+        } else if (attacker.getArrowCount() >= 20) {
             attacker.setArrowCount(0);
-            attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,600,1,true,true));
-            return damage *145f;
+            attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, true, true));
+            return damage * 145f;
         }
         return baseDamage;
     }

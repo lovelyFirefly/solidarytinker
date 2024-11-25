@@ -20,7 +20,7 @@ public class Injured extends BattleModifier {
     }
 
     public void LivingHealEvent(LivingHealEvent event) {
-        if(event.getEntity()!=null){
+        if (event.getEntity() != null) {
             if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
                 int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier();
                 if (level <= 3) {
@@ -33,7 +33,7 @@ public class Injured extends BattleModifier {
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if(level<=5){
+        if (level <= 5) {
             livingTarget.forceAddEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(), 100, level, false, false), attacker);
         } else
             livingTarget.forceAddEffect(new MobEffectInstance(solidarytinkerEffects.seriously_injured.get(), 400, level, false, false), attacker);

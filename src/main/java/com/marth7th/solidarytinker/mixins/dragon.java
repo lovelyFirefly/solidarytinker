@@ -13,16 +13,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EnderDragon.class)
 public abstract class dragon {
-    @Inject(method = {"canRide"}, at=@At("HEAD"), cancellable = true)
-    public void canRide(Entity p_219462_, CallbackInfoReturnable<Boolean> cir){
+    @Inject(method = {"canRide"}, at = @At("HEAD"), cancellable = true)
+    public void canRide(Entity p_219462_, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(true);
     }
-    @Inject(method = {"getHurtSound"}, at=@At("HEAD"), cancellable = true)
+
+    @Inject(method = {"getHurtSound"}, at = @At("HEAD"), cancellable = true)
     public void catsound(DamageSource p_31154_, CallbackInfoReturnable<SoundEvent> cir) {
         cir.setReturnValue(SoundEvents.CAT_HURT);
     }
-    @Inject(method = {"getAmbientSound"}, at=@At("RETURN"), cancellable = true)
-    public void catsound(CallbackInfoReturnable<SoundEvent> cir){
+
+    @Inject(method = {"getAmbientSound"}, at = @At("RETURN"), cancellable = true)
+    public void catsound(CallbackInfoReturnable<SoundEvent> cir) {
         cir.setReturnValue(SoundEvents.CAT_AMBIENT);
     }
 }

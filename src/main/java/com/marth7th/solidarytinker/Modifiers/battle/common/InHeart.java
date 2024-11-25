@@ -13,6 +13,7 @@ import java.util.List;
 
 public class InHeart extends BattleModifier {
     boolean fm = ModList.get().isLoaded("farmersdelight");
+
     public boolean havenolevel() {
         return true;
     }

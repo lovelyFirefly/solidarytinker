@@ -11,6 +11,7 @@ import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
+
 public class solidarytinkerFluid {
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(MOD_ID);
 

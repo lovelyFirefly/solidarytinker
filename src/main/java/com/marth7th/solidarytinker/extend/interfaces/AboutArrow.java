@@ -26,6 +26,7 @@ public interface AboutArrow extends ProjectileHitModifierHook, ProjectileLaunchM
 
         return false;
     }
+
     default void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, NamespacedNBT namespacedNBT, boolean primary) {
         if (arrow != null) {
             this.onTinkerArrowShoot(tool, modifier.getLevel(), shooter, projectile, arrow, namespacedNBT, primary);

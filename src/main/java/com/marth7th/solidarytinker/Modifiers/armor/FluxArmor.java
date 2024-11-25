@@ -42,6 +42,7 @@ public class FluxArmor extends FluxArmorModifier {
             }
         }
     }
+
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifierEntry, int amount, @Nullable LivingEntity livingEntity) {
         if (FluxStorage.getEnergyStored(tool) > 400 * amount) {

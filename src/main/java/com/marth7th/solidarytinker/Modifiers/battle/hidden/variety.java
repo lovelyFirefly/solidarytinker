@@ -21,7 +21,7 @@ public class variety extends BattleModifier {
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if(context.getAttacker()instanceof Player player){
+        if (context.getAttacker() instanceof Player player) {
             LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(player.level);
             if (lightningBolt != null) {
                 player.level.addFreshEntity(lightningBolt);
@@ -41,15 +41,15 @@ public class variety extends BattleModifier {
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         Collection<MobEffectInstance> harmeffect;
         harmeffect = entity.getActiveEffects();
-        for (int i = 0; i < harmeffect.size(); i++){
+        for (int i = 0; i < harmeffect.size(); i++) {
             MobEffectInstance effect = harmeffect.stream().toList().get(i);
-            MobEffect effects=effect.getEffect();
+            MobEffect effects = effect.getEffect();
             MobEffect harm = effect.getEffect();
             MobEffect neut = effect.getEffect();
-            if (harm.getCategory() == MobEffectCategory.HARMFUL){
+            if (harm.getCategory() == MobEffectCategory.HARMFUL) {
                 entity.removeEffect(harm);
             }
-            if (neut.getCategory() == MobEffectCategory.NEUTRAL){
+            if (neut.getCategory() == MobEffectCategory.NEUTRAL) {
                 entity.removeEffect(neut);
             }
         }

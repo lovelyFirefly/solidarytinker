@@ -30,6 +30,7 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
         this.tool = toolStack;
         this.capOptional = LazyOptional.of(() -> this);
     }
+
     public static int receiveEnergy(IToolStackView tool, int maxReceive, boolean simulate) {
         int energyStored = getEnergyStored(tool);
         int level = tool.getModifierLevel(solidarytinkerModifierMekEtsh.energytransport.getId());
@@ -42,6 +43,7 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
         }
         return sss;
     }
+
     public static void removeEnergy(IToolStackView tool, int energyRemoved, boolean simulate, boolean drain) {
         int energyStored = getEnergyStored(tool);
         ModDataNBT persistentData;

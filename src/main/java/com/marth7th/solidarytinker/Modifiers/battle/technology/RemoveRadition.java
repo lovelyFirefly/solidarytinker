@@ -50,8 +50,7 @@ public class RemoveRadition extends BattleModifier {
                 ToolDamageUtil.damageAnimated(tool, 500, entity);
                 player.sendSystemMessage(Component.translatable(array[randomIndex]));
             }
-        }
-        else {
+        } else {
             entity.sendSystemMessage(Component.translatable("唔嘿，没有力气再去清除了，先恢复点耐久吧"));
         }
     }

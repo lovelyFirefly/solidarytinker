@@ -12,8 +12,8 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class nos extends BattleModifier {
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        if(context.getTarget() instanceof Mob mob){
-            if(mob.getMobType()== MobType.UNDEAD){
+        if (context.getTarget() instanceof Mob mob) {
+            if (mob.getMobType() == MobType.UNDEAD) {
                 return damage + 114514;
             }
         }
@@ -23,7 +23,7 @@ public class nos extends BattleModifier {
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
-        LivingEntity attacker= context.getAttacker();
+        LivingEntity attacker = context.getAttacker();
         if (target != null) {
             target.hurt(tinkerdamage.tinker(attacker), 114514);
         }

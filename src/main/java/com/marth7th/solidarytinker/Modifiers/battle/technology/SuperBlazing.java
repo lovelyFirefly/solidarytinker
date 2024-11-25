@@ -33,7 +33,7 @@ public class SuperBlazing extends BattleModifier {
                     double b = targets.getY();
                     double c = targets.getZ();
                     targets.setRemainingFireTicks(2147483647);
-                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,10,1,true,true));
+                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 1, true, true));
                     {
                         if (Math.abs(Math.abs(a) - Math.abs(x)) > 5 || Math.abs(Math.abs(c) - Math.abs(z)) > 5) {
                             targets.setPos(x, y, z);
@@ -57,7 +57,7 @@ public class SuperBlazing extends BattleModifier {
                     double a = targets.getX();
                     double c = targets.getZ();
                     targets.setRemainingFireTicks(2147483647);
-                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,10,1,true,true));
+                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 1, true, true));
                     {
                         if (Math.abs(Math.abs(a) - Math.abs(x)) > 5 || Math.abs(Math.abs(c) - Math.abs(z)) > 5) {
                             targets.setPos(x, y, z);

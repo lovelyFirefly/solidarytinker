@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gem"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "name": "solidarytinker:molten_sulfur",
+    "amount": 100
+  },
+  "result": "thermal:sulfur",
+  "cooling_time": 200
+}

@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.hidden;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
-import com.marth7th.solidarytinker.shelf.damagesource.tinkerdamage;
+import com.marth7th.solidarytinker.shelf.damagesource.STDamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobType;
@@ -25,7 +25,7 @@ public class nos extends BattleModifier {
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
         if (target != null) {
-            target.hurt(tinkerdamage.tinker(attacker), 114514);
+            target.hurt(STDamageSource.tinker(attacker), 114514);
         }
     }
 }

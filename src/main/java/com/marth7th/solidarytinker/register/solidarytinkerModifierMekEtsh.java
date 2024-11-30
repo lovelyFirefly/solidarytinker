@@ -1,6 +1,8 @@
 package com.marth7th.solidarytinker.register;
 
+import com.marth7th.solidarytinker.Modifiers.armor.EnderInhibit;
 import com.marth7th.solidarytinker.Modifiers.armor.FluxArmor;
+import com.marth7th.solidarytinker.Modifiers.battle.common.MercuryPoisoning;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.FluxWeapon;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.Fluxshot;
 import com.marth7th.solidarytinker.Modifiers.slots.energyadd;
@@ -19,5 +21,6 @@ public class solidarytinkerModifierMekEtsh {
     public static final StaticModifier<FluxArmor> FLUX_ARMOR_STATIC_MODIFIER = MODIFIERS.register("fluxarmor", FluxArmor::new);   //测试
     public static final StaticModifier<FluxWeapon> fluxweapon = MODIFIERS.register("fluxweapon", FluxWeapon::new);   //测试
     public static final StaticModifier<Fluxshot> fluxshot = MODIFIERS.register("fluxshot", Fluxshot::new);   //测试
-
+    public static final StaticModifier<MercuryPoisoning> MercuryPoisoning = MODIFIERS.register("mercurypoisoning", MercuryPoisoning::new);   //测试
+    public static final StaticModifier<EnderInhibit> enderinhibit = MODIFIERS.register("enderinhibit", EnderInhibit::new);   //测试
 }

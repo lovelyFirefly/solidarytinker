@@ -1,5 +1,8 @@
 {
   "block.solidarytinker.dwarf_block": "Dwarf Block",
+  "death.attack.tinker": "%1$s 被死了",
+  "death.attack.tinker.player": "%1$s 被 %2$s 用了了",
+  "death.attack.mercurypoisoning": "%1$s 汞中毒而死",
   "effect.solidarytinker.bloodanger": "Red temperature",
   "effect.solidarytinker.seriously_injured": "Serious injury",
   "fluid_type.solidarytinker.molten_bloodmeat": "Molten Bloodmeat",

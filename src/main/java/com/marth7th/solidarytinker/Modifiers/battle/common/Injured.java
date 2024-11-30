@@ -28,6 +28,9 @@ public class Injured extends BattleModifier {
                 } else
                     event.setCanceled(true);
             }
+            if (event.getEntity().hasEffect(solidarytinkerEffects.mercurypoisoning.get())) {
+                event.setAmount(0);
+            }
         }
     }
 

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "solidarytinker:leadamalgamation_ingot"
+  },
+  "result": {
+    "fluid": "solidarytinker:molten_leadamalgamation",
+    "amount": 90
+  },
+  "temperature": 400,
+  "time": 20
+}

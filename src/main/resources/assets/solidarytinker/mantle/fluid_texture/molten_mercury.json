@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "solidarytinker:fluid/molten_mercury/flowing",
+  "still": "solidarytinker:fluid/molten_mercury/still"
+}

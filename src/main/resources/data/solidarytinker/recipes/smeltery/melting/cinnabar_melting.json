@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "fluid": "solidarytinker:molten_mercury"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ],
+  "rate": "gem",
+  "result": {
+    "amount": 100,
+    "fluid": "solidarytinker:molten_sulfur"
+  },
+  "temperature": 600,
+  "time": 160
+}

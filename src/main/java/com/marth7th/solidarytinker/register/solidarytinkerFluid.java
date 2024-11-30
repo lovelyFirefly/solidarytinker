@@ -47,6 +47,9 @@ public class solidarytinkerFluid {
     public static final FluidObject<ForgeFlowingFluid> molten_takeru = register("molten_takeru", 860);//熔融takeru
     public static final FluidObject<ForgeFlowingFluid> molten_extremelycoldsteel = register("molten_extremelycoldsteel", 860);//熔融超低温钢
     public static final FluidObject<ForgeFlowingFluid> molten_cold_chroma_alloy = register("molten_cold_chroma_alloy", 860);//熔融极寒彩钢
+    public static final FluidObject<ForgeFlowingFluid> molten_mercury = register("molten_mercury", 860);//水银
+    public static final FluidObject<ForgeFlowingFluid> molten_sulfur = register("molten_sulfur", 860);//熔融硫磺
+    public static final FluidObject<ForgeFlowingFluid> molten_leadamalgamation = register("molten_leadamalgamation", 860);//熔融铅汞齐
 
 
 }

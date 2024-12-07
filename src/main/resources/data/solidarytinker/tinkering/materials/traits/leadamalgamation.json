@@ -2,37 +2,45 @@
   "perStat": {
     "tconstruct:melee_harvest": [
       {
-        "name": "solidarytinker:removeradition",
+        "name": "solidarytinker:mercurypoisoning",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:enderference",
         "level": 1
       }
     ],
     "tconstruct:ranged": [
       {
-        "name": "solidarytinker:removeradition",
+        "name": "solidarytinker:mercurypoisoning",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:enderference",
         "level": 1
       }
     ],
     "tconstruct:armor": [
       {
-        "name": "solidarytinker:clean",
+        "name": "solidarytinker:enderinhibit",
         "level": 1
       }
     ],
     "tinkersinnovation:shield": [
       {
-        "name": "solidarytinker:clean",
+        "name": "solidarytinker:enderinhibit",
         "level": 1
       }
     ],
     "tinkers_ingenuity:laser_gun": [
       {
-        "name": "solidarytinker:removeradition",
+        "name": "solidarytinker:poisonprotect",
         "level": 1
       }
     ],
     "tinkers_ingenuity:curio": [
       {
-        "name": "solidarytinker:deepoceanchew",
+        "name": "solidarytinker:poisonprotect",
         "level": 1
       }
     ]

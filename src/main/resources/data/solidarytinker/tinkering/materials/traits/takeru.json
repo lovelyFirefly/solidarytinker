@@ -4,6 +4,10 @@
       {
         "name": "solidarytinker:uncannyvalley",
         "level": 1
+      },
+      {
+        "name": "solidarytinker:swift",
+        "level": 1
       }
     ],
     "tconstruct:ranged": [

@@ -8,7 +8,6 @@ package com.marth7th.solidarytinker.extend.superclass;
 import com.marth7th.solidarytinker.extend.interfaces.AboutArmor;
 import com.marth7th.solidarytinker.extend.interfaces.AboutBuilder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -63,14 +62,10 @@ public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockMo
     }
 
     public void LivingHurtEvent(LivingHurtEvent event) {
-        Entity var4 = event.getSource().getEntity();
-        if (var4 instanceof LivingEntity entity) {
-            LivingEntity var5 = event.getEntity();
-            if (var5 instanceof Player player) {
-                this.LivingHurt(event, entity, player);
-            }
+        if (event.getSource().getEntity() instanceof Player player) {
+            LivingEntity entity = event.getEntity();
+            this.LivingHurt(event, entity, player);
         }
-
     }
 
     public boolean hidden() {

@@ -1,4 +1,4 @@
-package com.marth7th.solidarytinker.extend.energy;
+package com.marth7th.solidarytinker.shelf.energy;
 
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;

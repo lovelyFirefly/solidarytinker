@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.technology;
 
-import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;

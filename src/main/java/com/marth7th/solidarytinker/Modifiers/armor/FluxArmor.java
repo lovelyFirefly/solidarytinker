@@ -1,8 +1,8 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
 
-import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.extend.superclass.FluxArmorModifier;
+import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

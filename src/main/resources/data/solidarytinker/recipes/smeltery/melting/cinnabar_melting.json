@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "modid": "thermal",
+      "type": "forge:mod_loaded"
+    }
+  ],
   "type": "tconstruct:ore_melting",
   "byproducts": [
     {
@@ -6,17 +12,14 @@
       "fluid": "solidarytinker:molten_mercury"
     }
   ],
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "thermal"
-    }
-  ],
+  "ingredient": {
+    "tag": "forge:gems/cinnabar"
+  },
   "rate": "gem",
   "result": {
     "amount": 100,
     "fluid": "solidarytinker:molten_sulfur"
   },
   "temperature": 600,
-  "time": 160
+  "time": 20
 }

@@ -24,7 +24,7 @@ public class NeverEnd extends BattleModifier {
         if (context.getLivingTarget() != null) {
             if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())) {
                 int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic().bypassInvul(), context.getLivingTarget().getMaxHealth() * 0.15f * (effectlevel + 1));
+                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic(), context.getLivingTarget().getMaxHealth() * 0.9f * (effectlevel + 1));
             }
         }
     }

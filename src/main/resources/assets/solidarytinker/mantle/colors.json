@@ -44,6 +44,7 @@
     "_魔力铀_": null,
     "clean": "#baff9c",
     "removeradition": "#baff9c",
+    "cleancurio": "#baff9c",
     "_圣厨_": null,
     "thefood": "#ffff60",
     "inheart": "#fffaab",
@@ -80,7 +81,8 @@
     "fluxshot": "#98dd4e",
     "slimecuring": "#d3f5ab",
     "mercurypoisoning": "#95838c",
-    "enderinhibit": "#95838c"
+    "enderinhibit": "#95838c",
+    "swift": "#ccc9d0"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

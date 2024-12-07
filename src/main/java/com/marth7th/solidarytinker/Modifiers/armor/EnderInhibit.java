@@ -12,8 +12,9 @@ public class EnderInhibit extends ArmorModifier {
     @Override
     public void LivingHurt(LivingHurtEvent event, LivingEntity entity, Player player) {
         if (entity instanceof EnderMan enderMan && ModifierLevel.EquipHasModifierlevel(player, this.getId())) {
-            enderMan.hurt(DamageSource.playerAttack(player), enderMan.getMaxHealth() * 0.5F);
-            event.setAmount(event.getAmount() * 0.3f);
+            int a = ModifierLevel.getTotalArmorModifierlevel(player, this.getId());
+            enderMan.hurt(DamageSource.playerAttack(player).bypassArmor().bypassMagic(), enderMan.getMaxHealth() * 0.1F * a);
+            event.setAmount(event.getAmount() * Math.max(0.1F, 1 - 0.3F * a));
         }
     }
 }

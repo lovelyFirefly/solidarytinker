@@ -9,10 +9,12 @@ public class StaticEffect extends MobEffect {
         super(type, color);
     }
 
-    public void setAmplifier(LivingEntity living, int amplifier) {
+    @Override
+    public void applyEffectTick(LivingEntity living, int amplifier) {
     }
 
-    public boolean aBoolean(int duration, int amplifier) {
+    @Override
+    public boolean isDurationEffectTick(int duration, int amplifier) {
         return duration > 0;
     }
 }

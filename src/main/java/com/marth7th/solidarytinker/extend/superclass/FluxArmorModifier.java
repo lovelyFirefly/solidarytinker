@@ -1,9 +1,9 @@
 package com.marth7th.solidarytinker.extend.superclass;
 
-import com.marth7th.solidarytinker.extend.energy.FluxStorage;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.register.solidarytinkerSlots;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
+import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;

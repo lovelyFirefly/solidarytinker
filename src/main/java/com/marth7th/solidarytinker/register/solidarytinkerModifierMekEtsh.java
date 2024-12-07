@@ -2,9 +2,9 @@ package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.armor.EnderInhibit;
 import com.marth7th.solidarytinker.Modifiers.armor.FluxArmor;
-import com.marth7th.solidarytinker.Modifiers.battle.common.MercuryPoisoning;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.FluxWeapon;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.Fluxshot;
+import com.marth7th.solidarytinker.Modifiers.battle.technology.MercuryPoisoning;
 import com.marth7th.solidarytinker.Modifiers.slots.energyadd;
 import com.marth7th.solidarytinker.Modifiers.slots.energymultiple;
 import com.marth7th.solidarytinker.Modifiers.slots.energytransport;

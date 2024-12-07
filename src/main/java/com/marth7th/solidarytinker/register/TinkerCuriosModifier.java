@@ -13,4 +13,6 @@ public class TinkerCuriosModifier {
     public static final StaticModifier<Natived> NATIVED_STATIC_MODIFIER = MODIFIERS.register("natived", Natived::new);
     public static final StaticModifier<Watery> WATERY_STATIC_MODIFIER = MODIFIERS.register("watery", Watery::new);
     public static final StaticModifier<bha> BHA_STATIC_MODIFIER = MODIFIERS.register("bha", bha::new);
+    public static final StaticModifier<PoisonProtect> poisonprotect = MODIFIERS.register("poisonprotect", PoisonProtect::new);
+    public static final StaticModifier<CleanCurio> CleanCurio = MODIFIERS.register("cleancurio", CleanCurio::new);
 }

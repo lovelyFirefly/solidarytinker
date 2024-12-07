@@ -15,13 +15,11 @@ import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHoo
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TheFood extends BattleModifier {
     boolean fm = ModList.get().isLoaded("farmersdelight");
     boolean carrot = ModList.get().isLoaded("solcarrot");
-    public static List<ModList> modLists = new ArrayList<>();
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {

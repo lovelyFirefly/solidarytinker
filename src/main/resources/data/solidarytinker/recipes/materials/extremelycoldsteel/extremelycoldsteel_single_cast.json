@@ -5,7 +5,7 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "name": "solidarytinker:extremelycoldsteel_steel",
+    "name": "solidarytinker:molten_extremelycoldsteel",
     "amount": 90
   },
   "result": "solidarytinker:extremelycoldsteel_ingot",

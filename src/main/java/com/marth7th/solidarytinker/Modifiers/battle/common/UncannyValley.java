@@ -31,12 +31,14 @@ public class UncannyValley extends BattleModifier {
                 List<Mob> mobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 4 * a, y + 4 * a, z + 4 * a, x - 4 * a, y - 4 * a, z - 4 * a));
                 List<Player> playerList = player.level.getEntitiesOfClass(Player.class, new AABB(x + 4 * a, y + 4 * a, z + 4 * a, x - 4 * a, y - 4 * a, z - 4 * a));
                 for (Mob mob : mobList) {
-                    if (mob != null) {
+                    if (mob != null && mob.hasEffect(MobEffects.WITHER)) {
                         mob.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 10, true, true));
+                        break;
                     }
                     for (Player friends : playerList) {
-                        if (friends != null) {
+                        if (friends != null && !friends.hasEffect(MobEffects.REGENERATION)) {
                             friends.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0, false, false));
+                            break;
                         }
                     }
                 }

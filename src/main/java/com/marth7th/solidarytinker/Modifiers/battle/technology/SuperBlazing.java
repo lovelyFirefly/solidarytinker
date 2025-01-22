@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.technology;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,12 +16,13 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.util.List;
 
 public class SuperBlazing extends BattleModifier {
     @Override
-    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public float beforeMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damage, float baseKnockback, float knockback) {
         LivingEntity attacker = context.getAttacker();
         if (attacker instanceof Player player) {
             double x = attacker.getX();
@@ -28,22 +30,22 @@ public class SuperBlazing extends BattleModifier {
             double z = attacker.getZ();
             List<Mob> mobbbb = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 40, y + 40, z + 40, x - 40, y - 40, z - 40));
             for (Mob targets : mobbbb) {
-                if (targets != null) {
+                if (targets != null && player.isCrouching()) {
                     double a = targets.getX();
-                    double b = targets.getY();
                     double c = targets.getZ();
                     targets.setRemainingFireTicks(2147483647);
-                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 1, true, true));
+                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1000, 1, true, true));
+                    targets.addEffect(new MobEffectInstance(TinkerModifiers.enderferenceEffect.get(), 1000, 1, true, true));
                     {
-                        if (Math.abs(Math.abs(a) - Math.abs(x)) > 5 || Math.abs(Math.abs(c) - Math.abs(z)) > 5) {
+                        if (Math.abs(Math.abs(a) - Math.abs(x)) > 3 || Math.abs(Math.abs(c) - Math.abs(z)) > 3) {
                             targets.setPos(x, y, z);
                         }
                     }
                 }
             }
         }
+        return damage;
     }
-
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
@@ -53,13 +55,14 @@ public class SuperBlazing extends BattleModifier {
             double z = attacker.getZ();
             List<Mob> mobbbb = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 40, y + 40, z + 40, x - 40, y - 40, z - 40));
             for (Mob targets : mobbbb) {
-                if (targets != null) {
+                if (targets != null && player.isCrouching()) {
                     double a = targets.getX();
                     double c = targets.getZ();
                     targets.setRemainingFireTicks(2147483647);
-                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 1, true, true));
+                    targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1000, 1, true, true));
+                    targets.addEffect(new MobEffectInstance(TinkerModifiers.enderferenceEffect.get(), 1000, 1, true, true));
                     {
-                        if (Math.abs(Math.abs(a) - Math.abs(x)) > 5 || Math.abs(Math.abs(c) - Math.abs(z)) > 5) {
+                        if (Math.abs(Math.abs(a) - Math.abs(x)) > 3 || Math.abs(Math.abs(c) - Math.abs(z)) > 3) {
                             targets.setPos(x, y, z);
                         }
                     }

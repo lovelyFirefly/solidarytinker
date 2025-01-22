@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.*;
 import java.util.List;
 
 public class DarkStar extends BattleModifier {
-    private static ResourceLocation DEATH = solidarytinker.getResource("death");
+    private static final ResourceLocation DEATH = solidarytinker.getResource("death");
 
     {
         MinecraftForge.EVENT_BUS.addListener(this::LivingDeathEvent);

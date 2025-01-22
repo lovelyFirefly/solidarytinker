@@ -9,9 +9,9 @@ public class Swell extends BattleModifier {
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         float a = attacker.getAbsorptionAmount();
-        if (a > 0 && a < 60) {
+        if (a > 0 && a < attacker.getMaxHealth() * 2) {
             return damage + a * 0.5f * level;
-        } else if (a > 60) {
+        } else if (a > attacker.getMaxHealth() * 2) {
             return damage + a * 1f * level;
 
         }

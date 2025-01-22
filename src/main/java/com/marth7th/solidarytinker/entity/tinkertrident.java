@@ -97,7 +97,7 @@ public class tinkertrident extends AbstractArrow {
         float f = (float) this.getDeltaMovement().length();
         float i = (float) Mth.clamp((double) f * this.baseDamage, 0.0D, Float.MAX_VALUE);
         Entity entity1 = this.getOwner();
-        DamageSource damagesource = DamageSource.trident(this, (Entity) (entity1 == null ? this : entity1)).bypassEnchantments();
+        DamageSource damagesource = DamageSource.trident(this, (Entity) (entity1 == null ? this : entity1)).bypassEnchantments().bypassMagic();
         this.dealtDamage = true;
         SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
         if (entity.hurt(damagesource, i)) {

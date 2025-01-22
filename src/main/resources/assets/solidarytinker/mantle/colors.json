@@ -13,7 +13,8 @@
     "takeru": "#848484",
     "extremelycoldsteel": "#4f9fe5",
     "cold_chroma_alloy": "#63dddd",
-    "leadamalgamation": "#95838c"
+    "leadamalgamation": "#95838c",
+    "cheese_alloy": "#ffedd7"
   },
   "modifier.solidarytinker": {
     "_白矮星_": null,
@@ -82,7 +83,8 @@
     "slimecuring": "#d3f5ab",
     "mercurypoisoning": "#95838c",
     "enderinhibit": "#95838c",
-    "swift": "#ccc9d0"
+    "swift": "#ccc9d0",
+    "highca": "#ffedd7"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

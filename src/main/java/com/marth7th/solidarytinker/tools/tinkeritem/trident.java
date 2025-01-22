@@ -49,7 +49,7 @@ public class trident extends ModifiableItem {
     }
 
     public int getUseDuration(ItemStack stack) {
-        return 72000;
+        return 18000;
     }
 
     public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int duration) {
@@ -57,8 +57,8 @@ public class trident extends ModifiableItem {
             int i = this.getUseDuration(stack) - duration;
             if (i >= 10) {
                 ToolStack tool = ToolStack.from(stack);
-                int j = ModifierLevel.getMainhandModifierlevel(player, solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId());
-                int k = ModifierLevel.getMainhandModifierlevel(player, solidarytinkerModifiers.CRCS_STATIC_MODIFIER.getId());
+                int j = ModifierLevel.getEachHandsTotalModifierlevel(player, solidarytinkerModifiers.RIPTIDE_STATIC_MODIFIER.getId());
+                int k = ModifierLevel.getEachHandsTotalModifierlevel(player, solidarytinkerModifiers.CRCS_STATIC_MODIFIER.getId());
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, (player1) -> {
                         player1.broadcastBreakEvent(livingEntity.getUsedItemHand());
@@ -74,7 +74,6 @@ public class trident extends ModifiableItem {
                         for (ModifierEntry entry : modifiers.getModifiers()) {
                             entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, entry, livingEntity, throwntrident, throwntrident, arrowData, true);
                         }
-
                         if (player.getAbilities().instabuild) {
                             throwntrident.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                         }

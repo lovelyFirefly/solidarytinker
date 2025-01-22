@@ -15,7 +15,9 @@ public class ExperienceProtect extends ArmorModifier {
                     int a = player.experienceLevel;
                     int level = ModifierLevel.getTotalArmorModifierlevel(player, this.getId());
                     if (a > 0) {
-                        event.setAmount(event.getAmount() - a * 0.08f * level);
+                        if (!event.getSource().isBypassMagic() || !event.getSource().isBypassArmor()) {
+                            event.setAmount(event.getAmount() - a * 0.04f * level);
+                        } else event.setAmount(event.getAmount() - a * 0.08f * level);
                     }
                 }
             }

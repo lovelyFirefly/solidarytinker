@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.armor.*;
+import com.marth7th.solidarytinker.Modifiers.battle.Uncategorized.Pilgrimage;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Corrode;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Swell;
 import com.marth7th.solidarytinker.Modifiers.battle.common.*;
@@ -59,6 +60,8 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<test> TEST_STATIC_MODIFIER = MODIFIERS.register("test", test::new);   //测试
     public static final StaticModifier<SlimeCuring> SlimeCuring = MODIFIERS.register("slimecuring", SlimeCuring::new);   //测试
     public static final StaticModifier<Swift> Swift = MODIFIERS.register("swift", Swift::new);   //迅捷
+    public static final StaticModifier<HighCa> HighCa = MODIFIERS.register("highca", HighCa::new);   //迅捷
+    public static final StaticModifier<Pilgrimage> pilgrimage = MODIFIERS.register("pilgrimage", Pilgrimage::new);   //迅捷
 
 
 }

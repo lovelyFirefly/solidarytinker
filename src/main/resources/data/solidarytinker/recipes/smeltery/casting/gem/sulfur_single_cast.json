@@ -7,9 +7,9 @@
     }
   ],
   "cast": {
-    "tag": "tconstruct:casts/multi_use/gem"
+    "tag": "tconstruct:casts/single_use/gem"
   },
-  "cast_consumed": false,
+  "cast_consumed": true,
   "fluid": {
     "name": "solidarytinker:molten_sulfur",
     "amount": 100

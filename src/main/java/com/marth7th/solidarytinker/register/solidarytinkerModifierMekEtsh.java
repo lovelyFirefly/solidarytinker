@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.register;
 
+import com.marth7th.solidarytinker.Modifiers.Tool.FluxMine;
 import com.marth7th.solidarytinker.Modifiers.armor.EnderInhibit;
 import com.marth7th.solidarytinker.Modifiers.armor.FluxArmor;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.FluxWeapon;
@@ -23,4 +24,6 @@ public class solidarytinkerModifierMekEtsh {
     public static final StaticModifier<Fluxshot> fluxshot = MODIFIERS.register("fluxshot", Fluxshot::new);   //测试
     public static final StaticModifier<MercuryPoisoning> MercuryPoisoning = MODIFIERS.register("mercurypoisoning", MercuryPoisoning::new);   //测试
     public static final StaticModifier<EnderInhibit> enderinhibit = MODIFIERS.register("enderinhibit", EnderInhibit::new);   //测试
+    public static final StaticModifier<FluxMine> FluxMine = MODIFIERS.register("fluxmine", FluxMine::new);   //通量挖掘
+
 }

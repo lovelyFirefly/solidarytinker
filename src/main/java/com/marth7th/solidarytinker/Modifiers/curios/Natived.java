@@ -10,7 +10,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import top.theillusivec4.curios.api.SlotContext;
@@ -31,7 +33,21 @@ public class Natived extends XICModifier {
     }
 
     {
-        MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::LivingHurtEvent);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::LivingAttackEvent);
+    }
+
+    private void LivingAttackEvent(LivingAttackEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            List<ItemStack> curio = ToolUtils.Curios.getStacks(player);
+            for (ItemStack curios : curio) {
+                if (ModifierUtil.getModifierLevel(curios, this.getId()) > 0) {
+                    if (event.getAmount() > player.getMaxHealth() * 0.26f) {
+                        player.invulnerableTime = 100;
+                    }
+                }
+            }
+        }
     }
 
     private void LivingHurtEvent(LivingHurtEvent event) {

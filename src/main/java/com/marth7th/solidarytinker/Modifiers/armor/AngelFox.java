@@ -20,10 +20,18 @@ public class AngelFox extends ArmorModifier {
             if (ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), this.getId()) > 0) {
                 LivingEntity entity = event.getEntity();
                 float OriginallyDamage = event.getAmount();
-                if (OriginallyDamage > entity.getMaxHealth()) {
-                    event.setAmount(Math.max(OriginallyDamage * 0 + entity.getMaxHealth() * 0.2f, 4));
-                } else if (OriginallyDamage > entity.getMaxHealth() * 0.5F) {
-                    event.setAmount(Math.max(OriginallyDamage * 0 + entity.getMaxHealth() * 0.1f, 2));
+                if (event.getSource().isBypassArmor() || event.getSource().isBypassMagic()) {
+                    if (OriginallyDamage > entity.getMaxHealth()) {
+                        event.setAmount(Math.max(OriginallyDamage * 0 + entity.getMaxHealth() * 0.4f, 4));
+                    } else if (OriginallyDamage > entity.getMaxHealth() * 0.5F) {
+                        event.setAmount(Math.max(OriginallyDamage * 0 + entity.getMaxHealth() * 0.2f, 2));
+                    }
+                } else if (!event.getSource().isBypassMagic() && !event.getSource().isBypassArmor()) {
+                    if (OriginallyDamage > entity.getMaxHealth()) {
+                        event.setAmount(Math.max(OriginallyDamage * 0 + entity.getMaxHealth() * 0.2f, 4));
+                    } else if (OriginallyDamage > entity.getMaxHealth() * 0.5F) {
+                        event.setAmount(Math.max(OriginallyDamage * 0 + entity.getMaxHealth() * 0.1f, 2));
+                    }
                 }
             }
         }

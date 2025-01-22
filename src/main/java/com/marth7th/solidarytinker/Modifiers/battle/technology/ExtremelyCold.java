@@ -25,8 +25,8 @@ public class ExtremelyCold extends BattleModifier {
             LivingEntity target = context.getLivingTarget();
             int a = RANDOM.nextInt(10);
             if (target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
-                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
+                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
+                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
                 if (timeleft >= 0) {
                     target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 10));
                 }
@@ -41,8 +41,8 @@ public class ExtremelyCold extends BattleModifier {
         if (target != null) {
             int a = RANDOM.nextInt(10);
             if (target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
-                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
+                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
+                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
                 if (timeleft >= 0) {
                     target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 10));
                 }

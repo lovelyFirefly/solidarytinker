@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.effects.BloodAnger;
+import com.marth7th.solidarytinker.effects.HighCa;
 import com.marth7th.solidarytinker.effects.MercuryPoisoning;
 import com.marth7th.solidarytinker.effects.Seriously_Injured;
 import net.minecraft.world.effect.MobEffect;
@@ -15,5 +16,6 @@ public class solidarytinkerEffects {
     public static final RegistryObject<MobEffect> bloodanger = EFFECT.register("bloodanger", BloodAnger::new);
     public static final RegistryObject<MobEffect> seriously_injured = EFFECT.register("seriously_injured", Seriously_Injured::new);
     public static final RegistryObject<MobEffect> mercurypoisoning = EFFECT.register("mercurypoisoning", MercuryPoisoning::new);
+    public static final RegistryObject<MobEffect> higtca = EFFECT.register("higtca", HighCa::new);
 
 }

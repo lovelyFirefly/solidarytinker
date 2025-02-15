@@ -11,17 +11,35 @@ import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 
 public class MekaTool extends ModifiableItem {
+    public int ToolLevel = 0;
+
+    public int getToolLevel() {
+        return ToolLevel;
+    }
+
+    public void setToolLevel(int level) {
+        ToolLevel = level;
+    }
     public MekaTool(Properties properties, ToolDefinition toolDefinition) {
         super(properties, toolDefinition);
     }
 
     @Override
-    public boolean mineBlock(ItemStack p_41416_, Level p_41417_, BlockState p_41418_, BlockPos p_41419_, LivingEntity p_41420_) {
+    public boolean mineBlock(ItemStack stack, Level level, BlockState blockState, BlockPos pos, LivingEntity entity) {
         return true;
     }
 
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
-        return 15f;
+        if (ToolLevel == 0) {
+            return 5;
+        } else if (ToolLevel == 1) {
+            return 15;
+        } else if (ToolLevel == 2) {
+            return 40;
+        } else if (ToolLevel == 3) {
+            return 80;
+        }
+        return 5;
     }
 
     @Override

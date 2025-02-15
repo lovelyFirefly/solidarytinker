@@ -76,6 +76,10 @@
         {
           "level": 1,
           "name": "etshtinker:fluxloaded"
+        },
+        {
+          "level": 1,
+          "name": "tconstruct:stripping"
         }
       ]
     },

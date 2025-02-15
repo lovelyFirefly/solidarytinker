@@ -2,11 +2,15 @@ package com.marth7th.solidarytinker.Modifiers.armor;
 
 
 import com.marth7th.solidarytinker.extend.superclass.FluxArmorModifier;
+import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
+import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -17,7 +21,7 @@ public class FluxArmor extends FluxArmorModifier {
 
     @Override
     public void LivingHurtEvent(LivingHurtEvent event) {
-        if (event.getEntity() instanceof Player player) {
+        if (event.getEntity() instanceof ServerPlayer player) {
             if (ModifierLevel.EachaArmorHasModifierlevel(player, this.getId())) {
                 IToolStackView helmet = ToolStack.from(player.getItemBySlot(EquipmentSlot.HEAD));
                 IToolStackView chest = ToolStack.from(player.getItemBySlot(EquipmentSlot.CHEST));
@@ -39,6 +43,22 @@ public class FluxArmor extends FluxArmorModifier {
                     FluxStorage.removeEnergy(legs, 200, false, true);
                     FluxStorage.removeEnergy(feet, 200, false, true);
                 }
+            }
+        }
+    }
+
+    @Override
+    public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
+        if (entity instanceof ServerPlayer serverPlayer) {
+            if (serverPlayer.tickCount % 2 == 0) {
+                IToolStackView helmet = ToolStack.from(serverPlayer.getItemBySlot(EquipmentSlot.HEAD));
+                IToolStackView chest = ToolStack.from(serverPlayer.getItemBySlot(EquipmentSlot.CHEST));
+                IToolStackView legs = ToolStack.from(serverPlayer.getItemBySlot(EquipmentSlot.LEGS));
+                IToolStackView feet = ToolStack.from(serverPlayer.getItemBySlot(EquipmentSlot.FEET));
+                float nowEnergy = FluxStorage.getEnergyStored(helmet) + FluxStorage.getEnergyStored(chest) + FluxStorage.getEnergyStored(legs) + FluxStorage.getEnergyStored(feet);
+                float TotalEnergy = FluxStorage.getMaxEnergyStored(helmet) + FluxStorage.getMaxEnergyStored(chest) + FluxStorage.getMaxEnergyStored(legs) + FluxStorage.getMaxEnergyStored(feet);
+                int EnergyLevel = Math.round(nowEnergy / TotalEnergy * 18F);
+                STChannel.SendToPlayer(new EnergyChangePacket(EnergyLevel), serverPlayer);
             }
         }
     }

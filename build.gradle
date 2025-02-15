@@ -139,11 +139,18 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
     mavenLocal()
     maven { // SlimeKnights and JEI
         name 'DVS1 Maven FS'
         url 'https://dvs1.progwml6.com/files/maven'
     }
+
     flatDir {
         dir 'libs'
     }
@@ -152,16 +159,18 @@ repositories {
 dependencies {
     // 依赖lib目录下的所有以.jar结尾的文件
     implementation fileTree(dir: 'lib', includes: ['*.jar'])
-    minecraft 'net.minecraftforge:forge:1.19.2-43.4.0'
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.19.2-${tcon_version}")
+    implementation fg.deobf("slimeknights.mantle:Mantle:1.19.2-${mantle_version}")
+    implementation fg.deobf("curse.maven:Mekanism-268560:4644795")
 }
 jar {
     manifest {
         attributes([
                 "Specification-Title"     : "solidarytinker",
                 "Specification-Vendor"    : "marth7th",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Version": "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "marth7th",

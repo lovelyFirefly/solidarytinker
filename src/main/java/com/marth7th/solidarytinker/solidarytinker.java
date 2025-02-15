@@ -4,6 +4,7 @@ import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
 import com.kwpugh.gobber2.lists.tiers.ToolMaterialTiers;
 import com.marth7th.solidarytinker.etshtinker.EtshinkerCarbon;
 import com.marth7th.solidarytinker.register.*;
+import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import com.marth7th.solidarytinker.shelf.tier.Momo;
 import net.minecraft.resources.ResourceLocation;
@@ -57,6 +58,7 @@ public class solidarytinker {
 
     public void commonSetup(FMLCommonSetupEvent event) {
         ToolCapabilityProvider.register(FluxStorage::new);
+        STChannel.register();
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);
             event.enqueueWork(EtshinkerCarbon::extendMap);

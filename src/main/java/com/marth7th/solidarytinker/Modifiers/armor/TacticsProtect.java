@@ -5,6 +5,7 @@ import com.marth7th.solidarytinker.register.solidarytinkerEffects;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -42,7 +43,7 @@ public class TacticsProtect extends ArmorModifier {
                                 double z = player.getZ();
                                 List<Mob> MobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 2 * modifierslevel, y + 2 * modifierslevel, z + 8 * modifierslevel, x - 2 * modifierslevel, y - 8 * modifierslevel, z - 2 * modifierslevel));
                                 for (Mob enemys : MobList) {
-                                    if (enemys != null) {
+                                    if (enemys != null&&event.getSource() instanceof EntityDamageSource source&&!source.isThorns()) {
                                         enemys.hurt(DamageSource.thorns(player).bypassArmor().bypassMagic(), entity.getAbsorptionAmount() + entity.getMaxHealth() * 0.3f);
                                     }
                                 }

@@ -307,5 +307,10 @@
   "modifier.solidarytinker.pilgrimage.flavor": "世界那么大， 我想去看看",
   "modifier.solidarytinker.contented": "知足",
   "modifier.solidarytinker.contented.description": "使用者的移动距离每凑够100步时清空步数，获得10点“硬币”并给予使用者随机Buff；攻击时，消耗硬币将伤害变成无视护甲的伤害.每攻击一次消耗1点.至多存储100*等级点硬币数量",
-  "modifier.solidarytinker.contented.flavor": "有一种收获的喜悦"
+  "modifier.solidarytinker.contented.flavor": "有一种收获的喜悦",
+
+
+  "modifier.solidarytinker.yidefuren": "以德服人",
+  "modifier.solidarytinker.yidefuren.description": "0.1mm超薄护盾",
+  "modifier.solidarytinker.yidefuren.flavor": "右键释放，立刻获得高达1点的伤害吸收，并且获得6秒 * 词条等级的'仁义'期间不会被施加负面药水效果，并且伤害增加50%,冷却时间60秒,在黄心存在的时候会根据已造成的伤害增加黄心，最多150"
 }

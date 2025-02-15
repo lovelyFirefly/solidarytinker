@@ -23,6 +23,7 @@ public class InHeart extends BattleModifier {
     public void processLoot(IToolStackView iToolStackView, ModifierEntry modifierEntry, List<ItemStack> list, LootContext lootContext) {
         if (fm) {
             int ran = RANDOM.nextInt(1000);
+
             if (ran == 1) {
                 list.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
             } else if (ran == 2) {

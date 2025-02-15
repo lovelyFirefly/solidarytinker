@@ -57,7 +57,7 @@ public class tinkertrident extends AbstractArrow {
                         this.yOld = this.getY();
                     }
 
-                    double d0 = 0.05D * (double) i;
+                    double d0 = 0.5D * (double) i;
                     this.setDeltaMovement(this.getDeltaMovement().scale(0.95D).add(vec3.normalize().scale(d0)));
                     if (this.clientSideReturnTridentTickCount == 0) {
                         this.playSound(SoundEvents.TRIDENT_RETURN, 10.0F, 1.0F);

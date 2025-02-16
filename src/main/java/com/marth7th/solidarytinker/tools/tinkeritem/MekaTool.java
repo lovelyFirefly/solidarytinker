@@ -37,7 +37,7 @@ public class MekaTool extends ModifiableItem {
         } else if (ToolLevel == 2) {
             return 40;
         } else if (ToolLevel == 3) {
-            return 80;
+            return 800;
         }
         return 5;
     }

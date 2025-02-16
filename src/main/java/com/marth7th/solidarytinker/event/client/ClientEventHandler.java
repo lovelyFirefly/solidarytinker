@@ -45,7 +45,8 @@ public class ClientEventHandler {
                         player.sendSystemMessage(Component.literal("切换到高速模式"));
                     } else if (mekaTool.getToolLevel() == 2) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(2));
-                        player.sendSystemMessage(Component.literal("切换到超高速模式"));
+                        player.sendSystemMessage(Component.literal("切换到极速模式"));
+                        player.sendSystemMessage(Component.literal("此模式可能产生幽灵方块"));
                     } else if (mekaTool.getToolLevel() == 3) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(3));
                         player.sendSystemMessage(Component.literal("切换到低速模式"));

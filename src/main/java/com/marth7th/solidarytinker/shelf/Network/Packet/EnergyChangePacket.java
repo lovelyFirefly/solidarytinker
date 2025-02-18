@@ -16,7 +16,6 @@ public class EnergyChangePacket {
     public EnergyChangePacket(FriendlyByteBuf buf) {
         this.EnergyLevel = buf.readInt();
     }
-
     public void ToByte(FriendlyByteBuf buf) {
         buf.writeInt(EnergyLevel);
     }

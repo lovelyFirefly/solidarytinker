@@ -1,5 +1,7 @@
 package com.marth7th.solidarytinker.shelf.energy.Cache;
 
+
+//用于中转和记录
 public class ClientEnergyData {
     private static int PlayerEnergyLevel;
 

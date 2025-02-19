@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,11 +24,11 @@ public class Crushing extends BattleModifier {
         LivingEntity entity = context.getAttacker();
         LivingEntity target = context.getLivingTarget();
         if (entity instanceof Player player) {
-            if (target != null) {
-                if (player.getMaxHealth() > target.getHealth()) {
+            if (target != null && player.getMaxHealth() > target.getHealth()) {
+                if (SolidarytinkerConfig.damascus_steel.get()) {
                     target.kill();
                     target.die(DamageSource.playerAttack(player));
-                }
+                } else target.hurt(DamageSource.playerAttack(player), 1000);
             }
         }
     }
@@ -37,8 +38,10 @@ public class Crushing extends BattleModifier {
         if (attacker instanceof Player player) {
             if (attacker.getMaxHealth() > target.getHealth()) {
                 target.invulnerableTime = 0;
-                target.die(DamageSource.playerAttack(player));
-                target.kill();
+                if (SolidarytinkerConfig.damascus_steel.get()) {
+                    target.die(DamageSource.playerAttack(player));
+                    target.kill();
+                } else target.hurt(DamageSource.playerAttack(player), 1000);
             }
         }
     }

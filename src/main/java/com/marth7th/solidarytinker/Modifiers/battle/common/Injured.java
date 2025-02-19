@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -21,10 +22,11 @@ public class Injured extends BattleModifier {
 
     public void LivingHealEvent(LivingHealEvent event) {
         if (event.getEntity() != null) {
+            float value = SolidarytinkerConfig.Injured.get().floatValue();
             if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
                 int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier();
                 if (level <= 3) {
-                    event.setAmount(event.getAmount() * 1 - 0.3f * level);
+                    event.setAmount(event.getAmount() * 1 - value * level);
                 } else
                     event.setCanceled(true);
             }

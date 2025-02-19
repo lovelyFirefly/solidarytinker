@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,7 +25,7 @@ public class NeverEnd extends BattleModifier {
         if (context.getLivingTarget() != null) {
             if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())) {
                 int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic(), context.getLivingTarget().getMaxHealth() * 0.09f * (effectlevel + 1));
+                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic(), context.getLivingTarget().getMaxHealth() * SolidarytinkerConfig.HoshinoRedTemperature.get() * (effectlevel + 1));
             }
         }
     }
@@ -34,12 +35,15 @@ public class NeverEnd extends BattleModifier {
         if (attacker.hasEffect(solidarytinkerEffects.bloodanger.get())) {
             int effectlevel = (attacker.getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
             int count = attacker.getArrowCount();
+            int MaxCount = SolidarytinkerConfig.HoshinoArrowCount.get();
+            int HoshinoMaxArrowCountDamage = SolidarytinkerConfig.HoshinoMaxArrowCountDamage.get();
+            int HoshinoArrowCountDamage = SolidarytinkerConfig.HoshinoArrowCountDamage.get();
             target.invulnerableTime = 0;
-            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic().bypassEnchantments(), target.getMaxHealth() * 0.09f * effectlevel + 1);
-            if (count >= 0 && count < 20) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * (1 + (0.08 * count)));
-            } else if (count >= 20) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * 145f);
+            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic(), target.getMaxHealth() * SolidarytinkerConfig.HoshinoRedTemperature.get() / 100 * effectlevel + 1);
+            if (count >= 0 && count < MaxCount) {
+                arrow.setBaseDamage(arrow.getBaseDamage() * (1 + (HoshinoArrowCountDamage / 100f * count)));
+            } else if (count >= MaxCount) {
+                arrow.setBaseDamage(arrow.getBaseDamage() * HoshinoMaxArrowCountDamage);
                 attacker.setArrowCount(0);
                 attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, true, true));
             }
@@ -48,12 +52,15 @@ public class NeverEnd extends BattleModifier {
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        if (attacker.getArrowCount() >= 0 && attacker.getArrowCount() < 20) {
-            return damage * (1f + (0.8f * attacker.getArrowCount()));
-        } else if (attacker.getArrowCount() >= 20) {
+        int MaxCount = SolidarytinkerConfig.HoshinoArrowCount.get();
+        int HoshinoMaxArrowCountDamage = SolidarytinkerConfig.HoshinoMaxArrowCountDamage.get();
+        int HoshinoArrowCountDamage = SolidarytinkerConfig.HoshinoArrowCountDamage.get();
+        if (attacker.getArrowCount() >= 0 && attacker.getArrowCount() < MaxCount) {
+            return damage * (1f + (HoshinoArrowCountDamage * attacker.getArrowCount()));
+        } else if (attacker.getArrowCount() >= MaxCount) {
             attacker.setArrowCount(0);
             attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, true, true));
-            return damage * 145f;
+            return damage * HoshinoMaxArrowCountDamage;
         }
         return baseDamage;
     }

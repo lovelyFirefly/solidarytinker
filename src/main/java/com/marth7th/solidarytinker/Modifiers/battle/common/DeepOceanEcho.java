@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.util.compound.IceFantasy;
 import net.minecraft.network.chat.Component;
@@ -20,13 +21,16 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 import java.util.List;
 
 public class DeepOceanEcho extends BattleModifier {
+    public float MaxValue() {
+        return SolidarytinkerConfig.iceMaxValue.get().floatValue();
+    }
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if (attacker instanceof Player player) {
             float a = (Math.max(player.getMaxHealth() * 0.2f, 1) * Math.max(player.getArmorValue() * 0.6f, 1) * Math.max(player.totalExperience * 0.001f, 1)) * 0.5f * level;
             if (livingTarget instanceof Player) {
                 return damage * 0f;
-            } else return damage + (a * 0.5f * level);
+            } else return damage + Math.min((a * 0.5f * level), MaxValue());
         }
         return damage;
     }
@@ -37,7 +41,7 @@ public class DeepOceanEcho extends BattleModifier {
             float a = (Math.max(player.getMaxHealth() * 0.2f, 1) * Math.max(player.getArmorValue() * 0.6f, 1) * Math.max(player.totalExperience * 0.001f, 1)) * 0.5f * level;
             if (target instanceof Player) {
                 arrow.setBaseDamage(0);
-            } else arrow.setBaseDamage(arrow.getBaseDamage() + (a * 0.5 * level));
+            } else arrow.setBaseDamage(Math.min((arrow.getBaseDamage() + (a * 0.5 * level)), MaxValue()));
         }
     }
 
@@ -48,7 +52,7 @@ public class DeepOceanEcho extends BattleModifier {
             float a = (Math.max(player.getMaxHealth() * 0.2f, 1) * Math.max(player.getArmorValue() * 0.6f, 1) * Math.max(player.totalExperience * 0.001f, 1)) * 0.5f * level;
             list.add(applyStyle(Component.literal(IceFantasy.GetColor("当前回声点数")).append(IceFantasy.GetColor(a + ""))));
             list.add(applyStyle(Component.literal(IceFantasy.GetColor("每点回声所增幅的伤害")).append(IceFantasy.GetColor(level * 0.5f + "攻击力"))));
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("实际提升的总伤害")).append(IceFantasy.GetColor((level * 0.5f) * a + "攻击力"))));
+            list.add(applyStyle(Component.literal(IceFantasy.GetColor("实际提升的总伤害")).append(IceFantasy.GetColor(Math.min((level * 0.5f) * a, MaxValue()) + "攻击力"))));
             list.add(applyStyle(Component.literal(IceFantasy.GetColor("你已是完全之龙，足以审判众神")).append(IceFantasy.GetColor("你已经掌握" + level + "层权能"))));
         }
     }

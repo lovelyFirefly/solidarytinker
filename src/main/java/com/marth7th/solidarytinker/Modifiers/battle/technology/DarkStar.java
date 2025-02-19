@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.battle.technology;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
@@ -41,7 +42,11 @@ public class DarkStar extends BattleModifier {
         if (event.getEntity() instanceof Player player) {
             if (ModifierLevel.getMainhandModifierlevel(event.getEntity(), this.getId()) > 0) {
                 ModDataNBT tooldata = ToolStack.from(player.getItemBySlot(EquipmentSlot.MAINHAND)).getPersistentData();
-                tooldata.putFloat(DEATH, player.getMaxHealth() * 0.33f + tooldata.getFloat(DEATH));
+                float count = tooldata.getFloat(DEATH);
+                float max = SolidarytinkerConfig.DwarfMaxDamage.get().floatValue();
+                if (count < max) {
+                    tooldata.putFloat(DEATH, player.getMaxHealth() * 0.33f + tooldata.getFloat(DEATH));
+                }
             }
         }
     }

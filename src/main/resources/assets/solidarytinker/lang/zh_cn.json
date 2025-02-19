@@ -191,7 +191,7 @@
   "modifier.solidarytinker.extremelycold.description": "攻击会有10%概率对目标施加减速效果,如果目标已经有减速效果则百分百在原有基础上延长10秒。",
   "modifier.solidarytinker.extremelycold.flavor": "凛冬将至",
   "modifier.solidarytinker.fluxarmor": "通量装甲",
-  "modifier.solidarytinker.fluxarmor.description": "身着4件时,消耗全身每件电量抵挡伤害,每400点电量抵挡1点实际伤害,至多抵挡原伤害92.5%,如果当前电量不足以抵挡此次伤害则免伤效果降低至50%且清空电量",
+  "modifier.solidarytinker.fluxarmor.description": "身着4件时,消耗全身每件电量抵挡伤害,每200点电量抵挡1点实际伤害,至多抵挡原伤害92.5%,如果当前电量不足以抵挡此次伤害则免伤效果降低至50%且清空电量",
   "modifier.solidarytinker.fluxarmor.flavor": "通量防御开启",
   "modifier.solidarytinker.fluxshot": "通量射击",
   "modifier.solidarytinker.fluxshot.description": "每次消耗100Fe来代替消耗箭矢",

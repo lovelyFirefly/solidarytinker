@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.ArmorModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
@@ -34,7 +35,8 @@ public class SandStrom extends ArmorModifier {
                         for (ItemStack itemStack1 : armor) {
                             if (!player.getCooldowns().isOnCooldown(itemStack1.getItem())) {
                                 if (event.getSource().getEntity() instanceof LivingEntity && event.getSource().getEntity() != null) {
-                                    event.setAmount(event.getAmount() * 0.7f);
+                                    float value = SolidarytinkerConfig.HoshinoArmor.get().floatValue();
+                                    event.setAmount(event.getAmount() * 1 - value);
                                 }
                             }
                         }

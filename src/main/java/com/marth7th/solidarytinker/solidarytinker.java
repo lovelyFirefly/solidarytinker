@@ -2,6 +2,7 @@ package com.marth7th.solidarytinker;
 
 import com.c2h6s.etshtinker.Mapping.ionizerFluidMapMek;
 import com.kwpugh.gobber2.lists.tiers.ToolMaterialTiers;
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.etshtinker.EtshinkerCarbon;
 import com.marth7th.solidarytinker.register.*;
 import com.marth7th.solidarytinker.shelf.Network.STChannel;
@@ -13,7 +14,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
@@ -46,6 +49,11 @@ public class solidarytinker {
         solidarytinkerFluid.FLUIDS.register(eventBus);
         solidarytinkerBlock.BLOCK.register(eventBus);
         solidarytinkerEffects.EFFECT.register(eventBus);
+        //config
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SolidarytinkerConfig.Materialspec);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SolidarytinkerConfig.Toolspec);
+
+
         solidarytinkerSlots.init();
         if (Mekenabled && ETSH) {
             solidarytinkerGas.GAS.register(eventBus);
@@ -58,6 +66,7 @@ public class solidarytinker {
 
     public void commonSetup(FMLCommonSetupEvent event) {
         ToolCapabilityProvider.register(FluxStorage::new);
+
         STChannel.register();
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);

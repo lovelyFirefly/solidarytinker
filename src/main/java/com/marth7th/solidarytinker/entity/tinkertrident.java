@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.entity;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -57,7 +58,8 @@ public class tinkertrident extends AbstractArrow {
                         this.yOld = this.getY();
                     }
 
-                    double d0 = 0.5D * (double) i;
+                    int Value = SolidarytinkerConfig.TridentLoyalSpeed.get();
+                    double d0 = Value / 10D * (double) i;
                     this.setDeltaMovement(this.getDeltaMovement().scale(0.95D).add(vec3.normalize().scale(d0)));
                     if (this.clientSideReturnTridentTickCount == 0) {
                         this.playSound(SoundEvents.TRIDENT_RETURN, 10.0F, 1.0F);
@@ -97,9 +99,15 @@ public class tinkertrident extends AbstractArrow {
         float f = (float) this.getDeltaMovement().length();
         float i = (float) Mth.clamp((double) f * this.baseDamage, 0.0D, Float.MAX_VALUE);
         Entity entity1 = this.getOwner();
-        DamageSource damagesource = DamageSource.trident(this, (Entity) (entity1 == null ? this : entity1)).bypassEnchantments().bypassMagic();
+        boolean IsBypassMagic = SolidarytinkerConfig.TridentbypassMagic.get();
         this.dealtDamage = true;
         SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
+        DamageSource damagesource;
+        if (IsBypassMagic) {
+            damagesource = DamageSource.trident(this, (Entity) (entity1 == null ? this : entity1)).bypassMagic();
+        } else {
+            damagesource = DamageSource.trident(this, (Entity) (entity1 == null ? this : entity1));
+        }
         if (entity.hurt(damagesource, i)) {
             return;
         }

@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.tools.tinkeritem;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.entity.tinkertrident;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
@@ -66,7 +67,8 @@ public class trident extends ModifiableItem {
                     if (j == 0 && k == 0 || (j > 0 && !player.isInWater() && !player.level.isRaining()) && k == 0) {
                         tinkertrident throwntrident = new tinkertrident(level, player, stack);
                         throwntrident.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F + (float) j * 0.5F, 1.0F);
-                        float baseArrowDamage = tool.getStats().get(ToolStats.ATTACK_DAMAGE);
+                        float value = SolidarytinkerConfig.TridentDamage.get().floatValue();
+                        float baseArrowDamage = tool.getStats().get(ToolStats.ATTACK_DAMAGE) * value;
                         throwntrident.setBaseDamage(ConditionalStatModifierHook.getModifiedStat(tool, player, ToolStats.ATTACK_DAMAGE, baseArrowDamage));
                         ModifierNBT modifiers = tool.getModifiers();
                         throwntrident.getCapability(EntityModifierCapability.CAPABILITY).ifPresent(cap -> cap.setModifiers(modifiers));
@@ -92,7 +94,8 @@ public class trident extends ModifiableItem {
                     float f2 = -Mth.sin(f * ((float) Math.PI / 180F));
                     float f3 = Mth.cos(f7 * ((float) Math.PI / 180F)) * Mth.cos(f * ((float) Math.PI / 180F));
                     float f4 = Mth.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
-                    float f5 = 3.0F * ((1.0F + (float) j) / 4.0F);
+                    int scala = SolidarytinkerConfig.TridentRipSpeed.get();
+                    float f5 = 3.0F * ((1.0F + (float) j * scala) / 4.0F);
                     f1 *= f5 / f4;
                     f2 *= f5 / f4;
                     f3 *= f5 / f4;

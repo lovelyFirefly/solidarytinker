@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.technology;
 
+import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,12 +28,14 @@ public class SuperBlazing extends BattleModifier {
             double x = attacker.getX();
             double y = attacker.getY();
             double z = attacker.getZ();
-            List<Mob> mobbbb = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 40, y + 40, z + 40, x - 40, y - 40, z - 40));
+            int FireTick = SolidarytinkerConfig.DwarfBlaze.get();
+            int range = SolidarytinkerConfig.DwarfSuperBlazing.get();
+            List<Mob> mobbbb = player.level.getEntitiesOfClass(Mob.class, new AABB(x + range, y + range, z + range, x - range, y - range, z - range));
             for (Mob targets : mobbbb) {
                 if (targets != null && player.isCrouching()) {
                     double a = targets.getX();
                     double c = targets.getZ();
-                    targets.setRemainingFireTicks(2147483647);
+                    targets.setRemainingFireTicks(FireTick);
                     targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1000, 1, true, true));
                     targets.addEffect(new MobEffectInstance(TinkerModifiers.enderferenceEffect.get(), 1000, 1, true, true));
                     {
@@ -53,12 +55,14 @@ public class SuperBlazing extends BattleModifier {
             double x = attacker.getX();
             double y = attacker.getY();
             double z = attacker.getZ();
-            List<Mob> mobbbb = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 40, y + 40, z + 40, x - 40, y - 40, z - 40));
+            int FireTick = SolidarytinkerConfig.DwarfBlaze.get();
+            int range = SolidarytinkerConfig.DwarfSuperBlazing.get();
+            List<Mob> mobbbb = player.level.getEntitiesOfClass(Mob.class, new AABB(x + range, y + range, z + range, x - range, y - range, z - range));
             for (Mob targets : mobbbb) {
                 if (targets != null && player.isCrouching()) {
                     double a = targets.getX();
                     double c = targets.getZ();
-                    targets.setRemainingFireTicks(2147483647);
+                    targets.setRemainingFireTicks(FireTick);
                     targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1000, 1, true, true));
                     targets.addEffect(new MobEffectInstance(TinkerModifiers.enderferenceEffect.get(), 1000, 1, true, true));
                     {

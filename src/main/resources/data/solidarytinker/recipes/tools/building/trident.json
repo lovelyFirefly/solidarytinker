@@ -1,5 +1,10 @@
 {
   "type": "tconstruct:tool_building",
+  "extra_requirements": [
+    {
+      "item": "minecraft:golden_apple"
+    }
+  ],
   "result": "solidarytinker:trident",
   "result_count": 1
 }

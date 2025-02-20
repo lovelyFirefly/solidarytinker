@@ -82,5 +82,5 @@ public class SolidarytinkerConfig {
             .defineInRange("TridentRipSpeed", 1, 0, Integer.MAX_VALUE);
 
     public static final ForgeConfigSpec Materialspec = MaterialBuilder.pop().build();
-    public static final ForgeConfigSpec Toolspec = MaterialBuilder.pop().build();
+    public static final ForgeConfigSpec Toolspec = ToolBuilder.pop().build();
 }

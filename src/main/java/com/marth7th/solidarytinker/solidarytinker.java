@@ -50,8 +50,8 @@ public class solidarytinker {
         solidarytinkerBlock.BLOCK.register(eventBus);
         solidarytinkerEffects.EFFECT.register(eventBus);
         //config
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SolidarytinkerConfig.Materialspec);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SolidarytinkerConfig.Toolspec);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SolidarytinkerConfig.Materialspec, "SolidaryTinkerMaterials.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SolidarytinkerConfig.Toolspec, "SolidaryTinkerTools.toml");
 
 
         solidarytinkerSlots.init();

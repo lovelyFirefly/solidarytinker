@@ -1,7 +1,6 @@
 package com.marth7th.solidarytinker.tools.tinkeritem;
 
 
-import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -31,20 +30,12 @@ public class MekaTool extends ModifiableItem {
     }
 
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
-        int Slow = SolidarytinkerConfig.MekaToolSlowSpeed.get();
-        int Medium = SolidarytinkerConfig.MekaToolMediumSpeed.get();
-        int High = SolidarytinkerConfig.MekaToolHighSpeed.get();
-        int Extreme = SolidarytinkerConfig.MekaToolExtremeSpeed.get();
-        if (ToolLevel == 0) {
-            return Slow;
-        } else if (ToolLevel == 1) {
-            return Medium;
-        } else if (ToolLevel == 2) {
-            return High;
-        } else if (ToolLevel == 3) {
-            return Extreme;
+        MekaToolSpeedLevel[] toolSpeedLevels = MekaToolSpeedLevel.values();
+        int truespeed = 0;
+        for (int i = 0; i < this.ToolLevel; i++) {
+            truespeed = toolSpeedLevels[i].getSpeed();
         }
-        return Slow;
+        return truespeed;
     }
 
     @Override

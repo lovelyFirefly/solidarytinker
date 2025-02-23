@@ -25,13 +25,13 @@ public class ExtremelyCold extends BattleModifier {
             LivingEntity target = context.getLivingTarget();
             int a = RANDOM.nextInt(10);
             if (target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
-                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
+                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
+                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
                 if (timeleft >= 0) {
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 10));
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 200));
                 }
             } else if (a == 1) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 10));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 200));
             }
         }
     }
@@ -41,13 +41,13 @@ public class ExtremelyCold extends BattleModifier {
         if (target != null) {
             int a = RANDOM.nextInt(10);
             if (target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
-                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
+                int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
+                int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
                 if (timeleft >= 0) {
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 10));
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 100));
                 }
             } else if (a == 1) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 10));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 200));
             }
         }
     }

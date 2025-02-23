@@ -44,7 +44,6 @@ public class SlimeCuring extends ArmorModifier {
                     if (TinkerModifiers.overslime.get().getShield(toolview) > toolview.getStats().get(OverslimeModifier.OVERSLIME_STAT) * 0.25F) {
                         TinkerModifiers.overslime.get().setShield(tooldata, (int) (shield - maxshield * 0.25F));
                         event.setAmount(event.getAmount() * 0.1f);
-                        break;
                     }
                 }
             }

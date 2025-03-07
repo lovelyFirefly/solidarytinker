@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "solidarytinker:heavy_armor_steel_ingot"
+  },
+  "result": {
+    "fluid": "solidarytinker:molten_heavy_armor_steel",
+    "amount": 90
+  },
+  "temperature": 1400,
+  "time": 40
+}

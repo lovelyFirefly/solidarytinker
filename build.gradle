@@ -163,13 +163,10 @@ repositories {
 dependencies {
     // 依赖lib目录下的所有以.jar结尾的文件
     implementation fileTree(dir: 'lib', includes: ['*.jar'])
-
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.19.2-${tcon_version}")
     implementation fg.deobf("slimeknights.mantle:Mantle:1.19.2-${mantle_version}")
-
-
     implementation fg.deobf("curse.maven:Mekanism-268560:4644795")
 }
 jar {

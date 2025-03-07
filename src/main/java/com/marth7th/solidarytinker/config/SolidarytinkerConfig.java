@@ -18,7 +18,7 @@ public class SolidarytinkerConfig {
             .defineInRange("ArrowCount", 20, 0, Integer.MAX_VALUE);
     //星野锭每层箭矢对应的增伤比例
     public static final ForgeConfigSpec.IntValue HoshinoArrowCountDamage = MaterialBuilder.comment("星野锭叠加箭矢对应的增伤,默认8%")
-            .defineInRange("EachArrowValue", 145, 0, Integer.MAX_VALUE);
+            .defineInRange("EachArrowValue", 8, 0, Integer.MAX_VALUE);
     //星野锭的满层箭矢单次增伤比例，默认145倍
     public static final ForgeConfigSpec.IntValue HoshinoMaxArrowCountDamage = MaterialBuilder.comment("叠满箭矢后单次伤害对应的倍率,默认145倍")
             .defineInRange("MaxArrowCountDamageValue", 145, 0, Integer.MAX_VALUE);

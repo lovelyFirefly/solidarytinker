@@ -18,8 +18,8 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.List;
 
 public class TheFood extends BattleModifier {
-    boolean fm = ModList.get().isLoaded("farmersdelight");
-    boolean carrot = ModList.get().isLoaded("solcarrot");
+    public static boolean fm = ModList.get().isLoaded("farmersdelight");
+    public static boolean carrot = ModList.get().isLoaded("solcarrot");
 
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {

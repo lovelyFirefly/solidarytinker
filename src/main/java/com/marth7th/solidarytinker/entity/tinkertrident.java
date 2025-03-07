@@ -28,7 +28,12 @@ import javax.annotation.Nullable;
 
 public class tinkertrident extends AbstractArrow {
 
-    private ItemStack tridentItem = new ItemStack(Items.TRIDENT);
+    static {
+        new ItemStack(Items.TRIDENT);
+    }
+
+    private final ItemStack tridentItem;
+
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
 

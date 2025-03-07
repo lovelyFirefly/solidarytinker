@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "solidarytinker:heavy_armor_steel",
+  "temperature": 1400,
+  "result": {
+    "fluid": "solidarytinker:molten_heavy_armor_steel",
+    "amount": 90
+  }
+}

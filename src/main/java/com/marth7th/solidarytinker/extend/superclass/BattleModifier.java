@@ -10,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -24,7 +25,7 @@ import java.util.List;
 public class BattleModifier extends Modifier implements AboutAttack, AboutBuilder, AboutArrow, EquipmentChangeModifierHook {
     public BattleModifier() {
         MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
-        MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGHEST, this::LivingAttackEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingDamageEvent);
     }
 

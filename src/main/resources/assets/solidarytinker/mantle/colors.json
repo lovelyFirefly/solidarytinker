@@ -14,7 +14,8 @@
     "extremelycoldsteel": "#4f9fe5",
     "cold_chroma_alloy": "#63dddd",
     "leadamalgamation": "#95838c",
-    "cheese_alloy": "#ffedd7"
+    "cheese_alloy": "#ffedd7",
+    "heavy_armor_steel": "c3c3c3"
   },
   "modifier.solidarytinker": {
     "_白矮星_": null,
@@ -84,7 +85,9 @@
     "mercurypoisoning": "#95838c",
     "enderinhibit": "#95838c",
     "swift": "#ccc9d0",
-    "highca": "#ffedd7"
+    "highca": "#ffedd7",
+    "armorcoating": "#ffedd7",
+    "sophisticated": "#57f1ff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

@@ -14,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
@@ -33,8 +34,12 @@ public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockMo
     public ArmorModifier() {
         MinecraftForge.EVENT_BUS.addListener(this::LivingHurtEvent);
         MinecraftForge.EVENT_BUS.addListener(this::LivingAttackEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::LivingDamageEvent);
         MinecraftForge.EVENT_BUS.addListener(this::MobEffectEvent);
         MinecraftForge.EVENT_BUS.addListener(this::WhenEffectRemove);
+    }
+
+    public void LivingDamageEvent(LivingDamageEvent event) {
     }
 
     public boolean havenolevel() {
@@ -58,14 +63,15 @@ public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockMo
         return this.havenolevel() ? super.getDisplayName() : super.getDisplayName(level);
     }
 
-    public void LivingHurt(LivingHurtEvent event, LivingEntity entity, Player player) {
-    }
+
 
     public void LivingHurtEvent(LivingHurtEvent event) {
-        if (event.getSource().getEntity() instanceof Player player) {
-            LivingEntity entity = event.getEntity();
-            this.LivingHurt(event, entity, player);
+        if (event.getSource().getEntity() instanceof LivingEntity enemy && event.getEntity() instanceof Player player) {
+            this.PlayerLivingHurt(event, enemy, player);
         }
+    }
+
+    public void PlayerLivingHurt(LivingHurtEvent event, LivingEntity enemy, Player player) {
     }
 
     public boolean hidden() {

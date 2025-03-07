@@ -33,7 +33,7 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> icefantasy_ingot = ITEMS.register("icefantasy_ingot", () -> new icefantasy_ingot(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> kemo33 = ITEMS.register("kemo33", () -> new kemo33(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> magicuranium_ingot = ITEMS.register("magicuranium_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
-    public static final RegistryObject<Item> rainbow_ingot = ITEMS.register("rainbow_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> heavy_armor_steel_ingot = ITEMS.register("heavy_armor_steel_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> violane = ITEMS.register("violane", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> damascus_steel_ingot = ITEMS.register("damascus_steel_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> saint_chief_ingot = ITEMS.register("saint_chief_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));

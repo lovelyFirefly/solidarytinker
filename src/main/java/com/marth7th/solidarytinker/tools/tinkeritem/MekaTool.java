@@ -32,7 +32,7 @@ public class MekaTool extends ModifiableItem {
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
         MekaToolSpeedLevel[] toolSpeedLevels = MekaToolSpeedLevel.values();
         int truespeed = 0;
-        for (int i = 0; i < this.ToolLevel; i++) {
+        for (int i = 0; i < this.ToolLevel + 1; i++) {
             truespeed = toolSpeedLevels[i].getSpeed();
         }
         return truespeed;

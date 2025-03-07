@@ -28,10 +28,10 @@ public class ExtremelyCold extends BattleModifier {
                 int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
                 int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
                 if (timeleft >= 0) {
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 200));
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, timeleft + 200, EffectLevel));
                 }
             } else if (a == 1) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 200));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 0));
             }
         }
     }
@@ -44,10 +44,10 @@ public class ExtremelyCold extends BattleModifier {
                 int timeleft = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getDuration();
                 int EffectLevel = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN).getAmplifier();
                 if (timeleft >= 0) {
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EffectLevel, timeleft + 100));
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, timeleft + 100, EffectLevel));
                 }
             } else if (a == 1) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 0, 200));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 0));
             }
         }
     }

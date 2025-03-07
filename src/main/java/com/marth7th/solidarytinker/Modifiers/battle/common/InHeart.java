@@ -12,18 +12,15 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 import java.util.List;
 
 public class InHeart extends BattleModifier {
-    boolean fm = ModList.get().isLoaded("farmersdelight");
+    public static boolean fm = ModList.get().isLoaded("farmersdelight");
 
     public boolean havenolevel() {
         return true;
     }
-
-
     @Override
     public void processLoot(IToolStackView iToolStackView, ModifierEntry modifierEntry, List<ItemStack> list, LootContext lootContext) {
         if (fm) {
             int ran = RANDOM.nextInt(1000);
-
             if (ran == 1) {
                 list.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
             } else if (ran == 2) {

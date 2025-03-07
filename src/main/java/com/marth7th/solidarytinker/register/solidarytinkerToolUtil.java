@@ -12,7 +12,6 @@ import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
         value = {Dist.CLIENT},
         bus = Mod.EventBusSubscriber.Bus.MOD
 )
-
 public class solidarytinkerToolUtil {
     public solidarytinkerToolUtil() {
     }

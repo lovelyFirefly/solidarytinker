@@ -18,16 +18,14 @@ public class solidarytinkerFluid {
     public solidarytinkerFluid() {
     }
 
+    public static final FluidObject<ForgeFlowingFluid> molten_heavy_armor_steel = register("molten_heavy_armor_steel", 860);
+
     private static FluidType.Properties hot(String name) {
-        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.ENDER_DRAGON_HURT).sound(SoundActions.BUCKET_EMPTY, SoundEvents.ENDER_DRAGON_DEATH);
+        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
     }
 
     private static FluidType.Properties cool(String name) {
-        return cool().descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.ENDER_DRAGON_HURT).sound(SoundActions.BUCKET_EMPTY, SoundEvents.ENDER_DRAGON_HURT);
-    }
-
-    private static FluidType.Properties cool() {
-        return FluidType.Properties.create().sound(SoundActions.BUCKET_FILL, SoundEvents.ENDER_DRAGON_HURT).sound(SoundActions.BUCKET_EMPTY, SoundEvents.ENDER_DRAGON_HURT);
+        return cool().descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
     }
 
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp) {
@@ -51,5 +49,8 @@ public class solidarytinkerFluid {
     public static final FluidObject<ForgeFlowingFluid> molten_sulfur = register("molten_sulfur", 860);//熔融硫磺
     public static final FluidObject<ForgeFlowingFluid> molten_leadamalgamation = register("molten_leadamalgamation", 860);//熔融铅汞齐
 
+    private static FluidType.Properties cool() {
+        return FluidType.Properties.create().sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
+    }
 
 }

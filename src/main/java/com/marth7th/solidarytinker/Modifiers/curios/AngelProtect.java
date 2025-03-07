@@ -16,17 +16,26 @@ public class AngelProtect extends XICModifier {
     {
         MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::LivingDamageEvent);
     }
-
     private void LivingDamageEvent(LivingDamageEvent event) {
         if (event.getEntity() instanceof Player player) {
             List<ItemStack> curio = ToolUtils.Curios.getStacks(player);
             float OriginallyDamage = event.getAmount();
             for (ItemStack curios : curio) {
                 if (ModifierUtil.getModifierLevel(curios, this.getId()) > 0) {
-                    if (OriginallyDamage > player.getMaxHealth()) {
-                        event.setAmount(Math.max(OriginallyDamage * 0 + player.getMaxHealth() * 0.2f, 4));
-                    } else if (OriginallyDamage > player.getMaxHealth() * 0.5F) {
-                        event.setAmount(Math.max(OriginallyDamage * 0 + player.getMaxHealth() * 0.1f, 2));
+                    if (event.getSource().getEntity() instanceof Player player1 && player != player1 && event.getAmount() > event.getEntity().getMaxHealth() * 100) {
+                        if (event.getSource().isBypassArmor() || event.getSource().isBypassMagic()) {
+                            if (OriginallyDamage > player.getMaxHealth()) {
+                                event.setAmount(Math.max(OriginallyDamage * 0 + player.getMaxHealth() * 0.4f, 4));
+                            } else if (OriginallyDamage > player.getMaxHealth() * 0.5F) {
+                                event.setAmount(Math.max(OriginallyDamage * 0 + player.getMaxHealth() * 0.2f, 2));
+                            }
+                        } else if (!event.getSource().isBypassMagic() && !event.getSource().isBypassArmor()) {
+                            if (OriginallyDamage > player.getMaxHealth()) {
+                                event.setAmount(Math.max(OriginallyDamage * 0 + player.getMaxHealth() * 0.2f, 4));
+                            } else if (OriginallyDamage > player.getMaxHealth() * 0.5F) {
+                                event.setAmount(Math.max(OriginallyDamage * 0 + player.getMaxHealth() * 0.1f, 2));
+                            }
+                        }
                     }
                 }
             }

@@ -13,6 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -36,18 +37,19 @@ public class ClientEventHandler {
         Player player = Minecraft.getInstance().player;
         if (player != null) {
             if (player.getMainHandItem().getItem() instanceof MekaTool mekaTool) {
+                ItemStack stack = player.getMainHandItem();
                 if (KeyBinding.DIGGING_SPEED_KEY.consumeClick()) {
-                    if (mekaTool.getToolLevel() == 0) {
+                    if (mekaTool.getToolLevel(stack) == 0) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(0));
                         player.sendSystemMessage(Component.literal("切换到中速模式"));
-                    } else if (mekaTool.getToolLevel() == 1) {
+                    } else if (mekaTool.getToolLevel(stack) == 1) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(1));
                         player.sendSystemMessage(Component.literal("切换到高速模式"));
-                    } else if (mekaTool.getToolLevel() == 2) {
+                    } else if (mekaTool.getToolLevel(stack) == 2) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(2));
                         player.sendSystemMessage(Component.literal("切换到极速模式"));
                         player.sendSystemMessage(Component.literal("此模式可能产生幽灵方块"));
-                    } else if (mekaTool.getToolLevel() == 3) {
+                    } else if (mekaTool.getToolLevel(stack) == 3) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(3));
                         player.sendSystemMessage(Component.literal("切换到低速模式"));
                     }

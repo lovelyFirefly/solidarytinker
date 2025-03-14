@@ -24,9 +24,9 @@ public class Injured extends BattleModifier {
         if (event.getEntity() != null) {
             float value = SolidarytinkerConfig.Injured.get().floatValue();
             if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
-                int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier();
+                int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier() + 1;
                 if (level <= 3) {
-                    event.setAmount(event.getAmount() * 1 - value * level);
+                    event.setAmount(event.getAmount() * Math.max(1 - (value * level), 0));
                 } else
                     event.setCanceled(true);
             }

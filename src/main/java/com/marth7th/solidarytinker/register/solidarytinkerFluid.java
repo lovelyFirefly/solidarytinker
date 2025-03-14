@@ -31,7 +31,6 @@ public class solidarytinkerFluid {
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp) {
         return FLUIDS.register(name).type(hot(name).temperature(temp).lightLevel(12)).block(Material.LAVA, 15).bucket().flowing();
     }
-
     public static final FluidObject<ForgeFlowingFluid> molten_dwarf = register("molten_dwarf", 5867);//熔融白矮星物质
     public static final FluidObject<ForgeFlowingFluid> super_dt = register("super_dt", 9500);//超能氘氚燃料
     public static final FluidObject<ForgeFlowingFluid> molten_starfall = register("molten_starfall", 1450);//熔融星落钢

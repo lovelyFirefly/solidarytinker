@@ -1,9 +1,11 @@
 package com.marth7th.solidarytinker.Modifiers.curios;
 
+import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.xiaoyue.tinkers_ingenuity.content.library.context.CurioAttributeContext;
 import com.xiaoyue.tinkers_ingenuity.generic.XICModifier;
 import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -15,20 +17,20 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 import java.util.UUID;
 
 public class Natived extends XICModifier {
-    private int inv = 0;
-
+    private static final ResourceLocation DEATH = solidarytinker.getResource("death");
     {
         MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::LivingDamageEvent);
     }
 
-    private int getInv() {
-        return this.inv;
+    private int getInv(ItemStack stack) {
+        return ToolStack.from(stack).getPersistentData().getInt(DEATH);
     }
 
     @Override
@@ -42,8 +44,8 @@ public class Natived extends XICModifier {
         attr.map().put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("3367bbc2-542d-4b6b-9229-6cc3ff6f4bc6"), Attributes.ATTACK_SPEED.getDescriptionId(), 0.266 * level, AttributeModifier.Operation.MULTIPLY_BASE));
     }
 
-    private void setInv(int invTime) {
-        this.inv = invTime;
+    private void setInv(int invTime, ItemStack stack) {
+        ToolStack.from(stack).getPersistentData().putInt(DEATH, invTime);
     }
 
     private void LivingDamageEvent(LivingDamageEvent event) {
@@ -54,8 +56,8 @@ public class Natived extends XICModifier {
                     if (event.getAmount() > player.getMaxHealth() * 0.26f) {
                         event.setAmount(player.getMaxHealth() * 0.26F);
                         if (ModifierLevel.getCurioModifierInstanceList(player, this.getId()).get(0) instanceof Natived natived) {
-                            if (natived.getInv() == 80) {
-                                natived.setInv(0);
+                            if (natived.getInv(curios) == 80) {
+                                natived.setInv(0, curios);
                                 player.setInvulnerable(true);
                             }
                         }
@@ -68,9 +70,9 @@ public class Natived extends XICModifier {
     @Override
     public void onCurioTick(IToolStackView curio, SlotContext context, LivingEntity entity, int level, ItemStack stack) {
         if (curio.getModifier(this).getModifier() instanceof Natived natived) {
-            if (natived.getInv() < 80) {
-                natived.setInv(natived.getInv() + 1);
-            } else if (natived.getInv() == 80) {
+            if (natived.getInv(stack) < 80) {
+                natived.setInv(natived.getInv(stack) + 1, stack);
+            } else if (natived.getInv(stack) == 80) {
                 entity.setInvulnerable(false);
             }
         }

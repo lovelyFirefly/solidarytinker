@@ -1,7 +1,9 @@
 package com.marth7th.solidarytinker.tools.tinkeritem;
 
 
+import com.marth7th.solidarytinker.solidarytinker;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -9,16 +11,19 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class MekaTool extends ModifiableItem {
-    public int ToolLevel = 0;
+    private static final ResourceLocation SPEED = solidarytinker.getResource("speedlevel");
 
-    public int getToolLevel() {
-        return ToolLevel;
+    public int getToolLevel(ItemStack stack) {
+        ModDataNBT nbt = ToolStack.from(stack).getPersistentData();
+        return nbt.getInt(SPEED);
     }
 
-    public void setToolLevel(int level) {
-        ToolLevel = level;
+    public void setToolLevel(int level, ItemStack stack) {
+        ToolStack.from(stack).getPersistentData().putInt(SPEED, level);
     }
     public MekaTool(Properties properties, ToolDefinition toolDefinition) {
         super(properties, toolDefinition);
@@ -31,8 +36,10 @@ public class MekaTool extends ModifiableItem {
 
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
         MekaToolSpeedLevel[] toolSpeedLevels = MekaToolSpeedLevel.values();
+        ModDataNBT nbt = ToolStack.from(stack).getPersistentData();
+        int toollevel = nbt.getInt(SPEED);
         int truespeed = 0;
-        for (int i = 0; i < this.ToolLevel + 1; i++) {
+        for (int i = 0; i < toollevel + 1; i++) {
             truespeed = toolSpeedLevels[i].getSpeed();
         }
         return truespeed;

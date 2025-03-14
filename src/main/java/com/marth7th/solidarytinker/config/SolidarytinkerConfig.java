@@ -1,6 +1,4 @@
 package com.marth7th.solidarytinker.config;
-
-
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class SolidarytinkerConfig {

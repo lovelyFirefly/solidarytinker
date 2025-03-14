@@ -46,4 +46,7 @@ public class STChannel {
     public static <MSG> void SendToPlayer(MSG msg, ServerPlayer player) {
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), msg);
     }
+
+    public STChannel() {
+    }
 }

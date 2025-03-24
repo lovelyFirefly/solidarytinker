@@ -41,6 +41,16 @@
         "name": "solidarytinker:swell",
         "level": 1
       }
+    ],
+    "etshtinker:plasma_generator": [
+      {
+        "name": "solidarytinker:corrode",
+        "level": 2
+      },
+      {
+        "name": "solidarytinker:swell",
+        "level": 1
+      }
     ]
   }
 }

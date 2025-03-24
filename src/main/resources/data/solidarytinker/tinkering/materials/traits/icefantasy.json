@@ -62,6 +62,20 @@
         "level": 1
       }
     ],
+    "etshtinker:plasma_generator": [
+      {
+        "name": "solidarytinker:ancientocean",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:deepoceanblessing",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:deepoceanecho",
+        "level": 1
+      }
+    ],
     "tinkers_ingenuity:curio": [
       {
         "name": "solidarytinker:deepoceanchew",

@@ -1,6 +1,5 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
-import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -8,34 +7,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 public class Injured extends BattleModifier {
-    {
-        MinecraftForge.EVENT_BUS.addListener(this::LivingHealEvent);
-    }
-
-    public void LivingHealEvent(LivingHealEvent event) {
-        if (event.getEntity() != null) {
-            float value = SolidarytinkerConfig.Injured.get().floatValue();
-            if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
-                int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier() + 1;
-                if (level <= 3) {
-                    event.setAmount(event.getAmount() * Math.max(1 - (value * level), 0));
-                } else
-                    event.setCanceled(true);
-            }
-            if (event.getEntity().hasEffect(solidarytinkerEffects.mercurypoisoning.get())) {
-                event.setAmount(event.getAmount() * 0.2F);
-            }
-        }
-    }
-
     @Override
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if (level <= 5) {

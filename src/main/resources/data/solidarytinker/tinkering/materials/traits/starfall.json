@@ -70,6 +70,20 @@
         "level": 1
       }
     ],
+    "etshtinker:plasma_generator": [
+      {
+        "name": "solidarytinker:neverend",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:reliable",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:tacticsattack",
+        "level": 1
+      }
+    ],
     "tinkers_ingenuity:curio": [
       {
         "name": "solidarytinker:bha",

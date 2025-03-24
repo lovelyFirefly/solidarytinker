@@ -70,13 +70,19 @@
       "plasmarange": 35,
       "damagemultiplier": 6.5
     },
+    "etshtinker:plasma_generator": {
+      "damagemultiplier": 7.5,
+      "criticalrate": 2.0,
+      "fluidefficiency": 4.3,
+      "slash_color": 1
+    },
     "tinkers_ingenuity:battery": {
       "energy_capacity": 64000,
       "durability": 0.2
     },
     "tinkers_ingenuity:laser_medium": {
-      "laser_range": 35,
-      "cooldown": 1.1
+      "laser_range": 50,
+      "cooldown": 0.3
     },
     "tinkers_ingenuity:curio_extra": {},
     "tinkers_ingenuity:curio_main": {

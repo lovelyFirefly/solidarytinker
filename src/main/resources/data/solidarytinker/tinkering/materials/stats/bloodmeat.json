@@ -65,6 +65,12 @@
     "etshtinker:fluid_chamber": {
       "fluid_capacity": 80000
     },
+    "etshtinker:plasma_generator": {
+      "damagemultiplier": 1.05,
+      "criticalrate": 0.55,
+      "fluidefficiency": 0.25,
+      "slash_color": 0
+    },
     "etshtinker:ionizer": {
       "cooldown": 100,
       "plasmarange": 50,

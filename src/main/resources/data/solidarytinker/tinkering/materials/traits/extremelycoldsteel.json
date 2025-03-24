@@ -41,6 +41,16 @@
         "name": "solidarytinker:brittle",
         "level": 1
       }
+    ],
+    "etshtinker:plasma_generator": [
+      {
+        "name": "solidarytinker:extremelycold",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:brittle",
+        "level": 1
+      }
     ]
   }
 }

@@ -29,6 +29,12 @@
         "name": "solidarytinker:experiencekiller",
         "level": 1
       }
+    ],
+    "etshtinker:plasma_generator": [
+      {
+        "name": "solidarytinker:experiencekiller",
+        "level": 1
+      }
     ]
   }
 }

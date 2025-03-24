@@ -5,10 +5,9 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class StaticEffect extends MobEffect {
-    protected StaticEffect(MobEffectCategory type, int color) {
-        super(type, color);
+    public StaticEffect(MobEffectCategory pCategory, int pColor) {
+        super(pCategory, pColor);
     }
-
     @Override
     public void applyEffectTick(LivingEntity living, int amplifier) {
     }

@@ -21,6 +21,7 @@ import slimeknights.tconstruct.tools.TinkerModifiers;
 import java.util.List;
 
 public class SuperBlazing extends BattleModifier {
+
     @Override
     public float beforeMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damage, float baseKnockback, float knockback) {
         LivingEntity attacker = context.getAttacker();

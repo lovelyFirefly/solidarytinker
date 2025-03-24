@@ -70,6 +70,12 @@
       "plasmarange": 30,
       "damagemultiplier": 2.5
     },
+    "etshtinker:plasma_generator": {
+      "damagemultiplier": 1.22,
+      "criticalrate": 0.85,
+      "fluidefficiency": 1.1,
+      "slash_color": 6
+    },
     "tinkers_ingenuity:battery": {
       "energy_capacity": 45000,
       "durability": 0.2

@@ -25,7 +25,7 @@ public class NeverEnd extends BattleModifier {
         if (context.getLivingTarget() != null) {
             if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())) {
                 int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic(), context.getLivingTarget().getMaxHealth() * SolidarytinkerConfig.HoshinoRedTemperature.get() * (effectlevel + 1));
+                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic(), context.getLivingTarget().getMaxHealth() *( SolidarytinkerConfig.HoshinoRedTemperature.get()/100f) * (effectlevel + 1));
             }
         }
     }
@@ -39,7 +39,7 @@ public class NeverEnd extends BattleModifier {
             int HoshinoMaxArrowCountDamage = SolidarytinkerConfig.HoshinoMaxArrowCountDamage.get();
             int HoshinoArrowCountDamage = SolidarytinkerConfig.HoshinoArrowCountDamage.get();
             target.invulnerableTime = 0;
-            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic(), target.getMaxHealth() * SolidarytinkerConfig.HoshinoRedTemperature.get() / 100 * effectlevel + 1);
+            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic(), target.getMaxHealth() * (SolidarytinkerConfig.HoshinoRedTemperature.get() / 100f) * (effectlevel + 1));
             if (count >= 0 && count < MaxCount) {
                 arrow.setBaseDamage(arrow.getBaseDamage() * (1 + ((HoshinoArrowCountDamage / 100f) * count)));
             } else if (count >= MaxCount) {

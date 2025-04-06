@@ -41,6 +41,7 @@ public class solidarytinker {
          几个注册表都在这边，有的联动所以需要前置
          */
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         eventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         solidarytinkerItem.ITEMS.register(eventBus);
@@ -49,12 +50,10 @@ public class solidarytinker {
         solidarytinkerFluid.FLUIDS.register(eventBus);
         solidarytinkerBlock.BLOCK.register(eventBus);
         solidarytinkerEffects.EFFECT.register(eventBus);
+        solidarytinkerSlots.init();
         //config
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SolidarytinkerConfig.Materialspec, "solidarytinkermaterials.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SolidarytinkerConfig.Toolspec, "solidarytinkertools.toml");
-
-
-        solidarytinkerSlots.init();
         if (Mekenabled && ETSH) {
             solidarytinkerGas.GAS.register(eventBus);
             solidarytinkerModifierMekEtsh.MODIFIERS.register(eventBus);
@@ -66,8 +65,8 @@ public class solidarytinker {
 
     public void commonSetup(FMLCommonSetupEvent event) {
         ToolCapabilityProvider.register(FluxStorage::new);
-
         STChannel.register();
+        event.enqueueWork(solidarytinkerMaterialStat::setup);
         if (Mekenabled && ETSH) {
             event.enqueueWork(ionizerFluidMapMek::extendMap);
             event.enqueueWork(EtshinkerCarbon::extendMap);

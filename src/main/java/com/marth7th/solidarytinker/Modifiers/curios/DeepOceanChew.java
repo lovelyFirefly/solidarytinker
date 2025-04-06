@@ -17,5 +17,6 @@ public class DeepOceanChew extends XICModifier {
     public void addCurioAttribute(IToolStackView curio, SlotContext context, LivingEntity entity, int level, ItemStack stack, CurioAttributeContext attr) {
         attr.map().put(Attributes.LUCK, new AttributeModifier(UUID.fromString("3367bbc2-913d-4b6b-9229-6cc3ff6f4bc6"), Attributes.LUCK.getDescriptionId(), 2, AttributeModifier.Operation.MULTIPLY_BASE));
         attr.map().put(Attributes.LUCK, new AttributeModifier(UUID.fromString("3367bbc2-913d-4b6b-9229-6cc3ff6f4bc6"), Attributes.ATTACK_SPEED.getDescriptionId(), 0.4, AttributeModifier.Operation.MULTIPLY_BASE));
+        attr.map().put(Attributes.MAX_HEALTH,new AttributeModifier(UUID.fromString("3367bbc2-913d-4b6b-9229-6cc3ff6f4bc6"),Attributes.MAX_HEALTH.getDescriptionId(),0.8 * level, AttributeModifier.Operation.MULTIPLY_TOTAL));
     }
 }

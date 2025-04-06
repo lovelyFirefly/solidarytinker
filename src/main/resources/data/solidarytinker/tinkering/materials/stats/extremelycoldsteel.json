@@ -83,6 +83,11 @@
     "tinkers_ingenuity:laser_medium": {
       "laser_range": 40,
       "cooldown": 1
+    },
+    "solidarytinker:soulge_heart": {
+      "detection_range": 20,
+      "exert_times": 18,
+      "attack_frequency": 7
     }
   }
 }

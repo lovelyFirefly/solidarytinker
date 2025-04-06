@@ -91,6 +91,11 @@
       "toughness": 2.5,
       "attack": 1.5,
       "arrow_damage": 1.5
+    },
+    "solidarytinker:soulge_heart": {
+      "detection_range": 90,
+      "exert_times": 60,
+      "attack_frequency": 2
     }
   }
 }

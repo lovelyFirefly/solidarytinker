@@ -1,0 +1,36 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "head1": "solidarytinker:item/tool/soulge/head1",
+    "head2": "solidarytinker:item/tool/soulge/head2",
+    "head3": "solidarytinker:item/tool/soulge/head3",
+    "heart": "solidarytinker:item/tool/soulge/heart",
+    "handle": "solidarytinker:item/tool/soulge/handle"
+  },
+  "modifier_roots": [
+    "solidarytinker:item/tool/soulge/modifiers/"
+  ],
+  "parts": [
+    {
+      "name": "head1",
+      "index": 0
+    },
+    {
+      "name": "heart",
+      "index": 1
+    },
+    {
+      "name": "head3",
+      "index": 2
+    },
+    {
+      "name": "head2",
+      "index": 3
+    },
+    {
+      "name": "handle",
+      "index": 4
+    }
+  ]
+}

@@ -104,7 +104,6 @@ public class trident extends ModifiableItem {
                     IToolStackView stackView = ToolStack.from(player.getMainHandItem());
                     ToolDamageUtil.damageAnimated(stackView, 10, player);
                     if (player.isOnGround()) {
-                        float f6 = 1.1999999F;
                         player.move(MoverType.SELF, new Vec3(0.0D, (double) 1.1999999F, 0.0D));
                     }
 

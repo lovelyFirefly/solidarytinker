@@ -168,6 +168,7 @@ dependencies {
     implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.19.2-${tcon_version}")
     implementation fg.deobf("slimeknights.mantle:Mantle:1.19.2-${mantle_version}")
     implementation fg.deobf("curse.maven:Mekanism-268560:4644795")
+    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
 }
 jar {
     manifest {

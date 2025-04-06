@@ -9,6 +9,10 @@
       "stat_type": "tconstruct:binding"
     },
     {
+      "path": "solidarytinker:item/tool/soulge_heart/soulge_heart",
+      "stat_type": "tconstruct:binding"
+    },
+    {
       "path": "solidarytinker:item/tool/trident/trident_head",
       "stat_type": "tconstruct:head"
     },
@@ -38,6 +42,26 @@
     },
     {
       "path": "solidarytinker:item/tool/mekatool/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "solidarytinker:item/tool/soulge/head1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "solidarytinker:item/tool/soulge/head2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "solidarytinker:item/tool/soulge/head3",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "solidarytinker:item/tool/soulge/heart",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "solidarytinker:item/tool/soulge/handle",
       "stat_type": "tconstruct:handle"
     }
   ],

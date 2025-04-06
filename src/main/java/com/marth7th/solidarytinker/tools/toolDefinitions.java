@@ -8,4 +8,5 @@ public class toolDefinitions {
     }
     public static final ToolDefinition MEKATOOL = ToolDefinition.create(solidarytinkerItem.mekatool);
     public static final ToolDefinition TRIDENT = ToolDefinition.create(solidarytinkerItem.trident);
+    public static final ToolDefinition Soulge = ToolDefinition.create(solidarytinkerItem.soulge);
 }

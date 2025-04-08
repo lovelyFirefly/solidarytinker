@@ -48,10 +48,14 @@ public class RemoveRadition extends BattleModifier {
                 Chunk3D save = new Chunk3D(player.level.dimension(), player.chunkPosition());
                 MekanismAPI.getRadiationManager().removeRadiationSources(save);
                 ToolDamageUtil.damageAnimated(tool, 500, entity);
-                player.sendSystemMessage(Component.translatable(array[randomIndex]));
+                if(entity.level.isClientSide()){
+                    player.sendSystemMessage(Component.literal(array[randomIndex]));
+                }
             }
         } else {
-            entity.sendSystemMessage(Component.translatable("唔嘿，没有力气再去清除了，先恢复点耐久吧"));
+            if(entity.level.isClientSide()){
+                entity.sendSystemMessage(Component.literal("唔嘿，没有力气再去清除了，先恢复点耐久吧"));
+            }
         }
     }
 

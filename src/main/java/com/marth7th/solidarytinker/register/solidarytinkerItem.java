@@ -25,6 +25,8 @@ public class solidarytinkerItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "solidarytinker");
     private static final Item.Properties TOOL = (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(1);
     private static final Item.Properties PART = (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
+    private static final Item.Properties CASTS = (new Item.Properties()).tab(solidarytinkerTab.CASTS).stacksTo(64);
+    public static final CastItemObject trident_head_cast = OTHER_ITEM.registerCast("trident_head", CASTS);
     public static final RegistryObject<Item> leadamalgamation_ingot = ITEMS.register("leadamalgamation_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<ModifiableItem> trident = ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));
     public static final RegistryObject<ModifiableItem> soulge = ITEMS.register("soulge", () -> new SoulGe(TOOL, toolDefinitions.Soulge));
@@ -46,8 +48,6 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> experience_steel_ingot = ITEMS.register("experience_steel_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> extremelycoldsteel_ingot = ITEMS.register("extremelycoldsteel_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block", () -> new BlockItem(solidarytinkerBlock.dwarf_block.get(), new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
-    private static final Item.Properties CASTS = (new Item.Properties()).tab(solidarytinkerTab.CASTS).stacksTo(64);
-    public static final CastItemObject trident_head_cast = OTHER_ITEM.registerCast("trident_head", CASTS);
     public static final RegistryObject<Item> cold_chroma_alloy_ingot = ITEMS.register("cold_chroma_alloy_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public solidarytinkerItem() {
     }

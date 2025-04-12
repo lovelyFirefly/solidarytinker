@@ -1,9 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.technology;
 
-import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.solidarytinker;
-import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -14,8 +12,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -27,28 +23,10 @@ import java.util.List;
 
 public class DarkStar extends BattleModifier {
     private static final ResourceLocation DEATH = solidarytinker.getResource("death");
-
-    {
-        MinecraftForge.EVENT_BUS.addListener(this::LivingDeathEvent);
-    }
-
     @Override
     public @Nullable Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
         iToolStackView.getPersistentData().remove(DEATH);
         return null;
-    }
-
-    private void LivingDeathEvent(LivingDeathEvent event) {
-        if (event.getEntity() instanceof Player player) {
-            if (ModifierLevel.getMainhandModifierlevel(event.getEntity(), this.getId()) > 0) {
-                ModDataNBT tooldata = ToolStack.from(player.getItemBySlot(EquipmentSlot.MAINHAND)).getPersistentData();
-                float count = tooldata.getFloat(DEATH);
-                float max = SolidarytinkerConfig.DwarfMaxDamage.get().floatValue();
-                if (count < max) {
-                    tooldata.putFloat(DEATH, player.getMaxHealth() * 0.33f + tooldata.getFloat(DEATH));
-                }
-            }
-        }
     }
 
     @Override
@@ -72,7 +50,7 @@ public class DarkStar extends BattleModifier {
         if (player != null) {
             ModDataNBT tooldata = iToolStackView.getPersistentData();
             float death = tooldata.getFloat(DEATH);
-            list.add(Component.translatable("已提升伤害：" + death).withStyle(ChatFormatting.GRAY));
+            list.add(Component.literal("已提升伤害：" + death).withStyle(ChatFormatting.GRAY));
         }
     }
 }

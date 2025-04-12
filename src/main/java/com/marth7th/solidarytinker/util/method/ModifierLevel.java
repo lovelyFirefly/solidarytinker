@@ -9,6 +9,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
+import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -110,6 +111,16 @@ public class ModifierLevel {
             }
         }
         return 0;
+    }
+    public static boolean inventoryHasThisModifier(LivingEntity entity,ModifierId modifierId){
+        if(entity instanceof Player player){
+            for(ItemStack stack:player.getInventory().items){
+                if(ModifierUtil.getModifierLevel(stack,modifierId)>0){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static int getTotalArmorModifierlevel(LivingEntity entity, ModifierId modifierId) {

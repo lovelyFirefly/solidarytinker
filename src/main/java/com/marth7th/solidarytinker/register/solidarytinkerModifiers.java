@@ -1,7 +1,6 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.Both.Sophisticated;
-import com.marth7th.solidarytinker.Modifiers.Tool.SoulGe;
 import com.marth7th.solidarytinker.Modifiers.armor.*;
 import com.marth7th.solidarytinker.Modifiers.battle.Uncategorized.Pilgrimage;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Corrode;
@@ -66,6 +65,5 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<Pilgrimage> pilgrimage = MODIFIERS.register("pilgrimage", Pilgrimage::new);
     public static final StaticModifier<ArmorCoating> armorcoating = MODIFIERS.register("armorcoating", ArmorCoating::new);
     public static final StaticModifier<Sophisticated> sophisticated = MODIFIERS.register("sophisticated", Sophisticated::new);//精良
-    public static final StaticModifier<SoulGe> SoulMingo = MODIFIERS.register("soulmingo", SoulGe::new);//精良
 
 }

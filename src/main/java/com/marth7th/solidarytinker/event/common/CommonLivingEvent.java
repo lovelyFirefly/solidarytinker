@@ -3,16 +3,26 @@ package com.marth7th.solidarytinker.event.common;
 import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.register.TinkerCuriosModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
+import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
+import com.marth7th.solidarytinker.solidarytinker;
+import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
+import slimeknights.tconstruct.library.tools.item.ModifiableItem;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
@@ -20,10 +30,12 @@ import static com.marth7th.solidarytinker.util.ModloadCotext.isLoadedIngenuity;
 
 @Mod.EventBusSubscriber(modid = MOD_ID)
 public class CommonLivingEvent {
+    private static final ResourceLocation DEATH = solidarytinker.getResource("death");
 
     @SubscribeEvent
     public static void CommonLivingAttackEvent(LivingAttackEvent event) {
     }
+
     @SubscribeEvent
     public static void LivingHealEvent(LivingHealEvent event) {
         if (event.getEntity() != null) {
@@ -40,6 +52,7 @@ public class CommonLivingEvent {
             }
         }
     }
+
     private static boolean isBypass(DamageSource source) {
         return source.isBypassArmor() || source.isBypassMagic();
     }
@@ -50,9 +63,10 @@ public class CommonLivingEvent {
         }
         return Math.max(player.getMaxHealth() * 0.15F, 2);
     }
+
     @SubscribeEvent
-    public static void TICurioEvents(LivingDamageEvent event){
-        if(isLoadedIngenuity){
+    public static void TICurioEvents(LivingDamageEvent event) {
+        if (isLoadedIngenuity) {
             if (event.getEntity() instanceof Player player) {
                 List<ItemStack> curio = ToolUtils.Curios.getStacks(player);
                 float OriginallyDamage = event.getAmount();
@@ -72,19 +86,51 @@ public class CommonLivingEvent {
             }
         }
     }
+
     @SubscribeEvent
-    public static void soulGe(LivingEvent.LivingTickEvent event){
-        var livingEntity=event.getEntity();
-        var entityData=livingEntity.getPersistentData();
-        var dieTick=entityData.getInt("ready_to_die");
-        var living=livingEntity.getLastHurtByMob();
-        if(dieTick>1){
-            entityData.putInt("ready_to_die",dieTick-1);
+    public static void soulGe(LivingEvent.LivingTickEvent event) {
+        var livingEntity = event.getEntity();
+        var entityData = livingEntity.getPersistentData();
+        var dieTick = entityData.getInt("ready_to_die");
+        var living = livingEntity.getLastHurtByMob();
+        if (dieTick > 1) {
+            entityData.putInt("ready_to_die", dieTick - 1);
+        } else if (dieTick == 1) {
+            livingEntity.setDeltaMovement(new Vec3(0, -2.5, 0));
+            if (living instanceof Player player && livingEntity.isOnGround()) {
+                livingEntity.hurt(DamageSource.playerAttack(player).bypassArmor().bypassInvul().bypassEnchantments().bypassMagic(), Float.MAX_VALUE);
+            }
         }
-        else if(dieTick==1){
-            livingEntity.setDeltaMovement(new Vec3(0,-2.5,0));
-            if (living instanceof Player player&&livingEntity.isOnGround()) {
-                livingEntity.hurt(DamageSource.playerAttack(player).bypassArmor().bypassInvul().bypassEnchantments().bypassMagic(),Float.MAX_VALUE);
+    }
+    @SubscribeEvent
+    public static void test(LivingDamageEvent event){
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void LivingDeathEvent(LivingDeathEvent event) {
+        if (event.getEntity() instanceof Player player&&player.isDeadOrDying()) {
+            List<ServerPlayer> haveDarkStar = new ArrayList<>();
+            if (player.getLevel() instanceof ServerLevel serverLevel) {
+                List<ServerPlayer> playerList = serverLevel.players();
+                for (ServerPlayer players : playerList) {
+                    if (ModifierLevel.inventoryHasThisModifier(players, solidarytinkerModifiers.DARKSTAR_STATIC_MODIFIER.getId())) {
+                        haveDarkStar.add(players);
+                    }
+                }
+                for (ServerPlayer players : haveDarkStar) {
+                    for (ItemStack stack : players.getInventory().items) {
+                        if (stack.getItem() instanceof ModifiableItem) {
+                            var view = ToolStack.from(stack).getPersistentData();
+                            if (ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.DARKSTAR_STATIC_MODIFIER.getId()) > 0) {
+                                float count = view.getFloat(DEATH);
+                                float max = SolidarytinkerConfig.DwarfMaxDamage.get().floatValue();
+                                if (count < max) {
+                                    view.putFloat(DEATH, player.getMaxHealth() * 0.33f/haveDarkStar.size()+1 + view.getFloat(DEATH));
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

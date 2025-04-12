@@ -37,9 +37,9 @@ public class MekaTool extends ModifiableItem {
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
         MekaToolSpeedLevel[] toolSpeedLevels = MekaToolSpeedLevel.values();
         ModDataNBT nbt = ToolStack.from(stack).getPersistentData();
-        int toollevel = nbt.getInt(SPEED);
+        int toolLevel = nbt.getInt(SPEED);
         int truespeed = 0;
-        for (int i = 0; i < toollevel + 1; i++) {
+        for (int i = 0; i < toolLevel + 1; i++) {
             truespeed = toolSpeedLevels[i].getSpeed();
         }
         return truespeed;

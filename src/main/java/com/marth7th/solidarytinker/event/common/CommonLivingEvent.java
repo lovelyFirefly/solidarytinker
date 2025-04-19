@@ -4,6 +4,7 @@ import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.register.TinkerCuriosModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
+import com.marth7th.solidarytinker.shelf.damagesource.STDamageSource;
 import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
@@ -11,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -32,12 +34,11 @@ import static com.marth7th.solidarytinker.util.ModloadCotext.isLoadedIngenuity;
 public class CommonLivingEvent {
     private static final ResourceLocation DEATH = solidarytinker.getResource("death");
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void CommonLivingAttackEvent(LivingAttackEvent event) {
     }
-
     @SubscribeEvent
-    public static void LivingHealEvent(LivingHealEvent event) {
+    public static void LivingHealEvent( LivingHealEvent event) {
         if (event.getEntity() != null) {
             float value = SolidarytinkerConfig.Injured.get().floatValue();
             if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
@@ -86,19 +87,25 @@ public class CommonLivingEvent {
             }
         }
     }
-
+    private static void applyDamage(LivingEntity entity, LivingEntity attacker, boolean should) {
+        if (should && attacker instanceof Player player) {
+            entity.hurt(DamageSource.playerAttack(player).bypassArmor().bypassInvul().bypassEnchantments().bypassMagic(), Float.MAX_VALUE);
+        } else {
+            entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
+        }
+    }
     @SubscribeEvent
     public static void soulGe(LivingEvent.LivingTickEvent event) {
         var livingEntity = event.getEntity();
         var entityData = livingEntity.getPersistentData();
         var dieTick = entityData.getInt("ready_to_die");
-        var living = livingEntity.getLastHurtByMob();
-        if (dieTick > 1) {
-            entityData.putInt("ready_to_die", dieTick - 1);
-        } else if (dieTick == 1) {
-            livingEntity.setDeltaMovement(new Vec3(0, -2.5, 0));
-            if (living instanceof Player player && livingEntity.isOnGround()) {
-                livingEntity.hurt(DamageSource.playerAttack(player).bypassArmor().bypassInvul().bypassEnchantments().bypassMagic(), Float.MAX_VALUE);
+        var attacker = livingEntity.getLastHurtByMob();
+        if(entityData.contains("ready_to_die")){
+            entityData.putInt("ready_to_die", dieTick-1);
+            switch (dieTick) {
+                case 1 -> applyDamage(livingEntity, attacker,true);
+                case 2-4-> applyDamage(livingEntity, attacker, livingEntity.isOnGround());
+                case 5 -> livingEntity.setDeltaMovement(new Vec3(0, -2.5, 0));
             }
         }
     }

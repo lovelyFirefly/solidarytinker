@@ -34,13 +34,16 @@ public class ClientEventHandler {
 
     @SubscribeEvent
     public static void onKeyPressed(InputEvent.Key event) {
+        //获取客户端玩家
         Player player = Minecraft.getInstance().player;
         if (player != null) {
             if (player.getMainHandItem().getItem() instanceof MekaTool mekaTool) {
                 ItemStack stack = player.getMainHandItem();
                 if (KeyBinding.DIGGING_SPEED_KEY.consumeClick()) {
+                    //符合条件之后发包,并且在包里面设置了对应的切换到的速度等级
                     if (mekaTool.getToolLevel(stack) == 0) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(0));
+                        //告诉客户端玩家切换到了哪个模式
                         player.sendSystemMessage(Component.literal("切换到中速模式"));
                     } else if (mekaTool.getToolLevel(stack) == 1) {
                         STChannel.SendToServer(new MekaKeyBoardPacket(1));
@@ -57,7 +60,6 @@ public class ClientEventHandler {
             }
         }
     }
-
     @SubscribeEvent
     public static void onPlayerJoinIn(EntityJoinLevelEvent event) {
         if (!event.getLevel().isClientSide) {

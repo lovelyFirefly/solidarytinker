@@ -67,8 +67,8 @@
     "brittle": "#4f9fe5",
     "coldfetters": "#4f9fe5",
     "_极寒彩钢_": null,
-    "fluxweapon": "#63dddd",
-    "fluxarmor": "#63dddd",
+    "fluxweapon": "#aaffff",
+    "fluxarmor": "#aaffff",
     "riptide": "#5d83ff",
     "crcs": "#2344ff",
     "seabless": "#7dd0c4",
@@ -77,9 +77,9 @@
     "injured": "#ca4cff",
     "despoil": "#ff1515",
     "precise": "#ffcc11",
-    "energyadd": "#98dd4e",
-    "energymultiple": "#98dd4e",
-    "energytransport": "#98dd4e",
+    "energyadd": "#aaffff",
+    "energymultiple": "#aaffff",
+    "energytransport": "#aaffff",
     "fluxshot": "#98dd4e",
     "slimecuring": "#d3f5ab",
     "mercurypoisoning": "#95838c",
@@ -87,7 +87,8 @@
     "swift": "#ccc9d0",
     "highca": "#ffedd7",
     "armorcoating": "#ffedd7",
-    "sophisticated": "#57f1ff"
+    "sophisticated": "#57f1ff",
+    "precision_circuits": "#aaffff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

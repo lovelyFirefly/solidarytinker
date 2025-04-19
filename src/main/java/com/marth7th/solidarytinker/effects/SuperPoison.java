@@ -14,9 +14,13 @@ public class SuperPoison extends StaticEffect {
     @Override
     public void applyEffectTick(LivingEntity living, int amplifier) {
         if (living.tickCount % 5 == 0) {
-            if (living.getMobType() == MobType.UNDEAD) {
-                living.hurt(DamageSource.playerAttack((Player) living).bypassArmor(), 2);
-            } else living.hurt(DamageSource.playerAttack((Player) living), 4);
+            var entity = living.getLastHurtByMob();
+            if (entity instanceof Player player) {
+                if (living.getMobType() == MobType.UNDEAD) {
+                    living.hurt(DamageSource.playerAttack(player).bypassArmor(), 2);
+                } else
+                    living.hurt(DamageSource.playerAttack(player), 2);
+            }
         }
     }
 }

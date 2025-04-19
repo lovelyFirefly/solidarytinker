@@ -47,7 +47,7 @@ public class FluxArmorModifier extends ArmorModifier implements VolatileDataModi
     }
 
     public void addVolatileData(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
-        volatileData.addSlots(solidarytinkerSlots.FLUX, 5);
+        volatileData.addSlots(solidarytinkerSlots.FLUX, 7);
         if (volatileData.contains(FluxStorage.MAX_ENERGY, 3)) {
             volatileData.putInt(FluxStorage.MAX_ENERGY, volatileData.getInt(FluxStorage.MAX_ENERGY) + this.getCapacity(context, modifier, volatileData) * modifier.getLevel());
         } else {
@@ -63,9 +63,9 @@ public class FluxArmorModifier extends ArmorModifier implements VolatileDataModi
         if (tool instanceof ToolStack && this.isOwner(tool.getVolatileData())) {
             int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_STORE);
             if (energy_store > 0) {
-                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).withStyle(this.getDisplayName().getStyle()));
+                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY) + "/" + (tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).withStyle(this.getDisplayName().getStyle()));
             } else {
-                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY))).withStyle(this.getDisplayName().getStyle()));
+                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY) + "/" + tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY)).withStyle(this.getDisplayName().getStyle()));
             }
         }
     }
@@ -73,7 +73,7 @@ public class FluxArmorModifier extends ArmorModifier implements VolatileDataModi
     public int getCapacity(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
         int add = context.getModifierLevel(solidarytinkerModifierMekEtsh.energyadd.getId());
         int mu = context.getModifierLevel(solidarytinkerModifierMekEtsh.energymultiple.getId());
-        return (int) ((30000 * modifier.getLevel() + add * 30000) * (1 + mu * 0.4F));
+        return (int) ((30000 * modifier.getLevel() + add * 40000) * (1 + mu * 0.6F));
     }
 
     public boolean isOwner(IModDataView volatileData) {

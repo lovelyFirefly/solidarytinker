@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    {
+      "tag": "forge:ingots/bronze",
+      "amount_needed": 1
+    },
+    {
+      "item": "mekanism:ultimate_control_circuit",
+      "amount_needed": 1
+    },
+    {
+      "tag": "forge:ingots/bronze",
+      "amount_needed": 1
+    },
+    {
+      "item": "mekanism:ultimate_control_circuit",
+      "amount_needed": 1
+    },{
+      "item": "mekanism:ultimate_control_circuit",
+      "amount_needed": 1
+    }
+  ],
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  },
+  "allow_crystal": true,
+  "result":"solidarytinker:precision_circuits",
+  "level": {
+    "max": 5
+  },
+  "slots": {
+    "upgrades": 1
+  }
+}

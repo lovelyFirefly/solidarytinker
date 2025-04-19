@@ -170,7 +170,7 @@ public class SoulGe extends ModifiableItem {
         for (Mob mob : mobList) {
             var persistentData = mob.getPersistentData();
             var targetedTimes = persistentData.getInt("targeted");
-            if (targetedTimes > 0 && livingEntity instanceof Player player && !persistentData.contains("ready_to_die")) {
+            if (targetedTimes > 0 && livingEntity instanceof Player player && !persistentData.contains("ready_to_die")){
                 ToolAttackUtil.attackEntity(view, player, mob);
                 ToolDamageUtil.damageAnimated(view, 1, player);
                 if(mob.getLevel().isClientSide()){
@@ -181,8 +181,9 @@ public class SoulGe extends ModifiableItem {
                 persistentData.putInt("targeted", targetedTimes - 1);
                 if (mob.getHealth() < mob.getMaxHealth() * killThreshold && mob.isAlive() && !persistentData.contains("ready_to_die")) {
                     mob.getActiveEffects().removeAll(mob.getActiveEffects());
+                    mob.setNoGravity(false);
                     mob.setDeltaMovement(new Vec3(0, 2.5, 0));
-                    persistentData.putInt("ready_to_die", 5);
+                    persistentData.putInt("ready_to_die", 9);
                 }
                 this.drawParticleBeam(player,mob);
                 if (!mob.isAlive()) {

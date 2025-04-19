@@ -26,11 +26,13 @@ public class STChannel {
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)
                 .simpleChannel();
+        //mekatool
         net.messageBuilder(MekaKeyBoardPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(MekaKeyBoardPacket::new)
                 .encoder(MekaKeyBoardPacket::ToByte)
                 .consumerMainThread(MekaKeyBoardPacket::handle)
                 .add();
+        //魂戈
         net.messageBuilder(SoulGeAttackPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(SoulGeAttackPacket::new)
                 .encoder(SoulGeAttackPacket::ToByte)

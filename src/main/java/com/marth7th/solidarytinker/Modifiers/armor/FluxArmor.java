@@ -31,13 +31,13 @@ public class FluxArmor extends FluxArmorModifier {
                 IToolStackView legs = ToolStack.from(player.getItemBySlot(EquipmentSlot.LEGS));
                 IToolStackView feet = ToolStack.from(player.getItemBySlot(EquipmentSlot.FEET));
                 int amount = (int) event.getAmount();
-                boolean canprotect = FluxStorage.getEnergyStored(helmet) >= cost * amount && FluxStorage.getEnergyStored(chest) >= cost * amount && FluxStorage.getEnergyStored(legs) >= cost * amount && FluxStorage.getEnergyStored(feet) >= cost * amount;
+                int shouldremove=amount * cost /4;
+                boolean canprotect = FluxStorage.getEnergyStored(helmet) >= shouldremove && FluxStorage.getEnergyStored(chest) >= shouldremove && FluxStorage.getEnergyStored(legs) >= shouldremove&& FluxStorage.getEnergyStored(feet) >= shouldremove;
                 if (canprotect) {
-                    event.getEntity().invulnerableTime = 30;
-                    FluxStorage.removeEnergy(helmet, cost * amount, false, false);
-                    FluxStorage.removeEnergy(chest, cost * amount, false, false);
-                    FluxStorage.removeEnergy(legs, cost * amount, false, false);
-                    FluxStorage.removeEnergy(feet, cost * amount, false, false);
+                    FluxStorage.removeEnergy(helmet, shouldremove, false, false);
+                    FluxStorage.removeEnergy(chest, shouldremove, false, false);
+                    FluxStorage.removeEnergy(legs, shouldremove, false, false);
+                    FluxStorage.removeEnergy(feet, shouldremove, false, false);
                     event.setAmount(amount * (1 - protect));
                 } else {
                     event.setAmount(event.getAmount() * 0.5f);
@@ -68,7 +68,7 @@ public class FluxArmor extends FluxArmorModifier {
 
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifierEntry, int amount, @Nullable LivingEntity livingEntity) {
-        if (FluxStorage.getEnergyStored(tool) > 400 * amount) {
+        if (FluxStorage.getEnergyStored(tool) > 200 * amount) {
             return 0;
         }
         return amount;

@@ -34,7 +34,7 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
     public static int receiveEnergy(IToolStackView tool, int maxReceive, boolean simulate) {
         int energyStored = getEnergyStored(tool);
         int level = tool.getModifierLevel(solidarytinkerModifierMekEtsh.energytransport.getId());
-        int tran = 1000 + level * 2000;
+        int tran = 2000 + level * 3000;
         int energyReceived = Math.min(getMaxEnergyStored(tool) - energyStored, Math.min(tran, maxReceive));
         int sss = Math.min(getMaxEnergyStored(tool) - energyStored, energyReceived);
         if (!simulate) {

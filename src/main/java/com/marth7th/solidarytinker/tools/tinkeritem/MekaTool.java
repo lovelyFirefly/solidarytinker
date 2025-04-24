@@ -33,7 +33,7 @@ public class MekaTool extends ModifiableItem {
     public boolean mineBlock(ItemStack stack, Level level, BlockState blockState, BlockPos pos, LivingEntity entity) {
         return true;
     }
-
+    @Override
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
         MekaToolSpeedLevel[] toolSpeedLevels = MekaToolSpeedLevel.values();
         ModDataNBT nbt = ToolStack.from(stack).getPersistentData();

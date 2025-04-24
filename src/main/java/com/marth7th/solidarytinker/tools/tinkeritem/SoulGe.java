@@ -4,6 +4,7 @@ package com.marth7th.solidarytinker.tools.tinkeritem;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import com.marth7th.solidarytinker.shelf.Network.Packet.SoulGeAttackPacket;
 import com.marth7th.solidarytinker.shelf.Network.STChannel;
+import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -61,9 +62,9 @@ public class SoulGe extends ModifiableItem {
             return InteractionResultHolder.consume(itemstack);
         }
     }
-
     @Override
     public @NotNull List<Component> getStatInformation(@NotNull IToolStackView tool, @Nullable Player player, @NotNull List<Component> tooltips, @NotNull TooltipKey key, @NotNull TooltipFlag tooltipFlag) {
+        int[] color=new int[]{0xffea95,0xffaaff,0x55c4ff};
         TooltipBuilder builder = new TooltipBuilder(tool, tooltips);
         if (tool.hasTag(TinkerTags.Items.DURABILITY)) {
             builder.addDurability();
@@ -72,14 +73,18 @@ public class SoulGe extends ModifiableItem {
             builder.add(ToolStats.ATTACK_DAMAGE);
             builder.add(ToolStats.ATTACK_SPEED);
         }
-        builder.add(Component.translatable("tool_stat.solidarytinker.detection_range").withStyle(style -> style.withColor(solidarytinkerToolstats.DETECTION_RANGE.getColor()))
-                .append(":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.DETECTION_RANGE).intValue())).withStyle(style -> style.withColor(solidarytinkerToolstats.DETECTION_RANGE.getColor())));
-        builder.add(Component.translatable("tool_stat.solidarytinker.exert_times").withStyle(style -> style.withColor(solidarytinkerToolstats.EXERT_TIMES.getColor()))
-                .append(":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.EXERT_TIMES).intValue())).withStyle(style -> style.withColor(solidarytinkerToolstats.EXERT_TIMES.getColor())));
-        builder.add(Component.translatable("tool_stat.solidarytinker.attack_frequency").withStyle(style -> style.withColor(solidarytinkerToolstats.ATTACK_FREQUENCY.getColor()))
-                .append(":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.ATTACK_FREQUENCY).intValue())).withStyle(style -> style.withColor(solidarytinkerToolstats.ATTACK_FREQUENCY.getColor())));
-        builder.add(Component.translatable("tool_stat.solidarytinker.kill_threshold").withStyle(style -> style.withColor(solidarytinkerToolstats.KILLTHRESHOLD.getColor()))
-                .append(":" + String.format("%s", String.format("%d", Math.round(tool.getStats().get(solidarytinkerToolstats.KILLTHRESHOLD) * 100)) + "%")).withStyle(style -> style.withColor(solidarytinkerToolstats.KILLTHRESHOLD.getColor())));
+        builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
+                "tool_stat.solidarytinker.detection_range",
+                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.DETECTION_RANGE).intValue()),color,20,20));
+        builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
+                "tool_stat.solidarytinker.exert_times",
+                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.EXERT_TIMES).intValue()),color,20,20));
+        builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
+                "tool_stat.solidarytinker.attack_frequency",
+                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.ATTACK_FREQUENCY).intValue()),color,20,20));
+        builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
+                "tool_stat.solidarytinker.kill_threshold",
+                ":" + String.format("%d", Math.round(tool.getStats().get(solidarytinkerToolstats.KILLTHRESHOLD) * 100)) + "%",color,20,20));
         builder.addAllFreeSlots();
         for (ModifierEntry entry : tool.getModifierList()) {
             entry.getHook(ModifierHooks.TOOLTIP).addTooltip(tool, entry, player, tooltips, key, tooltipFlag);
@@ -103,7 +108,7 @@ public class SoulGe extends ModifiableItem {
 
         }
         if (attacker.tickCount % attackFrequency == 0) {
-            this.attackTargets(attacker, tool, dist,exertTimes);
+            this.attackTargets(attacker, tool, dist);
         }
     }
 
@@ -155,7 +160,7 @@ public class SoulGe extends ModifiableItem {
         }
     }
 
-    private void attackTargets(LivingEntity livingEntity, IToolStackView view, int dist,int exertTimes) {
+    private void attackTargets(LivingEntity livingEntity, IToolStackView view, int dist) {
         float killThreshold = view.getStats().get(solidarytinkerToolstats.KILLTHRESHOLD);
         var x = livingEntity.getX();
         var y = livingEntity.getY();

@@ -88,10 +88,13 @@ public class CommonLivingEvent {
         }
     }
     private static void applyDamage(LivingEntity entity, LivingEntity attacker, boolean should) {
+        var data=entity.getPersistentData();
         if (should && attacker instanceof Player player) {
-            entity.hurt(DamageSource.playerAttack(player).bypassArmor().bypassInvul().bypassEnchantments().bypassMagic(), Float.MAX_VALUE);
+            entity.hurt(DamageSource.playerAttack(player), Float.MAX_VALUE);
+            data.remove("ready_to_die");
         } else {
             entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
+            data.remove("ready_to_die");
         }
     }
     @SubscribeEvent

@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +19,8 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSou
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class RemoveRadition extends BattleModifier {
@@ -46,8 +49,17 @@ public class RemoveRadition extends BattleModifier {
         if (enabled && tool.getCurrentDurability() > 500 && entity instanceof Player player) {
             if (MekanismAPI.getRadiationManager().getRadiationLevel(entity) > 0) {
                 int randomIndex = random.nextInt(array.length);
-                Chunk3D save = new Chunk3D(player.level.dimension(), player.chunkPosition());
-                MekanismAPI.getRadiationManager().removeRadiationSources(save);
+                List<Chunk3D> chunkPosList = new ArrayList<>();
+                int radius = 6;
+                for (int j = -radius; j <= radius; j++) {
+                    for (int k = -radius; k <= radius; k++) {
+                        ChunkPos chunkPos = new ChunkPos(player.chunkPosition().x + j, player.chunkPosition().z + k);
+                        chunkPosList.add(new Chunk3D(player.level.dimension(), chunkPos));
+                    }
+                }
+                for (Chunk3D chunk3D : chunkPosList) {
+                    MekanismAPI.getRadiationManager().removeRadiationSources(chunk3D);
+                }
                 ToolDamageUtil.damageAnimated(tool, 500, entity);
                 if(entity.level.isClientSide()){
                     player.sendSystemMessage(Component.literal(array[randomIndex]));

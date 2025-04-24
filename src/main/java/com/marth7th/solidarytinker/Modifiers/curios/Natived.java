@@ -24,13 +24,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class Natived extends XICModifier {
-    private static final ResourceLocation DEATH = solidarytinker.getResource("death");
+    private static final ResourceLocation INV = solidarytinker.getResource("inv");
     {
         MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::LivingDamageEvent);
     }
 
     private int getInv(ItemStack stack) {
-        return ToolStack.from(stack).getPersistentData().getInt(DEATH);
+        return ToolStack.from(stack).getPersistentData().getInt(INV);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class Natived extends XICModifier {
     }
 
     private void setInv(int invTime, ItemStack stack) {
-        ToolStack.from(stack).getPersistentData().putInt(DEATH, invTime);
+        ToolStack.from(stack).getPersistentData().putInt(INV, invTime);
     }
 
     private void LivingDamageEvent(LivingDamageEvent event) {

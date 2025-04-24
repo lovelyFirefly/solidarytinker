@@ -2,6 +2,7 @@ package com.marth7th.solidarytinker.Modifiers.battle.common;
 
 import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import com.marth7th.solidarytinker.util.compound.IceFantasy;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -54,6 +55,8 @@ public class DeepOceanEcho extends BattleModifier {
             list.add(applyStyle(Component.literal(IceFantasy.GetColor("每点回声所增幅的伤害")).append(IceFantasy.GetColor(level * 0.5f + "攻击力"))));
             list.add(applyStyle(Component.literal(IceFantasy.GetColor("实际提升的总伤害")).append(IceFantasy.GetColor(Math.min((level * 0.5f) * a, MaxValue()) + "攻击力"))));
             list.add(applyStyle(Component.literal(IceFantasy.GetColor("你已是完全之龙，足以审判众神")).append(IceFantasy.GetColor("你已经掌握" + level + "层权能"))));
+
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText())
         }
     }
 }

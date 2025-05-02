@@ -1,8 +1,8 @@
 package com.marth7th.solidarytinker.client.Hud;
 
+import com.marth7th.solidarytinker.Solidarytinker;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.shelf.energy.Cache.ClientEnergyData;
-import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
@@ -12,8 +12,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 
 public class BarOverlayImpl {
-    public static final ResourceLocation EnergyBar = new ResourceLocation(solidarytinker.MOD_ID, "textures/hud/energybar.png");
-    public static final ResourceLocation EnergyBar_Empty = new ResourceLocation(solidarytinker.MOD_ID, "textures/hud/energybar_empty.png");
+    public static final ResourceLocation EnergyBar = new ResourceLocation(Solidarytinker.MOD_ID, "textures/hud/energybar.png");
+    public static final ResourceLocation EnergyBar_Empty = new ResourceLocation(Solidarytinker.MOD_ID, "textures/hud/energybar_empty.png");
     public static final IGuiOverlay EnergyHud = ((gui, poseStack, partialTick, screenWidth, screenHeight) -> {
         int x = screenWidth / 2 - 91;
         int y = screenHeight - gui.leftHeight + 2;

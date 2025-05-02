@@ -1,6 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.curios;
 
-import com.marth7th.solidarytinker.solidarytinker;
+import com.marth7th.solidarytinker.Solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.xiaoyue.tinkers_ingenuity.content.library.context.CurioAttributeContext;
 import com.xiaoyue.tinkers_ingenuity.generic.XICModifier;
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class Natived extends XICModifier {
-    private static final ResourceLocation INV = solidarytinker.getResource("inv");
+    private static final ResourceLocation INV = Solidarytinker.getResource("inv");
     {
         MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, this::LivingDamageEvent);
     }

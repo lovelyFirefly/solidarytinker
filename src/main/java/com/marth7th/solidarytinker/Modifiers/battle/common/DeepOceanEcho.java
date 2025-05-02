@@ -2,6 +2,7 @@ package com.marth7th.solidarytinker.Modifiers.battle.common;
 
 import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import com.marth7th.solidarytinker.util.MathUtil;
 import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import com.marth7th.solidarytinker.util.compound.IceFantasy;
 import net.minecraft.network.chat.Component;
@@ -37,6 +38,11 @@ public class DeepOceanEcho extends BattleModifier {
     }
 
     @Override
+    public boolean havenolevel() {
+        return super.havenolevel();
+    }
+
+    @Override
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
         if (attacker instanceof Player player) {
             float a = (Math.max(player.getMaxHealth() * 0.2f, 1) * Math.max(player.getArmorValue() * 0.6f, 1) * Math.max(player.totalExperience * 0.001f, 1)) * 0.5f * level;
@@ -51,12 +57,10 @@ public class DeepOceanEcho extends BattleModifier {
         if (player != null) {
             int level = modifier.getLevel();
             float a = (Math.max(player.getMaxHealth() * 0.2f, 1) * Math.max(player.getArmorValue() * 0.6f, 1) * Math.max(player.totalExperience * 0.001f, 1)) * 0.5f * level;
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("当前回声点数")).append(IceFantasy.GetColor(a + ""))));
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("每点回声所增幅的伤害")).append(IceFantasy.GetColor(level * 0.5f + "攻击力"))));
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("实际提升的总伤害")).append(IceFantasy.GetColor(Math.min((level * 0.5f) * a, MaxValue()) + "攻击力"))));
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("你已是完全之龙，足以审判众神")).append(IceFantasy.GetColor("你已经掌握" + level + "层权能"))));
-
-            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText())
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText("当前回声点数", String.valueOf(a),new int[] {0x99b1ff},60,1000,false));
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText("每点回声所增幅的伤害", level * 0.5f + "攻击力",new int[] {0x99b1ff},60,1000,false));
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText("实际提升的总伤害", Math.min((level * 0.5f) * a, MaxValue()) + "攻击力",new int[] {0x99b1ff},60,1000,false));
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText("你已是完全之龙，足以审判众神", "你已经掌握" + level + "层权能",new int[] {0x99b1ff},60,1000,false));
         }
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
 
-import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
 
 public class solidarytinkerEntity {
     public solidarytinkerEntity() {

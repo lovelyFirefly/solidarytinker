@@ -16,7 +16,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import java.util.function.Supplier;
 
-import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
 
 
 public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.IToolCapabilityProvider {
@@ -68,7 +68,7 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
     public static int getMaxEnergyStored(IToolStackView tool) {
         IModDataView volatileData = tool.getVolatileData();
         if (volatileData.contains(MAX_ENERGY, 3)) {
-            int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_STORE);
+            int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_CAPACITY);
             return energy_store > 0 ? volatileData.getInt(MAX_ENERGY) + energy_store : volatileData.getInt(MAX_ENERGY);
         } else {
             return 0;

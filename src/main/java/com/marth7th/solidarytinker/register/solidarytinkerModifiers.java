@@ -1,6 +1,10 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Modifiers.Both.Sophisticated;
+import com.marth7th.solidarytinker.Modifiers.Halo.AzusaHalo;
+import com.marth7th.solidarytinker.Modifiers.Halo.HoshinoHalo;
+import com.marth7th.solidarytinker.Modifiers.Halo.ReisaHalo;
+import com.marth7th.solidarytinker.Modifiers.Tool.Crawl;
 import com.marth7th.solidarytinker.Modifiers.armor.*;
 import com.marth7th.solidarytinker.Modifiers.battle.Uncategorized.Pilgrimage;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Corrode;
@@ -14,7 +18,7 @@ import com.marth7th.solidarytinker.Modifiers.battle.technology.*;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
-import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
 
 public class solidarytinkerModifiers {
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(MOD_ID);
@@ -65,5 +69,9 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<Pilgrimage> pilgrimage = MODIFIERS.register("pilgrimage", Pilgrimage::new);
     public static final StaticModifier<ArmorCoating> armorcoating = MODIFIERS.register("armorcoating", ArmorCoating::new);
     public static final StaticModifier<Sophisticated> sophisticated = MODIFIERS.register("sophisticated", Sophisticated::new);//精良
+    public static final StaticModifier<Crawl> crawlStaticModifier = MODIFIERS.register("crawl", Crawl::new);//抓取
+    public static final StaticModifier<HoshinoHalo> hoshinoHaloStaticModifier = MODIFIERS.register("hoshinohalo", HoshinoHalo::new);//光环
+    public static final StaticModifier<ReisaHalo> reisaHaloStaticModifier = MODIFIERS.register("reisahalo", ReisaHalo::new);//光环
+    public static final StaticModifier<AzusaHalo> azusaHaloStaticModifier = MODIFIERS.register("azusahalo", AzusaHalo::new);//光环
 
 }

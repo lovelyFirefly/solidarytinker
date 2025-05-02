@@ -1,6 +1,6 @@
 package com.marth7th.solidarytinker.register;
 
-import com.marth7th.solidarytinker.solidarytinker;
+import com.marth7th.solidarytinker.Solidarytinker;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.SoundActions;
@@ -10,7 +10,7 @@ import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 
-import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
 
 public class solidarytinkerFluid {
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(MOD_ID);
@@ -21,11 +21,11 @@ public class solidarytinkerFluid {
     public static final FluidObject<ForgeFlowingFluid> molten_heavy_armor_steel = register("molten_heavy_armor_steel", 860);
 
     private static FluidType.Properties hot(String name) {
-        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
+        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(Solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
     }
 
     private static FluidType.Properties cool(String name) {
-        return cool().descriptionId(solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
+        return cool().descriptionId(Solidarytinker.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_FILL);
     }
 
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp) {

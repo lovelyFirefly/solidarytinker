@@ -1,8 +1,8 @@
 package com.marth7th.solidarytinker.Modifiers.battle.technology;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
-import com.marth7th.solidarytinker.solidarytinker;
-import net.minecraft.ChatFormatting;
+import com.marth7th.solidarytinker.Solidarytinker;
+import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.tools.nbt.*;
 import java.util.List;
 
 public class DarkStar extends BattleModifier {
-    private static final ResourceLocation DEATH = solidarytinker.getResource("death");
+    private static final ResourceLocation DEATH = Solidarytinker.getResource("death");
     @Override
     public @Nullable Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
         iToolStackView.getPersistentData().remove(DEATH);
@@ -50,7 +50,7 @@ public class DarkStar extends BattleModifier {
         if (player != null) {
             ModDataNBT tooldata = iToolStackView.getPersistentData();
             float death = tooldata.getFloat(DEATH);
-            list.add(Component.literal("已提升伤害：" + death).withStyle(ChatFormatting.GRAY));
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText("已提升伤害：", String.valueOf(death),new int[] {0xffffff},80,2000,false));
         }
     }
 }

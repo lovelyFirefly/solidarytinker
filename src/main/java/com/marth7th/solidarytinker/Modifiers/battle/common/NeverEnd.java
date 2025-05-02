@@ -23,9 +23,9 @@ public class NeverEnd extends BattleModifier {
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (context.getLivingTarget() != null) {
-            if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())) {
+            if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())&&context.getAttacker() instanceof Player player) {
                 int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack((Player) context.getAttacker()).bypassMagic(), context.getLivingTarget().getMaxHealth() *( SolidarytinkerConfig.HoshinoRedTemperature.get()/100f) * (effectlevel + 1));
+                context.getTarget().hurt(DamageSource.playerAttack(player).bypassMagic(), context.getLivingTarget().getMaxHealth() *( SolidarytinkerConfig.HoshinoRedTemperature.get()/100f) * (effectlevel + 1));
             }
         }
     }

@@ -1,8 +1,8 @@
 package com.marth7th.solidarytinker.register;
 
-import com.c2h6s.etshtinker.tools.stats.PlasmaGeneratorMaterialStats;
 import com.marth7th.solidarytinker.Items.ingot.*;
 import com.marth7th.solidarytinker.tools.Stats.SoulGeHeartMaterialStats;
+import com.marth7th.solidarytinker.tools.tinkeritem.EnergyPlateArmor;
 import com.marth7th.solidarytinker.tools.tinkeritem.MekaTool;
 import com.marth7th.solidarytinker.tools.tinkeritem.SoulGe;
 import com.marth7th.solidarytinker.tools.tinkeritem.trident;
@@ -12,17 +12,23 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.object.EnumObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
+import slimeknights.tconstruct.library.tools.item.armor.ModifiableArmorItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tools.item.ArmorSlotType;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
+import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+
 
 public class solidarytinkerItem {
-    public static final ItemDeferredRegisterExtension OTHER_ITEM = new ItemDeferredRegisterExtension("solidarytinker");
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "solidarytinker");
+    public static final ItemDeferredRegisterExtension OTHER_ITEM = new ItemDeferredRegisterExtension(MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
+    public static final ItemDeferredRegisterExtension ModifiableArmor = new ItemDeferredRegisterExtension(MOD_ID);
     private static final Item.Properties TOOL = (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(1);
     private static final Item.Properties PART = (new Item.Properties()).tab(solidarytinkerTab.TOOL).stacksTo(64);
     private static final Item.Properties CASTS = (new Item.Properties()).tab(solidarytinkerTab.CASTS).stacksTo(64);
@@ -30,6 +36,7 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> leadamalgamation_ingot = ITEMS.register("leadamalgamation_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<ModifiableItem> trident = ITEMS.register("trident", () -> new trident(TOOL, toolDefinitions.TRIDENT));
     public static final RegistryObject<ModifiableItem> soulge = ITEMS.register("soulge", () -> new SoulGe(TOOL, toolDefinitions.Soulge));
+    public static final EnumObject<ArmorSlotType,ModifiableArmorItem> energy_plate = ModifiableArmor.registerEnum("energy_plate",ArmorSlotType.values(), type -> new EnergyPlateArmor(toolDefinitions.ENERGY_PLATE, type, TOOL));
     public static final RegistryObject<Item> takeru = ITEMS.register("takeru", () -> new takeru(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> dwarf_ingot = ITEMS.register("dwarf_ingot", () -> new dwarf_ingot(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> bloodmeat_ingot = ITEMS.register("bloodmeat_ingot", () -> new bloodmeat_ingot(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));

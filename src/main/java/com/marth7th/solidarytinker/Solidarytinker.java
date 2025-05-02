@@ -24,19 +24,19 @@ import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 
 import java.util.List;
 
-@Mod(solidarytinker.MOD_ID)
+@Mod(Solidarytinker.MOD_ID)
 @Mod.EventBusSubscriber(
         bus = Mod.EventBusSubscriber.Bus.MOD
 )
 
-public class solidarytinker {
+public class Solidarytinker {
     public static boolean gobber2 = ModList.get().isLoaded("gobber2");
     public static boolean Mekenabled = ModList.get().isLoaded("mekanism");
     public static boolean ETSH = ModList.get().isLoaded("etshtinker");
     public static boolean TI = ModList.get().isLoaded("tinkers_ingenuity");
-    public static final String MOD_ID = "solidarytinker";
+    public static final String MOD_ID = "Solidarytinker";
 
-    public solidarytinker() {
+    public Solidarytinker() {
         /*
          几个注册表都在这边，有的联动所以需要前置
          */
@@ -46,6 +46,7 @@ public class solidarytinker {
         MinecraftForge.EVENT_BUS.register(this);
         solidarytinkerItem.ITEMS.register(eventBus);
         solidarytinkerItem.OTHER_ITEM.register(eventBus);
+        solidarytinkerItem.ModifiableArmor.register(eventBus);
         solidarytinkerModifiers.MODIFIERS.register(eventBus);
         solidarytinkerFluid.FLUIDS.register(eventBus);
         solidarytinkerBlock.BLOCK.register(eventBus);
@@ -73,15 +74,15 @@ public class solidarytinker {
         }
         if (!TierSortingRegistry.isTierSorted(Momo.instance)) {
             if (gobber2 && TierSortingRegistry.isTierSorted(ToolMaterialTiers.END_GOBBER)) {
-                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER), List.of());
+                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("Solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER), List.of());
             } else {
-                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(Tiers.NETHERITE), List.of());
+                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("Solidarytinker:momo"), List.of(Tiers.NETHERITE), List.of());
             }
         }
     }
 
     public static ResourceLocation getResource(String id) {
-        return new ResourceLocation("solidarytinker", id);
+        return new ResourceLocation("Solidarytinker", id);
     }
 
     public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
@@ -89,6 +90,6 @@ public class solidarytinker {
     }
 
     public static String makeDescriptionId(String type, String name) {
-        return type + ".solidarytinker." + name;
+        return type + ".Solidarytinker." + name;
     }
 }

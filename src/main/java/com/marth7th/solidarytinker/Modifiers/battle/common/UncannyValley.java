@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
+import com.marth7th.solidarytinker.util.RangeUtil;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,12 +25,9 @@ public class UncannyValley extends BattleModifier {
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (entity instanceof Player player) {
             if (ModifierLevel.EquipHasModifierlevel(player, this.getId())) {
-                double x = player.getX();
-                double y = player.getY();
-                double z = player.getZ();
                 int a = modifier.getLevel();
-                List<Mob> mobList = player.level.getEntitiesOfClass(Mob.class, new AABB(x + 4 * a, y + 4 * a, z + 4 * a, x - 4 * a, y - 4 * a, z - 4 * a));
-                List<Player> playerList = player.level.getEntitiesOfClass(Player.class, new AABB(x + 4 * a, y + 4 * a, z + 4 * a, x - 4 * a, y - 4 * a, z - 4 * a));
+                var mobList= RangeUtil.mobList(4*a,player);
+                var playerList= RangeUtil.playerList(4*a,player);
                 for (Mob mob : mobList) {
                     if (mob != null && mob.hasEffect(MobEffects.WITHER)) {
                         mob.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 10, true, true));

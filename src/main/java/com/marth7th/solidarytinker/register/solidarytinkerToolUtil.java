@@ -8,7 +8,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
 
 
-@Mod.EventBusSubscriber(modid = "solidarytinker", value = {Dist.CLIENT}, bus = Mod.EventBusSubscriber.Bus.MOD
+@Mod.EventBusSubscriber(modid = "Solidarytinker", value = {Dist.CLIENT}, bus = Mod.EventBusSubscriber.Bus.MOD
 )
 public class solidarytinkerToolUtil {
     public solidarytinkerToolUtil() {

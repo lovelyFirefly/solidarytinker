@@ -1,9 +1,9 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
+import com.marth7th.solidarytinker.Solidarytinker;
 import com.marth7th.solidarytinker.extend.superclass.ArmorModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
-import com.marth7th.solidarytinker.solidarytinker;
-import com.marth7th.solidarytinker.util.compound.IceFantasy;
+import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import java.util.List;
 
 public class DeepOceanProtect extends ArmorModifier {
-    public static ResourceLocation WAIT = solidarytinker.getResource("wait");
+    public static ResourceLocation WAIT = Solidarytinker.getResource("wait");
 
     @Override
     public Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {
@@ -68,8 +68,8 @@ public class DeepOceanProtect extends ArmorModifier {
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (player != null) {
             float a = Math.round(player.totalExperience * 0.0001f + player.getMaxHealth() * 0.2f + player.getArmorValue() * 0.6f) * ModifierLevel.getTotalArmorModifierlevel(player, this.getId());
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("当前回声点数")).append(IceFantasy.GetColor(a + ""))));
-            list.add(applyStyle(Component.literal(IceFantasy.GetColor("当前伤害减免")).append(IceFantasy.GetColor((1 - Math.max(1 - a * 0.001f, 0.1f)) * 100 + "%"))));
+            list.add(DynamicComponentUtil.BreathColorfulText.getColorfulText("当前回声点数", String.valueOf(a),new int[] {0x99b1ff},60,1000,false));
+            list.add(DynamicComponentUtil.scrollColorfulText.getColorfulText("当前伤害减免", (1 - Math.max(1 - a * 0.001f, 0.1f)) * 100 + "%",new int[] {0x99b1ff,0xf8c0ff},60,1500,false));
         }
     }
 

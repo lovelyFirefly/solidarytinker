@@ -17,10 +17,10 @@ public class ExperienceKiller extends BattleModifier {
     public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
         if (attacker instanceof Player player) {
             int cost = SolidarytinkerConfig.ExperienceSteelCost.get();
-            float Damage = SolidarytinkerConfig.ExperienceMeleeSteelDamage.get().floatValue();
-            int a = player.experienceLevel;
+            float Damagescale = SolidarytinkerConfig.ExperienceMeleeSteelDamage.get().floatValue();
+            int exp = player.experienceLevel;
             player.giveExperiencePoints(-cost);
-            return damage + a * Damage * level;
+            return damage + exp * Damagescale * level;
         }
         return damage;
     }

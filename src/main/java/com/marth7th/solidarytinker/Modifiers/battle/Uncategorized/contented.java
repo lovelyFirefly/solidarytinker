@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.Modifiers.battle.Uncategorized;
 
 import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
-import com.marth7th.solidarytinker.solidarytinker;
+import com.marth7th.solidarytinker.Solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +18,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class contented extends BattleModifier {
-    private static final ResourceLocation Coin = solidarytinker.getResource("coin");
+    private static final ResourceLocation Coin = Solidarytinker.getResource("coin");
 
     @Override
     public @Nullable Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {

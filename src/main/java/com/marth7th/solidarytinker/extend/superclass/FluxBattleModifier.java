@@ -61,11 +61,11 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
 
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
         if (tool instanceof ToolStack && this.isOwner(tool.getVolatileData())) {
-            int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_STORE);
+            int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_CAPACITY);
             if (energy_store > 0) {
-                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).withStyle(this.getDisplayName().getStyle()));
+                list.add(Component.translatable("modifier.Solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).withStyle(this.getDisplayName().getStyle()));
             } else {
-                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY))).withStyle(this.getDisplayName().getStyle()));
+                list.add(Component.translatable("modifier.Solidarytinker.tooltip.storedenergy").append(String.valueOf(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY)) + "/" + String.valueOf(tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY))).withStyle(this.getDisplayName().getStyle()));
             }
         }
     }

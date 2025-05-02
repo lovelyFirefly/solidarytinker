@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.tools.tinkeritem;
 
 
+import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import com.marth7th.solidarytinker.shelf.Network.Packet.SoulGeAttackPacket;
 import com.marth7th.solidarytinker.shelf.Network.STChannel;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,6 +27,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
@@ -74,17 +77,17 @@ public class SoulGe extends ModifiableItem {
             builder.add(ToolStats.ATTACK_SPEED);
         }
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.solidarytinker.detection_range",
-                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.DETECTION_RANGE).intValue()),color,20,20));
+                "tool_stat.Solidarytinker.detection_range",
+                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.DETECTION_RANGE).intValue()),color,20,20,true));
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.solidarytinker.exert_times",
-                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.EXERT_TIMES).intValue()),color,20,20));
+                "tool_stat.Solidarytinker.exert_times",
+                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.EXERT_TIMES).intValue()),color,20,20,true));
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.solidarytinker.attack_frequency",
-                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.ATTACK_FREQUENCY).intValue()),color,20,20));
+                "tool_stat.Solidarytinker.attack_frequency",
+                ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.ATTACK_FREQUENCY).intValue()),color,20,20,true));
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.solidarytinker.kill_threshold",
-                ":" + String.format("%d", Math.round(tool.getStats().get(solidarytinkerToolstats.KILLTHRESHOLD) * 100)) + "%",color,20,20));
+                "tool_stat.Solidarytinker.kill_threshold",
+                ":" + String.format("%d", Math.round(tool.getStats().get(solidarytinkerToolstats.KILLTHRESHOLD) * 100)) + "%",color,20,20,true));
         builder.addAllFreeSlots();
         for (ModifierEntry entry : tool.getModifierList()) {
             entry.getHook(ModifierHooks.TOOLTIP).addTooltip(tool, entry, player, tooltips, key, tooltipFlag);
@@ -185,6 +188,16 @@ public class SoulGe extends ModifiableItem {
                 }
                 persistentData.putInt("targeted", targetedTimes - 1);
                 if (mob.getHealth() < mob.getMaxHealth() * killThreshold && mob.isAlive() && !persistentData.contains("ready_to_die")) {
+                    if(ModifierUtil.getModifierLevel(player.getMainHandItem(), solidarytinkerModifiers.crawlStaticModifier.getId())>0){
+                        var mobPos=mob.position();
+                        var playerPos=player.position();
+                        var direction=mobPos.subtract(playerPos);
+                        double distance=mobPos.distanceTo(playerPos);
+                        Vec3 finalPos=playerPos.add(direction.scale(1.0/distance).scale(4));
+                        if(distance>=4){
+                            mob.moveTo(finalPos);
+                        }
+                    }
                     mob.getActiveEffects().removeAll(mob.getActiveEffects());
                     mob.setNoGravity(false);
                     mob.setDeltaMovement(new Vec3(0, 2.5, 0));

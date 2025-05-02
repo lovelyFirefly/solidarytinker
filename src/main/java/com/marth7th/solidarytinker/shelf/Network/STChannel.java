@@ -3,7 +3,7 @@ package com.marth7th.solidarytinker.shelf.Network;
 import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
 import com.marth7th.solidarytinker.shelf.Network.Packet.MekaKeyBoardPacket;
 import com.marth7th.solidarytinker.shelf.Network.Packet.SoulGeAttackPacket;
-import com.marth7th.solidarytinker.solidarytinker;
+import com.marth7th.solidarytinker.Solidarytinker;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
@@ -21,7 +21,7 @@ public class STChannel {
 
     public static void register() {
         SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(new ResourceLocation(solidarytinker.MOD_ID, "messages"))
+                .named(new ResourceLocation(Solidarytinker.MOD_ID, "messages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)

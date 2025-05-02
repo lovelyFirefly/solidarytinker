@@ -88,7 +88,8 @@
     "highca": "#ffedd7",
     "armorcoating": "#ffedd7",
     "sophisticated": "#57f1ff",
-    "precision_circuits": "#aaffff"
+    "precision_circuits": "#aaffff",
+    "crawl": "#aaaaff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

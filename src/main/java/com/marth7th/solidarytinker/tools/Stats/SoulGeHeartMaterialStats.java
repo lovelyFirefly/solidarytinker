@@ -3,8 +3,8 @@ package com.marth7th.solidarytinker.tools.Stats;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.marth7th.solidarytinker.Solidarytinker;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
-import com.marth7th.solidarytinker.solidarytinker;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
@@ -18,22 +18,22 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import java.util.List;
 
 public record SoulGeHeartMaterialStats(float detection_range, float exert_times, float attack_frequency,float kill_threshold) implements IMaterialStats {
-    public static final MaterialStatsId ID = new MaterialStatsId("solidarytinker", "soulge_heart");
+    public static final MaterialStatsId ID = new MaterialStatsId("Solidarytinker", "soulge_heart");
     public static final MaterialStatType<SoulGeHeartMaterialStats> TYPE= new MaterialStatType<>(ID,new SoulGeHeartMaterialStats(1,1,1,0), RecordLoadable.create(
             FloatLoadable.ANY.defaultField("detection_range", 0.0F, true, SoulGeHeartMaterialStats::detection_range),
             FloatLoadable.ANY.defaultField("exert_times", 0.0F, true, SoulGeHeartMaterialStats::exert_times),
             FloatLoadable.ANY.defaultField("attack_frequency", 0.0F, true, SoulGeHeartMaterialStats::attack_frequency),
             FloatLoadable.ANY.defaultField("kill_threshold", 0.0F, true, SoulGeHeartMaterialStats::kill_threshold),
             SoulGeHeartMaterialStats::new));
-    private static final String DETECTION_RANGE =IMaterialStats.makeTooltipKey(solidarytinker.getResource("detection_range"));
-    private static final String EXERT_TIMES=IMaterialStats.makeTooltipKey(solidarytinker.getResource("exert_times"));
-    private static final String ATTACK_FREQUENCY=IMaterialStats.makeTooltipKey(solidarytinker.getResource("attack_frequency"));
-    private static final String KILL_THRESHOLD=IMaterialStats.makeTooltipKey(solidarytinker.getResource("kill_threshold"));
+    private static final String DETECTION_RANGE =IMaterialStats.makeTooltipKey(Solidarytinker.getResource("detection_range"));
+    private static final String EXERT_TIMES=IMaterialStats.makeTooltipKey(Solidarytinker.getResource("exert_times"));
+    private static final String ATTACK_FREQUENCY=IMaterialStats.makeTooltipKey(Solidarytinker.getResource("attack_frequency"));
+    private static final String KILL_THRESHOLD=IMaterialStats.makeTooltipKey(Solidarytinker.getResource("kill_threshold"));
     private static final List<Component> DESCRIPTION = ImmutableList.of(
-            IMaterialStats.makeTooltip(solidarytinker.getResource("soulge_heart.detection_range.description")),
-            IMaterialStats.makeTooltip(solidarytinker.getResource("soulge_heart.exert_times.description")),
-            IMaterialStats.makeTooltip(solidarytinker.getResource("soulge_heart.attack_frequency.description")),
-            IMaterialStats.makeTooltip(solidarytinker.getResource("soulge_heart.kill_threshold.description")));
+            IMaterialStats.makeTooltip(Solidarytinker.getResource("soulge_heart.detection_range.description")),
+            IMaterialStats.makeTooltip(Solidarytinker.getResource("soulge_heart.exert_times.description")),
+            IMaterialStats.makeTooltip(Solidarytinker.getResource("soulge_heart.attack_frequency.description")),
+            IMaterialStats.makeTooltip(Solidarytinker.getResource("soulge_heart.kill_threshold.description")));
     public SoulGeHeartMaterialStats(float detection_range, float exert_times, float attack_frequency,float kill_threshold) {
         this.detection_range=detection_range;
         this.exert_times=exert_times;

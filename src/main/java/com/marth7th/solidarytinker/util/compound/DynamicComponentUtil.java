@@ -1,44 +1,51 @@
 package com.marth7th.solidarytinker.util.compound;
 
+import com.google.common.base.Preconditions;
 import net.minecraft.locale.Language;
 import net.minecraft.network.chat.*;
 import net.minecraftforge.fml.DistExecutor;
 
 import javax.annotation.Nullable;
+import java.util.Optional;
 
 /**
  * @author firefly
  * <h4>一个专门用于生成RGB颜色字的类,其他非public均为逻辑处理,无需调用</h4>
  */
 public class DynamicComponentUtil {
-    public static class scrollColorfulText{
+    public static class scrollColorfulText {
         // 统一入口方法（智能适配参数）
-        public static Component getColorfulText(String translatableText,String append,int[] colors,int step,int durationMs) {
+        public static Component getColorfulText(String translatableText, String append, int[] colors, int step, int durationMs, boolean isTranslatable) {
             return DistExecutor.unsafeRunForDist(
-                    () -> () -> buildGradientText(translatableText, append, colors,step,durationMs),
+                    () -> () -> buildGradientText(translatableText, append, colors, step, durationMs, isTranslatable),
                     () -> () -> Component.translatable(translatableText)
             );
         }
-
-        private static MutableComponent buildGradientText(String textKey, @Nullable String append, int[] colors, int step,int durationMs) {
-            String localizedText = Language.getInstance().getOrDefault(textKey);
+        private static MutableComponent buildGradientText(String textKey, @Nullable String append, int[] colors, int step, int durationMs, boolean isTranslatable) {
+            // 基础参数预处理
             String safeAppend = append != null ? append : "";
+            String localizedText = isTranslatable
+                    ? Language.getInstance().getOrDefault(textKey)
+                    : textKey;
             String fullText = localizedText + safeAppend;
+
+            // 生成渐变颜色数组
             int[] gradientColors = generateLinearGradient(colors, step);
             int cycleLength = 2 * (gradientColors.length - 1);
             long timestamp = System.currentTimeMillis();
+
+            // 统一字符处理逻辑
             MutableComponent result = Component.empty();
             for (int i = 0; i < fullText.length(); i++) {
                 int progress = (i + (int) (timestamp / durationMs)) % cycleLength;
                 int colorIndex = (gradientColors.length - 1) - Math.abs(progress - (gradientColors.length - 1));
-                char currentChar = (i < localizedText.length())
-                        ? localizedText.charAt(i)
-                        : safeAppend.charAt(i - localizedText.length());
-                result.append(Component.literal(String.valueOf(currentChar))
-                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(gradientColors[colorIndex]))));
+
+                result.append(
+                        Component.literal(String.valueOf(fullText.charAt(i)))
+                                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(gradientColors[colorIndex])))
+                );
             }
             return result;
-
         }
 
         private static int[] generateLinearGradient(int[] colors, int totalSteps) {
@@ -77,46 +84,68 @@ public class DynamicComponentUtil {
             return gradient;
         }
     }
-    public static class BreathColorfulText{
-        public static Component getColorfulText(String text, String append, int baseColor, int breathDuration) {
+
+    public static class BreathColorfulText {
+        public static Component getColorfulText(String textKey, @Nullable String append, int[] colors, int totalSteps, int durationMs, boolean isTranslatable) {
             return DistExecutor.unsafeRunForDist(
-                    () -> () -> buildBreathText(text, append,baseColor,breathDuration),
-                    () -> () -> Component.translatable(text)
+                    () -> () -> buildBreathText(textKey, append, colors, totalSteps, durationMs,isTranslatable),
+                    () -> () -> Component.translatable(textKey)
             );
         }
-        // 呼吸灯效果生成方法
-        private static Component buildBreathText(String text, String append, int baseColor, int breathDuration) {
-            MutableComponent component = Component.literal("");
 
-            // 计算呼吸周期（0~1正弦波动）
-            long timestamp = System.currentTimeMillis();
-            double phase = (timestamp % breathDuration) / (double) breathDuration;
-            float brightness = (float) (0.5 * Math.sin(2 * Math.PI * phase) + 0.5); // 亮度范围[0,1]
+        private static MutableComponent buildBreathText(String textKey, @Nullable String append, int[] colors, int totalSteps, int durationMs, boolean isTranslatable) {
+            // 参数校验与预处理
+            Preconditions.checkArgument(colors.length >= 1, "至少需要指定一个基础颜色");
+            String fullText = getLocalizedText(textKey, isTranslatable) + Optional.ofNullable(append).orElse("");
 
-            // 动态调整颜色亮度
-            for (int i = 0; i < text.length(); i++) {
-                int breathColor = adjustColorBrightness(baseColor, brightness);
-                component.append(Component.literal(String.valueOf(text.charAt(i)))
-                        .withStyle(Style.EMPTY.withColor(breathColor)));
-            }
+            // 生成呼吸周期颜色数组
+            int baseColor = colors[0];
+            int[] breathColors = generateRGBBreathWave(baseColor, totalSteps);
 
-            return component.append(append);
+            // 计算当前颜色相位
+            long cyclePosition = System.currentTimeMillis() % durationMs;
+            int colorIndex = (int) (cyclePosition * totalSteps / durationMs) % totalSteps;
+
+            // 构建组件
+            return buildColoredComponents(fullText, breathColors[colorIndex]);
         }
 
-        // 颜色亮度调整工具方法
-        private static int adjustColorBrightness(int color, float brightness) {
-            // 分解ARGB通道
-            int alpha = (color >> 24) & 0xFF;
-            int red = (color >> 16) & 0xFF;
-            int green = (color >> 8) & 0xFF;
-            int blue = color & 0xFF;
+        private static String getLocalizedText(String key, boolean translatable) {
+            return translatable ? Language.getInstance().getOrDefault(key) : key;
+        }
 
-            // 应用亮度系数（HSV的V值调整）
-            red = (int) (red * brightness);
-            green = (int) (green * brightness);
-            blue = (int) (blue * brightness);
+        private static MutableComponent buildColoredComponents(String text, int color) {
+            MutableComponent component = Component.empty();
+            TextColor textColor = TextColor.fromRgb(color & 0xFFFFFF); // 确保去除alpha通道
+            for (char c : text.toCharArray()) {
+                component.append(
+                        Component.literal(String.valueOf(c))
+                                .setStyle(Style.EMPTY.withColor(textColor))
+                );
+            }
+            return component;
+        }
 
-            return (alpha << 24) | (red << 16) | (green << 8) | blue;
+        private static int[] generateRGBBreathWave(int baseColor, int totalSteps) {
+            // 提取RGB分量
+            int r = (baseColor >> 16) & 0xFF;
+            int g = (baseColor >> 8) & 0xFF;
+            int b = baseColor & 0xFF;
+
+            int[] wave = new int[totalSteps];
+            for (int i = 0; i < totalSteps; i++) {
+                // 使用正弦波控制亮度 (0.2 ~ 1.0)
+                float ratio = 0.8f * (float) Math.abs(Math.sin(Math.PI * i / totalSteps)) + 0.2f;
+                // 应用亮度系数并限制范围
+                int dr = clamp((int) (r * ratio), 0, 255);
+                int dg = clamp((int) (g * ratio), 0, 255);
+                int db = clamp((int) (b * ratio), 0, 255);
+                wave[i] = (dr << 16) | (dg << 8) | db;
+            }
+            return wave;
+        }
+        private static int clamp(int value, int min, int max) {
+            return Math.max(min, Math.min(max, value));
         }
     }
 }

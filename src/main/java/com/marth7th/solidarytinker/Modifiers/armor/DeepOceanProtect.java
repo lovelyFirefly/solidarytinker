@@ -1,6 +1,6 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
-import com.marth7th.solidarytinker.Solidarytinker;
+import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.extend.superclass.ArmorModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import java.util.List;
 
 public class DeepOceanProtect extends ArmorModifier {
-    public static ResourceLocation WAIT = Solidarytinker.getResource("wait");
+    public static ResourceLocation WAIT = solidarytinker.getResource("wait");
 
     @Override
     public Component onRemoved(IToolStackView iToolStackView, Modifier modifier) {

@@ -4,7 +4,7 @@ import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStatId;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 public class solidarytinkerToolstats {
     public static final FloatToolStat ENERGY_CAPACITY = ToolStats.register(new FloatToolStat(name("energy_capacity"), -16760319, 0.0F, 0.0F, Integer.MAX_VALUE));

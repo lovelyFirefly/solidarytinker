@@ -24,19 +24,19 @@ import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 
 import java.util.List;
 
-@Mod(Solidarytinker.MOD_ID)
+@Mod(solidarytinker.MOD_ID)
 @Mod.EventBusSubscriber(
         bus = Mod.EventBusSubscriber.Bus.MOD
 )
 
-public class Solidarytinker {
+public class solidarytinker {
     public static boolean gobber2 = ModList.get().isLoaded("gobber2");
     public static boolean Mekenabled = ModList.get().isLoaded("mekanism");
     public static boolean ETSH = ModList.get().isLoaded("etshtinker");
     public static boolean TI = ModList.get().isLoaded("tinkers_ingenuity");
-    public static final String MOD_ID = "Solidarytinker";
+    public static final String MOD_ID = "solidarytinker";
 
-    public Solidarytinker() {
+    public solidarytinker() {
         /*
          几个注册表都在这边，有的联动所以需要前置
          */
@@ -74,15 +74,15 @@ public class Solidarytinker {
         }
         if (!TierSortingRegistry.isTierSorted(Momo.instance)) {
             if (gobber2 && TierSortingRegistry.isTierSorted(ToolMaterialTiers.END_GOBBER)) {
-                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("Solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER), List.of());
+                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(ToolMaterialTiers.END_GOBBER), List.of());
             } else {
-                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("Solidarytinker:momo"), List.of(Tiers.NETHERITE), List.of());
+                TierSortingRegistry.registerTier(Momo.instance, new ResourceLocation("solidarytinker:momo"), List.of(Tiers.NETHERITE), List.of());
             }
         }
     }
 
     public static ResourceLocation getResource(String id) {
-        return new ResourceLocation("Solidarytinker", id);
+        return new ResourceLocation(MOD_ID, id);
     }
 
     public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
@@ -90,6 +90,6 @@ public class Solidarytinker {
     }
 
     public static String makeDescriptionId(String type, String name) {
-        return type + ".Solidarytinker." + name;
+        return type + MOD_ID + name;
     }
 }

@@ -16,7 +16,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import java.util.function.Supplier;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 
 public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.IToolCapabilityProvider {

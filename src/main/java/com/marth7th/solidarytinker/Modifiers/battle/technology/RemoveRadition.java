@@ -58,25 +58,6 @@ public class RemoveRadition extends BattleModifier {
                 for (int j = -radius; j <= radius; j++) {
                     for (int k = -radius; k <= radius; k++) {
                         ChunkPos chunkPos = new ChunkPos(player.chunkPosition().x + j, player.chunkPosition().z + k);
-                        if(player.getLevel().hasChunk(chunkPos.x,chunkPos.z)){
-                            //直接暴力算半径内
-                            int radius1 = 1;
-                            var level = player.getLevel();
-                            ChunkPos yunshichunk = player.chunkPosition();
-                            for (int dx = -radius1; dx <= radius1; dx++) {
-                                for (int dz = -radius1; dz <= radius1; dz++) {
-                                    if (!level.hasChunk(yunshichunk.x + dx, yunshichunk.z + dz)) {
-                                        return;
-                                    }
-                                }
-                            }
-                            //流处理判断应不应该终止
-                            boolean shouldEnd = IntStream.rangeClosed(-radius, radius)
-                                    .anyMatch(dx -> IntStream.rangeClosed(-radius, radius)
-                                            .anyMatch(dz -> !level.hasChunk(yunshichunk.x + dx, yunshichunk.z + dz))
-                                    );
-                            if (shouldEnd) return;
-                        }
                         chunkPosList.add(new Chunk3D(player.level.dimension(), chunkPos));
                     }
                 }

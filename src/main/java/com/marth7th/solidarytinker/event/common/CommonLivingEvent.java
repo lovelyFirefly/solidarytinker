@@ -5,7 +5,7 @@ import com.marth7th.solidarytinker.register.TinkerCuriosModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.shelf.damagesource.STDamageSource;
-import com.marth7th.solidarytinker.Solidarytinker;
+import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
 import net.minecraft.resources.ResourceLocation;
@@ -29,12 +29,12 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 import static com.marth7th.solidarytinker.util.ModloadCotext.isLoadedIngenuity;
 
 @Mod.EventBusSubscriber(modid = MOD_ID)
 public class CommonLivingEvent {
-    private static final ResourceLocation DEATH = Solidarytinker.getResource("death");
+    private static final ResourceLocation DEATH = solidarytinker.getResource("death");
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void CommonLivingAttackEvent(LivingAttackEvent event) {

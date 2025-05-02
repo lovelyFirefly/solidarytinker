@@ -4,7 +4,7 @@ import mekanism.api.chemical.gas.Gas;
 import mekanism.common.registration.impl.GasDeferredRegister;
 import mekanism.common.registration.impl.GasRegistryObject;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 public class solidarytinkerGas {
     public static final GasDeferredRegister GAS = new GasDeferredRegister(MOD_ID);

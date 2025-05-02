@@ -77,16 +77,16 @@ public class SoulGe extends ModifiableItem {
             builder.add(ToolStats.ATTACK_SPEED);
         }
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.Solidarytinker.detection_range",
+                "tool_stat.solidarytinker.detection_range",
                 ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.DETECTION_RANGE).intValue()),color,20,20,true));
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.Solidarytinker.exert_times",
+                "tool_stat.solidarytinker.exert_times",
                 ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.EXERT_TIMES).intValue()),color,20,20,true));
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.Solidarytinker.attack_frequency",
+                "tool_stat.solidarytinker.attack_frequency",
                 ":" + String.format("%d", tool.getStats().get(solidarytinkerToolstats.ATTACK_FREQUENCY).intValue()),color,20,20,true));
         builder.add(DynamicComponentUtil.scrollColorfulText.getColorfulText(
-                "tool_stat.Solidarytinker.kill_threshold",
+                "tool_stat.solidarytinker.kill_threshold",
                 ":" + String.format("%d", Math.round(tool.getStats().get(solidarytinkerToolstats.KILLTHRESHOLD) * 100)) + "%",color,20,20,true));
         builder.addAllFreeSlots();
         for (ModifierEntry entry : tool.getModifierList()) {

@@ -22,7 +22,7 @@ import slimeknights.tconstruct.tools.item.ArmorSlotType;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 
 public class solidarytinkerItem {

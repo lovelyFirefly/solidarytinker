@@ -12,7 +12,7 @@ import com.marth7th.solidarytinker.Modifiers.slots.energytransport;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 public class solidarytinkerModifierMekEtsh {
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(MOD_ID);

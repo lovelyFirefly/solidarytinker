@@ -23,7 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 
 @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT,bus = Mod.EventBusSubscriber.Bus.FORGE)

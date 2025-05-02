@@ -1,7 +1,7 @@
 package com.marth7th.solidarytinker.tools.tinkeritem;
 
 
-import com.marth7th.solidarytinker.Solidarytinker;
+import com.marth7th.solidarytinker.solidarytinker;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,7 +15,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class MekaTool extends ModifiableItem {
-    private static final ResourceLocation SPEED = Solidarytinker.getResource("speedlevel");
+    private static final ResourceLocation SPEED = solidarytinker.getResource("speedlevel");
 
     public int getToolLevel(ItemStack stack) {
         ModDataNBT nbt = ToolStack.from(stack).getPersistentData();

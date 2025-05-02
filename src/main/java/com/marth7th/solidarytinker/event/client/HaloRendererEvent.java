@@ -1,6 +1,6 @@
 package com.marth7th.solidarytinker.event.client;
 
-import com.marth7th.solidarytinker.Solidarytinker;
+import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.client.Handler.ClientAzusaHaloHandler;
 import com.marth7th.solidarytinker.client.Handler.ClientHoshinoHaloHandler;
 import com.marth7th.solidarytinker.client.Handler.ClientReisaHaloHandler;
@@ -17,13 +17,14 @@ import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID,value = Dist.CLIENT)
 public class HaloRendererEvent {
-    private static final ResourceLocation HoshinoHalo= Solidarytinker.getResource("textures/halo/hoshino.png");
-    private static final ResourceLocation ReisaHalo= Solidarytinker.getResource("textures/halo/reisa.png");
-    private static final ResourceLocation AzusaHalo= Solidarytinker.getResource("textures/halo/azusa.png");
+    private static final ResourceLocation HoshinoHalo= solidarytinker.getResource("textures/halo/hoshino.png");
+    private static final ResourceLocation ReisaHalo= solidarytinker.getResource("textures/halo/reisa.png");
+    private static final ResourceLocation AzusaHalo= solidarytinker.getResource("textures/halo/azusa.png");
+    @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && event.side == LogicalSide.CLIENT) {
             Player player=event.player;
@@ -32,7 +33,7 @@ public class HaloRendererEvent {
             ClientReisaHaloHandler.setHasHalo(ModifierUtil.getModifierLevel(player.getItemBySlot(EquipmentSlot.HEAD), solidarytinkerModifiers.reisaHaloStaticModifier.getId()) > 0);
         }
     }
-
+    @SubscribeEvent
     public static void onRenderPlayer(RenderPlayerEvent.Post event) {
         Player player = event.getEntity();
         if (ClientHoshinoHaloHandler.shouldRenderHalo(player)) {

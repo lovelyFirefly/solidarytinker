@@ -3,7 +3,7 @@ package com.marth7th.solidarytinker.tools.Stats;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import com.marth7th.solidarytinker.Solidarytinker;
+import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
@@ -17,7 +17,7 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
 import java.util.List;
 
-import static com.marth7th.solidarytinker.Solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 public record FluidEscapeMaterialStats(float base_consumption, float consumption_multiplier, float damage_reduction, float energy_capability) implements IMaterialStats {
     public static final MaterialStatsId ID = new MaterialStatsId(MOD_ID, "fluid_escape");
@@ -27,15 +27,15 @@ public record FluidEscapeMaterialStats(float base_consumption, float consumption
             FloatLoadable.ANY.defaultField("damage_reduction", 0.0F, true, FluidEscapeMaterialStats::damage_reduction),
             FloatLoadable.ANY.defaultField("energy_capability", 0.0F, true, FluidEscapeMaterialStats::energy_capability),
             FluidEscapeMaterialStats::new));
-    private static final String BASE_CONSUMPTION =IMaterialStats.makeTooltipKey(Solidarytinker.getResource("base_consumption"));
-    private static final String CONSUMPTION_MULTIPLIER=IMaterialStats.makeTooltipKey(Solidarytinker.getResource("consumption_multiplier"));
-    private static final String DAMAGE_REDUCTION=IMaterialStats.makeTooltipKey(Solidarytinker.getResource("damage_reduction"));
-    private static final String ENERGY_CAPABILITY=IMaterialStats.makeTooltipKey(Solidarytinker.getResource("energy_capability"));
+    private static final String BASE_CONSUMPTION =IMaterialStats.makeTooltipKey(solidarytinker.getResource("base_consumption"));
+    private static final String CONSUMPTION_MULTIPLIER=IMaterialStats.makeTooltipKey(solidarytinker.getResource("consumption_multiplier"));
+    private static final String DAMAGE_REDUCTION=IMaterialStats.makeTooltipKey(solidarytinker.getResource("damage_reduction"));
+    private static final String ENERGY_CAPABILITY=IMaterialStats.makeTooltipKey(solidarytinker.getResource("energy_capability"));
     private static final List<Component> DESCRIPTION = ImmutableList.of(
-            IMaterialStats.makeTooltip(Solidarytinker.getResource("fluid_escape.base_consumption.description")),
-            IMaterialStats.makeTooltip(Solidarytinker.getResource("fluid_escape.consumption_multiplier.description")),
-            IMaterialStats.makeTooltip(Solidarytinker.getResource("fluid_escape.damage_reduction.description")),
-            IMaterialStats.makeTooltip(Solidarytinker.getResource("fluid_escape.energy_capability.description")));
+            IMaterialStats.makeTooltip(solidarytinker.getResource("fluid_escape.base_consumption.description")),
+            IMaterialStats.makeTooltip(solidarytinker.getResource("fluid_escape.consumption_multiplier.description")),
+            IMaterialStats.makeTooltip(solidarytinker.getResource("fluid_escape.damage_reduction.description")),
+            IMaterialStats.makeTooltip(solidarytinker.getResource("fluid_escape.energy_capability.description")));
     public FluidEscapeMaterialStats(float base_consumption, float consumption_multiplier, float damage_reduction, float energy_capability) {
         this.base_consumption=base_consumption;
         this.consumption_multiplier=consumption_multiplier;

@@ -1,12 +1,14 @@
 package com.marth7th.solidarytinker.extend.superclass;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 public class BaseModifier extends Modifier {
     public ModDataNBT getData(IToolStackView tool) {

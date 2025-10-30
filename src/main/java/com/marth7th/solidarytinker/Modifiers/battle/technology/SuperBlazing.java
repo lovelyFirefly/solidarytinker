@@ -12,6 +12,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
@@ -39,15 +40,14 @@ public class SuperBlazing extends BattleModifier {
                     targets.setRemainingFireTicks(FireTick);
                     targets.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1000, 1, true, true));
                     targets.addEffect(new MobEffectInstance(TinkerModifiers.enderferenceEffect.get(), 1000, 1, true, true));
-                    {
-                        if (Math.abs(Math.abs(a) - Math.abs(x)) > 3 || Math.abs(Math.abs(c) - Math.abs(z)) > 3) {
-                            targets.setPos(x, y, z);
-                        }
+                    if (Math.abs(Math.abs(a) - Math.abs(x)) > 3 || Math.abs(Math.abs(c) - Math.abs(z)) > 3) {
+                        targets.setPos(x, y, z);
                     }
+
                 }
             }
         }
-        return damage;
+        return knockback;
     }
 
     @Override

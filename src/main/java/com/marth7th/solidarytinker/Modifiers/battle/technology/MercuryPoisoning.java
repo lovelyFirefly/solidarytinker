@@ -8,6 +8,7 @@ import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraftforge.fml.DistExecutor;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -32,4 +33,5 @@ public class MercuryPoisoning extends BattleModifier {
             target.forceAddEffect(new MobEffectInstance(solidarytinkerEffects.mercurypoisoning.get(), 100 * level, level - 1), attacker);
         }
     }
+
 }

@@ -15,6 +15,8 @@ import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.test;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.*;
+import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -70,8 +72,10 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<ArmorCoating> armorcoating = MODIFIERS.register("armorcoating", ArmorCoating::new);
     public static final StaticModifier<Sophisticated> sophisticated = MODIFIERS.register("sophisticated", Sophisticated::new);//精良
     public static final StaticModifier<Crawl> crawlStaticModifier = MODIFIERS.register("crawl", Crawl::new);//抓取
-    public static final StaticModifier<HoshinoHalo> hoshinoHaloStaticModifier = MODIFIERS.register("hoshinohalo", HoshinoHalo::new);//光环
-    public static final StaticModifier<ReisaHalo> reisaHaloStaticModifier = MODIFIERS.register("reisahalo", ReisaHalo::new);//光环
-    public static final StaticModifier<AzusaHalo> azusaHaloStaticModifier = MODIFIERS.register("azusahalo", AzusaHalo::new);//光环
+    public static final StaticModifier<NoLevelsModifier> reisaHaloStaticModifier = MODIFIERS.register("reisahalo", NoLevelsModifier::new);//光环
+    public static final StaticModifier<NoLevelsModifier> azusaHaloStaticModifier = MODIFIERS.register("azusahalo", NoLevelsModifier::new);//光环
+    public static final StaticModifier<NoLevelsModifier> natsuHaloStaticModifier = MODIFIERS.register("natsuhalo", NoLevelsModifier::new);//光环
+    public static final StaticModifier<NoLevelsModifier> al1sHaloStaticModifier = MODIFIERS.register("al1shalo", NoLevelsModifier::new);//光环
+    public static final StaticModifier<NoLevelsModifier> mariHaloStaticModifier = MODIFIERS.register("marihalo", NoLevelsModifier::new);//光环
 
 }

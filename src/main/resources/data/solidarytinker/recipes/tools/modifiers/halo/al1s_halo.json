@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "item": "solidarytinker:violane"
+    },
+    {
+      "item": "mekanism:robit"
+    },
+    {
+      "item": "solidarytinker:violane"
+    }
+  ],
+  "level": {
+    "max": 1
+  },
+  "result": "solidarytinker:al1shalo",
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  }
+}

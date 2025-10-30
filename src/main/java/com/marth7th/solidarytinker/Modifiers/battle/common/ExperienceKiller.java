@@ -19,8 +19,9 @@ public class ExperienceKiller extends BattleModifier {
             int cost = SolidarytinkerConfig.ExperienceSteelCost.get();
             float Damagescale = SolidarytinkerConfig.ExperienceMeleeSteelDamage.get().floatValue();
             int exp = player.experienceLevel;
+            float add= Math.min(exp * Damagescale * level,1000*level);
             player.giveExperiencePoints(-cost);
-            return damage + exp * Damagescale * level;
+            return damage + add;
         }
         return damage;
     }
@@ -29,10 +30,11 @@ public class ExperienceKiller extends BattleModifier {
     public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
         if (attacker instanceof Player player) {
             int cost = SolidarytinkerConfig.ExperienceSteelCost.get();
-            float Damage = SolidarytinkerConfig.ExperienceProjectileSteelDamage.get().floatValue();
-            int a = player.experienceLevel;
+            float damageScale = SolidarytinkerConfig.ExperienceProjectileSteelDamage.get().floatValue();
+            int exp = player.experienceLevel;
+            float add= Math.min(exp * damageScale * level,1000*level);
             player.giveExperiencePoints(-cost);
-            arrow.setBaseDamage(arrow.getBaseDamage() + a * Damage * level);
+            arrow.setBaseDamage(arrow.getBaseDamage() + add);
         }
     }
 }

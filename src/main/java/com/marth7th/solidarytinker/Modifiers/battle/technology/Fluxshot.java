@@ -10,6 +10,7 @@ import slimeknights.tconstruct.library.modifiers.hook.ranged.BowAmmoModifierHook
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.item.CrystalshotItem;
+import slimeknights.tconstruct.tools.logic.ToolEvents;
 
 import java.util.function.Predicate;
 

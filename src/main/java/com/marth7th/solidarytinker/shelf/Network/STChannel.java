@@ -1,6 +1,7 @@
 package com.marth7th.solidarytinker.shelf.Network;
 
 import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
+import com.marth7th.solidarytinker.shelf.Network.Packet.HaloUpdatePacket;
 import com.marth7th.solidarytinker.shelf.Network.Packet.MekaKeyBoardPacket;
 import com.marth7th.solidarytinker.shelf.Network.Packet.SoulGeAttackPacket;
 import com.marth7th.solidarytinker.solidarytinker;
@@ -44,6 +45,11 @@ public class STChannel {
                 .encoder(EnergyChangePacket::ToByte)
                 .consumerMainThread(EnergyChangePacket::handle)
                 .add();
+        net.messageBuilder(HaloUpdatePacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(HaloUpdatePacket::new)
+                .encoder(HaloUpdatePacket::toByte)
+                .consumerMainThread(HaloUpdatePacket::handle)
+                .add();
         INSTANCE = net;
     }
 
@@ -53,6 +59,14 @@ public class STChannel {
 
     public static <MSG> void SendToPlayer(MSG msg, ServerPlayer player) {
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), msg);
+    }
+
+    public static <MSG> void sendToClient(MSG msg) {
+        INSTANCE.send(PacketDistributor.ALL.noArg(), msg);
+    }
+
+    public static <MSG> void sendToTrackingAndSelf(MSG msg, ServerPlayer player) {
+        INSTANCE.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> player), msg);
     }
 
     public STChannel() {

@@ -91,20 +91,13 @@ public class CommonLivingEvent {
         }
     }
 
-    private static void applyDamage(LivingEntity entity, LivingEntity attacker, boolean should) {
-        var data = entity.getPersistentData();
-        if (should && attacker instanceof Player player) {
-            entity.hurt(DamageSource.playerAttack(player), Float.MAX_VALUE);
-            data.remove("ready_to_die");
-        } else {
-            entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
-            data.remove("ready_to_die");
-        }
-    }
-
     @SubscribeEvent
     public static void soulGe(LivingEvent.LivingTickEvent event) {
         var livingEntity = event.getEntity();
+        if (livingEntity instanceof Player) {
+            livingEntity.getPersistentData().remove("ready_to_die");
+            return;
+        }
         var entityData = livingEntity.getPersistentData();
         var dieTick = entityData.getInt("ready_to_die");
         var attacker = livingEntity.getLastHurtByMob();
@@ -112,9 +105,20 @@ public class CommonLivingEvent {
             entityData.putInt("ready_to_die", dieTick - 1);
             switch (dieTick) {
                 case 1 -> applyDamage(livingEntity, attacker, true);
-                case 2 - 4 -> applyDamage(livingEntity, attacker, livingEntity.isOnGround());
+                case 2, 3, 4 -> applyDamage(livingEntity, attacker, livingEntity.isOnGround());
                 case 5 -> livingEntity.setDeltaMovement(new Vec3(0, -2.5, 0));
             }
+        }
+    }
+
+    private static void applyDamage(LivingEntity entity, LivingEntity attacker, boolean should) {
+        var data = entity.getPersistentData();
+        if (should && attacker instanceof Player player) {
+            entity.hurt(DamageSource.playerAttack(player), Float.MAX_VALUE);
+            data.remove("ready_to-die");
+        } else {
+            entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
+            data.remove("ready_to-die");
         }
     }
 
@@ -150,6 +154,7 @@ public class CommonLivingEvent {
             }
         }
     }
+
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void MagicUraniumCurio(LivingHurtEvent event) {
         if (isLoadedIngenuity) {
@@ -157,7 +162,7 @@ public class CommonLivingEvent {
                 List<ItemStack> curio = ToolUtils.Curios.getStacks(player);
                 float OriginallyDamage = event.getAmount();
                 for (ItemStack curios : curio) {
-                    if(ModifierUtil.getModifierLevel(curios,TinkerCuriosModifier.CleanCurio.getId())>0){
+                    if (ModifierUtil.getModifierLevel(curios, TinkerCuriosModifier.CleanCurio.getId()) > 0) {
                         List<MobEffectInstance> BeneficialEffects = player.getActiveEffects().stream().toList();
                         List<MobEffect> Beneficial = new ArrayList<>();
                         for (int i = 0; i < BeneficialEffects.size(); i++) {

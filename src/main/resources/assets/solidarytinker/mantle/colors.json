@@ -89,7 +89,12 @@
     "armorcoating": "#ffedd7",
     "sophisticated": "#57f1ff",
     "precision_circuits": "#aaffff",
-    "crawl": "#aaaaff"
+    "crawl": "#aaaaff",
+    "azusahalo":"#ffff9b",
+    "reisahalo":"#aaaaff",
+    "natsuhalo":"#ffb9df",
+    "al1shalo":"#75f9ff",
+    "marihalo":"#ffaa00"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

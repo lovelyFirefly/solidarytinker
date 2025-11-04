@@ -12,5 +12,6 @@ public class toolDefinitions {
     public static final ToolDefinition MEKATOOL = ToolDefinition.create(solidarytinkerItem.mekatool);
     public static final ToolDefinition TRIDENT = ToolDefinition.create(solidarytinkerItem.trident);
     public static final ToolDefinition Soulge = ToolDefinition.create(solidarytinkerItem.soulge);
+    public static final ToolDefinition electric_batons = ToolDefinition.create(solidarytinkerItem.ElectricBatons);
     public static final ModifiableArmorMaterial ENERGY_PLATE = ModifiableArmorMaterial.create(solidarytinker.getResource("energy_plate"), SoundEvents.PUFFER_FISH_BLOW_OUT);
 }

@@ -1,0 +1,12 @@
+{
+  "star_hit": {
+    "category": "voice",
+    "subtitle": "subtitles.solidarytinker.electric_hit",
+    "sounds": [
+      {
+        "name": "solidarytinker:electric_hit",
+        "stream": "true"
+      }
+    ]
+  }
+}

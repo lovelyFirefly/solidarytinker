@@ -1,11 +1,9 @@
 package com.marth7th.solidarytinker.register;
 
 import com.marth7th.solidarytinker.Items.ingot.*;
+import com.marth7th.solidarytinker.tools.Stats.CoreBatteryMaterialStats;
 import com.marth7th.solidarytinker.tools.Stats.SoulGeHeartMaterialStats;
-import com.marth7th.solidarytinker.tools.tinkeritem.EnergyPlateArmor;
-import com.marth7th.solidarytinker.tools.tinkeritem.MekaTool;
-import com.marth7th.solidarytinker.tools.tinkeritem.SoulGe;
-import com.marth7th.solidarytinker.tools.tinkeritem.trident;
+import com.marth7th.solidarytinker.tools.tinkeritem.*;
 import com.marth7th.solidarytinker.tools.toolDefinitions;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -43,8 +41,10 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> starfall_ingot = ITEMS.register("starfall_ingot", () -> new starfall_ingot(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<ToolPartItem> mining_core = ITEMS.register("mining_core", () -> new ToolPartItem(PART, StatlessMaterialStats.BINDING.getIdentifier()));
     public static final RegistryObject<ToolPartItem> soulge_heart = ITEMS.register("soulge_heart", () -> new ToolPartItem(PART, SoulGeHeartMaterialStats.ID));
+    public static final RegistryObject<ToolPartItem> core_battery = ITEMS.register("core_battery", () -> new ToolPartItem(PART, CoreBatteryMaterialStats.ID));
     public static final RegistryObject<ToolPartItem> trident_head = ITEMS.register("trident_head", () -> new ToolPartItem(PART, HeadMaterialStats.ID));
     public static final RegistryObject<ModifiableItem> mekatool = ITEMS.register("mekatool", () -> new MekaTool(TOOL, toolDefinitions.MEKATOOL));
+    public static final RegistryObject<ModifiableItem> ElectricBatons = ITEMS.register("electric_batons", () -> new ElectricBatons(TOOL, toolDefinitions.electric_batons));
     public static final RegistryObject<Item> icefantasy_ingot = ITEMS.register("icefantasy_ingot", () -> new icefantasy_ingot(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> kemo33 = ITEMS.register("kemo33", () -> new kemo33(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> magicuranium_ingot = ITEMS.register("magicuranium_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));

@@ -16,6 +16,7 @@ public class solidarytinkerToolstats {
     public static final FloatToolStat BASE_CONSUMPTION = ToolStats.register(new FloatToolStat(name("base_consumption"), 16755455, 0.0F, 0.0F,  Float.MAX_VALUE));
     public static final FloatToolStat CONSUMPTION_MULTIPLIER = ToolStats.register(new FloatToolStat(name("consumption_multiplier"), 16755455, 0.0F, 0.0F,  Float.MAX_VALUE));
     public static final FloatToolStat DAMAGE_REDUCTION = ToolStats.register(new FloatToolStat(name("damage_reduction"), 16755455, 0.0F, 0.0F,  Float.MAX_VALUE));
+    public static final FloatToolStat TARGET_AMOUNT = ToolStats.register(new FloatToolStat(name("target_amount"), 16755455, 0.0F, 0.0F,  Float.MAX_VALUE));
 
     private static ToolStatId name(String name) {
         return new ToolStatId(MOD_ID, name);

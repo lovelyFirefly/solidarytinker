@@ -353,5 +353,8 @@
   "modifier.solidarytinker.marihalo.flavor": "请输入文本",
   "modifier.solidarytinker.natsuhalo": "光环-柚鸟夏",
   "modifier.solidarytinker.natsuhalo.description": "获得夏的光环样式",
-  "modifier.solidarytinker.natsuhalo.flavor": "..."
+  "modifier.solidarytinker.natsuhalo.flavor": "...",
+  "subtitles.solidarytinker.electric_hit": "电流连锁",
+  "item.solidarytinker.electric_batons": "电棍",
+  "item.solidarytinker.electric_batons.description": "具有连锁伤害的近战武器，在面对数量较多的敌人时效果显著"
 }

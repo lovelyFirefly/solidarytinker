@@ -26,25 +26,24 @@ public class DynamicComponentUtil {
                     ? Language.getInstance().getOrDefault(textKey)
                     : textKey;
             String fullText = localizedText + safeAppend;
+
             int[] gradientColors = generateLinearGradient(colors, step);
-            int gradientLength = gradientColors.length;
-            int halfCycle = gradientLength - 1;
-            int cycleLength = 2 * halfCycle;
+            int maxIndex = gradientColors.length - 1;
+            int cycleLength = 2 * maxIndex;
             long timestamp = System.currentTimeMillis();
+
             MutableComponent result = Component.empty();
             for (int i = 0; i < fullText.length(); i++) {
-                int progress = (i + (int) (timestamp / durationMs)) % cycleLength;
-                int colorIndex;
-                if (progress < halfCycle) {
-                    colorIndex = progress;
-                } else {
-                    colorIndex = cycleLength - progress;
-                }
-                if (colorIndex < 0 || colorIndex >= gradientLength) {
+                long timeOffset = durationMs > 0 ? (timestamp / durationMs) : 0;
+                int progress = (int) ((i + timeOffset) % cycleLength);
+                int colorIndex = maxIndex - Math.abs(progress - maxIndex);
+                if (colorIndex < 0) {
                     colorIndex = 0;
+                } else if (colorIndex > maxIndex) {
+                    colorIndex = maxIndex;
                 }
-
-                result.append(Component.literal(String.valueOf(fullText.charAt(i))).setStyle(Style.EMPTY.withColor(TextColor.fromRgb(gradientColors[colorIndex])))
+                result.append(Component.literal(String.valueOf(fullText.charAt(i)))
+                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(gradientColors[colorIndex])))
                 );
             }
             return result;

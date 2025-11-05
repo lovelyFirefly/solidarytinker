@@ -1,10 +1,7 @@
 package com.marth7th.solidarytinker.register;
 
+import com.marth7th.solidarytinker.Modifiers.Tool.*;
 import com.marth7th.solidarytinker.Modifiers.Both.Sophisticated;
-import com.marth7th.solidarytinker.Modifiers.Halo.AzusaHalo;
-import com.marth7th.solidarytinker.Modifiers.Halo.HoshinoHalo;
-import com.marth7th.solidarytinker.Modifiers.Halo.ReisaHalo;
-import com.marth7th.solidarytinker.Modifiers.Tool.Crawl;
 import com.marth7th.solidarytinker.Modifiers.armor.*;
 import com.marth7th.solidarytinker.Modifiers.battle.Uncategorized.Pilgrimage;
 import com.marth7th.solidarytinker.Modifiers.battle.biomancy.Corrode;
@@ -15,7 +12,6 @@ import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.test;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.*;
-import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
@@ -72,6 +68,10 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<ArmorCoating> armorcoating = MODIFIERS.register("armorcoating", ArmorCoating::new);
     public static final StaticModifier<Sophisticated> sophisticated = MODIFIERS.register("sophisticated", Sophisticated::new);//精良
     public static final StaticModifier<Crawl> crawlStaticModifier = MODIFIERS.register("crawl", Crawl::new);//抓取
+    public static final StaticModifier<ElectricBatonsCore> electricBatonsCoreStaticModifier = MODIFIERS.register("electricbatonscore", ElectricBatonsCore::new);//能量核心
+    public static final StaticModifier<EnergyPowerFul> ENERGY_POWER_FUL_STATIC_MODIFIER = MODIFIERS.register("energypowerful", EnergyPowerFul::new);//能量充沛
+    public static final StaticModifier<FastCharge> FAST_CHARGE_STATIC_MODIFIER = MODIFIERS.register("fastcharge", FastCharge::new);//快速蓄能
+    public static final StaticModifier<HouGuoYu> HOU_GUO_YU_STATIC_MODIFIER = MODIFIERS.register("houguoyu", HouGuoYu::new);//器灵
     public static final StaticModifier<NoLevelsModifier> reisaHaloStaticModifier = MODIFIERS.register("reisahalo", NoLevelsModifier::new);//光环
     public static final StaticModifier<NoLevelsModifier> azusaHaloStaticModifier = MODIFIERS.register("azusahalo", NoLevelsModifier::new);//光环
     public static final StaticModifier<NoLevelsModifier> natsuHaloStaticModifier = MODIFIERS.register("natsuhalo", NoLevelsModifier::new);//光环

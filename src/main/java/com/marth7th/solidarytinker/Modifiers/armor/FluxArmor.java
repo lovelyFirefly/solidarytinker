@@ -1,8 +1,10 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
 
+import com.c2h6s.etshtinker.Modifiers.modifiers.etshmodifierfluxed;
 import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.superclass.FluxArmorModifier;
+import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
 import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
@@ -52,6 +54,19 @@ public class FluxArmor extends FluxArmorModifier {
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
+        int etshEnergy = etshmodifierfluxed.getEnergyStored(tool);
+        if (etshEnergy > 0 && notFull(tool)) {
+            int trans = FluxStorage.checkTransport(tool);
+            int currentStored = getEnergyStorage(tool);
+            int maxStored = getMaxEnergyStorage(tool);
+            int need = maxStored - currentStored;
+            int maxTransfer = Math.min(need, trans);
+            int actualTransfer = Math.min(maxTransfer, etshEnergy);
+            if (actualTransfer > 0) {
+                etshmodifierfluxed.removeEnergy(tool, actualTransfer, false, true);
+                FluxStorage.receiveEnergy(tool, actualTransfer, false);
+            }
+        }
         if (entity instanceof ServerPlayer serverPlayer) {
             if (serverPlayer.tickCount % 2 == 0) {
                 IToolStackView helmet = ToolStack.from(serverPlayer.getItemBySlot(EquipmentSlot.HEAD));
@@ -64,6 +79,18 @@ public class FluxArmor extends FluxArmorModifier {
                 STChannel.SendToPlayer(new EnergyChangePacket(EnergyLevel), serverPlayer);
             }
         }
+    }
+    private boolean notFull(IToolStackView view){
+        return getEnergyStorage(view)<getMaxEnergyStorage(view);
+    }
+    private int getEnergyStorage(IToolStackView view) {
+        return view.getPersistentData().getInt(FluxStorage.STORED_ENERGY);
+    }
+
+    private int getMaxEnergyStorage(IToolStackView view) {
+        int add = view.getStats().getInt(solidarytinkerToolstats.ENERGY_CAPACITY);
+        int base = view.getVolatileData().getInt(FluxStorage.MAX_ENERGY);
+        return add + base;
     }
 
     @Override

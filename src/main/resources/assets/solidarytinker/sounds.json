@@ -1,10 +1,30 @@
 {
-  "star_hit": {
+  "electric_hit": {
     "category": "voice",
     "subtitle": "subtitles.solidarytinker.electric_hit",
     "sounds": [
       {
         "name": "solidarytinker:electric_hit",
+        "stream": "true"
+      }
+    ]
+  },
+  "electric_cooldown": {
+    "category": "voice",
+    "subtitle": "subtitles.solidarytinker.electric_cooldown",
+    "sounds": [
+      {
+        "name": "solidarytinker:electric_cooldown",
+        "stream": "true"
+      }
+    ]
+  },
+  "electric_not_full": {
+    "category": "voice",
+    "subtitle": "subtitles.solidarytinker.electric_not_full",
+    "sounds": [
+      {
+        "name": "solidarytinker:electric_not_full",
         "stream": "true"
       }
     ]

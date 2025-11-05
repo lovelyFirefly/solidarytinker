@@ -1,4 +1,4 @@
-package com.marth7th.solidarytinker.extend.superclass;
+package com.marth7th.solidarytinker.Modifiers.Tool;
 
 import com.c2h6s.etshtinker.Modifiers.modifiers.etshmodifierfluxed;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
@@ -7,16 +7,14 @@ import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ToolDamageModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ValidateModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.VolatileDataModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.DurabilityDisplayModifierHook;
@@ -25,15 +23,11 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.*;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-import java.util.List;
-
-public class FluxBattleModifier extends BattleModifier implements VolatileDataModifierHook, ValidateModifierHook, DurabilityDisplayModifierHook, ToolDamageModifierHook {
-    public FluxBattleModifier() {
-    }
+public class ElectricBatonsCore extends Modifier implements ValidateModifierHook , VolatileDataModifierHook , ModifierRemovalHook , DurabilityDisplayModifierHook , ToolDamageModifierHook , InventoryTickModifierHook {
 
     protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
-        builder.addHook(this, ModifierHooks.DURABILITY_DISPLAY, ModifierHooks.TOOL_DAMAGE);
+        builder.addHook(this, ModifierHooks.VALIDATE, ModifierHooks.VOLATILE_DATA,ModifierHooks.DURABILITY_DISPLAY,ModifierHooks.INVENTORY_TICK);
     }
 
     public Component validate(IToolStackView tool, ModifierEntry modifier) {
@@ -52,37 +46,21 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
     }
 
     public void addVolatileData(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
-        volatileData.addSlots(solidarytinkerSlots.FLUX, 5);
+        volatileData.addSlots(solidarytinkerSlots.FLUX, 3);
         if (volatileData.contains(FluxStorage.MAX_ENERGY, 3)) {
-            volatileData.putInt(FluxStorage.MAX_ENERGY, volatileData.getInt(FluxStorage.MAX_ENERGY) + this.getCapacity(context, modifier, volatileData) * modifier.getLevel());
+            volatileData.putInt(FluxStorage.MAX_ENERGY, volatileData.getInt(FluxStorage.MAX_ENERGY) + this.getCapacity(context, modifier) * modifier.getLevel());
         } else {
-            volatileData.putInt(FluxStorage.MAX_ENERGY, this.getCapacity(context, modifier, volatileData) * modifier.getLevel());
+            volatileData.putInt(FluxStorage.MAX_ENERGY, this.getCapacity(context, modifier) * modifier.getLevel());
         }
-
         if (!volatileData.contains(FluxStorage.ENERGY_OWNER, 8)) {
             volatileData.putString(FluxStorage.ENERGY_OWNER, this.getId().toString());
         }
     }
 
-    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> list, TooltipKey key, TooltipFlag tooltipFlag) {
-        if (tool instanceof ToolStack && this.isOwner(tool.getVolatileData())) {
-            int energy_store = tool.getStats().getInt(solidarytinkerToolstats.ENERGY_CAPACITY);
-            if (energy_store > 0) {
-                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY) + "/" + (tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY) + energy_store)).withStyle(this.getDisplayName().getStyle()));
-            } else {
-                list.add(Component.translatable("modifier.solidarytinker.tooltip.storedenergy").append(tool.getPersistentData().getInt(FluxStorage.STORED_ENERGY) + "/" + tool.getVolatileData().getInt(FluxStorage.MAX_ENERGY)).withStyle(this.getDisplayName().getStyle()));
-            }
-        }
-    }
-
-    public int getCapacity(IToolContext context, ModifierEntry modifier, ModDataNBT volatileData) {
+    public int getCapacity(IToolContext context, ModifierEntry modifier) {
         int add = context.getModifierLevel(solidarytinkerModifierMekEtsh.energyadd.getId());
         int mu = context.getModifierLevel(solidarytinkerModifierMekEtsh.energymultiple.getId());
-        return (int) ((10000 * modifier.getLevel() + add * 30000) * (1 + mu * 0.4F));
-    }
-
-    public boolean isOwner(IModDataView volatileData) {
-        return this.getId().toString().equals(volatileData.getString(FluxStorage.ENERGY_OWNER));
+        return (int) ((100000 * modifier.getLevel() + add * 40000) * (1 + mu * 0.6F));
     }
 
     public Boolean showDurabilityBar(IToolStackView tool, ModifierEntry modifier) {
@@ -102,9 +80,17 @@ public class FluxBattleModifier extends BattleModifier implements VolatileDataMo
     }
 
     public int getDurabilityRGB(IToolStackView tool, ModifierEntry modifier) {
-        return FluxStorage.getEnergyStored(tool) > 0 ? 0xf8cdff : -1;
+        return FluxStorage.getEnergyStored(tool) > 0 ? 0xece4fd : -1;
     }
 
+    @Override
+    public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
+        if(amount==0) return amount;
+        if (FluxStorage.getEnergyStored(tool) > 200 * amount) {
+            return 0;
+        }
+        return amount;
+    }
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         int etshEnergy = etshmodifierfluxed.getEnergyStored(tool);

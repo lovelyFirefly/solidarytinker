@@ -123,7 +123,39 @@ public class CommonLivingEvent {
     }
 
     @SubscribeEvent
-    public static void test(LivingDamageEvent event) {
+    public static void electricBatonExtraDamage(LivingDamageEvent event) {
+        var entity=event.getEntity();
+        int count=entity.getPersistentData().getInt("electric_batons_extra_hurt");
+        if(count>0){
+            entity.getPersistentData().putInt("electric_batons_extra_hurt",count-1);
+            event.setAmount(event.getAmount() * 1.7f);
+        }
+    }
+    @SubscribeEvent
+    public static void corrodeExtraAttack(LivingAttackEvent event) {
+        var entity=event.getEntity();
+        int count=entity.getPersistentData().getInt("corrode_amount");
+        if(count>=50){
+            event.getSource().bypassArmor();
+        }
+    }
+    @SubscribeEvent
+    public static void corrodeExtraHurt(LivingDamageEvent event) {
+        var entity=event.getEntity();
+        int count=entity.getPersistentData().getInt("corrode_amount");
+        if(count>0){
+            event.setAmount(event.getAmount() * 1+count * 0.02f);
+        }
+    }
+    @SubscribeEvent
+    public static void corrodeTick(LivingEvent.LivingTickEvent event) {
+        var entity=event.getEntity();
+        if(entity.tickCount%200==0){
+            int count=entity.getPersistentData().getInt("corrode_amount");
+            if(count>0){
+                entity.getPersistentData().putInt("corrode_amount",count-1);
+            }
+        }
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)

@@ -94,7 +94,11 @@
     "reisahalo":"#aaaaff",
     "natsuhalo":"#ffb9df",
     "al1shalo":"#75f9ff",
-    "marihalo":"#ffaa00"
+    "marihalo":"#ffaa00",
+    "electricbatonscore":"#7ca3fd",
+    "energypowerful":"#b47ffd",
+    "fastcharge":"#73fde2",
+    "houguoyu":"#fddafd"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

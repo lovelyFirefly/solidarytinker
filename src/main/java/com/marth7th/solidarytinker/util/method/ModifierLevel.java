@@ -160,5 +160,27 @@ public class ModifierLevel {
         }
         return modifierList;
     }
+    public static int curioModifierLevel(LivingEntity entity, ModifierId modifierId) {
+        if (entity != null) {
+            if (entity instanceof Player) {
+                List<ItemStack> list = new ArrayList<>();
+                LazyOptional<ICuriosItemHandler> handler = CuriosApi.getCuriosHelper().getCuriosHandler(entity);
+                if (handler.resolve().isPresent()) {
+                    for (ICurioStacksHandler curios : handler.resolve().get().getCurios().values()) {
+                        for (int i = 0; i < curios.getSlots(); ++i) {
+                            ItemStack stack = curios.getStacks().getStackInSlot(i);
+                            if (!stack.isEmpty() && stack.is(TinkerTags.Items.MODIFIABLE)) {
+                                list.add(stack);
+                            }
+                        }
+                    }
+                }
+                for (ItemStack curios : list) {
+                    return ModifierUtil.getModifierLevel(curios, modifierId);
+                }
+            }
+        }
+        return 0;
+    }
 
 }

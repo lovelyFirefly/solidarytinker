@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.shelf.energy;
 
+import com.marth7th.solidarytinker.register.solidarytinkerItem;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.register.solidarytinkerToolstats;
 import net.minecraft.resources.ResourceLocation;
@@ -33,8 +34,7 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
 
     public static int receiveEnergy(IToolStackView tool, int maxReceive, boolean simulate) {
         int energyStored = getEnergyStored(tool);
-        int level = tool.getModifierLevel(solidarytinkerModifierMekEtsh.energytransport.getId());
-        int tran = 2000 + level * 3000;
+        int tran = checkTransport(tool);
         int energyReceived = Math.min(getMaxEnergyStored(tool) - energyStored, Math.min(tran, maxReceive));
         int sss = Math.min(getMaxEnergyStored(tool) - energyStored, energyReceived);
         if (!simulate) {
@@ -42,6 +42,12 @@ public class FluxStorage implements IEnergyStorage, ToolCapabilityProvider.ITool
             persistentData.putInt(STORED_ENERGY, energyStored + sss);
         }
         return sss;
+    }
+    public static int checkTransport(IToolStackView tool){
+        int level= tool.getModifierLevel(solidarytinkerModifierMekEtsh.energytransport.getId());
+        if(tool.getItem().equals(solidarytinkerItem.ElectricBatons.get())){
+            return (100000 + level * 30000);
+        } else return 2000+level* 3000;
     }
 
     public static void removeEnergy(IToolStackView tool, int energyRemoved, boolean simulate, boolean drain) {

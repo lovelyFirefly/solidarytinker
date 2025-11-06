@@ -91,6 +91,11 @@
       "exert_times": 30,
       "attack_frequency": 4,
       "kill_threshold": 0.2
+    },
+    "solidarytinker:core_battery": {
+      "attack_range": 10,
+      "target_amount": 5,
+      "energy_capability": 200000
     }
   }
 }

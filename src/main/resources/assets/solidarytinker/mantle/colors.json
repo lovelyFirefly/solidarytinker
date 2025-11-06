@@ -98,7 +98,8 @@
     "electricbatonscore":"#7ca3fd",
     "energypowerful":"#b47ffd",
     "fastcharge":"#73fde2",
-    "houguoyu":"#fddafd"
+    "houguoyu":"#fddafd",
+    "deadlyrhythm": "#fddafd"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

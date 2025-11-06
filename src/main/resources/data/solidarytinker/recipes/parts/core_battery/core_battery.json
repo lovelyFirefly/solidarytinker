@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:table_casting_material",
   "cast": {
-    "item": "powah:battery_nitro"
+    "item": "powah:battery_spirited"
   },
   "cast_consumed": true,
-  "item_cost": 8,
+  "item_cost": 12,
   "result": "solidarytinker:core_battery"
 }

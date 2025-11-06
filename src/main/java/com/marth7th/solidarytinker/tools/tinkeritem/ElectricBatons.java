@@ -40,6 +40,7 @@ import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
@@ -119,13 +120,11 @@ public class ElectricBatons extends ModifiableItem {
 
         //成功攻击
         mob.getPersistentData().putInt("electric_batons_extra_hurt", 3);
-        int fastChargeLevel = ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.FAST_CHARGE_STATIC_MODIFIER.getId());
-        int baseCoolingDownTick = Math.max(8 - fastChargeLevel, 3);
-        if (solidarytinker.TI && ModifierLevel.curioModifierLevel(player, TinkerCuriosModifier.BHA_STATIC_MODIFIER.getId()) > 0) {
-            if (baseCoolingDownTick < 4) {
-                persistentData.putInt(COOLING, 1);
-            } else persistentData.putInt(COOLING, (int) (baseCoolingDownTick / 2f));
-        }else persistentData.putInt(COOLING, baseCoolingDownTick);
+
+        int cooldownTick= calculateCooldown(tool,player,random);
+        if(cooldownTick>0){
+            persistentData.putInt(COOLING,cooldownTick);
+        }
         if(player.isCreative()){
             player.containerMenu.broadcastChanges();
         }
@@ -157,6 +156,19 @@ public class ElectricBatons extends ModifiableItem {
             hasBeenAttackedMob.add(nextMob);
         }
         return InteractionResult.SUCCESS;
+    }
+    private int calculateCooldown(IToolStackView view, Player player,Random random){
+        int fastChargeLevel = view.getModifierLevel(solidarytinkerModifiers.FAST_CHARGE_STATIC_MODIFIER.getId());
+        int rhyLevel=view.getModifierLevel(solidarytinkerModifiers.DEADLY_RHYTHM_STATIC_MODIFIER.getId());
+        if(rhyLevel>0&&random.nextInt(10)<7)return 0;
+        int baseCoolingDownTick = Math.max(8 - fastChargeLevel, 3);
+        if (solidarytinker.TI && ModifierLevel.curioModifierLevel(player, TinkerCuriosModifier.BHA_STATIC_MODIFIER.getId()) > 0) {
+            if (baseCoolingDownTick < 4) {
+                return 1;
+            } else return (int) (baseCoolingDownTick / 2f);
+        }else
+            return baseCoolingDownTick;
+
     }
 
     private void drawParticleBeam(Mob mob1, Mob mob2, Random random, ServerLevel level) {

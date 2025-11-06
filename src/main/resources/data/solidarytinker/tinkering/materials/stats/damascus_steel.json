@@ -77,6 +77,11 @@
     "tinkers_ingenuity:laser_medium": {
       "laser_range": 35,
       "cooldown": 0.2
+    },
+    "solidarytinker:core_battery": {
+      "attack_range": 5,
+      "target_amount": 3,
+      "energy_capability": 50000
     }
   }
 }

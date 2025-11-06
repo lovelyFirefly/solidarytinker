@@ -232,7 +232,7 @@
   "modifier.solidarytinker.mercurypoisoning.description": "[对普通目标]造成5秒 * 词条等级 的 等同于词条等级的汞中毒效果.[对末影人]造成15秒 * 词条等级 的 词条等级×3的等级的的汞中毒效果,并且额外附带抑影效果.汞中毒状态会持续损失生命值并且减少80%回复血量,并且每次每级灼烧目标3点生命。如果目标为末影人，则每次灼烧还会附带其最大生命3%的伤害",
   "modifier.solidarytinker.mercurypoisoning.flavor": "来尝一口",
   "modifier.solidarytinker.natived": "原生",
-  "modifier.solidarytinker.natived.description": "增加每级2点幸运和26.6% X 等级的攻击速度,增加5倍的生命,你受到单次伤害不会超过最大生命26%,触发时候获得4秒免疫时间,并且取消周围生物敌意。获得额外时运效果",
+  "modifier.solidarytinker.natived.description": "增加每级2点幸运和26.6% X 等级的攻击速度,增加5 * 词条等级倍的生命,你受到单次伤害不会超过最大生命26%,触发时候获得4秒免疫时间,并且取消周围生物敌意。获得额外时运效果",
   "modifier.solidarytinker.natived.flavor": "初始形态",
   "modifier.solidarytinker.neverend": "永不休止",
   "modifier.solidarytinker.neverend.description": "当你自己生命值低于30%时获得1级红温效果,拥有此状态时候,每级红温效果攻击附带目标最大生命9%的无视魔抗伤害，此伤害无法被增幅",
@@ -355,6 +355,8 @@
   "modifier.solidarytinker.natsuhalo.description": "获得夏的光环样式",
   "modifier.solidarytinker.natsuhalo.flavor": "...",
   "subtitles.solidarytinker.electric_hit": "电流连锁",
+  "subtitles.solidarytinker.electric_not_full": "电棍:不行",
+  "subtitles.solidarytinker.electric_cooldown": "电棍:冷却中",
   "item.solidarytinker.core_battery": "核心电池",
   "item.solidarytinker.electric_batons": "电棍",
   "stat.solidarytinker.core_battery": "核心电池",
@@ -376,5 +378,8 @@
   "modifier.solidarytinker.fastcharge.description": "每级额外降低电棍蓄能冷却1秒,至多缩减至3秒,同时每级提升10000点基础充电速率",
   "modifier.solidarytinker.houguoyu": "器灵觉醒",
   "modifier.solidarytinker.houguoyu.flavor": "冲刺,冲冲",
-  "modifier.solidarytinker.houguoyu.description": "器灵已觉醒,候国玉为您提示电量,冷却"
+  "modifier.solidarytinker.houguoyu.description": "器灵已觉醒,候国玉为您提示电量,冷却",
+  "modifier.solidarytinker.deadlyrhythm": "致命节奏",
+  "modifier.solidarytinker.deadlyrhythm.flavor": "根本停不下来",
+  "modifier.solidarytinker.deadlyrhythm.description": "此电棍有70%概率攻击后无需冷却"
 }

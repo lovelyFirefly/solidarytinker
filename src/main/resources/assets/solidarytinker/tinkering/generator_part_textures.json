@@ -13,6 +13,10 @@
       "stat_type": "tconstruct:binding"
     },
     {
+      "path": "solidarytinker:item/tool/core_battery/core_battery",
+      "stat_type": "tconstruct:binding"
+    },
+    {
       "path": "solidarytinker:item/tool/trident/trident_head",
       "stat_type": "tconstruct:head"
     },
@@ -62,6 +66,26 @@
     },
     {
       "path": "solidarytinker:item/tool/soulge/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "solidarytinker:item/tool/electric_batons/head1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "solidarytinker:item/tool/electric_batons/head2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "solidarytinker:item/tool/electric_batons/head3",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "solidarytinker:item/tool/electric_batons/core",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "solidarytinker:item/tool/electric_batons/handle",
       "stat_type": "tconstruct:handle"
     }
   ],

@@ -93,7 +93,7 @@
     "solidarytinker:core_battery": {
       "attack_range": 10,
       "target_amount": 4,
-      "energy_capability": 300000
+      "energy_capability": 3000000
     }
   }
 }

@@ -72,6 +72,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<EnergyPowerFul> ENERGY_POWER_FUL_STATIC_MODIFIER = MODIFIERS.register("energypowerful", EnergyPowerFul::new);//能量充沛
     public static final StaticModifier<FastCharge> FAST_CHARGE_STATIC_MODIFIER = MODIFIERS.register("fastcharge", FastCharge::new);//快速蓄能
     public static final StaticModifier<HouGuoYu> HOU_GUO_YU_STATIC_MODIFIER = MODIFIERS.register("houguoyu", HouGuoYu::new);//器灵
+    public static final StaticModifier<DeadlyRhythm> DEADLY_RHYTHM_STATIC_MODIFIER = MODIFIERS.register("deadlyrhythm", DeadlyRhythm::new);//致命节奏
     public static final StaticModifier<NoLevelsModifier> reisaHaloStaticModifier = MODIFIERS.register("reisahalo", NoLevelsModifier::new);//光环
     public static final StaticModifier<NoLevelsModifier> azusaHaloStaticModifier = MODIFIERS.register("azusahalo", NoLevelsModifier::new);//光环
     public static final StaticModifier<NoLevelsModifier> natsuHaloStaticModifier = MODIFIERS.register("natsuhalo", NoLevelsModifier::new);//光环

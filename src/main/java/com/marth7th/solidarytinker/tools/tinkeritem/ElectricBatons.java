@@ -99,6 +99,7 @@ public class ElectricBatons extends ModifiableItem {
         float range = tool.getStats().get(solidarytinkerToolstats.DETECTION_RANGE);
         float amount = tool.getStats().get(solidarytinkerToolstats.TARGET_AMOUNT);
         int powerfulAttackLevel = ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.ENERGY_POWER_FUL_STATIC_MODIFIER.getId());
+        boolean elsy = ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.HVE_STATIC_MODIFIER.getId())>0;
         boolean houGuoYu = ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.HOU_GUO_YU_STATIC_MODIFIER.getId())>0;
 
         int coolingDownTick = persistentData.getInt(COOLING);
@@ -133,8 +134,11 @@ public class ElectricBatons extends ModifiableItem {
         //主目标
         ToolAttackUtil.attackEntity(tool, player, InteractionHand.MAIN_HAND, mob, () -> 1, false);
         int currentCost = Math.round(getMaxEnergyStorage(tool) * 0.3f);
+        if(elsy){
+            currentCost=currentCost * 2;
+        }
         if (powerfulAttackLevel > 0) {
-            runPowerfulAttack(mob, player, powerfulAttackLevel, 1,currentCost);
+            runPowerfulAttack(mob, player, powerfulAttackLevel, 1,currentCost,elsy);
             costEnergy(tool, currentCost);
         }
 
@@ -149,7 +153,7 @@ public class ElectricBatons extends ModifiableItem {
             if (nextMob instanceof Villager) continue;
             ToolAttackUtil.attackEntity(tool, player, InteractionHand.MAIN_HAND, nextMob, () -> 1, false);
             if (powerfulAttackLevel > 0) {
-                runPowerfulAttack(nextMob, player, powerfulAttackLevel, i + 2,currentCost);
+                runPowerfulAttack(nextMob, player, powerfulAttackLevel, i + 2,currentCost,elsy);
             }
             drawParticleBeam(currentTarget, nextMob, random, level);
             currentTarget = nextMob;
@@ -215,15 +219,16 @@ public class ElectricBatons extends ModifiableItem {
         FluxStorage.removeEnergy(view, cost, false, true);
     }
 
-    private void runPowerfulAttack( LivingEntity entity, LivingEntity attacker, int modifierLevel, int index,int cost) {
-
+    private void runPowerfulAttack( LivingEntity entity, LivingEntity attacker, int modifierLevel, int index,int cost,boolean hasElysia) {
         float scale = 1.2f * (1 - 0.06f * (index - 1));
+        if(hasElysia){
+            scale=scale*2;
+        }
         float extraDamage = cost * 0.01f * modifierLevel;
         float totalDamage = extraDamage * scale;
         DamageSource powerAttack = new EntityDamageSource("power_attack", attacker).bypassArmor();
         entity.invulnerableTime = 0;
         entity.hurt(powerAttack, totalDamage);
-
     }
 
     @Override

@@ -1,5 +1,8 @@
 package com.marth7th.solidarytinker.register;
 
+import com.marth7th.solidarytinker.Modifiers.Both.ElysiaMagic;
+import com.marth7th.solidarytinker.Modifiers.Both.StartEnd;
+import com.marth7th.solidarytinker.Modifiers.Both.Wtf;
 import com.marth7th.solidarytinker.Modifiers.Tool.*;
 import com.marth7th.solidarytinker.Modifiers.Both.Sophisticated;
 import com.marth7th.solidarytinker.Modifiers.armor.*;
@@ -78,5 +81,9 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<NoLevelsModifier> natsuHaloStaticModifier = MODIFIERS.register("natsuhalo", NoLevelsModifier::new);//光环
     public static final StaticModifier<NoLevelsModifier> al1sHaloStaticModifier = MODIFIERS.register("al1shalo", NoLevelsModifier::new);//光环
     public static final StaticModifier<NoLevelsModifier> mariHaloStaticModifier = MODIFIERS.register("marihalo", NoLevelsModifier::new);//光环
+    public static final StaticModifier<ElysiaMagic> ELYSIA_MAGIC_STATIC_MODIFIER = MODIFIERS.register("elysiamagic", ElysiaMagic::new);
+    public static final StaticModifier<Wtf> WTF_STATIC_MODIFIER = MODIFIERS.register("wtf", Wtf::new);
+    public static final StaticModifier<StartEnd> START_END_STATIC_MODIFIER = MODIFIERS.register("startend", StartEnd::new);
+    public static final StaticModifier<Hve> HVE_STATIC_MODIFIER = MODIFIERS.register("hve", Hve::new);
 
 }

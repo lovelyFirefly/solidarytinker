@@ -11,6 +11,9 @@ import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,6 +21,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -115,10 +119,10 @@ public class CommonLivingEvent {
         var data = entity.getPersistentData();
         if (should && attacker instanceof Player player) {
             entity.hurt(DamageSource.playerAttack(player), Float.MAX_VALUE);
-            data.remove("ready_to-die");
+            data.remove("ready_to_die");
         } else {
             entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
-            data.remove("ready_to-die");
+            data.remove("ready_to_die");
         }
     }
 
@@ -206,6 +210,17 @@ public class CommonLivingEvent {
                         event.setAmount(OriginallyDamage * Math.max(1 - 0.06F * Beneficial.size(), 0.4F));
                     }
                 }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void elysiaCurioTick(TickEvent.PlayerTickEvent event){
+        if(event.player.tickCount%1320!=0)return;
+        var player=event.player;
+        if(ModifierLevel.curioModifierLevel(player,TinkerCuriosModifier.PERIODIC_PULSATION_STATIC_MODIFIER.getId())>0){
+            if(player.getHealth()<player.getMaxHealth()){
+                player.heal(player.getMaxHealth() * 0.66f);
+                player.level.playSound(null,player.getOnPos(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.AMBIENT,1,1);
             }
         }
     }

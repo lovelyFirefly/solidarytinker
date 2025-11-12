@@ -5,11 +5,17 @@ import com.marth7th.solidarytinker.tools.Stats.CoreBatteryMaterialStats;
 import com.marth7th.solidarytinker.tools.Stats.SoulGeHeartMaterialStats;
 import com.marth7th.solidarytinker.tools.tinkeritem.*;
 import com.marth7th.solidarytinker.tools.toolDefinitions;
+import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.registration.object.EnumObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
@@ -19,6 +25,8 @@ import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.item.ArmorSlotType;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+
+import java.util.List;
 
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
@@ -56,6 +64,17 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> extremelycoldsteel_ingot = ITEMS.register("extremelycoldsteel_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block", () -> new BlockItem(solidarytinkerBlock.dwarf_block.get(), new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> cold_chroma_alloy_ingot = ITEMS.register("cold_chroma_alloy_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> elysia = ITEMS.register("elysia_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)){
+        @Override
+        public Component getName(ItemStack p_41458_) {
+            return Component.literal("爱莉希雅").withStyle(style -> style.withColor(0xffaaff));
+        }
+
+        @Override
+        public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+            pTooltipComponents.add(DynamicComponentUtil.scrollColorfulText.getColorfulText("素手挽清风",null,new int[]{0xffd0f8,0xffaaff,0xed8eff},20,20,false));
+        }
+    });
     public solidarytinkerItem() {
     }
 }

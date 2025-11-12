@@ -1,0 +1,50 @@
+{
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "  ABA  ",
+    " AACAA ",
+    "AADEDAA",
+    "BFGHIFB",
+    "AAEJEAA",
+    " AAKAA ",
+    "  ABA  "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:pink_dye"
+    },
+    "B": {
+      "item": "ae2:pink_lumen_paint_ball"
+    },
+    "C": {
+      "item": "etshtinker:activated_chroma_plate"
+    },
+    "D": {
+      "item": "tinkerscalibration:alumite_ingot"
+    },
+    "E": {
+      "item": "cherrytinker:enchantedgold"
+    },
+    "F": {
+      "item": "tinkersinnovation:enchantment_ingot"
+    },
+    "G": {
+      "item": "minecraft:iron_ingot"
+    },
+    "H": {
+      "item": "botania:cosmetic_tiny_potato_mask"
+    },
+    "I": {
+      "item": "botania:twig_wand"
+    },
+    "J": {
+      "item": "l2complements:space_shard"
+    },
+    "K": {
+      "item": "tconstruct:amethyst_bronze_ingot"
+    }
+  },
+  "result": {
+    "item": "solidarytinker:elysia_ingot"
+  }
+}

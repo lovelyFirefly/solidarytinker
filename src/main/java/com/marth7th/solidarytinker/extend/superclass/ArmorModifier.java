@@ -10,6 +10,8 @@ import com.marth7th.solidarytinker.extend.interfaces.AboutBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.FishingHook;
+import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.MinecraftForge;
@@ -40,6 +42,7 @@ public class ArmorModifier extends Modifier implements AboutArmor, DamageBlockMo
     }
 
     public void LivingDamageEvent(LivingDamageEvent event) {
+
     }
 
     public boolean havenolevel() {

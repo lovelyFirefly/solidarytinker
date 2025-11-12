@@ -5,7 +5,11 @@ import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
 import com.marth7th.solidarytinker.util.MathUtil;
 import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import com.marth7th.solidarytinker.util.compound.IceFantasy;
+import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -47,6 +51,7 @@ public class DeepOceanEcho extends BattleModifier {
         if (attacker instanceof Player player) {
             float a = (Math.max(player.getMaxHealth() * 0.2f, 1) * Math.max(player.getArmorValue() * 0.6f, 1) * Math.max(player.totalExperience * 0.001f, 1)) * 0.5f * level;
             if (target instanceof Player) {
+
                 arrow.setBaseDamage(0);
             } else arrow.setBaseDamage(Math.min((arrow.getBaseDamage() + (a * 0.5 * level)), MaxValue()));
         }

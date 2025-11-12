@@ -15,7 +15,8 @@
     "cold_chroma_alloy": "#63dddd",
     "leadamalgamation": "#95838c",
     "cheese_alloy": "#ffedd7",
-    "heavy_armor_steel": "c3c3c3"
+    "heavy_armor_steel": "#c3c3c3",
+    "elysia": "#eabeff"
   },
   "modifier.solidarytinker": {
     "_白矮星_": null,
@@ -99,7 +100,12 @@
     "energypowerful":"#b47ffd",
     "fastcharge":"#73fde2",
     "houguoyu":"#fddafd",
-    "deadlyrhythm": "#fddafd"
+    "deadlyrhythm": "#fddafd",
+    "periodicpulsation": "#eabeff",
+    "elysiamagic": "#eabeff",
+    "wtf": "#eabeff",
+    "startend": "#eabeff",
+    "hve": "#eabeff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

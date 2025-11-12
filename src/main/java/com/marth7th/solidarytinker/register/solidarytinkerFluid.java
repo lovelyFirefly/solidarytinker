@@ -39,6 +39,7 @@ public class solidarytinkerFluid {
     public static final FluidObject<ForgeFlowingFluid> molten_mercury = registerHotBurning("molten_mercury", 860,15,3,3);//水银
     public static final FluidObject<ForgeFlowingFluid> molten_sulfur = registerHotBurning("molten_sulfur", 860,15,3,3);//熔融硫磺
     public static final FluidObject<ForgeFlowingFluid> molten_leadamalgamation = registerHotBurning("molten_leadamalgamation", 860,15,3,3);//熔融铅汞齐
+    public static final FluidObject<ForgeFlowingFluid> molten_elysia = registerHotBurning("molten_elysia", 860,15,3,3);
 
 
     private static FluidType.Properties hot(String name, int Temp) {

@@ -1,9 +1,6 @@
 package com.marth7th.solidarytinker.shelf.Network;
 
-import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
-import com.marth7th.solidarytinker.shelf.Network.Packet.HaloUpdatePacket;
-import com.marth7th.solidarytinker.shelf.Network.Packet.MekaKeyBoardPacket;
-import com.marth7th.solidarytinker.shelf.Network.Packet.SoulGeAttackPacket;
+import com.marth7th.solidarytinker.shelf.Network.Packet.*;
 import com.marth7th.solidarytinker.solidarytinker;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

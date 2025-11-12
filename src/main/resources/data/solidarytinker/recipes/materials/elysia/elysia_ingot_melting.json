@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "solidarytinker:elysia_ingot"},
+  "result": {
+    "fluid": "solidarytinker:molten_elysia",
+    "amount": 90
+  },
+  "temperature": 2666,
+  "time": 20
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "name": "solidarytinker:molten_elysia",
+    "amount": 90
+  },
+  "temperature": 2666,
+  "output": "solidarytinker:elysia"
+}

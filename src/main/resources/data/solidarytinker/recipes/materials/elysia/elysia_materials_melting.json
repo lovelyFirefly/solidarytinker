@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "solidarytinker:elysia",
+  "temperature": 2666,
+  "result": {
+    "fluid": "solidarytinker:molten_elysia",
+    "amount": 90
+  }
+}

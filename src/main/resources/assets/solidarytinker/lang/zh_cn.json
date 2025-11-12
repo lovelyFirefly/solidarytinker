@@ -369,7 +369,7 @@
   "tool_stat.solidarytinker.core_battery.energy_capability.description": "来自部件的额外能量存储大小",
   "modifier.solidarytinker.electricbatonscore": "电棍之心",
   "modifier.solidarytinker.electricbatonscore.flavor": "Q打断别人的E啊,E他妈百分之七十减伤",
-  "modifier.solidarytinker.electricbatonscore.description": "电棍可以存储电能,被电棍右键连锁的敌人会受到全额的攻击伤害,并附带近战攻击效果。被电棍命中的首个敌人会被施加易伤效果,该敌人接下来受到的所有伤害将会增加70%,此易伤效果持续到目标死亡/三次受伤后\n电棍每隔6秒可以发动一次连锁攻击,有星野戒指则冷却缩减至原CD20%\n每次连锁攻击消耗50000FE,电棍基础传输电量速率为100KFE\n连锁攻击不会伤害可驯服生物/村民",
+  "modifier.solidarytinker.electricbatonscore.description": "电棍可以存储电能,被电棍右键连锁的敌人会受到全额的攻击伤害,并附带近战攻击效果。被电棍命中的首个敌人会被施加易伤效果,该敌人接下来受到的所有伤害将会增加70%,此易伤效果持续到目标死亡/三次受伤后\n电棍每隔6秒可以发动一次连锁攻击,有星野戒指则冷却缩减至原CD50%\n每次连锁攻击消耗50000FE,电棍基础传输电量速率为100KFE\n连锁攻击不会伤害可驯服生物/村民",
   "modifier.solidarytinker.energypowerful": "电能充沛",
   "modifier.solidarytinker.energypowerful.flavor": "燃烧电量",
   "modifier.solidarytinker.energypowerful.description": "提升单次电棍攻击所消耗的耗电量至总电量30%,并且将连锁攻击的伤害额外附带消耗电量的1% * 词条等级的穿甲伤害施加给敌人,首个目标收到伤害为120%,每下一个敌人衰减上一次伤害的6%",
@@ -381,5 +381,33 @@
   "modifier.solidarytinker.houguoyu.description": "器灵已觉醒,候国玉为您提示电量,冷却",
   "modifier.solidarytinker.deadlyrhythm": "致命节奏",
   "modifier.solidarytinker.deadlyrhythm.flavor": "根本停不下来",
-  "modifier.solidarytinker.deadlyrhythm.description": "此电棍有70%概率攻击后无需冷却"
+  "modifier.solidarytinker.deadlyrhythm.description": "此电棍有70%概率攻击后无需冷却",
+
+  "item.solidarytinker.elysia_ingot": "爱莉希雅锭",
+  "item.solidarytinker.molten_elysia_bucket": "熔融爱莉希雅桶",
+  "fluid.solidarytinker.molten_elysia": "熔融爱莉希雅",
+
+  "material.solidarytinker.elysia": "爱莉希雅",
+  "material.solidarytinker.elysia.flavor": "嗨~想我了吗♪",
+  "material.solidarytinker.elysia.encyclopedia": "材料描述",
+
+  "modifier.solidarytinker.elysiamagic": "是魔法哦~",
+  "modifier.solidarytinker.elysiamagic.flavor": "美少女的魔法，很神奇吧♪",
+  "modifier.solidarytinker.elysiamagic.description":"正常使用时不消耗耐久",
+
+  "modifier.solidarytinker.wtf": "真我·始源之律者",
+  "modifier.solidarytinker.wtf.flavor": "使用始源之律者的权能，获取力量",
+  "modifier.solidarytinker.wtf.description":"攻击/挖掘时获得1点能量，能量上限100，能量到达50点时暴击会消耗50点能量进入律者形态，律者形态持续期间攻击力提升50%*词条等级，限66次攻击,律者期间无法叠加能量",
+
+  "modifier.solidarytinker.startend": "以我为始，以我为终",
+  "modifier.solidarytinker.startend.flavor": "魔法的时间结束了♪",
+  "modifier.solidarytinker.startend.description":"退出律者形态时会恢复全部生命并且清除全部负面药水效果",
+
+  "modifier.solidarytinker.periodicpulsation": "心跳",
+  "modifier.solidarytinker.periodicpulsation.flavor": "心动了吗♪",
+  "modifier.solidarytinker.periodicpulsation.description":"每级增加66%最大生命,每隔66秒恢复66%最大生命",
+
+  "modifier.solidarytinker.hve": "高压电",
+  "modifier.solidarytinker.hve.flavor": "这种粉毛电人最疼了",
+  "modifier.solidarytinker.hve.description":"电能充沛的伤害倍率翻倍,耗电也翻倍"
 }

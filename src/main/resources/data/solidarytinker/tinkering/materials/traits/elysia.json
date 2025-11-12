@@ -1,0 +1,56 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "solidarytinker:elysiamagic",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:wtf",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:startend",
+        "level": 1
+      }
+    ],
+    "etshtinker:plasma_generator": [
+      {
+        "name": "solidarytinker:elysiamagic",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:wtf",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:startend",
+        "level": 1
+      }
+    ],
+    "tinkers_ingenuity:curio": [
+      {
+        "name": "solidarytinker:periodicpulsation",
+        "level": 1
+      }
+    ],
+    "solidarytinker:core_battery": [
+      {
+        "name": "solidarytinker:elysiamagic",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:wtf",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:startend",
+        "level": 1
+      },
+      {
+        "name": "solidarytinker:hve",
+        "level": 1
+      }
+    ]
+  }
+}

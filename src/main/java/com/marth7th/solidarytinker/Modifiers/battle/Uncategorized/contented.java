@@ -41,7 +41,7 @@ public class contented extends BattleModifier {
     public void LivingAttackEvent(LivingAttackEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (ModifierLevel.getMainhandModifierlevel(player, this.getId()) > 0) {
-                if (player.getMainHandItem().getItem() instanceof ModifiableItem modifiableItem) {
+                if (player.getMainHandItem().getItem() instanceof ModifiableItem) {
                     IToolStackView toolStackView = ToolStack.from(player.getMainHandItem());
                     int a = toolStackView.getPersistentData().getInt(Coin);
                     if (a > 0) {

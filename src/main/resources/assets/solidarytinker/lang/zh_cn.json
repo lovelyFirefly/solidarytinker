@@ -117,9 +117,7 @@
   "material.solidarytinker.takeru": "takeru",
   "material.solidarytinker.takeru.encyclopedia": "据说看着它的眼睛会有奇奇妙妙的反应哦",
   "material.solidarytinker.takeru.flavor": "takeru是一只可爱的小猫",
-  "modifier.solidarytinker.absolutejustice": "绝对正义",
-  "modifier.solidarytinker.absolutejustice.description": "你对无来源伤害几近于免疫(无来源伤害：自然伤害,虚空伤害等...)\n[当副手物品属于工匠创新的重盾时]完全免疫无来源并且取消受击判定",
-  "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
+
   "modifier.solidarytinker.ancientocean": "古海孑遗",
   "modifier.solidarytinker.ancientocean.description": "当你生命值高于80%时候攻击会无视目标护甲,魔抗,保护效果,和抗性提升。并且你的工具常规使用不再消耗耐久",
   "modifier.solidarytinker.ancientocean.flavor": "深洋之下,不可莫测",
@@ -129,9 +127,7 @@
   "modifier.solidarytinker.angelprotect": "天使之护",
   "modifier.solidarytinker.angelprotect.description": "如果伤害大于你最大生命会被强制修改为最大生命的30%,如果大于最大生命50%则强制修改为最大生命15%,这个数值不会低于4（前者）/2（后者）(全伤害).当伤害源无视护甲/无视魔抗的时候受到的实际伤害会为这个数值的2倍.当收到的伤害来源为你自己时/数值大于最大生命10倍时，这个防护效果不生效",
   "modifier.solidarytinker.angelprotect.flavor": "啊呜啊呜",
-  "modifier.solidarytinker.bha": "临战",
-  "modifier.solidarytinker.bha.description": "攻击次数八次后的第九次攻击转而造成400% * 词条等级的全伤害加成的伤害,获得额外抢夺效果",
-  "modifier.solidarytinker.bha.flavor": "冲锋陷阵,百战当先",
+
   "modifier.solidarytinker.brittle": "脆质化",
   "modifier.solidarytinker.brittle.description": "目标缓慢效果时长会极大影响你对其的伤害,在其剩余时间小于20秒时候你的伤害会降低80%,20-40秒时候会提升20%伤害。如果目标缓慢时长大于一分钟还会被额外造成其最大生命12%的伤害",
   "modifier.solidarytinker.brittle.flavor": "优雅冻人",
@@ -231,12 +227,43 @@
   "modifier.solidarytinker.mercurypoisoning": "汞中毒",
   "modifier.solidarytinker.mercurypoisoning.description": "[对普通目标]造成5秒 * 词条等级 的 等同于词条等级的汞中毒效果.[对末影人]造成15秒 * 词条等级 的 词条等级×3的等级的的汞中毒效果,并且额外附带抑影效果.汞中毒状态会持续损失生命值并且减少80%回复血量,并且每次每级灼烧目标3点生命。如果目标为末影人，则每次灼烧还会附带其最大生命3%的伤害",
   "modifier.solidarytinker.mercurypoisoning.flavor": "来尝一口",
+
+  "modifier.solidarytinker.neverend": "反击",
+  "modifier.solidarytinker.neverend.description": "[被动效果]被攻击的目标如果生命值超过其最大生命50%,则你对其造成伤害提升100%,副手使用盾牌时会自动使用主手武器进行攻击周围2格内的目标(至多不超过14个),每4tick就会反击一次,副手持有盾牌时",
+  "modifier.solidarytinker.neverend.flavor": "现在正是反击的时刻",
+
+  "modifier.solidarytinker.reliable": "统御",
+  "modifier.solidarytinker.reliable.description": "[被动效果]被攻击的目标周围4格内没有其他怪物时,你对这个目标造成的伤害提升100%,如果目标周围4格内有其他生物,其他生物会均摊主目标受到的200%工具伤害,至多溅射20个怪物,此伤害穿透护甲和魔法抗性",
+  "modifier.solidarytinker.reliable.flavor": "冲锋陷阵,百战当先",
+
+  "modifier.solidarytinker.sandstrom": "诸武精通",
+  "modifier.solidarytinker.sandstrom.description": "你工具造成的伤害不再对目标造成无敌帧和击退,每3次攻击的下一次攻击会额外使用你末影箱里面第一个匠魂工具进行一次额外攻击,如为电棍/弓则会触发使用效果",
+  "modifier.solidarytinker.sandstrom.flavor": "我会永远注视着你",
+
+  "modifier.solidarytinker.sandbless": "沙海赐福",
+  "modifier.solidarytinker.sandbless.description": "获得常驻的饱和效果,每隔4秒获得最大生命5%的伤害吸收,至多可叠加至200%最大生命的伤害吸收",
+  "modifier.solidarytinker.sandbless.flavor": "天命者",
+
+  "modifier.solidarytinker.absolutejustice": "绝对正义",
+  "modifier.solidarytinker.absolutejustice.description": "无源伤害对你造成的实际伤害降低99%,受伤跌入20%血/受到致命伤害会进入持续20秒的凝滞状态,期间不会损失血量也不会恢复血量,凝滞状态结束时会恢复满血量。凝滞cd为369秒",
+  "modifier.solidarytinker.absolutejustice.flavor": "公平决斗",
+
+  "modifier.solidarytinker.tacticsprotect": "战术防御",
+  "modifier.solidarytinker.tacticsprotect.description": "获得额外等同于该词条等级数量的升级槽,能力槽和防御槽。护甲不再损失耐久.获得可叠加的单级至多20次的次数盾,次数盾每隔10秒可恢复1格,次数盾可以完全免疫受到的单次伤害,次数盾在伤害吸收之后结算,小于1点的伤害不会触发次数盾",
+  "modifier.solidarytinker.tacticsprotect.flavor": "对勇者的嘉奖",
+
+  "modifier.solidarytinker.watery": "水着",
+  "modifier.solidarytinker.watery.description": "大幅缩减你所有物品栏的工具的原版冷却速度(4倍),对于一些工具有额外加成",
+  "modifier.solidarytinker.watery.flavor": "专注速度",
+
+  "modifier.solidarytinker.bha": "临战",
+  "modifier.solidarytinker.bha.description": "攻击次数八次后的第九次攻击转而造成400% * 词条等级的全伤害加成的伤害,获得额外抢夺效果",
+  "modifier.solidarytinker.bha.flavor": "冲锋陷阵,百战当先",
+
   "modifier.solidarytinker.natived": "原生",
   "modifier.solidarytinker.natived.description": "增加每级2点幸运和26.6% X 等级的攻击速度,增加5 * 词条等级倍的生命,你受到单次伤害不会超过最大生命26%,触发时候获得4秒免疫时间,并且取消周围生物敌意。获得额外时运效果",
   "modifier.solidarytinker.natived.flavor": "初始形态",
-  "modifier.solidarytinker.neverend": "永不休止",
-  "modifier.solidarytinker.neverend.description": "当你自己生命值低于30%时获得1级红温效果,拥有此状态时候,每级红温效果攻击附带目标最大生命9%的无视魔抗伤害，此伤害无法被增幅",
-  "modifier.solidarytinker.neverend.flavor": "bro从来不会红温的,对吧",
+
   "modifier.solidarytinker.poisonprotect": "剧毒免疫",
   "modifier.solidarytinker.poisonprotect.description": "以毒攻毒",
   "modifier.solidarytinker.poisonprotect.flavor": "每tick都会移除你身上的中毒效果",
@@ -246,18 +273,13 @@
   "modifier.solidarytinker.protonation": "质子化",
   "modifier.solidarytinker.protonation.description": "增加全额的2024护甲韧性和护甲值",
   "modifier.solidarytinker.protonation.flavor": "能承受的住它的重量的你注定不平凡",
-  "modifier.solidarytinker.reliable": "可靠",
-  "modifier.solidarytinker.reliable.description": "[常驻效果]对生命占比大于50%的目标额外造成2倍的伤害,在一场持续的战斗中,你会累计身上的箭矢（每一次受伤都会累计箭矢）,箭矢越多,你造成的额外伤害就越高（每根提供8%增伤效果）,达到10根箭矢再受伤会获得红温效果（）每次受伤会延长红温5秒。累计达到20根箭矢会造成一次145倍的伤害,清除所有箭矢并且获得10秒的抗性提升2效果\n[当主手或者副手持有工匠匠心的幻海化梦词条时]基础伤害提升至1.3倍,每次攻击均有10%概率立刻恢复全身装备冷却,玩家移速锁定至130%,并且获得可以叠加的伤害吸收,至多叠加至最大生命的4倍。持有物品属于ETSH的离子化射线炮时额外获得免伤效果\n[主手或副手未持有幻海化梦词条时]大幅提升免伤,夜间手持额外获得夜视效果和急迫",
-  "modifier.solidarytinker.reliable.flavor": "冲锋陷阵,百战当先",
   "modifier.solidarytinker.removeradition": "变辐侠",
   "modifier.solidarytinker.removeradition.description": "长按右键消耗500耐久清除当前区块环境辐射",
   "modifier.solidarytinker.removeradition.flavor": "是的,这武器现在会说话了",
   "modifier.solidarytinker.riptide": "激流",
   "modifier.solidarytinker.riptide.description": "强化版的激流,相较于原版使你非水环境可以正常使用三叉戟,雨天和水中则会进入激流模式,提升词条等级以提升激流冲刺距离",
   "modifier.solidarytinker.riptide.flavor": "激流勇进！",
-  "modifier.solidarytinker.sandstrom": "沙海的守望者",
-  "modifier.solidarytinker.sandstrom.description": "在沙漠中执行任务时候每秒有5%概率寻得金矿并保存在你的背包里,受击遁入隐身状态,攻击退出隐身状态\n在沙漠之外的地方获得沙海之祝福,每有一件盔甲不在冷却都会在上一件的基础上获得40%免伤",
-  "modifier.solidarytinker.sandstrom.flavor": "荒原...家乡",
+
   "modifier.solidarytinker.seabless": "海神赐福",
   "modifier.solidarytinker.seabless.description": "在水中或者下雨耐久消耗降低50%",
   "modifier.solidarytinker.seabless.flavor": "不是海王",
@@ -273,12 +295,8 @@
   "modifier.solidarytinker.swift": "迅捷",
   "modifier.solidarytinker.swift.description": "你知道我要说什么",
   "modifier.solidarytinker.swift.flavor": "增加70%的攻击速度每级，但是面板攻击会被降低到30%，并且受伤了会随机传送",
-  "modifier.solidarytinker.tacticsattack": "战术性进攻",
-  "modifier.solidarytinker.tacticsattack.description": "获得额外等同于该词条等级数量的升级槽和能力槽,你的工具耐久损降低70%\n无视目标的无敌帧",
-  "modifier.solidarytinker.tacticsattack.flavor": "对勇者的嘉奖",
-  "modifier.solidarytinker.tacticsprotect": "战术防御",
-  "modifier.solidarytinker.tacticsprotect.description": "获得额外等同于该词条等级数量的升级槽,能力槽和防御槽。护甲耐久损耗降低70%\n生命值首次跌入20%以下的时候获得最大生命30%的伤害吸收,冷却20秒,并且获得持续10秒的等同于盔甲词条等级的抗性提升（不会大于4级）和红温效果(至高词条等级对应的等级为上限,每触发一次提升一级)。并且对周围8*词条等级范围内的怪物造成等同于护盾值的伤害。",
-  "modifier.solidarytinker.tacticsprotect.flavor": "对勇者的嘉奖",
+
+
   "modifier.solidarytinker.test": "清除",
   "modifier.solidarytinker.test.description": "用于remove一些出了bug的实体等",
   "modifier.solidarytinker.test.flavor": "测试用词条",
@@ -293,9 +311,7 @@
   "modifier.solidarytinker.voraciousfox": "贪吃狐",
   "modifier.solidarytinker.voraciousfox.description": "攻击额外附加受运气影响的魔法伤害,提升等级会提升比例（每级提升10%自身生命上限）",
   "modifier.solidarytinker.voraciousfox.flavor": "啊呜啊呜",
-  "modifier.solidarytinker.watery": "水着",
-  "modifier.solidarytinker.watery.description": "大幅缩减你所有物品栏的工具的冷却速度(4倍）",
-  "modifier.solidarytinker.watery.flavor": "专注速度",
+
   "pattern.solidarytinker.mining_core": "挖掘核心",
   "pattern.solidarytinker.trident_head": "三叉戟头",
   "recipe.solidarytinker.modifier.crcs": "需要任意等级激流强化作为前置哦宝贝",
@@ -333,6 +349,7 @@
   "modifier.solidarytinker.crawl.flavor": "你逃不出去的",
   "key.category.solidarytinker": "solidarytinker",
   "key.solidarytinker.digging_speed": "开拓者工具调速按键",
+  "key.solidarytinker.soulge_config": "魂戈配置按键",
   "modifier.solidarytinker.yidefuren": "以德服人",
   "modifier.solidarytinker.yidefuren.flavor": "0.1mm超薄护盾",
   "modifier.solidarytinker.yidefuren.description": "右键释放，立刻获得高达1点的伤害吸收，并且获得6秒 * 词条等级的'仁义'期间不会被施加负面药水效果，并且伤害增加50%,冷却时间60秒,在黄心存在的时候会根据已造成的伤害增加黄心，最多150",
@@ -357,7 +374,9 @@
   "subtitles.solidarytinker.electric_hit": "电流连锁",
   "subtitles.solidarytinker.electric_not_full": "电棍:不行",
   "subtitles.solidarytinker.electric_cooldown": "电棍:冷却中",
+  "subtitles.solidarytinker.beam_up": "升档",
   "item.solidarytinker.core_battery": "核心电池",
+  "item.solidarytinker.first_add_item": "车载急救包",
   "item.solidarytinker.electric_batons": "电棍",
   "stat.solidarytinker.core_battery": "核心电池",
   "item.solidarytinker.electric_batons.description": "具有连锁伤害的近战武器，在面对数量较多的敌人时效果显著",
@@ -372,7 +391,7 @@
   "modifier.solidarytinker.electricbatonscore.description": "电棍可以存储电能,被电棍右键连锁的敌人会受到全额的攻击伤害,并附带近战攻击效果。被电棍命中的首个敌人会被施加易伤效果,该敌人接下来受到的所有伤害将会增加70%,此易伤效果持续到目标死亡/三次受伤后\n电棍每隔6秒可以发动一次连锁攻击,有星野戒指则冷却缩减至原CD50%\n每次连锁攻击消耗50000FE,电棍基础传输电量速率为100KFE\n连锁攻击不会伤害可驯服生物/村民",
   "modifier.solidarytinker.energypowerful": "电能充沛",
   "modifier.solidarytinker.energypowerful.flavor": "燃烧电量",
-  "modifier.solidarytinker.energypowerful.description": "提升单次电棍攻击所消耗的耗电量至总电量30%,并且将连锁攻击的伤害额外附带消耗电量的1% * 词条等级的穿甲伤害施加给敌人,首个目标收到伤害为120%,每下一个敌人衰减上一次伤害的6%",
+  "modifier.solidarytinker.energypowerful.description": "提升单次电棍攻击所消耗的耗电量至总电量30%,并且将连锁攻击的伤害额外附带总电量的1% * 词条等级的穿甲伤害施加给敌人,首个目标收到伤害为120%,每下一个敌人衰减上一次伤害的6%",
   "modifier.solidarytinker.fastcharge": "快速蓄能",
   "modifier.solidarytinker.fastcharge.flavor": "闪充！",
   "modifier.solidarytinker.fastcharge.description": "每级额外降低电棍蓄能冷却1秒,至多缩减至3秒,同时每级提升10000点基础充电速率",
@@ -382,6 +401,17 @@
   "modifier.solidarytinker.deadlyrhythm": "致命节奏",
   "modifier.solidarytinker.deadlyrhythm.flavor": "根本停不下来",
   "modifier.solidarytinker.deadlyrhythm.description": "此电棍有70%概率攻击后无需冷却",
+  "item.solidarytinker.blast_burner": "燃气喷灯",
+
+
+  "tooltip.firstadd.fullhealth": "血量已满,不需要治疗",
+  "tooltip.mekatool.mediummode": "切换到中速模式",
+  "tooltip.mekatool.highmode": "切换到高速模式",
+  "tooltip.mekatool.extrememode": "切换到极速模式",
+  "tooltip.mekatool.extrememode.desc1":"此模式可能产生幽灵方块",
+  "tooltip.mekatool.lowmode": "切换到低速模式",
+  "tooltip.soulge.configscreen.close": "关闭",
+
 
   "item.solidarytinker.elysia_ingot": "爱莉希雅锭",
   "item.solidarytinker.molten_elysia_bucket": "熔融爱莉希雅桶",
@@ -409,5 +439,23 @@
 
   "modifier.solidarytinker.hve": "高压电",
   "modifier.solidarytinker.hve.flavor": "这种粉毛电人最疼了",
-  "modifier.solidarytinker.hve.description":"电能充沛的伤害倍率翻倍,耗电也翻倍"
+  "modifier.solidarytinker.hve.description":"电能充沛的伤害倍率翻倍,耗电也翻倍",
+
+  "modifier.solidarytinker.crazydog": "疯狂狗子",
+  "modifier.solidarytinker.crazydog.flavor": "魂戈这东西狗来了都会用",
+  "modifier.solidarytinker.crazydog.description":"你的狗子会在你对敌人标记后一起使用魂戈攻击敌人",
+
+  "modifier.solidarytinker.anymoremode": "棱镜变换",
+  "modifier.solidarytinker.anymoremode.flavor": "人形地狱塔",
+  "modifier.solidarytinker.anymoremode.description":"打开按键配置可在界面调整单头多头模式\n[单头模式] 只能对一个目标造成攻击，并且隔2秒后会升温，工具伤害为1.05倍，6秒后为二档温度，工具伤害倍率提升至1.5倍，失去目标0.5秒后，你将降低至最低温度\n同时你的魂戈不再能标记敌人\n[多头模式] 魂戈可以标记目标，攻击范围内至多标记11名敌人，按右键会自动索敌",
+
+  "modifier.solidarytinker.extraburn": "加力燃烧",
+  "modifier.solidarytinker.extraburn.flavor": "烧，给我狠狠的烧",
+  "modifier.solidarytinker.extraburn.description":"[仅单头] 增加40000mb容量,你的工具现在可以填充燃料,当有燃料时,基础变档倍率提升至1.5,4倍,你的工具总伤害还会额外×燃料倍率,不同燃料倍率不同",
+
+  "modifier.solidarytinker.overloadburn": "超载燃烧",
+  "modifier.solidarytinker.overloadburn.flavor": "外骨骼启动",
+  "modifier.solidarytinker.overloadburn.description":"开放额外的燃烧倍率,额外开放配置的滚动条,可至多额外提升25倍燃烧效率,燃烧效率的开平方会转化为独立伤害乘区再次提高你的魂戈单头模式伤害",
+
+
 }

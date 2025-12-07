@@ -27,7 +27,7 @@
     "_星野_": null,
     "neverend": "#ffaa7f",
     "reliable": "#ffacf0",
-    "tacticsattack": "#50b9ff",
+    "sandbless": "#50b9ff",
     "sandstrom": "#ffaa7f",
     "absolutejustice": "#ffacf0",
     "tacticsprotect": "#50b9ff",
@@ -105,7 +105,10 @@
     "elysiamagic": "#eabeff",
     "wtf": "#eabeff",
     "startend": "#eabeff",
-    "hve": "#eabeff"
+    "hve": "#eabeff",
+    "anymoremode": "#4f5fba",
+    "extraburn": "#be0000",
+    "overloadburn": "#97f2ff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

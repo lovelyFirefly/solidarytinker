@@ -137,7 +137,7 @@ public class ElectricBatons extends ModifiableItem {
         if(elsy){
             currentCost=currentCost * 2;
         }
-        if (powerfulAttackLevel > 0) {
+        if (powerfulAttackLevel > 0&&getEnergyStorage(tool)>=getMaxEnergyStorage(tool) * 0.3f) {
             runPowerfulAttack(mob, player, powerfulAttackLevel, 1,currentCost,elsy);
             costEnergy(tool, currentCost);
         }

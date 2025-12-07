@@ -28,5 +28,15 @@
         "stream": "true"
       }
     ]
+  },
+  "beam_up": {
+    "category": "voice",
+    "subtitle": "subtitles.solidarytinker.beam_up",
+    "sounds": [
+      {
+        "name": "solidarytinker:beam_up",
+        "stream": "true"
+      }
+    ]
   }
 }

@@ -1,0 +1,37 @@
+{
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "    A B  ",
+    "CDDDDB   ",
+    "  BBDBB  ",
+    "  BEEEB  ",
+    "  BFEFB  ",
+    "  BEEEB  ",
+    "  BFEFB  ",
+    "  BEEEB  ",
+    "  BBBBB  "
+  ],
+  "key": {
+    "A": {
+      "item": "createutilities:graviton_tube"
+    },
+    "B": {
+      "item": "create:sturdy_sheet"
+    },
+    "C": {
+      "item": "minecraft:dispenser"
+    },
+    "D": {
+      "item": "pipez:gas_pipe"
+    },
+    "E": {
+      "item": "biomancy:volatile_fluid"
+    },
+    "F": {
+      "item": "biomancy:unstable_compound"
+    }
+  },
+  "result": {
+    "item": "solidarytinker:blast_burner"
+  }
+}

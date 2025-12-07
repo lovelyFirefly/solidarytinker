@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "item": "cherrytinker:cherrygem"
+    },
+    "B": {
+      "item": "biomancy:injector"
+    },
+    "C": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "solidarytinker:first_add_item",
+    "count": 1
+  }
+}

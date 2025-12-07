@@ -1,12 +1,14 @@
 package com.marth7th.solidarytinker.event.client;
 
 import com.marth7th.solidarytinker.client.KeyBinding;
+import com.marth7th.solidarytinker.client.Screen.SoulgeSettingScreen;
 import com.marth7th.solidarytinker.register.solidarytinkerModifierMekEtsh;
 import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
 import com.marth7th.solidarytinker.shelf.Network.Packet.MekaKeyBoardPacket;
 import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import com.marth7th.solidarytinker.tools.tinkeritem.MekaTool;
+import com.marth7th.solidarytinker.tools.tinkeritem.SoulGe;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -16,17 +18,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
 
 
-@Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT,bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ClientEventHandler {
     @SubscribeEvent
     static void clientSetupEvent(FMLClientSetupEvent event) {
@@ -36,29 +40,30 @@ public class ClientEventHandler {
     public static void onKeyPressed(InputEvent.Key event) {
         Player player = Minecraft.getInstance().player;
         if (player != null) {
-            if(player.level.isClientSide()){
+            if (player.level.isClientSide()) {
                 if (player.getMainHandItem().getItem() instanceof MekaTool mekaTool) {
                     ItemStack stack = player.getMainHandItem();
-                    if (KeyBinding.DIGGING_SPEED_KEY.consumeClick()){
+                    if (KeyBinding.DIGGING_SPEED_KEY.consumeClick()) {
                         if (mekaTool.getToolLevel(stack) == 0) {
                             STChannel.SendToServer(new MekaKeyBoardPacket(0));
-                            player.sendSystemMessage(Component.literal("切换到中速模式"));
+                            player.sendSystemMessage(Component.translatable("tooltip.mekatool.mediummode"));
                         } else if (mekaTool.getToolLevel(stack) == 1) {
                             STChannel.SendToServer(new MekaKeyBoardPacket(1));
-                            player.sendSystemMessage(Component.literal("切换到高速模式"));
+                            player.sendSystemMessage(Component.translatable("tooltip.mekatool.highmode"));
                         } else if (mekaTool.getToolLevel(stack) == 2) {
                             STChannel.SendToServer(new MekaKeyBoardPacket(2));
-                            player.sendSystemMessage(Component.literal("切换到极速模式"));
-                            player.sendSystemMessage(Component.literal("此模式可能产生幽灵方块"));
+                            player.sendSystemMessage(Component.translatable("tooltip.mekatool.extrememode"));
+                            player.sendSystemMessage(Component.translatable("tooltip.mekatool.extrememode.desc1"));
                         } else if (mekaTool.getToolLevel(stack) == 3) {
                             STChannel.SendToServer(new MekaKeyBoardPacket(3));
-                            player.sendSystemMessage(Component.literal("切换到低速模式"));
+                            player.sendSystemMessage(Component.translatable("tooltip.mekatool.lowmode"));
                         }
                     }
                 }
             }
         }
     }
+
     @SubscribeEvent
     public static void onPlayerJoinIn(EntityJoinLevelEvent event) {
         if (!event.getLevel().isClientSide) {
@@ -72,6 +77,22 @@ public class ClientEventHandler {
                     float TotalEnergy = FluxStorage.getMaxEnergyStored(helmet) + FluxStorage.getMaxEnergyStored(chest) + FluxStorage.getMaxEnergyStored(legs) + FluxStorage.getMaxEnergyStored(feet);
                     int EnergyLevel = Math.round(nowEnergy / TotalEnergy * 18F);
                     STChannel.SendToPlayer(new EnergyChangePacket(EnergyLevel), player);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onSoulgeConfig(InputEvent.Key event) {
+        Player player = Minecraft.getInstance().player;
+        if (player != null) {
+            if (player.level.isClientSide()) {
+                if (KeyBinding.SOULGE_CONFIG.consumeClick()) {
+                    var stack = player.getMainHandItem();
+                    if (stack.getItem() instanceof SoulGe) {
+                        var view = ToolStack.from(stack);
+                        Minecraft.getInstance().setScreen(new SoulgeSettingScreen(view));
+                    }
                 }
             }
         }

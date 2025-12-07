@@ -3,6 +3,7 @@ package com.marth7th.solidarytinker.register;
 import com.marth7th.solidarytinker.Modifiers.Both.ElysiaMagic;
 import com.marth7th.solidarytinker.Modifiers.Both.StartEnd;
 import com.marth7th.solidarytinker.Modifiers.Both.Wtf;
+import com.marth7th.solidarytinker.Modifiers.CrazyDog;
 import com.marth7th.solidarytinker.Modifiers.Tool.*;
 import com.marth7th.solidarytinker.Modifiers.Both.Sophisticated;
 import com.marth7th.solidarytinker.Modifiers.armor.*;
@@ -30,7 +31,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<Collapse> COLLAPSE_STATIC_MODIFIER = MODIFIERS.register("collapse", Collapse::new);   //坍缩
     public static final StaticModifier<NeverEnd> NEVEREND_STATIC_MODIFIER = MODIFIERS.register("neverend", NeverEnd::new);   //永不休止
     public static final StaticModifier<Reliable> RELIABLE_STATIC_MODIFIER = MODIFIERS.register("reliable", Reliable::new);   //可靠
-    public static final StaticModifier<TacticsAttack> TACTICSATTACK_STATIC_MODIFIER = MODIFIERS.register("tacticsattack", TacticsAttack::new);//战术进攻
+    public static final StaticModifier<SandBless> SAND_BLESS_STATIC_MODIFIER = MODIFIERS.register("sandbless", SandBless::new);//沙海祝福
     public static final StaticModifier<SandStrom> SANDSTROM_STATIC_MODIFIER = MODIFIERS.register("sandstrom", SandStrom::new);   //沙海守望
     public static final StaticModifier<AbsoluteJustice> ABSOLUTEJUSTICE_STATIC_MODIFIER = MODIFIERS.register("absolutejustice", AbsoluteJustice::new);   //绝对正义
     public static final StaticModifier<TacticsProtect> TACTICSPROTECT_STATIC_MODIFIER = MODIFIERS.register("tacticsprotect", TacticsProtect::new);   //战术防御
@@ -85,5 +86,9 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<Wtf> WTF_STATIC_MODIFIER = MODIFIERS.register("wtf", Wtf::new);
     public static final StaticModifier<StartEnd> START_END_STATIC_MODIFIER = MODIFIERS.register("startend", StartEnd::new);
     public static final StaticModifier<Hve> HVE_STATIC_MODIFIER = MODIFIERS.register("hve", Hve::new);
+    public static final StaticModifier<CrazyDog> CRAZY_DOG_STATIC_MODIFIER = MODIFIERS.register("crazydog", CrazyDog::new);
+    public static final StaticModifier<AnymoreMode> ANYMORE_MODE_STATIC_MODIFIER = MODIFIERS.register("anymoremode", AnymoreMode::new);
+    public static final StaticModifier<OverloadBurn> OVERLOAD_BURN_STATIC_MODIFIER = MODIFIERS.register("overloadburn", OverloadBurn::new);
+    public static final StaticModifier<ExtraBurn> EXTRA_BURN_STATIC_MODIFIER = MODIFIERS.register("extraburn", ExtraBurn::new);
 
 }

@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "item":"solidarytinker:extremelycoldsteel_ingot",
+      "amount_needed": 10
+    },
+    {
+      "item": "solidarytinker:blast_burner"
+    },
+    {
+      "item": "etshtinker:blizz_enderium",
+      "amount_needed": 10
+    },
+    {
+      "item": "kubejs:pyrocrystal",
+      "amount_needed": 64
+    },
+    {
+      "item": "kubejs:pyrocrystal",
+      "amount_needed": 64
+    }
+  ],
+  "level": 1,
+  "result": "solidarytinker:overloadburn",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "item": "solidarytinker:soulge"
+  }
+}

@@ -1,9 +1,16 @@
 package com.marth7th.solidarytinker.event.common;
 
+import com.marth7th.solidarytinker.Modifiers.armor.AbsoluteJustice;
+import com.marth7th.solidarytinker.Modifiers.armor.TacticsProtect;
 import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
+import com.marth7th.solidarytinker.extend.interfaces.LocateSoulgeKiller;
 import com.marth7th.solidarytinker.register.TinkerCuriosModifier;
 import com.marth7th.solidarytinker.register.solidarytinkerEffects;
+import com.marth7th.solidarytinker.register.solidarytinkerItem;
 import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
+import com.marth7th.solidarytinker.shelf.Network.Packet.NumberBlockChangePacket;
+import com.marth7th.solidarytinker.shelf.Network.Packet.StagnationUpdatePacket;
+import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.shelf.damagesource.STDamageSource;
 import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
@@ -11,15 +18,19 @@ import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.*;
@@ -27,7 +38,6 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
-import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import java.util.ArrayList;
@@ -96,15 +106,37 @@ public class CommonLivingEvent {
     }
 
     @SubscribeEvent
+    public static void oo(TickEvent.ServerTickEvent event) {
+        var level = event.getServer().getLevel(ServerLevel.OVERWORLD);
+        if (level != null) {
+            level.getAllEntities().forEach(
+                    entity -> {
+                        if (entity instanceof ItemEntity itemEntity) {
+                            if (itemEntity.getItem().is(solidarytinkerItem.dwarf_ingot.get())) {
+                                if (itemEntity.getBlockStateOn().is(Blocks.WATER)) {
+                                    level.explode(null, entity.getX(), entity.getY(), entity.getZ(), 4, Explosion.BlockInteraction.NONE);
+                                }
+                            }
+                        }
+                    }
+            );
+        }
+    }
+
+    @SubscribeEvent
     public static void soulGe(LivingEvent.LivingTickEvent event) {
         var livingEntity = event.getEntity();
         if (livingEntity instanceof Player) {
             livingEntity.getPersistentData().remove("ready_to_die");
             return;
         }
+        LivingEntity attacker = null;
         var entityData = livingEntity.getPersistentData();
         var dieTick = entityData.getInt("ready_to_die");
-        var attacker = livingEntity.getLastHurtByMob();
+        if (livingEntity instanceof LocateSoulgeKiller locateSoulgeKiller) {
+            attacker = locateSoulgeKiller.solidarytinker$getLastSoulgeHurtPlayer();
+        }
+
         if (entityData.contains("ready_to_die")) {
             entityData.putInt("ready_to_die", dieTick - 1);
             switch (dieTick) {
@@ -120,7 +152,7 @@ public class CommonLivingEvent {
         if (should && attacker instanceof Player player) {
             entity.hurt(DamageSource.playerAttack(player), Float.MAX_VALUE);
             data.remove("ready_to_die");
-        } else {
+        } else if (should) {
             entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
             data.remove("ready_to_die");
         }
@@ -128,36 +160,39 @@ public class CommonLivingEvent {
 
     @SubscribeEvent
     public static void electricBatonExtraDamage(LivingDamageEvent event) {
-        var entity=event.getEntity();
-        int count=entity.getPersistentData().getInt("electric_batons_extra_hurt");
-        if(count>0){
-            entity.getPersistentData().putInt("electric_batons_extra_hurt",count-1);
+        var entity = event.getEntity();
+        int count = entity.getPersistentData().getInt("electric_batons_extra_hurt");
+        if (count > 0) {
+            entity.getPersistentData().putInt("electric_batons_extra_hurt", count - 1);
             event.setAmount(event.getAmount() * 1.7f);
         }
     }
+
     @SubscribeEvent
     public static void corrodeExtraAttack(LivingAttackEvent event) {
-        var entity=event.getEntity();
-        int count=entity.getPersistentData().getInt("corrode_amount");
-        if(count>=50){
+        var entity = event.getEntity();
+        int count = entity.getPersistentData().getInt("corrode_amount");
+        if (count >= 50) {
             event.getSource().bypassArmor();
         }
     }
+
     @SubscribeEvent
     public static void corrodeExtraHurt(LivingDamageEvent event) {
-        var entity=event.getEntity();
-        int count=entity.getPersistentData().getInt("corrode_amount");
-        if(count>0){
-            event.setAmount(event.getAmount() * 1+count * 0.02f);
+        var entity = event.getEntity();
+        int count = entity.getPersistentData().getInt("corrode_amount");
+        if (count > 0) {
+            event.setAmount(event.getAmount() * 1 + count * 0.02f);
         }
     }
+
     @SubscribeEvent
     public static void corrodeTick(LivingEvent.LivingTickEvent event) {
-        var entity=event.getEntity();
-        if(entity.tickCount%200==0){
-            int count=entity.getPersistentData().getInt("corrode_amount");
-            if(count>0){
-                entity.getPersistentData().putInt("corrode_amount",count-1);
+        var entity = event.getEntity();
+        if (entity.tickCount % 200 == 0) {
+            int count = entity.getPersistentData().getInt("corrode_amount");
+            if (count > 0) {
+                entity.getPersistentData().putInt("corrode_amount", count - 1);
             }
         }
     }
@@ -175,18 +210,37 @@ public class CommonLivingEvent {
                 }
                 for (ServerPlayer players : haveDarkStar) {
                     for (ItemStack stack : players.getInventory().items) {
-                        if (stack.getItem() instanceof ModifiableItem) {
-                            var view = ToolStack.from(stack).getPersistentData();
-                            if (ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.DARKSTAR_STATIC_MODIFIER.getId()) > 0) {
-                                float count = view.getFloat(DEATH);
-                                float max = SolidarytinkerConfig.DwarfMaxDamage.get().floatValue();
-                                if (count < max) {
-                                    view.putFloat(DEATH, player.getMaxHealth() * 0.33f / haveDarkStar.size() + 1 + view.getFloat(DEATH));
-                                }
+                        var view = ToolStack.from(stack).getPersistentData();
+                        if (ModifierUtil.getModifierLevel(stack, solidarytinkerModifiers.DARKSTAR_STATIC_MODIFIER.getId()) > 0) {
+                            float count = view.getFloat(DEATH);
+                            float max = SolidarytinkerConfig.DwarfMaxDamage.get().floatValue();
+                            if (count < max) {
+                                view.putFloat(DEATH, player.getMaxHealth() * 0.33f / haveDarkStar.size() + 1 + view.getFloat(DEATH));
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void hoshinoPreventDeath(LivingDeathEvent event) {
+        if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) return;
+        if (ModifierLevel.getTotalArmorModifierlevel(serverPlayer, solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
+            int stagnationTime = AbsoluteJustice.getHoshinoStagnationTime(serverPlayer);
+            if (stagnationTime > 0) return;
+            for (ItemStack armor : serverPlayer.getInventory().armor) {
+                var view = ToolStack.from(armor);
+                int stagnationCD = AbsoluteJustice.getHoshinoStagnationWaitTime(view);
+                if (view.getModifierLevel(solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) == 0)
+                    continue;
+                if (stagnationCD > 0) continue;
+                event.setCanceled(true);
+                serverPlayer.setHealth(1);
+                AbsoluteJustice.setHoshinoStagnationWaitTime(view, 369);
+                AbsoluteJustice.setHoshinoStagnationTime(serverPlayer, 20);
+                break;
             }
         }
     }
@@ -213,14 +267,99 @@ public class CommonLivingEvent {
             }
         }
     }
+
     @SubscribeEvent
-    public static void elysiaCurioTick(TickEvent.PlayerTickEvent event){
-        if(event.player.tickCount%1320!=0)return;
-        var player=event.player;
-        if(ModifierLevel.curioModifierLevel(player,TinkerCuriosModifier.PERIODIC_PULSATION_STATIC_MODIFIER.getId())>0){
-            if(player.getHealth()<player.getMaxHealth()){
+    public static void elysiaCurioTick(TickEvent.PlayerTickEvent event) {
+        if (event.player.tickCount % 1320 != 0) return;
+        if (!solidarytinker.TI) return;
+        var player = event.player;
+        if (ModifierLevel.curioModifierLevel(player, TinkerCuriosModifier.PERIODIC_PULSATION_STATIC_MODIFIER.getId()) > 0) {
+            if (player.getHealth() < player.getMaxHealth()) {
                 player.heal(player.getMaxHealth() * 0.66f);
-                player.level.playSound(null,player.getOnPos(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.AMBIENT,1,1);
+                player.level.playSound(null, player.getOnPos(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.AMBIENT, 1, 1);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void runSpecialBlock(LivingDamageEvent event) {
+        if (!(event.getEntity() instanceof Player player)) return;
+        if (ModifierLevel.getTotalArmorModifierlevel(player, solidarytinkerModifiers.TACTICSPROTECT_STATIC_MODIFIER.getId()) > 0) {
+            int blockNumber = TacticsProtect.getTotalBlockNumber(player);
+            if (blockNumber > 0 && event.getAmount() >= 1) {
+                event.setCanceled(true);
+                var armorList = player.getInventory().armor;
+                for (ItemStack armor : armorList) {
+                    var view = ToolStack.from(armor);
+                    int currentAmount = TacticsProtect.getBlockNumber(view);
+                    if (currentAmount > 0) {
+                        TacticsProtect.setBlockNumber(view, currentAmount - 1);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void runPlayerShieldRecover(TickEvent.PlayerTickEvent event) {
+        var player = event.player;
+        if (event.side.isServer() && event.phase == TickEvent.Phase.END) {
+            if (player.tickCount % 40 == 0) {
+                var modifierID = solidarytinkerModifiers.TACTICSPROTECT_STATIC_MODIFIER.getId();
+                if (ModifierLevel.getTotalArmorModifierlevel(player, modifierID) > 0) {
+                    for (ItemStack armor : player.getInventory().armor) {
+                        var view = ToolStack.from(armor);
+                        int currentModifierLevel = view.getModifierLevel(modifierID);
+                        if (currentModifierLevel == 0) continue;
+                        var currentBlockNumber = TacticsProtect.getBlockNumber(view);
+                        if (currentBlockNumber >= 10 * currentModifierLevel) continue;
+                        TacticsProtect.setBlockNumber(view, Math.min(currentBlockNumber + 1, 10 * currentModifierLevel));
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void runPlayerStagnationUpdate(TickEvent.PlayerTickEvent event) {
+        var player = event.player;
+        if (event.side.isServer() && event.phase == TickEvent.Phase.END) {
+            if (player instanceof ServerPlayer serverPlayer) {
+                if (serverPlayer.tickCount % 4 == 0) {
+                    int stagnationTime = AbsoluteJustice.getHoshinoStagnationTime(serverPlayer);
+                    if (serverPlayer.tickCount % 20 == 0) {
+                        if (stagnationTime == 1) {
+                            AbsoluteJustice.setHoshinoStagnationTime(serverPlayer, 0);
+                            serverPlayer.setHealth(serverPlayer.getMaxHealth());
+                        }
+                        if (stagnationTime > 0) {
+                            AbsoluteJustice.setHoshinoStagnationTime(serverPlayer, stagnationTime - 1);
+                        }
+                    }
+                    var modifierID = solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId();
+                    if (ModifierLevel.getTotalArmorModifierlevel(serverPlayer, modifierID) > 0) {
+                        if (serverPlayer.tickCount % 40 == 0) {
+                            float abAmount = serverPlayer.getAbsorptionAmount();
+                            if (abAmount < serverPlayer.getMaxHealth() * 2) {
+                                serverPlayer.setAbsorptionAmount(abAmount + serverPlayer.getMaxHealth() * 0.04f);
+                            }
+                            serverPlayer.addEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 1, false, false));
+                        }
+                    }
+                    int[] cdArray = new int[]{0, 0, 0, 0};
+                    EquipmentSlot[] armorSlots = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
+                    for (int i = 0; i < armorSlots.length; i++) {
+                        var armor = serverPlayer.getItemBySlot(armorSlots[i]);
+                        var view = ToolStack.from(armor);
+                        int currentCD = AbsoluteJustice.getHoshinoStagnationWaitTime(view);
+                        if (currentCD == 0) continue;
+                        cdArray[i] = currentCD;
+                    }
+                    STChannel.SendToPlayer(new StagnationUpdatePacket(cdArray[0], cdArray[1], cdArray[2], cdArray[3], stagnationTime), serverPlayer);
+                }
+                STChannel.sendToClient(new NumberBlockChangePacket(TacticsProtect.getTotalBlockNumber(serverPlayer)));
             }
         }
     }

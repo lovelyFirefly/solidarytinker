@@ -2,6 +2,7 @@ package com.marth7th.solidarytinker.register;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 public class solidarytinkerTab {
     public static final CreativeModeTab MATERIALS = new CreativeModeTab("solidarytinker.materials") {
@@ -23,6 +24,4 @@ public class solidarytinkerTab {
         }
     };
 
-    public solidarytinkerTab() {
-    }
 }

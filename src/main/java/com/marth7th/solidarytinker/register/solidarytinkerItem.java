@@ -1,5 +1,6 @@
 package com.marth7th.solidarytinker.register;
 
+import com.marth7th.solidarytinker.Items.common.FirstAddItem;
 import com.marth7th.solidarytinker.Items.ingot.*;
 import com.marth7th.solidarytinker.tools.Stats.CoreBatteryMaterialStats;
 import com.marth7th.solidarytinker.tools.Stats.SoulGeHeartMaterialStats;
@@ -64,6 +65,13 @@ public class solidarytinkerItem {
     public static final RegistryObject<Item> extremelycoldsteel_ingot = ITEMS.register("extremelycoldsteel_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<BlockItem> dwarf_block = ITEMS.register("dwarf_block", () -> new BlockItem(solidarytinkerBlock.dwarf_block.get(), new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
     public static final RegistryObject<Item> cold_chroma_alloy_ingot = ITEMS.register("cold_chroma_alloy_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> first_add_item = ITEMS.register("first_add_item", () -> new FirstAddItem(new Item.Properties().tab(solidarytinkerTab.MATERIALS)));
+    public static final RegistryObject<Item> blast_burner = ITEMS.register("blast_burner", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)){
+        @Override
+        public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+            pTooltipComponents.add(Component.literal("跑刀露天刷新的我你爱答不理,CTI里的我你高攀不起").withStyle(style -> style.withColor(0xaa00ff)));
+        }
+    });
     public static final RegistryObject<Item> elysia = ITEMS.register("elysia_ingot", () -> new Item(new Item.Properties().tab(solidarytinkerTab.MATERIALS)){
         @Override
         public Component getName(ItemStack p_41458_) {

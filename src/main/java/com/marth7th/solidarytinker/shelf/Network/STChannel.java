@@ -42,10 +42,30 @@ public class STChannel {
                 .encoder(EnergyChangePacket::ToByte)
                 .consumerMainThread(EnergyChangePacket::handle)
                 .add();
+        net.messageBuilder(NumberBlockChangePacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(NumberBlockChangePacket::new)
+                .encoder(NumberBlockChangePacket::ToByte)
+                .consumerMainThread(NumberBlockChangePacket::handle)
+                .add();
+        net.messageBuilder(StagnationUpdatePacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(StagnationUpdatePacket::new)
+                .encoder(StagnationUpdatePacket::ToByte)
+                .consumerMainThread(StagnationUpdatePacket::handle)
+                .add();
+        net.messageBuilder(RunItemActivationPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(RunItemActivationPacket::new)
+                .encoder(RunItemActivationPacket::ToByte)
+                .consumerMainThread(RunItemActivationPacket::handle)
+                .add();
         net.messageBuilder(HaloUpdatePacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(HaloUpdatePacket::new)
                 .encoder(HaloUpdatePacket::toByte)
                 .consumerMainThread(HaloUpdatePacket::handle)
+                .add();
+        net.messageBuilder(SoulgeConfigPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(SoulgeConfigPacket::new)
+                .encoder(SoulgeConfigPacket::toBytes)
+                .consumerMainThread(SoulgeConfigPacket::handle)
                 .add();
         INSTANCE = net;
     }

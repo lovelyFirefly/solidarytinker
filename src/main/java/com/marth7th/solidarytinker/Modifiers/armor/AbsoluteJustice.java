@@ -1,45 +1,74 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
-import com.gjhi.tinkersinnovation.register.TinkersInnovationItems;
-import com.marth7th.solidarytinker.extend.superclass.ArmorModifier;
-import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
-import com.marth7th.solidarytinker.util.method.ModifierLevel;
+import com.marth7th.solidarytinker.solidarytinker;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.ModList;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.armor.DamageBlockModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.behavior.ToolDamageModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.EquipmentContext;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+
+import java.util.List;
 
 
-public class AbsoluteJustice extends ArmorModifier {
+public class AbsoluteJustice extends NoLevelsModifier implements  DamageBlockModifierHook, InventoryTickModifierHook , ToolDamageModifierHook , TooltipModifierHook {
     @Override
-    public boolean havenolevel() {
-        return true;
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        hookBuilder.addHook(this,ModifierHooks.DAMAGE_BLOCK,ModifierHooks.INVENTORY_TICK,ModifierHooks.TOOL_DAMAGE,ModifierHooks.TOOLTIP);
+    }
+    private static final ResourceLocation StagnationWaitTime= solidarytinker.getResource("stagnation_wait_time");
+
+
+    @Override
+    public boolean isDamageBlocked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount) {
+        return source.getEntity() == null;
     }
 
-    boolean TN = ModList.get().isLoaded("tinkersinnovation");
-
-    public void LivingHurtEvent(LivingHurtEvent event) {
-        if (event.getEntity() != null) {
-            if (ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
-                if (event.getSource().getEntity() == null) {
-                    event.setCanceled(event.getSource() != DamageSource.OUT_OF_WORLD || !(event.getAmount() > Float.MAX_VALUE));
-                }
+    @Override
+    public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
+        if(holder instanceof ServerPlayer serverPlayer && serverPlayer.tickCount%20==0){
+            int stagnationCD=getHoshinoStagnationWaitTime(tool);
+            if(stagnationCD>0){
+                setHoshinoStagnationWaitTime(tool,stagnationCD-1);
             }
         }
     }
+    public static int getHoshinoStagnationWaitTime(IToolStackView tool){
+        return tool.getPersistentData().getInt(StagnationWaitTime);
+    }
+    public static void setHoshinoStagnationWaitTime(IToolStackView tool,int time){
+        tool.getPersistentData().putInt(StagnationWaitTime,time);
+    }
+    public static int getHoshinoStagnationTime(Player player){
+        return player.getPersistentData().getInt("hoshino_stagnation");
+    }
+    public static void setHoshinoStagnationTime(Player player,int time){
+        player.getPersistentData().putInt("hoshino_stagnation",time);
+    }
+    @Override
+    public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
+        return 0;
+    }
 
-    public void LivingAttackEvent(LivingAttackEvent event) {
-        if (ModifierLevel.getTotalArmorModifierlevel(event.getEntity(), solidarytinkerModifiers.ABSOLUTEJUSTICE_STATIC_MODIFIER.getId()) > 0) {
-            if (TN) {
-                if (event.getEntity() instanceof Player player) {
-                    if (event.getSource().getEntity() == null && player.getItemBySlot(EquipmentSlot.OFFHAND).is(TinkersInnovationItems.heavy_shield.get())) {
-                        event.getEntity().invulnerableTime = 80;
-                        event.setCanceled(true);
-                    }
-                }
-            }
-        }
+    @Override
+    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
+        int current=getHoshinoStagnationWaitTime(tool);
+        tooltip.add(Component.literal("cd"+current));
     }
 }

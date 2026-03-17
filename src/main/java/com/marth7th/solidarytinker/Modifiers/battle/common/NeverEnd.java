@@ -1,74 +1,37 @@
 package com.marth7th.solidarytinker.Modifiers.battle.common;
 
-import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
-import com.marth7th.solidarytinker.extend.superclass.BattleModifier;
-import com.marth7th.solidarytinker.register.solidarytinkerEffects;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.behavior.EnchantmentModifierHook;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
-import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
-public class NeverEnd extends BattleModifier {
+import java.util.Map;
+
+public class NeverEnd extends NoLevelsModifier implements EnchantmentModifierHook {
     @Override
-    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if (context.getLivingTarget() != null) {
-            if (context.getAttacker().hasEffect(solidarytinkerEffects.bloodanger.get())&&context.getAttacker() instanceof Player player) {
-                int effectlevel = (context.getAttacker().getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-                context.getTarget().hurt(DamageSource.playerAttack(player).bypassMagic(), context.getLivingTarget().getMaxHealth() *( SolidarytinkerConfig.HoshinoRedTemperature.get()/100f) * (effectlevel + 1));
-            }
-        }
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        hookBuilder.addHook(this, ModifierHooks.ENCHANTMENTS);
     }
 
     @Override
-    public void arrowhurt(ModifierNBT modifiers, NamespacedNBT persistentData, int level, Projectile projectile, EntityHitResult hit, AbstractArrow arrow, LivingEntity attacker, LivingEntity target) {
-        if (attacker.hasEffect(solidarytinkerEffects.bloodanger.get())) {
-            int effectlevel = (attacker.getEffect(solidarytinkerEffects.bloodanger.get())).getAmplifier();
-            int count = attacker.getArrowCount();
-            int MaxCount = SolidarytinkerConfig.HoshinoArrowCount.get();
-            int HoshinoMaxArrowCountDamage = SolidarytinkerConfig.HoshinoMaxArrowCountDamage.get();
-            int HoshinoArrowCountDamage = SolidarytinkerConfig.HoshinoArrowCountDamage.get();
-            target.invulnerableTime = 0;
-            target.hurt(DamageSource.playerAttack((Player) attacker).bypassMagic(), target.getMaxHealth() * (SolidarytinkerConfig.HoshinoRedTemperature.get() / 100f) * (effectlevel + 1));
-            if (count >= 0 && count < MaxCount) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * (1 + ((HoshinoArrowCountDamage / 100f) * count)));
-            } else if (count >= MaxCount) {
-                arrow.setBaseDamage(arrow.getBaseDamage() * HoshinoMaxArrowCountDamage);
-                attacker.setArrowCount(0);
-                attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, true, true));
-            }
+    public int updateEnchantmentLevel(IToolStackView tool, ModifierEntry modifierEntry, Enchantment enchantment, int level) {
+        int bonus = modifierEntry.getLevel()* 2;
+        if (bonus>0&&(enchantment== Enchantments.MOB_LOOTING||enchantment==Enchantments.BLOCK_FORTUNE)){
+            level+=bonus;
         }
+        return level;
     }
 
     @Override
-    public float staticdamage(IToolStackView tool, int level, ToolAttackContext context, LivingEntity attacker, LivingEntity livingTarget, float baseDamage, float damage) {
-        int MaxCount = SolidarytinkerConfig.HoshinoArrowCount.get();
-        int HoshinoMaxArrowCountDamage = SolidarytinkerConfig.HoshinoMaxArrowCountDamage.get();
-        int HoshinoArrowCountDamage = SolidarytinkerConfig.HoshinoArrowCountDamage.get();
-        if (attacker.getArrowCount() >= 0 && attacker.getArrowCount() < MaxCount) {
-            return damage * (1f + (HoshinoArrowCountDamage / 100F * attacker.getArrowCount()));
-        } else if (attacker.getArrowCount() >= MaxCount) {
-            attacker.setArrowCount(0);
-            attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, true, true));
-            return damage * HoshinoMaxArrowCountDamage;
-        }
-        return damage;
-    }
-
-    @Override
-    public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity entity, int index, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
-        if (entity.getHealth() <= entity.getMaxHealth() * 0.3f && entity.hasEffect(solidarytinkerEffects.bloodanger.get())) {
-            entity.addEffect(new MobEffectInstance(solidarytinkerEffects.bloodanger.get(), 200, 0));
+    public void updateEnchantments(IToolStackView tool, ModifierEntry modifierEntry, Map<Enchantment, Integer> map) {
+        int bonus = modifierEntry.getLevel()* 2;
+        if (bonus>0){
+            EnchantmentModifierHook.addEnchantment(map, Enchantments.BLOCK_FORTUNE,bonus);
+            EnchantmentModifierHook.addEnchantment(map, Enchantments.MOB_LOOTING,bonus);
         }
     }
 }

@@ -9,11 +9,14 @@ import com.marth7th.solidarytinker.shelf.Network.Packet.EnergyChangePacket;
 import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.shelf.energy.FluxStorage;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
+import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -21,9 +24,10 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class FluxArmor extends FluxArmorModifier {
-
-    @Override
-    public void LivingHurtEvent(LivingHurtEvent event) {
+    public FluxArmor(){
+        MinecraftForge.EVENT_BUS.addListener(this::LivingDamageEvent);
+    }
+    public void LivingDamageEvent(LivingDamageEvent event) {
         if (event.getEntity() instanceof ServerPlayer player) {
             float protect = SolidarytinkerConfig.FluxArmorBlock.get().floatValue();
             int cost = SolidarytinkerConfig.FluxArmorCost.get();

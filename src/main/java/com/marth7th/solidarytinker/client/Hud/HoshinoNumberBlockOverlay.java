@@ -1,11 +1,8 @@
 package com.marth7th.solidarytinker.client.Hud;
 
-import com.marth7th.solidarytinker.Modifiers.armor.TacticsProtect;
-import com.marth7th.solidarytinker.register.solidarytinkerModifiers;
 import com.marth7th.solidarytinker.shelf.energy.Cache.BlockAmountData;
 import com.marth7th.solidarytinker.shelf.energy.Cache.ClientEnergyData;
 import com.marth7th.solidarytinker.solidarytinker;
-import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -14,7 +11,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 
-public class NumberBlockOverlay {
+public class HoshinoNumberBlockOverlay {
     public static final ResourceLocation GemIcon_LeftHalf = new ResourceLocation(solidarytinker.MOD_ID, "textures/hud/gem_icon_left.png");
     public static final ResourceLocation GemIcon_RightHalf = new ResourceLocation(solidarytinker.MOD_ID, "textures/hud/gem_icon_right.png");
 
@@ -40,6 +37,9 @@ public class NumberBlockOverlay {
         int levelsToDraw = currentLevel + 1;
         int x = screenWidth / 2 - 91;
         int y = screenHeight - gui.leftHeight + 2;
+        if(ClientEnergyData.getPlayerEnergyLevel()>0){
+            y=y-10;
+        }
         String levelString = String.valueOf(currentTotalAmount);
         int textX = x - font.width(levelString) - 2;
         int textY = y + (8 / 2) - (font.lineHeight / 2);

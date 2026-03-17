@@ -137,12 +137,16 @@
   "modifier.solidarytinker.cleancurio": "净化",
   "modifier.solidarytinker.cleancurio.description": "今天也要元气满满",
   "modifier.solidarytinker.cleancurio.flavor": "免疫除正面效果以外的所有效果的施加,同时身上每有一种正面效果,受到伤害降低6%,至高降低60%",
-  "modifier.solidarytinker.coldfetters": "寒冰血脉",
-  "modifier.solidarytinker.coldfetters.description": "如果攻击你的目标带有缓慢效果,你此次受到伤害降低10% * 词条等级。代价是当你收到的无来源伤害增加10%",
-  "modifier.solidarytinker.coldfetters.flavor": "绝对零度！",
+  "modifier.solidarytinker.coldfetters": "弗雷尔卓德血脉",
+  "modifier.solidarytinker.coldfetters.description": "",
+  "modifier.solidarytinker.coldfetters.flavor": "大东百是我滴家乡",
+
+
   "modifier.solidarytinker.collapse": "焱御",
-  "modifier.solidarytinker.collapse.description": "攻击你的敌人会陷入永久状态的燃烧,并且如果目标处于燃烧状态,则对你的伤害降低至20%",
+  "modifier.solidarytinker.collapse.description": "获得一面5秒充能一次的次数盾,次数盾存在时,获得99%的免伤,单次伤害低于最大生命20%的伤害不会触发次数盾,每级增加8最大次数盾",
   "modifier.solidarytinker.collapse.flavor": "所谓永恒,对于恒星漫长生命周期不过一瞬",
+
+
   "modifier.solidarytinker.corrode": "侵蚀",
   "modifier.solidarytinker.corrode.description": "攻击和箭矢会对目标施加持续的腐蚀层数,每层腐蚀增加目标收到的2%伤害,至高叠加200层,当层数达到50层时候目标受到的所有伤害穿透护甲,词条等级会增加单次施加的层数.目标每隔10秒消散一层",
   "modifier.solidarytinker.corrode.flavor": "似乎和酸液作用相似",
@@ -229,15 +233,15 @@
   "modifier.solidarytinker.mercurypoisoning.flavor": "来尝一口",
 
   "modifier.solidarytinker.neverend": "反击",
-  "modifier.solidarytinker.neverend.description": "[被动效果]被攻击的目标如果生命值超过其最大生命50%,则你对其造成伤害提升100%,副手使用盾牌时会自动使用主手武器进行攻击周围2格内的目标(至多不超过14个),每4tick就会反击一次,副手持有盾牌时",
+  "modifier.solidarytinker.neverend.description": "[被动效果]被攻击的目标如果生命值超过其最大生命50%,则你对其造成伤害提升100%.获得每级2时运2抢夺",
   "modifier.solidarytinker.neverend.flavor": "现在正是反击的时刻",
 
   "modifier.solidarytinker.reliable": "统御",
-  "modifier.solidarytinker.reliable.description": "[被动效果]被攻击的目标周围4格内没有其他怪物时,你对这个目标造成的伤害提升100%,如果目标周围4格内有其他生物,其他生物会均摊主目标受到的200%工具伤害,至多溅射20个怪物,此伤害穿透护甲和魔法抗性",
+  "modifier.solidarytinker.reliable.description": "[被动效果]被攻击的目标周围4格内没有其他怪物时,你对这个目标造成的伤害提升至688%,如果目标周围4格内有其他生物,其他生物会均摊主目标受到的188%工具伤害(不触发词条),至多溅射20个怪物,此伤害穿透护甲和魔法抗性",
   "modifier.solidarytinker.reliable.flavor": "冲锋陷阵,百战当先",
 
   "modifier.solidarytinker.sandstrom": "诸武精通",
-  "modifier.solidarytinker.sandstrom.description": "你工具造成的伤害不再对目标造成无敌帧和击退,每3次攻击的下一次攻击会额外使用你末影箱里面第一个匠魂工具进行一次额外攻击,如为电棍/弓则会触发使用效果",
+  "modifier.solidarytinker.sandstrom.description": "你工具造成的伤害不再对目标造成无敌帧和击退,每3次攻击的下一次攻击会额外使用你末影箱里面第一个匠魂工具进行一次额外攻击,如为电棍则会触发使用效果",
   "modifier.solidarytinker.sandstrom.flavor": "我会永远注视着你",
 
   "modifier.solidarytinker.sandbless": "沙海赐福",
@@ -441,6 +445,10 @@
   "modifier.solidarytinker.hve.flavor": "这种粉毛电人最疼了",
   "modifier.solidarytinker.hve.description":"电能充沛的伤害倍率翻倍,耗电也翻倍",
 
+  "modifier.solidarytinker.overloadcurio": "超载者",
+  "modifier.solidarytinker.overloadcurio.flavor": "当思念飞过夜空...缠绕指尖停留...美得像一场梦",
+  "modifier.solidarytinker.overloadcurio.description":"永久增加15%移速,击杀生物后会瞬间恢复8%血量并且获得短时间的8级生命恢复.同时当你移动速度超过默认速度时候,有22%概率免疫掉伤害",
+
   "modifier.solidarytinker.crazydog": "疯狂狗子",
   "modifier.solidarytinker.crazydog.flavor": "魂戈这东西狗来了都会用",
   "modifier.solidarytinker.crazydog.description":"你的狗子会在你对敌人标记后一起使用魂戈攻击敌人",
@@ -455,7 +463,7 @@
 
   "modifier.solidarytinker.overloadburn": "超载燃烧",
   "modifier.solidarytinker.overloadburn.flavor": "外骨骼启动",
-  "modifier.solidarytinker.overloadburn.description":"开放额外的燃烧倍率,额外开放配置的滚动条,可至多额外提升25倍燃烧效率,燃烧效率的开平方会转化为独立伤害乘区再次提高你的魂戈单头模式伤害",
+  "modifier.solidarytinker.overloadburn.description":"开放额外的燃烧倍率,额外开放配置的滚动条,可至多额外提升25倍燃烧效率,燃烧效率的开平方会转化为独立伤害乘区再次提高你的魂戈单头模式伤害"
 
 
 }

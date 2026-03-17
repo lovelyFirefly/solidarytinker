@@ -1,5 +1,7 @@
 package com.marth7th.solidarytinker.util.method;
 
+import com.marth7th.solidarytinker.Modifiers.armor.NumberBlockModifier;
+import com.xiaoyue.tinkers_ingenuity.register.TIItems;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -7,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.LazyOptional;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
@@ -21,6 +24,23 @@ import java.util.List;
 
 
 public class ModifierLevel {
+    public static int getNumberBlockModifierLevel(LivingEntity entity){
+        if(entity!=null){
+            int currentLevel=0;
+            for(ItemStack stack:entity.getArmorSlots()){
+                ToolStack tool=ToolStack.from(stack);
+                if(!tool.isBroken()){
+                    for(ModifierEntry entry:tool.getModifiers().getModifiers()){
+                        if(entry.getModifier() instanceof NumberBlockModifier){
+                            currentLevel+=entry.getLevel();
+                        }
+                    }
+                }
+            }
+            return currentLevel;
+        }
+        return 0;
+    }
     public static int getMainhandModifierlevel(LivingEntity entity, ModifierId modifierId) {
         if (entity != null) {
             if (entity instanceof Player player) {
@@ -169,7 +189,7 @@ public class ModifierLevel {
                     for (ICurioStacksHandler curios : handler.resolve().get().getCurios().values()) {
                         for (int i = 0; i < curios.getSlots(); ++i) {
                             ItemStack stack = curios.getStacks().getStackInSlot(i);
-                            if (!stack.isEmpty() && stack.is(TinkerTags.Items.MODIFIABLE)) {
+                            if (!stack.isEmpty() && stack.is(TIItems.TINKER_RING.get())) {
                                 list.add(stack);
                             }
                         }

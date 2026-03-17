@@ -17,9 +17,11 @@ import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.capability.fluid.ToolTankHelper;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class AnymoreMode extends NoLevelsModifier implements MeleeDamageModifierHook, ToolStatsModifierHook , MeleeHitModifierHook {
     @Override
@@ -44,7 +46,9 @@ public class AnymoreMode extends NoLevelsModifier implements MeleeDamageModifier
 
         if (!(context.getLivingTarget() instanceof Mob mob)) return damage;
         if (!(context.getAttacker() instanceof Player player)) return damage;
-        if (!SoulgeHelper.isSingleMode(tool)) return damage;
+        var attackSpeed= tool.getStats().get(ToolStats.ATTACK_SPEED);
+
+        if (!SoulgeHelper.isSingleMode(tool)) return damage * attackSpeed;
 
         var fluidStack = ToolTankHelper.TANK_HELPER.getFluid(tool);
         var fluid = fluidStack.getFluid();

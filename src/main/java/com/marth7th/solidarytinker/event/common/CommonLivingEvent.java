@@ -1,6 +1,8 @@
 package com.marth7th.solidarytinker.event.common;
 
 import com.marth7th.solidarytinker.Modifiers.armor.AbsoluteJustice;
+import com.marth7th.solidarytinker.Modifiers.armor.Collapse;
+import com.marth7th.solidarytinker.Modifiers.armor.NumberBlockModifier;
 import com.marth7th.solidarytinker.Modifiers.armor.TacticsProtect;
 import com.marth7th.solidarytinker.config.SolidarytinkerConfig;
 import com.marth7th.solidarytinker.extend.interfaces.LocateSoulgeKiller;
@@ -15,6 +17,8 @@ import com.marth7th.solidarytinker.shelf.damagesource.STDamageSource;
 import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.method.ModifierLevel;
 import com.xiaoyue.tinkers_ingenuity.utils.ToolUtils;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -26,6 +30,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -44,15 +49,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.marth7th.solidarytinker.solidarytinker.MOD_ID;
+import static com.marth7th.solidarytinker.solidarytinker.TI;
 import static com.marth7th.solidarytinker.util.ModloadCotext.isLoadedIngenuity;
 
 @Mod.EventBusSubscriber(modid = MOD_ID)
 public class CommonLivingEvent {
     private static final ResourceLocation DEATH = solidarytinker.getResource("death");
-
-    @SubscribeEvent(priority = EventPriority.HIGH)
-    public static void CommonLivingAttackEvent(LivingAttackEvent event) {
-    }
 
     @SubscribeEvent
     public static void LivingHealEvent(LivingHealEvent event) {
@@ -67,6 +69,15 @@ public class CommonLivingEvent {
             }
             if (event.getEntity().hasEffect(solidarytinkerEffects.mercurypoisoning.get())) {
                 event.setAmount(event.getAmount() * 0.2F);
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void onInJuredRun(LivingHurtEvent event){
+        if (event.getEntity() != null) {
+            if (event.getEntity().hasEffect(solidarytinkerEffects.seriously_injured.get())) {
+                int level = event.getEntity().getEffect(solidarytinkerEffects.seriously_injured.get()).getAmplifier() + 1;
+                event.setAmount(event.getAmount() * 1+ (level *0.15f));
             }
         }
     }
@@ -140,7 +151,7 @@ public class CommonLivingEvent {
         if (entityData.contains("ready_to_die")) {
             entityData.putInt("ready_to_die", dieTick - 1);
             switch (dieTick) {
-                case 1 -> applyDamage(livingEntity, attacker, true);
+                case 0,1 -> applyDamage(livingEntity, attacker, true);
                 case 2, 3, 4 -> applyDamage(livingEntity, attacker, livingEntity.isOnGround());
                 case 5 -> livingEntity.setDeltaMovement(new Vec3(0, -2.5, 0));
             }
@@ -150,7 +161,7 @@ public class CommonLivingEvent {
     private static void applyDamage(LivingEntity entity, LivingEntity attacker, boolean should) {
         var data = entity.getPersistentData();
         if (should && attacker instanceof Player player) {
-            entity.hurt(DamageSource.playerAttack(player), Float.MAX_VALUE);
+            entity.hurt(DamageSource.playerAttack(player).bypassInvul().bypassMagic(), Float.MAX_VALUE);
             data.remove("ready_to_die");
         } else if (should) {
             entity.hurt(STDamageSource.MercuryPoisoning, Float.MAX_VALUE);
@@ -300,6 +311,46 @@ public class CommonLivingEvent {
             }
         }
     }
+    @SubscribeEvent
+    public static void runDwarfSpecialBlock(LivingDamageEvent event) {
+        if (!(event.getEntity() instanceof Player player)) return;
+        int level=ModifierLevel.getTotalArmorModifierlevel(player,solidarytinkerModifiers.COLLAPSE_STATIC_MODIFIER.getId());
+        if (level> 0) {
+            int blockNumber = Collapse.getTotalBlockNumber(player);
+            int max=level *5;
+            int per=blockNumber/max;
+            if (blockNumber > 0 && event.getAmount() >= player.getMaxHealth() * 0.2f) {
+                event.setAmount(event.getAmount() * 0.05f);
+                if(player.level.isClientSide){
+                    player.level.playSound(null,player.getOnPos(),SoundEvents.FIREWORK_ROCKET_BLAST,SoundSource.AMBIENT,1,per);
+                }
+                var armorList = player.getInventory().armor;
+                for (ItemStack armor : armorList) {
+                    var view = ToolStack.from(armor);
+                    int currentAmount = Collapse.getBlockNumber(view);
+                    if (currentAmount > 0) {
+                        Collapse.setBlockNumber(view, currentAmount - 1);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void hoshinoAttackSingle(LivingDamageEvent event){
+        var living=event.getEntity();
+        var attacker=event.getSource().getEntity();
+        if(attacker instanceof Player player){
+            int level=ModifierLevel.getEachHandsTotalModifierlevel(player,solidarytinkerModifiers.RELIABLE_STATIC_MODIFIER.getId());
+            if(level>0){
+                var box=living.getBoundingBox().inflate(4);
+                var mobLists=attacker.level.getEntitiesOfClass(Mob.class,box);
+                if(mobLists.size()<2){
+                    event.setAmount(event.getAmount() * 2f);
+                }
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void runPlayerShieldRecover(TickEvent.PlayerTickEvent event) {
@@ -317,6 +368,52 @@ public class CommonLivingEvent {
                         TacticsProtect.setBlockNumber(view, Math.min(currentBlockNumber + 1, 10 * currentModifierLevel));
                         break;
                     }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void runPlayerDwarfShieldRecover(TickEvent.PlayerTickEvent event) {
+        var player = event.player;
+        if (event.side.isServer() && event.phase == TickEvent.Phase.END) {
+            if (player.tickCount % 120 == 0) {
+                var modifierID = solidarytinkerModifiers.COLLAPSE_STATIC_MODIFIER.getId();
+                if (ModifierLevel.getTotalArmorModifierlevel(player, modifierID) > 0) {
+                    for (ItemStack armor : player.getInventory().armor) {
+                        var view = ToolStack.from(armor);
+                        int currentModifierLevel = view.getModifierLevel(modifierID);
+                        if (currentModifierLevel == 0) continue;
+                        var currentBlockNumber = Collapse.getBlockNumber(view);
+                        if (currentBlockNumber >= 5 * currentModifierLevel) continue;
+                        Collapse.setBlockNumber(view, Math.min(currentBlockNumber + 1, 5 * currentModifierLevel));
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void OverloadKillHeal(LivingDeathEvent event) {
+        if(TI){
+            var killer = event.getSource().getEntity();
+            if (killer instanceof Player player) {
+                int level = ModifierLevel.curioModifierLevel(player, TinkerCuriosModifier.OVER_LOAD_CURIO_STATIC_MODIFIER.getId());
+                if (level > 0) {
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, Math.min(level + 6, 9)));
+                    player.setHealth(Math.min(player.getMaxHealth(), player.getHealth() + player.getMaxHealth() * 0.08f));
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void OverloadPassHurt(LivingAttackEvent event) {
+        if(TI){
+            var suffer = event.getEntity();
+            if (suffer instanceof Player player) {
+                int level = ModifierLevel.curioModifierLevel(player, TinkerCuriosModifier.OVER_LOAD_CURIO_STATIC_MODIFIER.getId());
+                var random=player.getRandom();
+                if(random.nextInt(100)>78&&level>0){
+                    event.setCanceled(true);
                 }
             }
         }

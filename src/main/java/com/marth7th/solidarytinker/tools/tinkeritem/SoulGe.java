@@ -9,6 +9,7 @@ import com.marth7th.solidarytinker.shelf.Network.STChannel;
 import com.marth7th.solidarytinker.solidarytinker;
 import com.marth7th.solidarytinker.util.compound.DynamicComponentUtil;
 import com.marth7th.solidarytinker.util.method.SoulgeHelper;
+import net.mehvahdjukaar.dummmmmmy.common.TargetDummyEntity;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.locale.Language;
@@ -27,6 +28,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
@@ -35,7 +37,6 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.tools.capability.fluid.ToolTankHelper;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
-import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
@@ -218,7 +219,7 @@ public class SoulGe extends ModifiableItem {
             if (pointedEntity != null && pointedEntity.isAlive()) {
                 if (attacker.tickCount % 5 == 0) {
                     setTemperatureRiseTick(tool, getTemperatureRiseTick(tool) + 1);
-                    setTemperatureCooldownTick(tool, 3);
+                    setTemperatureCooldownTick(tool, 12);
                     if (!level.isClientSide()) {
                         checkTemperatureLevel(getTemperatureRiseTick(tool), attacker);
                     }
@@ -248,9 +249,10 @@ public class SoulGe extends ModifiableItem {
         List<LivingEntity> nearbyEntities = level.getEntitiesOfClass(LivingEntity.class, attacker.getBoundingBox().expandTowards(playerLook.x * dist, playerLook.y * dist, playerLook.z * dist).inflate(1.0F, 1.0F, 1.0F));
         double d2 = dist;
         for (LivingEntity nearbyEntity : nearbyEntities) {
-            AABB axisAlignedBB = nearbyEntity.getBoundingBox().inflate(nearbyEntity.getPickRadius());
-            Optional<Vec3> optional = axisAlignedBB.clip(playerEyePosition, Vector3d2);
-            if (axisAlignedBB.contains(playerEyePosition)) {
+            var box=nearbyEntity.getBoundingBox().inflate(nearbyEntity.getPickRadius());
+            var finalBox =box.inflate(0.5f);
+            Optional<Vec3> optional = finalBox.clip(playerEyePosition, Vector3d2);
+            if (finalBox.contains(playerEyePosition)) {
                 if (d2 >= (double) 0.0F) {
                     pointedEntity = nearbyEntity;
                     d2 = 0.0F;
@@ -314,20 +316,13 @@ public class SoulGe extends ModifiableItem {
                 persistentData.putInt("targeted", targetedTimes - 1);
 
                 if (mob.getHealth() < mob.getMaxHealth() * killThreshold && mob.isAlive() && !persistentData.contains("ready_to_die")) {
-                    if (ModifierUtil.getModifierLevel(player.getMainHandItem(), solidarytinkerModifiers.crawlStaticModifier.getId()) > 0) {
-                        var mobPos = mob.position();
-                        var playerPos = player.position();
-                        var direction = mobPos.subtract(playerPos);
-                        double distance = mobPos.distanceTo(playerPos);
-                        Vec3 finalPos = playerPos.add(direction.scale(1.0 / distance).scale(4));
-                        if (distance >= 4) {
-                            mob.moveTo(finalPos);
-                        }
+                    boolean loadedDummy = ModList.get().isLoaded("dummmmmmy");
+                    if(!loadedDummy ||!(mob instanceof TargetDummyEntity)){
+                        mob.getActiveEffects().removeAll(mob.getActiveEffects());
+                        mob.setNoGravity(false);
+                        mob.setDeltaMovement(new Vec3(0, 2.5, 0));
+                        persistentData.putInt("ready_to_die", 9);
                     }
-                    mob.getActiveEffects().removeAll(mob.getActiveEffects());
-                    mob.setNoGravity(false);
-                    mob.setDeltaMovement(new Vec3(0, 2.5, 0));
-                    persistentData.putInt("ready_to_die", 9);
                 }
                 if (shouldDrawParticleBeam) {
                     this.drawParticleBeam(player, mob, ParticleTypes.SOUL);

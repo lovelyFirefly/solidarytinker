@@ -26,8 +26,8 @@ public class Crushing extends BattleModifier {
         if (entity instanceof Player player) {
             if (target != null && player.getMaxHealth() > target.getHealth()) {
                 if (SolidarytinkerConfig.damascus_steel.get()) {
-                    target.kill();
                     target.die(DamageSource.playerAttack(player));
+                    target.discard();
                 } else target.hurt(DamageSource.playerAttack(player), 1000);
             }
         }
@@ -40,7 +40,7 @@ public class Crushing extends BattleModifier {
                 target.invulnerableTime = 0;
                 if (SolidarytinkerConfig.damascus_steel.get()) {
                     target.die(DamageSource.playerAttack(player));
-                    target.kill();
+                    target.discard();
                 } else target.hurt(DamageSource.playerAttack(player), 1000);
             }
         }

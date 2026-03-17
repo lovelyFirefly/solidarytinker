@@ -108,7 +108,8 @@
     "hve": "#eabeff",
     "anymoremode": "#4f5fba",
     "extraburn": "#be0000",
-    "overloadburn": "#97f2ff"
+    "overloadburn": "#97f2ff",
+    "overloadcurio": "#97f2ff"
   },
   "harvest_tier.solidarytinker": {
     "momo": "#ffc9ff"

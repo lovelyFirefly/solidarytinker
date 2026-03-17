@@ -1,6 +1,5 @@
-package com.marth7th.solidarytinker.Modifiers.battle.hidden;
+package com.marth7th.solidarytinker.Modifiers.battle.mme;
 
-import net.minecraft.network.chat.Component;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -9,7 +8,7 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class test extends Modifier implements MeleeDamageModifierHook {
+public class MikaStar extends Modifier implements MeleeDamageModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
@@ -17,14 +16,6 @@ public class test extends Modifier implements MeleeDamageModifierHook {
 
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        var target=context.getLivingTarget();
-        if(target!=null){
-            var dieCount=target.getPersistentData().getInt("ready_to_die");
-            var player=context.getPlayerAttacker();
-            if(player!=null){
-                player.sendSystemMessage(Component.literal(dieCount+"  tick"));
-            }
-        }
-        return damage;
+        return 0;
     }
 }

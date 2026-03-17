@@ -1,23 +1,16 @@
 package com.marth7th.solidarytinker.Modifiers.armor;
 
 import com.marth7th.solidarytinker.solidarytinker;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.library.modifiers.Modifier;
-import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
-public class Collapse extends Modifier {
+public class NumberBlockModifier extends Modifier {
 
-    @Override
-    public Component getDisplayName(IToolStackView tool, ModifierEntry entry) {
-        return Component.translatable(getTranslationKey()).append(Component.literal(" 次数盾量:"+getBlockNumber(tool))).withStyle(style -> style.withColor(getTextColor()));
-    }
-
-    public static ResourceLocation BLOCK_NUMBER = solidarytinker.getResource("dwarf_block_number");
+    public static ResourceLocation BLOCK_NUMBER = solidarytinker.getResource("hoshino_block_number");
 
     public static int getTotalBlockNumber(Player player) {
         var armorList = player.getInventory().armor;
@@ -37,5 +30,4 @@ public class Collapse extends Modifier {
     public static void setBlockNumber(IToolStackView view, int amount) {
         view.getPersistentData().putInt(BLOCK_NUMBER, amount);
     }
-
 }

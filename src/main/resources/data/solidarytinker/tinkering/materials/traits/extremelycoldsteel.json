@@ -2,6 +2,10 @@
   "perStat": {
     "tconstruct:melee_harvest": [
       {
+        "name": "cti:industrial",
+        "level": 3
+      },
+      {
         "name": "solidarytinker:extremelycold",
         "level": 1
       },
@@ -11,6 +15,10 @@
       }
     ],
     "tconstruct:ranged": [
+      {
+        "name": "cti:industrial",
+        "level": 3
+      },
       {
         "name": "solidarytinker:extremelycold",
         "level": 1
@@ -24,15 +32,27 @@
       {
         "name": "solidarytinker:coldfetters",
         "level": 1
+      },
+      {
+        "name": "cti:industrial_armor",
+        "level": 3
       }
     ],
     "tinkersinnovation:shield": [
+      {
+        "name": "cti:industrial",
+        "level": 3
+      },
       {
         "name": "solidarytinker:coldfetters",
         "level": 1
       }
     ],
     "tinkers_ingenuity:laser_gun": [
+      {
+        "name": "cti:industrial",
+        "level": 3
+      },
       {
         "name": "solidarytinker:extremelycold",
         "level": 1
@@ -41,8 +61,13 @@
         "name": "solidarytinker:brittle",
         "level": 1
       }
+
     ],
     "etshtinker:plasma_generator": [
+      {
+        "name": "cti:industrial",
+        "level": 3
+      },
       {
         "name": "solidarytinker:extremelycold",
         "level": 1

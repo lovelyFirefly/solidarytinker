@@ -16,4 +16,5 @@ public class TinkerCuriosModifier {
     public static final StaticModifier<PoisonProtect> poisonprotect = MODIFIERS.register("poisonprotect", PoisonProtect::new);
     public static final StaticModifier<CleanCurio> CleanCurio = MODIFIERS.register("cleancurio", CleanCurio::new);
     public static final StaticModifier<PeriodicPulsation> PERIODIC_PULSATION_STATIC_MODIFIER = MODIFIERS.register("periodicpulsation", PeriodicPulsation::new);
+    public static final StaticModifier<OverLoadCurio> OVER_LOAD_CURIO_STATIC_MODIFIER = MODIFIERS.register("overloadcurio", OverLoadCurio::new);
 }

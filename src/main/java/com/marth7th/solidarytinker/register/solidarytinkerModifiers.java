@@ -15,6 +15,7 @@ import com.marth7th.solidarytinker.Modifiers.battle.hidden.Release;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.nos;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.test;
 import com.marth7th.solidarytinker.Modifiers.battle.hidden.variety;
+import com.marth7th.solidarytinker.Modifiers.battle.mme.MikaStar;
 import com.marth7th.solidarytinker.Modifiers.battle.technology.*;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -90,5 +91,7 @@ public class solidarytinkerModifiers {
     public static final StaticModifier<AnymoreMode> ANYMORE_MODE_STATIC_MODIFIER = MODIFIERS.register("anymoremode", AnymoreMode::new);
     public static final StaticModifier<OverloadBurn> OVERLOAD_BURN_STATIC_MODIFIER = MODIFIERS.register("overloadburn", OverloadBurn::new);
     public static final StaticModifier<ExtraBurn> EXTRA_BURN_STATIC_MODIFIER = MODIFIERS.register("extraburn", ExtraBurn::new);
+    public static final StaticModifier<MikaStar> MIKA_STAR_STATIC_MODIFIER = MODIFIERS.register("mikastar", MikaStar::new);
+
 
 }
